@@ -964,6 +964,128 @@
     ctx.textBaseline = 'middle';
     ctx.fillText('Promille (‰)', 0, 0);
     ctx.restore();
+
+    // Add interactive hover/touch functionality
+    addChartInteractivity(canvas, dataPoints, timePoints, padding, width, height, scale, maxPromille, bgColor, fgColor, accentColor, mutedColor, dpr);
+  }
+
+  // Add chart interactivity
+  function addChartInteractivity(canvas, dataPoints, timePoints, padding, width, height, scale, maxPromille, bgColor, fgColor, accentColor, mutedColor, dpr) {
+    const rect = canvas.getBoundingClientRect();
+    let hoveredIndex = -1;
+
+    function redrawWithTooltip(index) {
+      if (index < 0 || index >= dataPoints.length) {
+        updateChart();
+        return;
+      }
+
+      const ctx = canvas.getContext('2d');
+
+      // Clear entire canvas first
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.scale(dpr, dpr);
+      ctx.fillStyle = bgColor;
+      ctx.fillRect(0, 0, rect.width, 350);
+
+      // Draw zones and grid (simplified redraw)
+      const redZoneLimit = 0.6;
+      const redZoneHeight = (redZoneLimit / maxPromille) * height;
+      ctx.fillStyle = 'rgba(211, 47, 47, 0.1)';
+      ctx.fillRect(padding, padding + height - redZoneHeight, width, redZoneHeight);
+      ctx.fillStyle = 'rgba(56, 142, 60, 0.1)';
+      ctx.fillRect(padding, padding, width, height - redZoneHeight);
+
+      // Draw line and points
+      if (dataPoints.length > 0) {
+        ctx.strokeStyle = accentColor;
+        ctx.lineWidth = 2;
+        ctx.lineJoin = 'round';
+        ctx.beginPath();
+        dataPoints.forEach((point, i) => {
+          const x = padding + (i / (dataPoints.length - 1)) * width;
+          const y = padding + height - point * scale;
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+
+        // Draw points
+        ctx.fillStyle = accentColor;
+        dataPoints.forEach((point, i) => {
+          const x = padding + (i / (dataPoints.length - 1)) * width;
+          const y = padding + height - point * scale;
+          const radius = i === index ? 6 : 3;
+          ctx.beginPath();
+          ctx.arc(x, y, radius, 0, Math.PI * 2);
+          ctx.fill();
+        });
+      }
+
+      // Draw tooltip for hovered point
+      if (index >= 0 && index < dataPoints.length) {
+        const x = padding + (index / (dataPoints.length - 1)) * width;
+        const y = padding + height - dataPoints[index] * scale;
+        const tooltipText = `${dataPoints[index].toFixed(2)}‰ @ ${timePoints[index]}`;
+
+        ctx.fillStyle = accentColor;
+        const tooltipWidth = 150;
+        const tooltipHeight = 32;
+        const tooltipX = Math.max(padding, Math.min(x - tooltipWidth / 2, padding + width - tooltipWidth));
+        const tooltipY = Math.max(padding - 45, y - 45);
+
+        ctx.fillRect(tooltipX, tooltipY, tooltipWidth, tooltipHeight);
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 12px system-ui';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(tooltipText, tooltipX + tooltipWidth / 2, tooltipY + tooltipHeight / 2);
+      }
+    }
+
+    function handleInteraction(clientX, clientY) {
+      if (clientX < rect.left || clientX > rect.right || clientY < rect.top || clientY > rect.bottom) {
+        hoveredIndex = -1;
+        updateChart();
+        return;
+      }
+
+      const relativeX = (clientX - rect.left) / rect.width;
+      const chartX = (relativeX * rect.width - padding) / width;
+
+      if (chartX < 0 || chartX > 1) {
+        hoveredIndex = -1;
+        updateChart();
+        return;
+      }
+
+      hoveredIndex = Math.round(chartX * (dataPoints.length - 1));
+      redrawWithTooltip(hoveredIndex);
+    }
+
+    // Mouse events
+    canvas.addEventListener('mousemove', (e) => {
+      handleInteraction(e.clientX, e.clientY);
+    });
+
+    canvas.addEventListener('mouseleave', () => {
+      hoveredIndex = -1;
+      updateChart();
+    });
+
+    // Touch events
+    canvas.addEventListener('touchmove', (e) => {
+      if (e.touches.length > 0) {
+        const touch = e.touches[0];
+        handleInteraction(touch.clientX, touch.clientY);
+      }
+    });
+
+    canvas.addEventListener('touchend', () => {
+      hoveredIndex = -1;
+      updateChart();
+    });
   }
 
   // Drycktyper med format och alkoholhalt
@@ -1388,6 +1510,129 @@
     ctx.textBaseline = 'middle';
     ctx.fillText('Promille (‰)', 0, 0);
     ctx.restore();
+
+    // Add interactive hover/touch functionality to plan chart
+    addPlanChartInteractivity(canvas, dataPoints, timePoints, padding, width, height, scale, maxPromille, bgColor, fgColor, accentColor, mutedColor, dpr);
+  }
+
+  // Add plan chart interactivity
+  function addPlanChartInteractivity(canvas, dataPoints, timePoints, padding, width, height, scale, maxPromille, bgColor, fgColor, accentColor, mutedColor, dpr) {
+    const rect = canvas.getBoundingClientRect();
+    let hoveredIndex = -1;
+
+    function redrawPlanWithTooltip(index) {
+      if (index < 0 || index >= dataPoints.length) {
+        return;
+      }
+
+      const ctx = canvas.getContext('2d');
+
+      // Clear entire canvas first
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.scale(dpr, dpr);
+
+      ctx.fillStyle = bgColor;
+      ctx.fillRect(0, 0, rect.width, 350);
+
+      // Draw grid lines
+      ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--border').trim();
+      ctx.lineWidth = 1;
+      for (let i = 0; i <= 5; i++) {
+        const y = padding + height - (i * height / 5);
+        ctx.beginPath();
+        ctx.moveTo(padding, y);
+        ctx.lineTo(padding + width, y);
+        ctx.stroke();
+      }
+
+      // Draw line and points
+      if (dataPoints.length > 0) {
+        ctx.strokeStyle = accentColor;
+        ctx.lineWidth = 2;
+        ctx.lineJoin = 'round';
+        ctx.beginPath();
+        dataPoints.forEach((point, i) => {
+          const x = padding + (i / (dataPoints.length - 1)) * width;
+          const y = padding + height - point * scale;
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+
+        // Draw points with highlight
+        ctx.fillStyle = accentColor;
+        dataPoints.forEach((point, i) => {
+          const x = padding + (i / (dataPoints.length - 1)) * width;
+          const y = padding + height - dataPoints[i] * scale;
+          const radius = i === index ? 6 : 3;
+          ctx.beginPath();
+          ctx.arc(x, y, radius, 0, Math.PI * 2);
+          ctx.fill();
+        });
+      }
+
+      // Draw tooltip for hovered point
+      if (index >= 0 && index < dataPoints.length) {
+        const x = padding + (index / (dataPoints.length - 1)) * width;
+        const y = padding + height - dataPoints[index] * scale;
+        const tooltipText = `${dataPoints[index].toFixed(2)}‰ @ ${timePoints[index]}`;
+
+        ctx.fillStyle = accentColor;
+        const tooltipWidth = 150;
+        const tooltipHeight = 32;
+        const tooltipX = Math.max(padding, Math.min(x - tooltipWidth / 2, padding + width - tooltipWidth));
+        const tooltipY = Math.max(padding - 45, y - 45);
+
+        ctx.fillRect(tooltipX, tooltipY, tooltipWidth, tooltipHeight);
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 12px system-ui';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(tooltipText, tooltipX + tooltipWidth / 2, tooltipY + tooltipHeight / 2);
+      }
+    }
+
+    function handlePlanInteraction(clientX, clientY) {
+      if (clientX < rect.left || clientX > rect.right || clientY < rect.top || clientY > rect.bottom) {
+        hoveredIndex = -1;
+        return;
+      }
+
+      const relativeX = (clientX - rect.left) / rect.width;
+      const chartX = (relativeX * rect.width - padding) / width;
+
+      if (chartX < 0 || chartX > 1) {
+        hoveredIndex = -1;
+        return;
+      }
+
+      hoveredIndex = Math.round(chartX * (dataPoints.length - 1));
+      if (hoveredIndex >= 0 && hoveredIndex < dataPoints.length) {
+        redrawPlanWithTooltip(hoveredIndex);
+      }
+    }
+
+    // Mouse events
+    canvas.addEventListener('mousemove', (e) => {
+      handlePlanInteraction(e.clientX, e.clientY);
+    });
+
+    canvas.addEventListener('mouseleave', () => {
+      hoveredIndex = -1;
+    });
+
+    // Touch events
+    canvas.addEventListener('touchmove', (e) => {
+      if (e.touches.length > 0) {
+        const touch = e.touches[0];
+        handlePlanInteraction(touch.clientX, touch.clientY);
+      }
+    });
+
+    canvas.addEventListener('touchend', () => {
+      hoveredIndex = -1;
+    });
   }
 
   // Initialisera dryckformat när sidan laddar
