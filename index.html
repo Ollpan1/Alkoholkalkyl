@@ -377,6 +377,14 @@
     <h2>Promillekurva (nästa 8 timmar)</h2>
     <div id="chartContainer"></div>
   </div>
+
+  <!-- APK Statistics Section -->
+  <div id="apkSection" class="form-section">
+    <h2>Kvällens APK</h2>
+    <div style="display: flex; align-items: center; gap: 1rem; justify-content: center;">
+      <div style="font-size: 2.5rem; font-weight: bold; color: var(--accent);" id="apkValue">-</div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -553,6 +561,7 @@
     const volume = parseFloat(document.getElementById('volume').value);
     const alcoholContent = parseFloat(document.getElementById('alcoholContent').value);
     const drinkTime = document.getElementById('drinkTime').value;
+    const drinkName = document.getElementById('drinkSearch').value;
 
     if (!volume || !alcoholContent || !drinkTime) {
       alert('Vänligen fyll i alla fält');
@@ -566,6 +575,7 @@
 
     drinks.push({
       id: Date.now(),
+      namn: drinkName,
       volume,
       alcoholContent,
       time: drinkDate.toISOString(),
@@ -574,10 +584,12 @@
     saveDrinks(drinks);
     loadDrinks();
     updateChart();
+    updateApkAverage();
 
     // Clear inputs
     document.getElementById('volume').value = '';
     document.getElementById('alcoholContent').value = '';
+    document.getElementById('drinkSearch').value = '';
     setDefaultDrinkTime();
   }
 
@@ -641,6 +653,7 @@
     saveDrinks(filtered);
     loadDrinks();
     updateChart();
+    updateApkAverage();
   }
 
   // Clear all drinks
@@ -649,6 +662,48 @@
       saveDrinks([]);
       loadDrinks();
       updateChart();
+      updateApkAverage();
+    }
+  }
+
+  // Beräkna och uppdatera APK-snittet
+  function updateApkAverage() {
+    const drinks = getDrinks();
+    let apkValues = [];
+
+    // Samla alla APK-värden från dryckerna i databasen
+    drinks.forEach(drink => {
+      const drinkData = drinksDatabase.find(d => d.namn === drink.namn);
+      if (drinkData && drinkData.apk) {
+        apkValues.push(drinkData.apk);
+      }
+    });
+
+    console.log('Drinks:', drinks.length, 'APK Values found:', apkValues);
+
+    // Beräkna snittet
+    let average = '-';
+    let apkColor = 'var(--accent)';
+
+    if (apkValues.length > 0) {
+      average = (apkValues.reduce((a, b) => a + b, 0) / apkValues.length).toFixed(2);
+      const avgNum = parseFloat(average);
+
+      // Bestäm färg baserat på snittet
+      if (avgNum < 1.5) {
+        apkColor = '#d32f2f'; // röd
+      } else if (avgNum < 1.8) {
+        apkColor = '#f59e0b'; // orange/gul
+      } else {
+        apkColor = '#388e3c'; // grön
+      }
+    }
+
+    // Uppdatera visningen
+    const apkValueElement = document.getElementById('apkValue');
+    if (apkValueElement) {
+      apkValueElement.textContent = average;
+      apkValueElement.style.color = apkColor;
     }
   }
 
