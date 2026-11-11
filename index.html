@@ -1149,11 +1149,11 @@
     document.getElementById('planSchedule').textContent = 'Dryck på tiderna:\n' + scheduleDisplay;
     document.getElementById('planResult').style.display = 'block';
 
-    drawPlanChart(startMin, buildupMinutes, maintenanceMinutes, schedule, weight, r, k, gramsPerDrink, drinkType);
+    drawPlanChart(startMin, buildupMinutes, maintenanceMinutes, schedule, weight, r, k, gramsPerDrink, drinkType, targetPromille);
   }
 
   // Rita promillekurva för Promilleplaneraren
-  function drawPlanChart(startMin, buildupMinutes, maintenanceMinutes, schedule, weight, r, k_a, gramsPerDrink, drinkType) {
+  function drawPlanChart(startMin, buildupMinutes, maintenanceMinutes, schedule, weight, r, k_a, gramsPerDrink, drinkType, targetPromille) {
     const k_e = 0.15;
 
     let chartContainer = document.getElementById('planChartContainer');
@@ -1229,17 +1229,16 @@
     ctx.fillStyle = bgColor;
     ctx.fillRect(0, 0, rect.width, 350);
 
-    // Rita röd zon (0-0.6‰)
-    const redZoneLimit = 0.6;
-    const redZoneHeight = (redZoneLimit / maxPromille) * height;
-    ctx.fillStyle = 'rgba(211, 47, 47, 0.1)';
+    // Rita röd zon (0 till målpromille)
+    const redZoneHeight = (targetPromille / maxPromille) * height;
+    ctx.fillStyle = 'rgba(211, 47, 47, 0.1)'; // Light red
     ctx.fillRect(padding, padding + height - redZoneHeight, width, redZoneHeight);
 
-    // Rita grön zon (0.6+‰)
-    ctx.fillStyle = 'rgba(56, 142, 60, 0.1)';
+    // Rita grön zon (målpromille och uppåt)
+    ctx.fillStyle = 'rgba(56, 142, 60, 0.1)'; // Light green
     ctx.fillRect(padding, padding, width, height - redZoneHeight);
 
-    // Rita gräns mellan zoner
+    // Rita gräns mellan zoner (streckad linje vid målpromille)
     const boundaryY = padding + height - redZoneHeight;
     ctx.strokeStyle = borderColor;
     ctx.lineWidth = 1;
