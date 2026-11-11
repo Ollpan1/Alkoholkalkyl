@@ -419,6 +419,11 @@
     // Setup drink search
     document.getElementById('drinkSearch').addEventListener('input', (e) => {
       searchDrinks(e.target.value);
+      // Återställ knappens färg till blå om sökfältet är tomt
+      if (!e.target.value) {
+        const addButton = document.querySelector('button.btn-primary');
+        addButton.style.backgroundColor = 'var(--accent)';
+      }
     });
 
     // Close suggestions when clicking outside
@@ -448,6 +453,14 @@
     }
   }
 
+  // Get button color based on APK
+  function getApkColor(apk) {
+    if (!apk) return 'var(--accent)'; // blå om ingen APK
+    if (apk < 1.5) return '#d32f2f'; // röd
+    if (apk < 1.8) return '#f59e0b'; // orange/gul
+    return '#388e3c'; // grön
+  }
+
   // Search for drinks
   function searchDrinks(query) {
     const suggestionsContainer = document.getElementById('drinkSuggestions');
@@ -470,6 +483,10 @@
     results.forEach(drink => {
       const item = document.createElement('div');
       item.className = 'drink-suggestion';
+      const apkColor = getApkColor(drink.apk);
+      item.style.borderLeftColor = apkColor;
+      item.style.borderLeftWidth = '4px';
+      item.style.borderLeftStyle = 'solid';
       item.innerHTML = `
         <div class="suggestion-name">${drink.namn}</div>
         <div class="suggestion-details">${drink.procent}% alkohol</div>
@@ -499,6 +516,11 @@
     document.getElementById('alcoholContent').value = drink.procent;
     document.getElementById('drinkSearch').value = drink.namn;
     document.getElementById('drinkSuggestions').style.display = 'none';
+
+    // Ändra knappens färg baserat på APK
+    const addButton = document.querySelector('button.btn-primary');
+    const apkColor = getApkColor(drink.apk);
+    addButton.style.backgroundColor = apkColor;
   }
 
   // Load settings from localStorage
@@ -591,7 +613,11 @@
     drinks.forEach(drink => {
       const drinkDate = new Date(drink.time);
       const timeString = drinkDate.toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit' });
-      const gramsAlcohol = (drink.volume * drink.alcoholContent) / 100;
+
+      // Beräkna ml ren alkohol
+      const mlAlcohol = (drink.volume * drink.alcoholContent) / 100;
+      // Omvandla till gram (alkoholens densitet ≈ 0,789 g/ml)
+      const gramsAlcohol = mlAlcohol * 0.789;
 
       const item = document.createElement('div');
       item.className = 'drink-item';
