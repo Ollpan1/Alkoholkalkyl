@@ -441,10 +441,10 @@
   let drinksDatabase = [];
   async function loadDrinksDatabase() {
     try {
-      const response = await fetch('drycker.json');
+      const response = await fetch('apk.json');
       drinksDatabase = await response.json();
     } catch (e) {
-      console.log('Could not load drycker.json');
+      console.log('Could not load apk.json');
     }
   }
 
@@ -485,8 +485,17 @@
 
   // Select a drink from suggestions
   function selectDrink(drink) {
-    // Standard volym för en drink är 250ml
-    document.getElementById('volume').value = 250;
+    // Bestäm volym baserat på typ
+    let volym = 250; // default
+    if (drink.typ === 'Sprit') {
+      volym = 40;
+    } else if (drink.typ === 'Vin') {
+      volym = 150;
+    } else if (drink.typ === 'Öl' || drink.typ === 'Cider') {
+      volym = drink.volym || 330;
+    }
+
+    document.getElementById('volume').value = volym;
     document.getElementById('alcoholContent').value = drink.procent;
     document.getElementById('drinkSearch').value = drink.namn;
     document.getElementById('drinkSuggestions').style.display = 'none';

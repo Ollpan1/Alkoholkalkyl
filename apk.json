@@ -1,0 +1,1486 @@
+[
+  {
+    "namn": "Farmers Market Organic",
+    "apk": 1.18,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 750
+  },
+  {
+    "namn": "Cruzcampo Gran Reserva",
+    "apk": 1.18,
+    "typ": "Öl",
+    "procent": 6.4,
+    "volym": 330
+  },
+  {
+    "namn": "Finca Almendral Reserva",
+    "apk": 1.18,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 750
+  },
+  {
+    "namn": "Rio Maggio",
+    "apk": 1.18,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 750
+  },
+  {
+    "namn": "Clefs de L'Enclave Côtes du Rhône Vielles Vignes",
+    "apk": 1.18,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 750
+  },
+  {
+    "namn": "Zupreme Zinfandel",
+    "apk": 1.18,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 750
+  },
+  {
+    "namn": "Susurro Sauvignon Blanc Verdejo",
+    "apk": 1.179,
+    "typ": "Vin",
+    "procent": 11.5,
+    "volym": 2000
+  },
+  {
+    "namn": "McManis Cabernet Sauvignon",
+    "apk": 1.179,
+    "typ": "Vin",
+    "procent": 13.5,
+    "volym": 2000
+  },
+  {
+    "namn": "Kapuziner Hefe-Weissbier",
+    "apk": 1.179,
+    "typ": "Öl",
+    "procent": 5.4,
+    "volym": 500
+  },
+  {
+    "namn": "Carlsberg Hof Organic",
+    "apk": 1.173,
+    "typ": "Öl",
+    "procent": 4.2,
+    "volym": 500
+  },
+  {
+    "namn": "The Dundee",
+    "apk": 1.172,
+    "typ": "Sprit",
+    "procent": 40,
+    "volym": 700
+  },
+  {
+    "namn": "Isle of Skye Peated 8 years",
+    "apk": 1.172,
+    "typ": "Sprit",
+    "procent": 40,
+    "volym": 700
+  },
+  {
+    "namn": "Kopparberg Cider Cherry",
+    "apk": 1.172,
+    "typ": "Cider",
+    "procent": 6,
+    "volym": 330
+  },
+  {
+    "namn": "Pistonhead Hard Apple Cider",
+    "apk": 1.172,
+    "typ": "Cider",
+    "procent": 6,
+    "volym": 330
+  },
+  {
+    "namn": "Eriksberg Mäster",
+    "apk": 1.17,
+    "typ": "Öl",
+    "procent": 5,
+    "volym": 330
+  },
+  {
+    "namn": "Riesling for you and for me",
+    "apk": 1.169,
+    "typ": "Vin",
+    "procent": 12,
+    "volym": 750
+  },
+  {
+    "namn": "Königsmosel Riesling",
+    "apk": 1.164,
+    "typ": "Vin",
+    "procent": 8.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Untouched White",
+    "apk": 1.164,
+    "typ": "Vin",
+    "procent": 8.5,
+    "volym": 1000
+  },
+  {
+    "namn": "Eriksberg Julöl",
+    "apk": 1.162,
+    "typ": "Öl",
+    "procent": 5.6,
+    "volym": 330
+  },
+  {
+    "namn": "Oppigårds Deep Blonde Ale",
+    "apk": 1.161,
+    "typ": "Öl",
+    "procent": 7,
+    "volym": 330
+  },
+  {
+    "namn": "Mariestads Dunkel",
+    "apk": 1.16,
+    "typ": "Öl",
+    "procent": 5.8,
+    "volym": 330
+  },
+  {
+    "namn": "Greizer Bock",
+    "apk": 1.159,
+    "typ": "Öl",
+    "procent": 6.7,
+    "volym": 500
+  },
+  {
+    "namn": "Paulaner Oktoberfest",
+    "apk": 1.158,
+    "typ": "Öl",
+    "procent": 6,
+    "volym": 500
+  },
+  {
+    "namn": "Don Simon Sangría",
+    "apk": 1.158,
+    "typ": "Vin",
+    "procent": 11,
+    "volym": 1000
+  },
+  {
+    "namn": "Highland Queen",
+    "apk": 1.157,
+    "typ": "Sprit",
+    "procent": 40,
+    "volym": 700
+  },
+  {
+    "namn": "Diablo Golden Chardonnay",
+    "apk": 1.154,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 1500
+  },
+  {
+    "namn": "Crocodile Glutenfri",
+    "apk": 1.152,
+    "typ": "Öl",
+    "procent": 5.2,
+    "volym": 330
+  },
+  {
+    "namn": "ZIP Orange Longdrink",
+    "apk": 1.151,
+    "typ": "Cider",
+    "procent": 4.5,
+    "volym": 330
+  },
+  {
+    "namn": "Maison Francoise Chardonnay",
+    "apk": 1.147,
+    "typ": "Vin",
+    "procent": 12.5,
+    "volym": 1000
+  },
+  {
+    "namn": "Massetti Chianti",
+    "apk": 1.147,
+    "typ": "Vin",
+    "procent": 12.5,
+    "volym": 1000
+  },
+  {
+    "namn": "Dão Casal Mor",
+    "apk": 1.147,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 750
+  },
+  {
+    "namn": "Río Claro Sauvignon Blanc",
+    "apk": 1.147,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 750
+  },
+  {
+    "namn": "Candidato Ecologico Tempranillo",
+    "apk": 1.147,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 750
+  },
+  {
+    "namn": "Crudo Catarratto Zibibbo Organic",
+    "apk": 1.147,
+    "typ": "Vin",
+    "procent": 12.5,
+    "volym": 1000
+  },
+  {
+    "namn": "Wolfgang Grüner Veltliner",
+    "apk": 1.147,
+    "typ": "Vin",
+    "procent": 12.5,
+    "volym": 1000
+  },
+  {
+    "namn": "Leale Sangiovese",
+    "apk": 1.147,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 750
+  },
+  {
+    "namn": "Pilsner Urquell",
+    "apk": 1.146,
+    "typ": "Öl",
+    "procent": 4.4,
+    "volym": 500
+  },
+  {
+    "namn": "Bols Vodka",
+    "apk": 1.146,
+    "typ": "Sprit",
+    "procent": 37.5,
+    "volym": 700
+  },
+  {
+    "namn": "Piratens Vodka",
+    "apk": 1.146,
+    "typ": "Sprit",
+    "procent": 37.5,
+    "volym": 700
+  },
+  {
+    "namn": "POMPOM Rosé",
+    "apk": 1.145,
+    "typ": "Cider",
+    "procent": 5.9,
+    "volym": 330
+  },
+  {
+    "namn": "The Wanted Zin Zinfandel Old Vines",
+    "apk": 1.143,
+    "typ": "Vin",
+    "procent": 14.5,
+    "volym": 750
+  },
+  {
+    "namn": "Señor Burro Organico Tempranillo Syrah",
+    "apk": 1.144,
+    "typ": "Vin",
+    "procent": 13.5,
+    "volym": 500
+  },
+  {
+    "namn": "Lord Calvert",
+    "apk": 1.143,
+    "typ": "Sprit",
+    "procent": 40,
+    "volym": 700
+  },
+  {
+    "namn": "Karlovacko",
+    "apk": 1.142,
+    "typ": "Öl",
+    "procent": 5,
+    "volym": 500
+  },
+  {
+    "namn": "Göteborgs Nya Bryggeri Göteborgs Lager",
+    "apk": 1.142,
+    "typ": "Öl",
+    "procent": 5,
+    "volym": 500
+  },
+  {
+    "namn": "Appassinero Appassimento",
+    "apk": 2.164,
+    "typ": "Vin",
+    "procent": 14.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Arboga 10,2",
+    "apk": 2.152,
+    "typ": "Öl",
+    "procent": 10.2,
+    "volym": 500
+  },
+  {
+    "namn": "Sofiero Original Guld",
+    "apk": 2.095,
+    "typ": "Öl",
+    "procent": 7.5,
+    "volym": 500
+  },
+  {
+    "namn": "Candidato Ecologico Tempranillo",
+    "apk": 2.086,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 3000
+  },
+  {
+    "namn": "Castillo de Gredos Red Wine",
+    "apk": 2.063,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 3000
+  },
+  {
+    "namn": "Sju komma tvåan",
+    "apk": 2.022,
+    "typ": "Öl",
+    "procent": 7.2,
+    "volym": 500
+  },
+  {
+    "namn": "Mira",
+    "apk": 2.01,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 3000
+  },
+  {
+    "namn": "In the MOOD for Shiraz Cinsault",
+    "apk": 2.01,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 3000
+  },
+  {
+    "namn": "Dandy Reserve",
+    "apk": 1.986,
+    "typ": "Vin",
+    "procent": 14.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Three Hearts Extra Strong",
+    "apk": 1.984,
+    "typ": "Öl",
+    "procent": 7.5,
+    "volym": 500
+  },
+  {
+    "namn": "Grandiosa Gran Especial Cabernet Sauvignon",
+    "apk": 1.96,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 3000
+  },
+  {
+    "namn": "Zumbali Red Reserve",
+    "apk": 1.953,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 3000
+  },
+  {
+    "namn": "Falu Rödvin",
+    "apk": 1.938,
+    "typ": "Vin",
+    "procent": 13.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Pelles Pilsner",
+    "apk": 1.938,
+    "typ": "Öl",
+    "procent": 5,
+    "volym": 500
+  },
+  {
+    "namn": "Casas Patronales Rich Cabernet sauvignon, carmenère och syrah.",
+    "apk": 1.938,
+    "typ": "Vin",
+    "procent": 13.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Pripps Blå Extra",
+    "apk": 1.932,
+    "typ": "Öl",
+    "procent": 6.8,
+    "volym": 500
+  },
+  {
+    "namn": "Umbala",
+    "apk": 1.9,
+    "typ": "Vin",
+    "procent": 14.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Lisa 1503",
+    "apk": 1.893,
+    "typ": "Vin",
+    "procent": 13.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Hunter Ljus lager",
+    "apk": 1.887,
+    "typ": "Öl",
+    "procent": 6,
+    "volym": 500
+  },
+  {
+    "namn": "Arboga Originalet",
+    "apk": 1.879,
+    "typ": "Öl",
+    "procent": 5.6,
+    "volym": 500
+  },
+  {
+    "namn": "Sofiero Original",
+    "apk": 1.871,
+    "typ": "Öl",
+    "procent": 5.2,
+    "volym": 500
+  },
+  {
+    "namn": "Crocodile Lager",
+    "apk": 1.871,
+    "typ": "Öl",
+    "procent": 5.2,
+    "volym": 500
+  },
+  {
+    "namn": "Åbro Extra Stark",
+    "apk": 1.867,
+    "typ": "Öl",
+    "procent": 7.3,
+    "volym": 330
+  },
+  {
+    "namn": "Gato Negro Cabernet Sauvignon",
+    "apk": 1.866,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 3000
+  },
+  {
+    "namn": "Levante Merlot",
+    "apk": 1.849,
+    "typ": "Vin",
+    "procent": 13.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Leva Reserve Cabernet Sauvignon Merlot",
+    "apk": 1.849,
+    "typ": "Vin",
+    "procent": 13.5,
+    "volym": 3000
+  },
+  {
+    "namn": "CHILL OUT Cabernet Sauvignon Australia",
+    "apk": 1.849,
+    "typ": "Vin",
+    "procent": 13.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Stockholm Festival",
+    "apk": 1.842,
+    "typ": "Öl",
+    "procent": 7.2,
+    "volym": 330
+  },
+  {
+    "namn": "GOSA Organic Monastrell",
+    "apk": 1.834,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 3000
+  },
+  {
+    "namn": "Massimo Grande Rosso",
+    "apk": 1.834,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 4500
+  },
+  {
+    "namn": "Kung",
+    "apk": 1.831,
+    "typ": "Öl",
+    "procent": 5.2,
+    "volym": 500
+  },
+  {
+    "namn": "Maze Shiraz Cabernet Sauvignon",
+    "apk": 1.82,
+    "typ": "Vin",
+    "procent": 14.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Castillo de Gredos White wine",
+    "apk": 1.818,
+    "typ": "Vin",
+    "procent": 12,
+    "volym": 3000
+  },
+  {
+    "namn": "Ey'Bro",
+    "apk": 1.799,
+    "typ": "Öl",
+    "procent": 5,
+    "volym": 500
+  },
+  {
+    "namn": "Norrlands Djup",
+    "apk": 1.799,
+    "typ": "Öl",
+    "procent": 6.8,
+    "volym": 500
+  },
+  {
+    "namn": "Åbro Original Extra Stark",
+    "apk": 1.798,
+    "typ": "Öl",
+    "procent": 7.3,
+    "volym": 330
+  },
+  {
+    "namn": "In the MOOD for Chenin Blanc",
+    "apk": 1.794,
+    "typ": "Vin",
+    "procent": 12.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Lucky Bait",
+    "apk": 1.635,
+    "typ": "Öl",
+    "procent": 5.4,
+    "volym": 330
+  },
+  {
+    "namn": "Casas Patronales Crisp Chardonnay Sauvignon Blanc",
+    "apk": 1.632,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 3000
+  },
+  {
+    "namn": "Oz Rozz Rosé",
+    "apk": 1.625,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 1000
+  },
+  {
+    "namn": "Sangre de Toro Organic Selection",
+    "apk": 1.622,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 3000
+  },
+  {
+    "namn": "Zinfandel 24K",
+    "apk": 1.622,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 3000
+  },
+  {
+    "namn": "TT Pilsner",
+    "apk": 1.619,
+    "typ": "Öl",
+    "procent": 4.5,
+    "volym": 500
+  },
+  {
+    "namn": "Allegro Primitivo Sangiovese",
+    "apk": 1.617,
+    "typ": "Vin",
+    "procent": 14.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Roodeberg",
+    "apk": 1.617,
+    "typ": "Vin",
+    "procent": 14.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Carlsberg Sort Guld",
+    "apk": 1.608,
+    "typ": "Öl",
+    "procent": 5.5,
+    "volym": 500
+  },
+  {
+    "namn": "Il Barone Organic Rosé",
+    "apk": 1.605,
+    "typ": "Vin",
+    "procent": 11.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Fagerhult",
+    "apk": 1.605,
+    "typ": "Öl",
+    "procent": 5.3,
+    "volym": 330
+  },
+  {
+    "namn": "Fagerhult Export",
+    "apk": 1.605,
+    "typ": "Öl",
+    "procent": 5.3,
+    "volym": 330
+  },
+  {
+    "namn": "Tuborg Guld",
+    "apk": 1.605,
+    "typ": "Öl",
+    "procent": 5.3,
+    "volym": 330
+  },
+  {
+    "namn": "Zeunerts Original",
+    "apk": 1.605,
+    "typ": "Öl",
+    "procent": 5.3,
+    "volym": 330
+  },
+  {
+    "namn": "Sofiero Julöl",
+    "apk": 1.585,
+    "typ": "Öl",
+    "procent": 5.2,
+    "volym": 500
+  },
+  {
+    "namn": "Husets Röda",
+    "apk": 1.582,
+    "typ": "Vin",
+    "procent": 12.5,
+    "volym": 1000
+  },
+  {
+    "namn": "Prego Bianco",
+    "apk": 1.582,
+    "typ": "Vin",
+    "procent": 12.5,
+    "volym": 1000
+  },
+  {
+    "namn": "AUSSIE Flamingo Blush Rosé",
+    "apk": 1.582,
+    "typ": "Vin",
+    "procent": 12.5,
+    "volym": 1000
+  },
+  {
+    "namn": "Castillo de Gredos White wine",
+    "apk": 1.579,
+    "typ": "Vin",
+    "procent": 12,
+    "volym": 1000
+  },
+  {
+    "namn": "Sofia y Sebastian White Wine is Best Enjoyed with Friends Organic",
+    "apk": 1.575,
+    "typ": "Vin",
+    "procent": 11.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Småland",
+    "apk": 1.574,
+    "typ": "Öl",
+    "procent": 5.2,
+    "volym": 330
+  },
+  {
+    "namn": "Fem komma tvåan",
+    "apk": 1.574,
+    "typ": "Öl",
+    "procent": 5.2,
+    "volym": 330
+  },
+  {
+    "namn": "Rosie Rosé",
+    "apk": 1.573,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 1000
+  },
+  {
+    "namn": "Chapel Hill Riesling Sauvignon Blanc",
+    "apk": 1.572,
+    "typ": "Vin",
+    "procent": 12,
+    "volym": 3000
+  },
+  {
+    "namn": "Ramos Elegant White",
+    "apk": 1.572,
+    "typ": "Vin",
+    "procent": 12,
+    "volym": 3000
+  },
+  {
+    "namn": "Euphoria Sauvignon Blanc",
+    "apk": 1.572,
+    "typ": "Vin",
+    "procent": 12,
+    "volym": 3000
+  },
+  {
+    "namn": "Ecologica Familias Torrontés Chardonnay",
+    "apk": 1.572,
+    "typ": "Vin",
+    "procent": 12,
+    "volym": 3000
+  },
+  {
+    "namn": "Carlsberg Export",
+    "apk": 1.572,
+    "typ": "Öl",
+    "procent": 5,
+    "volym": 500
+  },
+  {
+    "namn": "Stockholm",
+    "apk": 1.572,
+    "typ": "Öl",
+    "procent": 5,
+    "volym": 500
+  },
+  {
+    "namn": "Bianco Vino Italiano Quargentan",
+    "apk": 1.571,
+    "typ": "Vin",
+    "procent": 11,
+    "volym": 1000
+  },
+  {
+    "namn": "CHILL OUT Chardonnay Australia",
+    "apk": 1.569,
+    "typ": "Vin",
+    "procent": 12.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Crudo Catarratto Zibibbo",
+    "apk": 1.569,
+    "typ": "Vin",
+    "procent": 12.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Crudo Nerello Mascalese Frappato",
+    "apk": 1.566,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 3000
+  },
+  {
+    "namn": "No 26 Chardonnay",
+    "apk": 1.566,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 3000
+  },
+  {
+    "namn": "KWV Sauvignon Blanc",
+    "apk": 1.566,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 3000
+  },
+  {
+    "namn": "GW :s Låda",
+    "apk": 1.564,
+    "typ": "Vin",
+    "procent": 13.5,
+    "volym": 3000
+  },
+  {
+    "namn": "The Big Zin Zinfandel Old Vines",
+    "apk": 1.564,
+    "typ": "Vin",
+    "procent": 13.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Casillero del Diablo Carmenère Cabernet Sauvignon",
+    "apk": 1.564,
+    "typ": "Vin",
+    "procent": 13.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Cigarra Reserva Shiraz Touriga Nacional",
+    "apk": 1.564,
+    "typ": "Vin",
+    "procent": 13.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Casalforte Collezione Campistorti",
+    "apk": 1.564,
+    "typ": "Vin",
+    "procent": 13.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Ciù Ciù di Bartolomei Grande Sangiovese",
+    "apk": 1.564,
+    "typ": "Vin",
+    "procent": 13.5,
+    "volym": 3000
+  },
+  {
+    "namn": "SomeZin Zinfandel",
+    "apk": 1.561,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 3000
+  },
+  {
+    "namn": "Casa Vinironia Appassimento Grande Edizione",
+    "apk": 1.559,
+    "typ": "Vin",
+    "procent": 14.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Ey'Bro",
+    "apk": 1.542,
+    "typ": "Öl",
+    "procent": 5,
+    "volym": 330
+  },
+  {
+    "namn": "Pripps Blå",
+    "apk": 1.542,
+    "typ": "Öl",
+    "procent": 5,
+    "volym": 330
+  },
+  {
+    "namn": "The Bäär",
+    "apk": 1.542,
+    "typ": "Öl",
+    "procent": 5,
+    "volym": 330
+  },
+  {
+    "namn": "Sofiero Julöl",
+    "apk": 1.538,
+    "typ": "Öl",
+    "procent": 5.2,
+    "volym": 500
+  },
+  {
+    "namn": "Olvi Export Lager",
+    "apk": 1.538,
+    "typ": "Öl",
+    "procent": 5.2,
+    "volym": 500
+  },
+  {
+    "namn": "Falcon Export",
+    "apk": 1.538,
+    "typ": "Öl",
+    "procent": 5.2,
+    "volym": 500
+  },
+  {
+    "namn": "Rekorderlig Skogsbär Extra stark",
+    "apk": 1.528,
+    "typ": "Cider",
+    "procent": 7,
+    "volym": 500
+  },
+  {
+    "namn": "Lindemans Shiraz Cabernet",
+    "apk": 1.528,
+    "typ": "Vin",
+    "procent": 13.5,
+    "volym": 3000
+  },
+  {
+    "namn": "99 Rosas Sauvignon Blanc Chardonnay",
+    "apk": 1.524,
+    "typ": "Vin",
+    "procent": 12.5,
+    "volym": 1000
+  },
+  {
+    "namn": "Fair & Square Smart",
+    "apk": 1.519,
+    "typ": "Vin",
+    "procent": 12,
+    "volym": 1000
+  },
+  {
+    "namn": "Husets Vita",
+    "apk": 1.519,
+    "typ": "Vin",
+    "procent": 12,
+    "volym": 1000
+  },
+  {
+    "namn": "Cape Heights Chenin Blanc Chardonnay",
+    "apk": 1.519,
+    "typ": "Vin",
+    "procent": 12,
+    "volym": 1000
+  },
+  {
+    "namn": "Bright Brew",
+    "apk": 1.515,
+    "typ": "Öl",
+    "procent": 5,
+    "volym": 500
+  },
+  {
+    "namn": "Saturnus Starkvinsglögg",
+    "apk": 1.515,
+    "typ": "Vin",
+    "procent": 15,
+    "volym": 1000
+  },
+  {
+    "namn": "Åbro Original Extra Stark",
+    "apk": 1.515,
+    "typ": "Öl",
+    "procent": 7.3,
+    "volym": 330
+  },
+  {
+    "namn": "Norrlands Guld Export",
+    "apk": 1.514,
+    "typ": "Öl",
+    "procent": 5.3,
+    "volym": 500
+  },
+  {
+    "namn": "Král lev Pivo",
+    "apk": 1.514,
+    "typ": "Öl",
+    "procent": 5,
+    "volym": 330
+  },
+  {
+    "namn": "Paolini Organic White",
+    "apk": 1.512,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 1500
+  },
+  {
+    "namn": "Hardys Crest Cabernet Shiraz Merlot",
+    "apk": 1.511,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 1500
+  },
+  {
+    "namn": "Åbro Lejon",
+    "apk": 1.509,
+    "typ": "Öl",
+    "procent": 5.9,
+    "volym": 330
+  },
+  {
+    "namn": "Grosshandlarens Premium Lager",
+    "apk": 1.508,
+    "typ": "Öl",
+    "procent": 5.7,
+    "volym": 500
+  },
+  {
+    "namn": "Bryggmästarens Premium Gold",
+    "apk": 1.508,
+    "typ": "Öl",
+    "procent": 5.7,
+    "volym": 500
+  },
+  {
+    "namn": "Byron Bay Sauvignon Blanc",
+    "apk": 1.506,
+    "typ": "Vin",
+    "procent": 12.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Villa Brichot Gros Manseng",
+    "apk": 1.506,
+    "typ": "Vin",
+    "procent": 12,
+    "volym": 3000
+  },
+  {
+    "namn": "Guldkällan",
+    "apk": 1.505,
+    "typ": "Öl",
+    "procent": 5.7,
+    "volym": 330
+  },
+  {
+    "namn": "Julia & Navines La Pluma Garnacha Organic",
+    "apk": 1.505,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 3000
+  },
+  {
+    "namn": "Ventoux Réserve Rouge",
+    "apk": 1.505,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 3000
+  },
+  {
+    "namn": "Tr3 Apor Äppelcider Ekologisk",
+    "apk": 1.5,
+    "typ": "Cider",
+    "procent": 4.5,
+    "volym": 330
+  },
+  {
+    "namn": "Falcon Bayerskt",
+    "apk": 1.486,
+    "typ": "Öl",
+    "procent": 5.2,
+    "volym": 500
+  },
+  {
+    "namn": "Nästgårds NEIPA",
+    "apk": 1.482,
+    "typ": "Öl",
+    "procent": 5.9,
+    "volym": 500
+  },
+  {
+    "namn": "Bron IPA",
+    "apk": 1.482,
+    "typ": "Öl",
+    "procent": 5.9,
+    "volym": 500
+  },
+  {
+    "namn": "In the MOOD for Cabernet Sauvignon Reserve",
+    "apk": 1.481,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 2000
+  },
+  {
+    "namn": "Cálido Reserva Carmenère Cabernet Sauvignon",
+    "apk": 1.481,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 2000
+  },
+  {
+    "namn": "Mariestads Julebrygd",
+    "apk": 1.48,
+    "typ": "Öl",
+    "procent": 5.8,
+    "volym": 500
+  },
+  {
+    "namn": "Mariestads Påskbrygd",
+    "apk": 1.48,
+    "typ": "Öl",
+    "procent": 5.8,
+    "volym": 500
+  },
+  {
+    "namn": "Mariestads Export",
+    "apk": 1.48,
+    "typ": "Öl",
+    "procent": 5.3,
+    "volym": 500
+  },
+  {
+    "namn": "Zeunerts Höga Kusten",
+    "apk": 1.48,
+    "typ": "Öl",
+    "procent": 5.3,
+    "volym": 500
+  },
+  {
+    "namn": "Pripps Blå Julöl",
+    "apk": 1.479,
+    "typ": "Öl",
+    "procent": 5,
+    "volym": 500
+  },
+  {
+    "namn": "Z1N Zinfandel",
+    "apk": 1.474,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 1000
+  },
+  {
+    "namn": "The Wanted Zin Zinfandel Old Vines",
+    "apk": 1.474,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 3000
+  },
+  {
+    "namn": "Good Guys Brew Hopmonster 2.0",
+    "apk": 1.472,
+    "typ": "Öl",
+    "procent": 9.5,
+    "volym": 330
+  },
+  {
+    "namn": "Euphoria Rosé",
+    "apk": 1.462,
+    "typ": "Vin",
+    "procent": 11.5,
+    "volym": 750
+  },
+  {
+    "namn": "Leva Sauvignon Blanc Misket",
+    "apk": 1.461,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 1000
+  },
+  {
+    "namn": "Santa Helena Varietal Carmenère",
+    "apk": 1.461,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 1000
+  },
+  {
+    "namn": "Terre de Mistral Reserve Côtes du Rhône Organic",
+    "apk": 1.455,
+    "typ": "Vin",
+    "procent": 14.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Eriksberg Julöl",
+    "apk": 1.407,
+    "typ": "Öl",
+    "procent": 5.6,
+    "volym": 500
+  },
+  {
+    "namn": "Zywiec",
+    "apk": 1.407,
+    "typ": "Öl",
+    "procent": 5.5,
+    "volym": 330
+  },
+  {
+    "namn": "Red Gold Smultron",
+    "apk": 1.406,
+    "typ": "Vin",
+    "procent": 15,
+    "volym": 750
+  },
+  {
+    "namn": "Lemon Gold Citron",
+    "apk": 1.406,
+    "typ": "Vin",
+    "procent": 15,
+    "volym": 750
+  },
+  {
+    "namn": "Casa Marzoni Primitivo Organic",
+    "apk": 1.405,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 3000
+  },
+  {
+    "namn": "Côtes-du-Rhône Reserve",
+    "apk": 1.405,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 3000
+  },
+  {
+    "namn": "Amicale",
+    "apk": 1.405,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 3000
+  },
+  {
+    "namn": "McManis Petite Sirah",
+    "apk": 1.405,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 3000
+  },
+  {
+    "namn": "Casas Patronales Crispy Sauvignon Blanc",
+    "apk": 1.404,
+    "typ": "Vin",
+    "procent": 12.5,
+    "volym": 1000
+  },
+  {
+    "namn": "Snapper",
+    "apk": 1.404,
+    "typ": "Vin",
+    "procent": 12.5,
+    "volym": 1000
+  },
+  {
+    "namn": "Les Champs Sauvignon Blanc",
+    "apk": 1.404,
+    "typ": "Vin",
+    "procent": 12.5,
+    "volym": 1000
+  },
+  {
+    "namn": "Tarapacá Biodiversity Cabernet Sauvignon Syrah",
+    "apk": 1.403,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 1500
+  },
+  {
+    "namn": "Three Hearts Julöl",
+    "apk": 1.402,
+    "typ": "Öl",
+    "procent": 5.3,
+    "volym": 500
+  },
+  {
+    "namn": "Lynx Chardonnay Barrel-aged",
+    "apk": 1.398,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 3000
+  },
+  {
+    "namn": "19 Crimes Shiraz",
+    "apk": 1.398,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 3000
+  },
+  {
+    "namn": "Bryggmästarens Bästa Pilsner",
+    "apk": 1.397,
+    "typ": "Öl",
+    "procent": 5,
+    "volym": 500
+  },
+  {
+    "namn": "Lindemans Chardonnay",
+    "apk": 1.397,
+    "typ": "Vin",
+    "procent": 12.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Barossa Shiraz By Brian Dominic",
+    "apk": 1.453,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 3000
+  },
+  {
+    "namn": "KWV Chardonnay",
+    "apk": 1.452,
+    "typ": "Vin",
+    "procent": 13.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Ramos Reserva",
+    "apk": 1.452,
+    "typ": "Vin",
+    "procent": 13.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Frontera Cabernet Sauvignon",
+    "apk": 1.452,
+    "typ": "Vin",
+    "procent": 12,
+    "volym": 1500
+  },
+  {
+    "namn": "Periquita Reserva",
+    "apk": 1.45,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 3000
+  },
+  {
+    "namn": "Umani Sangiovese Biologico",
+    "apk": 1.448,
+    "typ": "Vin",
+    "procent": 12.5,
+    "volym": 3000
+  },
+  {
+    "namn": "Tuborg Classic",
+    "apk": 1.447,
+    "typ": "Öl",
+    "procent": 4.6,
+    "volym": 500
+  },
+  {
+    "namn": "Adobe Sauvignon Blanc",
+    "apk": 1.446,
+    "typ": "Vin",
+    "procent": 12,
+    "volym": 3000
+  },
+  {
+    "namn": "Puy Chéri Sauvignon Blanc",
+    "apk": 1.446,
+    "typ": "Vin",
+    "procent": 12,
+    "volym": 3000
+  },
+  {
+    "namn": "Casa Nero Barbera",
+    "apk": 1.444,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 1000
+  },
+  {
+    "namn": "Veronia Appassimento",
+    "apk": 1.443,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 1000
+  },
+  {
+    "namn": "Backyard Brew Chopping Block",
+    "apk": 1.442,
+    "typ": "Öl",
+    "procent": 5.2,
+    "volym": 330
+  },
+  {
+    "namn": "Big Bossy Jane Zinfandel",
+    "apk": 1.429,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 1500
+  },
+  {
+    "namn": "Stockholm Festival Beer",
+    "apk": 1.424,
+    "typ": "Öl",
+    "procent": 6,
+    "volym": 330
+  },
+  {
+    "namn": "Falcon Hoppfull",
+    "apk": 1.418,
+    "typ": "Öl",
+    "procent": 5.2,
+    "volym": 330
+  },
+  {
+    "namn": "Pistonhead Haze Lager",
+    "apk": 1.414,
+    "typ": "Öl",
+    "procent": 5.1,
+    "volym": 330
+  },
+  {
+    "namn": "Spier Million Trees Cabernet Sauvignon Shiraz",
+    "apk": 1.414,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 1000
+  },
+  {
+    "namn": "El Sueño Syrah",
+    "apk": 1.414,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 1000
+  },
+  {
+    "namn": "Spring Village Pinot Noir",
+    "apk": 1.414,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 1000
+  },
+  {
+    "namn": "Viña Maipo Chardonnay",
+    "apk": 1.413,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 750
+  },
+  {
+    "namn": "Expedition Torrontés Chardonnay",
+    "apk": 1.413,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 1000
+  },
+  {
+    "namn": "Frontera Chardonnay",
+    "apk": 1.413,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 750
+  },
+  {
+    "namn": "Gato Negro Cabernet Sauvignon",
+    "apk": 1.413,
+    "typ": "Vin",
+    "procent": 13,
+    "volym": 750
+  },
+  {
+    "namn": "Welmoed Chenin Blanc",
+    "apk": 1.409,
+    "typ": "Vin",
+    "procent": 14,
+    "volym": 1500
+  },
+  {
+    "namn": "Pripps Blå Julöl",
+    "apk": 1.453,
+    "typ": "Öl",
+    "procent": 5,
+    "volym": 500
+  }
+]
