@@ -1073,8 +1073,25 @@
     // Maxhastighet: 1 enhet per 5 minuter
     const maxDrinksInTime = Math.floor(buildupMinutes / 5);
     if (drinksNeeded > maxDrinksInTime) {
-      const maxPossiblePromille = (maxDrinksInTime * gramsPerDrink / (weight * r)) * (1 - Math.exp(-k * buildupHours)) - BETA * buildupHours;
-      alert(`Omöjligt att nå ${targetPromille}‰ på ${buildupHours.toFixed(1)} timmar.\n\nDu kan max dricka 1 enhet var 5:e minut = ${maxDrinksInTime} drycker.\nDet ger max ~${Math.max(0, maxPossiblePromille).toFixed(2)}‰ med ${drink.size}.\n\nFörsök med:\n- Längre tid till målpromille\n- Större/starkare drycker\n- Lägre målpromille`);
+      // Använd two-compartment-modell för att beräkna max möjlig promille
+      const k_a = k; // Absorptionshastighet från hungringsnivå
+      const k_e = 0.15; // Elimineringshastighet (fast)
+
+      // Beräkna promille med maxhastighet (en dryck var 5:e minut)
+      let maxPromille = 0;
+      for (let i = 0; i < maxDrinksInTime; i++) {
+        const timeOfDrink = (i * 5) / 60; // Timmar
+        // Vid slutet av uppbyggningsfasen
+        const t = buildupHours;
+        const timeSinceDrink = t - timeOfDrink;
+        if (timeSinceDrink >= 0) {
+          const term1 = Math.exp(-k_e * timeSinceDrink);
+          const term2 = Math.exp(-k_a * timeSinceDrink);
+          maxPromille += (gramsPerDrink / (weight * r)) * (term1 - term2);
+        }
+      }
+
+      alert(`Omöjligt att nå ${targetPromille}‰ på ${buildupHours.toFixed(1)} timmar.\n\nDu kan max dricka 1 enhet var 5:e minut = ${maxDrinksInTime} drycker.\nDet ger max ~${Math.max(0, maxPromille).toFixed(2)}‰ med ${drink.size}.\n\nFörsök med:\n- Längre tid till målpromille\n- Större/starkare drycker\n- Lägre målpromille`);
       return;
     }
 
