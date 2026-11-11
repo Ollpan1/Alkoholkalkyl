@@ -1137,6 +1137,197 @@
     document.getElementById('planMaintenanceText').textContent = maintenanceText;
     document.getElementById('planSchedule').textContent = 'Dryck på tiderna:\n' + schedule.join(', ');
     document.getElementById('planResult').style.display = 'block';
+
+    // Rita promillekurva för planen
+    drawPlanChart(startMin, targetMin, endMin, schedule, weight, r, k, gramsPerDrink);
+  }
+
+  // Rita promillekurva för Promilleplaneraren (8 timmar från starttiden, EXAKT som huvudgrafen)
+  function drawPlanChart(startMin, targetMin, endMin, schedule, weight, r, k_a, gramsPerDrink) {
+    const k_e = 0.15;
+
+    // Skapa container för graf
+    let chartContainer = document.getElementById('planChartContainer');
+    if (!chartContainer) {
+      chartContainer = document.createElement('div');
+      chartContainer.id = 'planChartContainer';
+      chartContainer.style.width = '100%';
+      chartContainer.style.height = '350px';
+      chartContainer.style.marginTop = '1.5rem';
+      document.getElementById('planResult').appendChild(chartContainer);
+    }
+
+    chartContainer.innerHTML = '';
+    const canvas = document.createElement('canvas');
+    chartContainer.appendChild(canvas);
+
+    const dpr = window.devicePixelRatio || 1;
+    const rect = chartContainer.getBoundingClientRect();
+    canvas.width = rect.width * dpr;
+    canvas.height = 350 * dpr;
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = '350px';
+
+    const ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+
+    const padding = 60;
+    const width = rect.width - padding * 2;
+    const height = 350 - padding * 2;
+
+    // Få CSS-färger
+    const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();
+    const fgColor = getComputedStyle(document.documentElement).getPropertyValue('--fg').trim();
+    const borderColor = getComputedStyle(document.documentElement).getPropertyValue('--border').trim();
+    const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
+    const mutedColor = getComputedStyle(document.documentElement).getPropertyValue('--muted').trim();
+
+    // Beräkna promille över 8 timmar från starttiden (EXAKT som huvudgrafen)
+    const dataPoints = [];
+    const timePoints = [];
+
+    // Använd samma 0.25-timmars intervall som huvudgrafen (33 datapunkter totalt)
+    for (let hour = 0; hour <= 8; hour += 0.25) {
+      const hourMinutes = hour * 60; // Minuter från starttiden
+      let totalPromille = 0;
+
+      // För varje dryck i schemat
+      schedule.forEach((drinkTime) => {
+        const [h, m] = drinkTime.split(':').map(Number);
+        const drinkMinutes = h * 60 + m;
+        // Tid sedan denna dryck i timmar
+        const timeSinceMinutes = hourMinutes - (drinkMinutes - startMin);
+
+        if (timeSinceMinutes >= 0) {
+          const timeSinceHours = timeSinceMinutes / 60;
+          const term1 = Math.exp(-k_e * timeSinceHours);
+          const term2 = Math.exp(-k_a * timeSinceHours);
+          totalPromille += (gramsPerDrink / (weight * r)) * (term1 - term2);
+        }
+      });
+
+      dataPoints.push(Math.max(0, totalPromille));
+
+      // Lagra tidpunkter baserat på starttiden
+      const totalMinutes = startMin + hourMinutes;
+      const timeHours = Math.floor((totalMinutes / 60) % 24);
+      const timeMins = Math.floor(totalMinutes % 60);
+      timePoints.push(String(timeHours).padStart(2, '0') + ':' + String(timeMins).padStart(2, '0'));
+    }
+
+    const maxPromille = Math.max(...dataPoints, 2);
+    const scale = height / maxPromille;
+
+    // Rita bakgrund
+    ctx.fillStyle = bgColor;
+    ctx.fillRect(0, 0, rect.width, 350);
+
+    // Rita röd zon (0-0.6‰)
+    const redZoneLimit = 0.6;
+    const redZoneHeight = (redZoneLimit / maxPromille) * height;
+    ctx.fillStyle = 'rgba(211, 47, 47, 0.1)';
+    ctx.fillRect(padding, padding + height - redZoneHeight, width, redZoneHeight);
+
+    // Rita grön zon (0.6+‰)
+    ctx.fillStyle = 'rgba(56, 142, 60, 0.1)';
+    ctx.fillRect(padding, padding, width, height - redZoneHeight);
+
+    // Rita gräns mellan zoner (streckad linje vid 0.6‰)
+    const boundaryY = padding + height - redZoneHeight;
+    ctx.strokeStyle = borderColor;
+    ctx.lineWidth = 1;
+    ctx.setLineDash([5, 5]);
+    ctx.beginPath();
+    ctx.moveTo(padding, boundaryY);
+    ctx.lineTo(padding + width, boundaryY);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Rita rutnät
+    ctx.strokeStyle = borderColor;
+    ctx.lineWidth = 1;
+    for (let i = 0; i <= 5; i++) {
+      const y = padding + height - (i * height / 5);
+      ctx.beginPath();
+      ctx.moveTo(padding, y);
+      ctx.lineTo(padding + width, y);
+      ctx.stroke();
+    }
+
+    // Rita Y-axis labels
+    ctx.fillStyle = mutedColor;
+    ctx.font = '12px system-ui';
+    ctx.textAlign = 'right';
+    ctx.textBaseline = 'middle';
+    for (let i = 0; i <= 5; i++) {
+      const y = padding + height - (i * height / 5);
+      const value = (i * maxPromille / 5).toFixed(1);
+      ctx.fillText(value, padding - 10, y);
+    }
+
+    // Rita slät kurva utan datapunkter
+    if (dataPoints.length > 0) {
+      ctx.strokeStyle = accentColor;
+      ctx.lineWidth = 2;
+      ctx.lineJoin = 'round';
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+
+      dataPoints.forEach((point, i) => {
+        const x = padding + (i / (dataPoints.length - 1)) * width;
+        const y = padding + height - point * scale;
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      });
+      ctx.stroke();
+
+      // Rita större punkter på drycktiderna
+      ctx.fillStyle = accentColor;
+      schedule.forEach((drinkTime) => {
+        const [h, m] = drinkTime.split(':').map(Number);
+        const drinkMinutes = h * 60 + m;
+        const timeSinceMinutes = drinkMinutes - startMin;
+
+        // Hitta motsvarande index i dataPoints (0.25-timmars intervaller)
+        const hoursSinceDrink = timeSinceMinutes / 60;
+        const index = Math.round(hoursSinceDrink * 4); // 0.25 hour intervals
+
+        if (index >= 0 && index < dataPoints.length) {
+          const x = padding + (index / (dataPoints.length - 1)) * width;
+          const y = padding + height - dataPoints[index] * scale;
+          ctx.beginPath();
+          ctx.arc(x, y, 5, 0, Math.PI * 2); // Större punkter (5px istället för 3px)
+          ctx.fill();
+        }
+      });
+    }
+
+    // Rita X-axis labels (timmar, samma som huvudgrafen)
+    ctx.fillStyle = mutedColor;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'top';
+    for (let hour = 0; hour <= 8; hour++) {
+      const index = Math.round(hour * 4); // 0.25 hour intervals
+      if (index < timePoints.length) {
+        const x = padding + (index / (dataPoints.length - 1)) * width;
+        ctx.fillText(timePoints[index], x, padding + height + 10);
+      }
+    }
+
+    // Rita axis labels
+    ctx.fillStyle = fgColor;
+    ctx.font = 'bold 12px system-ui';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'top';
+    ctx.fillText('Tid', rect.width / 2, 350 - 10);
+
+    ctx.save();
+    ctx.translate(15, 175);
+    ctx.rotate(-Math.PI / 2);
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('Promille (‰)', 0, 0);
+    ctx.restore();
   }
 
   // Initialisera dryckformat när sidan laddar
