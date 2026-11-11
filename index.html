@@ -218,6 +218,37 @@
     gap: 0.5rem;
   }
 
+  /* Drink suggestions dropdown */
+  #drinkSuggestions {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .drink-suggestion {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .drink-suggestion:hover {
+    background-color: var(--accent-light);
+  }
+
+  .drink-suggestion:last-child {
+    border-bottom: none;
+  }
+
+  .suggestion-name {
+    font-weight: 500;
+    color: var(--fg);
+  }
+
+  .suggestion-details {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+  }
+
   /* Chart area */
   #chartSection {
     background: var(--input-bg);
@@ -309,6 +340,14 @@
 
     <div class="form-grid">
       <div class="form-group">
+        <label for="drinkSearch">Sök drink</label>
+        <input type="text" id="drinkSearch" placeholder="T.ex. Heineken, Bärlincrona...">
+        <div id="drinkSuggestions" style="position: absolute; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; margin-top: 0.25rem; max-height: 300px; overflow-y: auto; display: none; z-index: 100; width: 100%; min-width: 200px;"></div>
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-group">
         <label for="volume">Volym (ml)</label>
         <input type="number" id="volume" min="10" max="500" step="10" placeholder="250">
       </div>
@@ -355,6 +394,7 @@
 
   // Initialize on load
   document.addEventListener('DOMContentLoaded', () => {
+    loadDrinksDatabase();
     loadSettings();
     setDefaultDrinkTime();
     loadDrinks();
@@ -375,6 +415,18 @@
       saveSettings();
       updateChart();
     });
+
+    // Setup drink search
+    document.getElementById('drinkSearch').addEventListener('input', (e) => {
+      searchDrinks(e.target.value);
+    });
+
+    // Close suggestions when clicking outside
+    document.addEventListener('click', (e) => {
+      if (e.target.id !== 'drinkSearch') {
+        document.getElementById('drinkSuggestions').style.display = 'none';
+      }
+    });
   });
 
   // Set default drink time to now
@@ -383,6 +435,61 @@
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
     document.getElementById('drinkTime').value = `${hours}:${minutes}`;
+  }
+
+  // Load drinks database
+  let drinksDatabase = [];
+  async function loadDrinksDatabase() {
+    try {
+      const response = await fetch('drycker.json');
+      drinksDatabase = await response.json();
+    } catch (e) {
+      console.log('Could not load drycker.json');
+    }
+  }
+
+  // Search for drinks
+  function searchDrinks(query) {
+    const suggestionsContainer = document.getElementById('drinkSuggestions');
+
+    if (!query || query.length < 1) {
+      suggestionsContainer.style.display = 'none';
+      return;
+    }
+
+    const results = drinksDatabase.filter(drink =>
+      drink.namn.toLowerCase().includes(query.toLowerCase())
+    ).slice(0, 10);
+
+    if (results.length === 0) {
+      suggestionsContainer.style.display = 'none';
+      return;
+    }
+
+    suggestionsContainer.innerHTML = '';
+    results.forEach(drink => {
+      const item = document.createElement('div');
+      item.className = 'drink-suggestion';
+      item.innerHTML = `
+        <div class="suggestion-name">${drink.namn}</div>
+        <div class="suggestion-details">${drink.procent}% alkohol</div>
+      `;
+      item.addEventListener('click', () => {
+        selectDrink(drink);
+      });
+      suggestionsContainer.appendChild(item);
+    });
+
+    suggestionsContainer.style.display = 'block';
+  }
+
+  // Select a drink from suggestions
+  function selectDrink(drink) {
+    // Standard volym för en drink är 250ml
+    document.getElementById('volume').value = 250;
+    document.getElementById('alcoholContent').value = drink.procent;
+    document.getElementById('drinkSearch').value = drink.namn;
+    document.getElementById('drinkSuggestions').style.display = 'none';
   }
 
   // Load settings from localStorage
