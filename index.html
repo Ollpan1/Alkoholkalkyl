@@ -1142,7 +1142,11 @@
       maintenanceText = 'Ingen underhållsfas (sluttid = målpromille-tid)';
     }
 
-    const scheduleDisplay = schedule.map(min => minutesToTime(min, startMin)).join(', ');
+    const scheduleDisplay = schedule.map(min => {
+      // Avrunda till närmaste 5-tal
+      const rounded = Math.round(min / 5) * 5;
+      return minutesToTime(rounded, startMin);
+    }).join(', ');
 
     document.getElementById('planBuildupText').textContent = buildupText;
     document.getElementById('planMaintenanceText').textContent = maintenanceText;
