@@ -324,7 +324,7 @@
       </div>
 
       <div class="form-group">
-        <label for="hunger">Hungringsnivå</label>
+        <label for="hunger">Mättnadskänsla</label>
         <select id="hunger">
           <option value="hungry">Hungrig</option>
           <option value="full" selected>Mätt</option>
@@ -338,11 +338,11 @@
 
   <!-- Drink Registration Section -->
   <div class="form-section">
-    <h2>Lägg till drink</h2>
+    <h2>Lägg Till Dryck</h2>
 
     <div class="form-grid">
       <div class="form-group">
-        <label for="drinkSearch">Sök drink</label>
+        <label for="drinkSearch">Sök Dryck</label>
         <input type="text" id="drinkSearch" placeholder="T.ex. Heineken, Bärlincrona...">
         <div id="drinkSuggestions" style="position: absolute; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; margin-top: 0.25rem; max-height: 300px; overflow-y: auto; display: none; z-index: 100; width: 100%; min-width: 200px;"></div>
       </div>
@@ -360,13 +360,13 @@
       </div>
 
       <div class="form-group">
-        <label for="drinkTime">Tidpunkt</label>
+        <label for="drinkTime">Tid</label>
         <input type="time" id="drinkTime">
       </div>
 
       <div class="form-group">
         <label>&nbsp;</label>
-        <button class="btn-primary" onclick="addDrink()">Lägg till drink</button>
+        <button class="btn-primary" onclick="addDrink()">Lägg till berusning</button>
       </div>
     </div>
 
@@ -376,7 +376,7 @@
 
   <!-- Chart Section -->
   <div id="chartSection">
-    <h2>Promillekurva (nästa 8 timmar)</h2>
+    <h2>Promillekurva</h2>
     <div id="chartContainer"></div>
   </div>
 
@@ -394,27 +394,27 @@
 
     <div class="form-grid">
       <div class="form-group">
-        <label for="planStartTime">Börja dricka (tid)</label>
+        <label for="planStartTime">Första Klunken (Tid)</label>
         <input type="time" id="planStartTime" placeholder="19:00">
       </div>
 
       <div class="form-group">
-        <label for="planTargetTime">Nå målpromille (tid)</label>
+        <label for="planTargetTime">Berusningsstart (Tid)</label>
         <input type="time" id="planTargetTime" placeholder="20:00">
       </div>
 
       <div class="form-group">
-        <label for="planEndTime">Sluta dricka (tid)</label>
+        <label for="planEndTime">Berusningsslut (Tid)</label>
         <input type="time" id="planEndTime" placeholder="21:00">
       </div>
 
       <div class="form-group">
-        <label for="planTargetPromille">Målpromille (‰)</label>
+        <label for="planTargetPromille">Önskad Promille (‰)</label>
         <input type="number" id="planTargetPromille" min="0" max="3" step="0.1" placeholder="0.6">
       </div>
 
       <div class="form-group">
-        <label for="planDrinkType">Drycktyp</label>
+        <label for="planDrinkType">Alkoholtyp</label>
         <select id="planDrinkType" onchange="updateDrinkOptions()">
           <option value="ol">Öl</option>
           <option value="cider">Cider</option>
