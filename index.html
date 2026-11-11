@@ -385,6 +385,77 @@
       <div style="font-size: 2.5rem; font-weight: bold; color: var(--accent);" id="apkValue">-</div>
     </div>
   </div>
+
+  <!-- Promilleplanerare Section -->
+  <div class="form-section">
+    <h2>Promilleplanerare</h2>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="planStartTime">Börja dricka (tid)</label>
+        <input type="time" id="planStartTime" placeholder="19:00">
+      </div>
+
+      <div class="form-group">
+        <label for="planTargetTime">Nå målpromille (tid)</label>
+        <input type="time" id="planTargetTime" placeholder="20:00">
+      </div>
+
+      <div class="form-group">
+        <label for="planEndTime">Sluta dricka (tid)</label>
+        <input type="time" id="planEndTime" placeholder="21:00">
+      </div>
+
+      <div class="form-group">
+        <label for="planTargetPromille">Målpromille (‰)</label>
+        <input type="number" id="planTargetPromille" min="0" max="3" step="0.1" placeholder="0.6">
+      </div>
+
+      <div class="form-group">
+        <label for="planDrinkType">Drycktyp</label>
+        <select id="planDrinkType" onchange="updateDrinkOptions()">
+          <option value="ol">Öl</option>
+          <option value="cider">Cider</option>
+          <option value="vin">Vin</option>
+          <option value="sprit">Sprit</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="planDrinkSize">Storlek & Styrka</label>
+        <select id="planDrinkSize">
+          <!-- Fylls dynamiskt baserat på drycktyp -->
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>&nbsp;</label>
+        <button class="btn-primary" onclick="calculatePlan()">Beräkna plan</button>
+      </div>
+    </div>
+
+    <!-- Resultat -->
+    <div id="planResult" style="margin-top: 1.5rem; display: none;">
+      <div style="background: var(--accent-light); border: 1px solid var(--border); border-radius: 6px; padding: 1.5rem;">
+        <h3 style="margin: 0 0 1rem 0; color: var(--fg);">Din promillplan</h3>
+
+        <div style="margin-bottom: 1.5rem;">
+          <h4 style="margin: 0 0 0.5rem 0; color: var(--fg);">Uppbyggningsfas</h4>
+          <p id="planBuildupText" style="margin: 0; color: var(--muted); font-size: 0.95rem;"></p>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <h4 style="margin: 0 0 0.5rem 0; color: var(--fg);">Underhållsfas</h4>
+          <p id="planMaintenanceText" style="margin: 0; color: var(--muted); font-size: 0.95rem;"></p>
+        </div>
+
+        <div>
+          <h4 style="margin: 0 0 0.5rem 0; color: var(--fg);">Schema</h4>
+          <p id="planSchedule" style="margin: 0; color: var(--muted); font-size: 0.95rem; font-family: monospace;"></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -407,6 +478,7 @@
     setDefaultDrinkTime();
     loadDrinks();
     updateChart();
+    updateDrinkOptions(); // Initialisera promilleplanerare-dropdowns
 
     // Update chart when settings change
     document.getElementById('weight').addEventListener('change', () => {
@@ -707,13 +779,14 @@
     }
   }
 
-  // Calculate BAC (promille) with absorption model
+  // Calculate BAC (promille) with two-compartment model
   function calculatePromille() {
     const weight = parseFloat(document.getElementById('weight').value) || 70;
     const gender = document.getElementById('gender').value;
     const hunger = document.getElementById('hunger').value;
     const r = REDUCTION_FACTOR[gender];
-    const k = K_VALUES[hunger];
+    const k_a = K_VALUES[hunger]; // Absorptionshastighet från hungringsnivå
+    const k_e = 0.15; // Elimineringshastighet (fast)
 
     const drinks = getDrinks();
     const now = new Date();
@@ -730,13 +803,15 @@
         const drinkTime = new Date(drink.time);
         const hoursSinceDrink = (timePoint - drinkTime) / (1000 * 60 * 60);
 
+        // Endast beräkna om drycken redan har druckits
         if (hoursSinceDrink >= 0) {
           const gramsAlcohol = (drink.volume * drink.alcoholContent) / 100;
 
-          // Formula: C(t) = (A/(m·r))(1 - e^(-k·t)) - β·t
-          const absorption = (gramsAlcohol / (weight * r)) * (1 - Math.exp(-k * hoursSinceDrink));
-          const elimination = BETA * hoursSinceDrink;
-          const promilleNow = absorption - elimination;
+          // Two-compartment model: C_i(t) = (A_i / (m * r)) * (exp(-k_e * t) - exp(-k_a * t))
+          const A = gramsAlcohol;
+          const term1 = Math.exp(-k_e * hoursSinceDrink);
+          const term2 = Math.exp(-k_a * hoursSinceDrink);
+          const promilleNow = (A / (weight * r)) * (term1 - term2);
 
           totalPromille += Math.max(0, promilleNow);
         }
@@ -889,8 +964,165 @@
     ctx.restore();
   }
 
-  // Resize chart on window resize
-  window.addEventListener('resize', () => {
-    updateChart();
-  });
-</script>
+  // Drycktyper med format och alkoholhalt
+  const drinkFormats = {
+    ol: [
+      { size: '330ml', volume: 330, percent: 5 },
+      { size: '400ml', volume: 400, percent: 5 },
+      { size: '500ml', volume: 500, percent: 5 }
+    ],
+    cider: [
+      { size: '330ml', volume: 330, percent: 4.5 },
+      { size: '400ml', volume: 400, percent: 4.5 },
+      { size: '500ml', volume: 500, percent: 4.5 }
+    ],
+    vin: [
+      { size: '150ml (12%)', volume: 150, percent: 12 },
+      { size: '200ml (12%)', volume: 200, percent: 12 },
+      { size: '150ml (14%)', volume: 150, percent: 14 },
+      { size: '200ml (14%)', volume: 200, percent: 14 }
+    ],
+    sprit: [
+      { size: '40ml (40%)', volume: 40, percent: 40 },
+      { size: '60ml (40%)', volume: 60, percent: 40 }
+    ]
+  };
+
+  // Uppdatera dryckformat baserat på vald typ
+  function updateDrinkOptions() {
+    const drinkType = document.getElementById('planDrinkType').value;
+    const sizeSelect = document.getElementById('planDrinkSize');
+    sizeSelect.innerHTML = '';
+
+    drinkFormats[drinkType].forEach((format, index) => {
+      const option = document.createElement('option');
+      option.value = index;
+      option.textContent = format.size;
+      sizeSelect.appendChild(option);
+    });
+  }
+
+  // Beräkna promilleplanen
+  function calculatePlan() {
+    const startTime = document.getElementById('planStartTime').value;
+    const targetTime = document.getElementById('planTargetTime').value;
+    const endTime = document.getElementById('planEndTime').value;
+    const targetPromille = parseFloat(document.getElementById('planTargetPromille').value);
+    const drinkType = document.getElementById('planDrinkType').value;
+    const sizeIndex = parseInt(document.getElementById('planDrinkSize').value);
+
+    // Validering
+    if (!startTime || !targetTime || !endTime || !targetPromille) {
+      alert('Fyll i alla fält');
+      return;
+    }
+
+    // Hämta drink-info
+    const drink = drinkFormats[drinkType][sizeIndex];
+
+    // Hämta personliga inställningar
+    const weight = parseFloat(document.getElementById('weight').value) || 70;
+    const gender = document.getElementById('gender').value;
+    const hunger = document.getElementById('hunger').value;
+    const r = REDUCTION_FACTOR[gender];
+    const k = K_VALUES[hunger];
+
+    // Helper: konvertera tid till minuter
+    const timeToMinutes = (timeStr) => {
+      const [h, m] = timeStr.split(':').map(Number);
+      return h * 60 + m;
+    };
+
+    // Helper: konvertera minuter till tid-string (24h)
+    const minutesToTime = (minutes) => {
+      const h = Math.floor((minutes % (24 * 60)) / 60);
+      const m = Math.floor(minutes % 60);
+      return String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0');
+    };
+
+    // Konvertera alla tider
+    let startMin = timeToMinutes(startTime);
+    let targetMin = timeToMinutes(targetTime);
+    let endMin = timeToMinutes(endTime);
+
+    // Beräkna intervaller (hantera över midnatt)
+    let buildupMinutes = targetMin >= startMin ?
+      targetMin - startMin :
+      (24 * 60 - startMin) + targetMin;
+
+    let maintenanceMinutes = endMin >= targetMin ?
+      endMin - targetMin :
+      (24 * 60 - targetMin) + endMin;
+
+    const buildupHours = buildupMinutes / 60;
+    const maintenanceHours = maintenanceMinutes / 60;
+
+    // Validering
+    if (buildupHours <= 0) {
+      alert('Målpromille-tid måste vara senare än starttid');
+      return;
+    }
+
+    // Gram alkohol per drink
+    const gramsPerDrink = (drink.volume * drink.percent) / 100 * 0.789;
+
+    // Beräkna drycker för uppbyggning
+    const theoreticalGrams = targetPromille * weight * r;
+    const drinksNeeded = Math.max(1, Math.round(theoreticalGrams / gramsPerDrink));
+
+    // Maxhastighet: 1 enhet per 5 minuter
+    const maxDrinksInTime = Math.floor(buildupMinutes / 5);
+    if (drinksNeeded > maxDrinksInTime) {
+      const maxPossiblePromille = (maxDrinksInTime * gramsPerDrink / (weight * r)) * (1 - Math.exp(-k * buildupHours)) - BETA * buildupHours;
+      alert(`Omöjligt att nå ${targetPromille}‰ på ${buildupHours.toFixed(1)} timmar.\n\nDu kan max dricka 1 enhet var 5:e minut = ${maxDrinksInTime} drycker.\nDet ger max ~${Math.max(0, maxPossiblePromille).toFixed(2)}‰ med ${drink.size}.\n\nFörsök med:\n- Längre tid till målpromille\n- Större/starkare drycker\n- Lägre målpromille`);
+      return;
+    }
+
+    // Beräkna underhållsfas
+    let maintenanceInterval = 0;
+    if (maintenanceHours > 0) {
+      const eliminationPerHour = BETA * weight * r;
+      const drinksPerHour = eliminationPerHour / gramsPerDrink;
+      maintenanceInterval = Math.max(15, Math.round(60 / drinksPerHour));
+    }
+
+    // Formatera resultat
+    const buildupText = `Drick ${drinksNeeded} x ${drink.size} från ${startTime} till ${targetTime} (${buildupHours.toFixed(1)} timmar) för att nå ~${targetPromille}‰`;
+
+    let maintenanceText = '';
+    if (maintenanceHours > 0) {
+      maintenanceText = `Drick 1 x ${drink.size} var ${maintenanceInterval} minuter från ${targetTime} till ${endTime} (${maintenanceHours.toFixed(1)} timmar) för att hålla ~${targetPromille}‰`;
+    } else {
+      maintenanceText = 'Ingen underhållsfas (sluttid = målpromille-tid)';
+    }
+
+    // Skapa schema
+    let schedule = [];
+
+    // Uppbyggningsfas - jämn fördelning
+    const buildupInterval = buildupMinutes / drinksNeeded;
+    for (let i = 0; i < drinksNeeded; i++) {
+      const drinkTime = startMin + (i * buildupInterval);
+      schedule.push(minutesToTime(drinkTime));
+    }
+
+    // Underhållsfas
+    if (maintenanceHours > 0) {
+      let mainTime = targetMin + maintenanceInterval;
+      while (mainTime <= (targetMin + maintenanceMinutes)) {
+        schedule.push(minutesToTime(mainTime));
+        mainTime += maintenanceInterval;
+      }
+    }
+
+    // Visa resultat
+    document.getElementById('planBuildupText').textContent = buildupText;
+    document.getElementById('planMaintenanceText').textContent = maintenanceText;
+    document.getElementById('planSchedule').textContent = 'Dryck på tiderna:\n' + schedule.join(', ');
+    document.getElementById('planResult').style.display = 'block';
+  }
+
+  // Initialisera dryckformat när sidan laddar
+  document.addEventListener('DOMContentLoaded', () => {
+    updateDrinkOptions();
+  });</script>
