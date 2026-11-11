@@ -1190,15 +1190,14 @@
     const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
     const mutedColor = getComputedStyle(document.documentElement).getPropertyValue('--muted').trim();
 
-    // Beräkna promille över 8 timmar från starttiden
+    // Beräkna promille från starttid till sluttid + 3 timmar för att visa avtarningen
     const dataPoints = [];
     const timePoints = [];
-    const totalDurationMinutes = buildupMinutes + maintenanceMinutes;
-    const maxTimeMinutes = Math.min(8 * 60, totalDurationMinutes);
+    const totalDurationMinutes = buildupMinutes + maintenanceMinutes + (3 * 60); // +3 timmar för att visa avtarningen
 
-    for (let hour = 0; hour <= 8; hour += 0.25) {
+    for (let hour = 0; hour * 60 <= totalDurationMinutes; hour += 0.25) {
       const minutesFromStart = hour * 60;
-      if (minutesFromStart > maxTimeMinutes) break;
+      if (minutesFromStart > totalDurationMinutes) break;
 
       let totalPromille = 0;
 
@@ -1220,6 +1219,35 @@
       const timeHours = Math.floor((totalMinutes % (24 * 60)) / 60);
       const timeMins = Math.floor(totalMinutes % 60);
       timePoints.push(String(timeHours).padStart(2, '0') + ':' + String(timeMins).padStart(2, '0'));
+    }
+
+    // Beräkna när promillen når 0.2‰ (söka långt framåt, även längre än grafen visar)
+    let timeAt02 = 'okänd';
+
+    const sluttidMinutesFromStart = buildupMinutes + maintenanceMinutes;
+
+    // Beräkna framåt upp till 24 timmar från start för att hitta 0.2‰
+    for (let minutesFromStart = sluttidMinutesFromStart; minutesFromStart <= 24 * 60; minutesFromStart += 15) {
+      let totalPromille = 0;
+
+      schedule.forEach(drinkMinutesFromStart => {
+        const timeSinceMinutes = minutesFromStart - drinkMinutesFromStart;
+        if (timeSinceMinutes >= 0) {
+          const timeSinceHours = timeSinceMinutes / 60;
+          const term1 = Math.exp(-k_e * timeSinceHours);
+          const term2 = Math.exp(-k_a * timeSinceHours);
+          totalPromille += (gramsPerDrink / (weight * r)) * (term1 - term2);
+        }
+      });
+
+      if (totalPromille <= 0.2) {
+        // Konvertera minuter från starttid till tidstring
+        const totalMinutes = startMin + minutesFromStart;
+        const timeHours = Math.floor((totalMinutes % (24 * 60)) / 60);
+        const timeMins = Math.floor(totalMinutes % 60);
+        timeAt02 = String(timeHours).padStart(2, '0') + ':' + String(timeMins).padStart(2, '0');
+        break;
+      }
     }
 
     const maxPromille = Math.max(...dataPoints, 2);
@@ -1333,6 +1361,14 @@
         ctx.fillText(timePoints[index], x, padding + height + 10);
       }
     }
+
+    // Rita information om när man når 0.2‰
+    ctx.fillStyle = mutedColor;
+    ctx.font = '12px system-ui';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'top';
+    const infoText = `Når 0.2‰ vid ${timeAt02}`;
+    ctx.fillText(infoText, rect.width / 2, padding + height + 35);
 
     // Rita axis labels
     ctx.fillStyle = fgColor;
