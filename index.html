@@ -1,4 +1,6 @@
 <title>Alkoholkalkyl</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>
   /* Design plan: minimalist alcohol tracker
@@ -18,7 +20,7 @@
     --success: #388e3c;
     --input-bg: #f9f9f9;
 
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    --font-sans: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
 
     font-family: var(--font-sans);
     font-size: 16px;
@@ -1011,41 +1013,36 @@
     const drinkType = document.getElementById('planDrinkType').value;
     const sizeIndex = parseInt(document.getElementById('planDrinkSize').value);
 
-    // Validering
     if (!startTime || !targetTime || !endTime || !targetPromille) {
       alert('Fyll i alla fält');
       return;
     }
 
-    // Hämta drink-info
     const drink = drinkFormats[drinkType][sizeIndex];
-
-    // Hämta personliga inställningar
     const weight = parseFloat(document.getElementById('weight').value) || 70;
     const gender = document.getElementById('gender').value;
     const hunger = document.getElementById('hunger').value;
     const r = REDUCTION_FACTOR[gender];
     const k = K_VALUES[hunger];
 
-    // Helper: konvertera tid till minuter
+    // === HELPERS ===
     const timeToMinutes = (timeStr) => {
       const [h, m] = timeStr.split(':').map(Number);
       return h * 60 + m;
     };
 
-    // Helper: konvertera minuter till tid-string (24h)
-    const minutesToTime = (minutes) => {
-      const h = Math.floor((minutes % (24 * 60)) / 60);
-      const m = Math.floor(minutes % 60);
+    const minutesToTime = (minutesFromStart, startTimeMinutes) => {
+      const totalMinutes = startTimeMinutes + minutesFromStart;
+      const h = Math.floor((totalMinutes % (24 * 60)) / 60);
+      const m = totalMinutes % 60;
       return String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0');
     };
 
-    // Konvertera alla tider
-    let startMin = timeToMinutes(startTime);
-    let targetMin = timeToMinutes(targetTime);
-    let endMin = timeToMinutes(endTime);
+    // === BERÄKNA INTERVALLER ===
+    const startMin = timeToMinutes(startTime);
+    const targetMin = timeToMinutes(targetTime);
+    const endMin = timeToMinutes(endTime);
 
-    // Beräkna intervaller (hantera över midnatt)
     let buildupMinutes = targetMin >= startMin ?
       targetMin - startMin :
       (24 * 60 - startMin) + targetMin;
@@ -1057,54 +1054,20 @@
     const buildupHours = buildupMinutes / 60;
     const maintenanceHours = maintenanceMinutes / 60;
 
-    // Validering
     if (buildupHours <= 0) {
       alert('Målpromille-tid måste vara senare än starttid');
       return;
     }
 
-    // Gram alkohol per drink
+    // === KONSTANTER ===
     const gramsPerDrink = (drink.volume * drink.percent) / 100 * 0.789;
+    const k_a = k;
+    const k_e = 0.15;
+    const MIN_DRINK_INTERVAL = 10;
 
-    // Beräkna drycker för uppbyggning - sikta på 0.1‰ ÖVER målpromillen
-    const bufferPromille = 0.1;
-    const buildupTargetPromille = targetPromille + bufferPromille;
-    const theoreticalGrams = buildupTargetPromille * weight * r;
-    const drinksNeeded = Math.max(1, Math.round(theoreticalGrams / gramsPerDrink));
-
-    // Maxhastighet: 1 enhet per 5 minuter
-    const maxDrinksInTime = Math.floor(buildupMinutes / 5);
-    if (drinksNeeded > maxDrinksInTime) {
-      // Använd two-compartment-modell för att beräkna max möjlig promille
-      const k_a = k; // Absorptionshastighet från hungringsnivå
-      const k_e = 0.15; // Elimineringshastighet (fast)
-
-      // Beräkna promille med maxhastighet (en dryck var 5:e minut)
-      let maxPromille = 0;
-      for (let i = 0; i < maxDrinksInTime; i++) {
-        const timeOfDrink = (i * 5) / 60; // Timmar
-        // Vid slutet av uppbyggningsfasen
-        const t = buildupHours;
-        const timeSinceDrink = t - timeOfDrink;
-        if (timeSinceDrink >= 0) {
-          const term1 = Math.exp(-k_e * timeSinceDrink);
-          const term2 = Math.exp(-k_a * timeSinceDrink);
-          maxPromille += (gramsPerDrink / (weight * r)) * (term1 - term2);
-        }
-      }
-
-      alert(`Omöjligt att nå ${buildupTargetPromille}‰ på ${buildupHours.toFixed(1)} timmar.\n\nDu kan max dricka 1 enhet var 5:e minut = ${maxDrinksInTime} drycker.\nDet ger max ~${Math.max(0, maxPromille).toFixed(2)}‰ med ${drink.size}.\n\nFörsök med:\n- Längre tid till målpromille\n- Större/starkare drycker\n- Lägre målpromille`);
-      return;
-    }
-
-    // Skapa schema
-    let schedule = [];
-    const k_a = k; // Absorptionshastighet
-    const k_e = 0.15; // Elimineringshastighet
-
-    // Helper: beräkna promille för en drink vid en viss tid
-    const calculatePromilleAtTime = (drinkMinutes, currentMinutes, gramsPerDrink) => {
-      const timeSinceMinutes = currentMinutes - drinkMinutes;
+    // === BERÄKNA PROMILLE FÖR EN DRINK ===
+    const calculatePromilleAtTime = (drinkMinutesFromStart, currentMinutesFromStart) => {
+      const timeSinceMinutes = currentMinutesFromStart - drinkMinutesFromStart;
       if (timeSinceMinutes < 0) return 0;
 
       const timeSinceHours = timeSinceMinutes / 60;
@@ -1113,51 +1076,60 @@
       return (gramsPerDrink / (weight * r)) * (term1 - term2);
     };
 
-    // ===== UPPBYGGNINGSFAS =====
-    // Jämn fördelning för att nå målpromillen vid targetMin
-    const buildupInterval = buildupMinutes / drinksNeeded;
-    for (let i = 0; i < drinksNeeded; i++) {
-      const drinkTime = startMin + (i * buildupInterval);
-      schedule.push(minutesToTime(drinkTime));
-    }
+    // === UPPBYGGNINGSFAS ===
+    let schedule = []; // Minuter från starttid
+    let drinksNeeded = 0;
+    let maxDrinksInTime = Math.floor(buildupMinutes / MIN_DRINK_INTERVAL);
 
-    // ===== UNDERHÅLLSFAS - DYNAMISK BERÄKNING =====
-    // Målfasen: aldrig under målpromillen, dryck när promillen sjunker mot målnivån
-    // Minst 5 minuter mellan drycker för att undvika spiker
-    // Buffert: drick när promillen sjunker till 95% av målnivån
-    const minDrinkInterval = 5; // minuter
-    const promilleBuffer = targetPromille * 0.05; // 5% buffert (drick vid 95% av målnivån)
+    for (let testDrinks = 1; testDrinks <= maxDrinksInTime; testDrinks++) {
+      const interval = buildupMinutes / testDrinks;
+      let testSchedule = [];
 
-    if (maintenanceHours > 0) {
-      let currentTime = targetMin + 1; // Börja söka 1 minut efter målnivå-tiden
-      let maxIterations = 1000; // Säkerhet mot oändliga loopar
-      let lastDrinkTime = timeToMinutes(schedule[schedule.length - 1]);
+      for (let i = 0; i < testDrinks; i++) {
+        testSchedule.push(i * interval);
+      }
 
-      while (currentTime < endMin && maxIterations > 0) {
-        maxIterations--;
+      // Beräkna promille vid målpromille-tiden (buildupMinutes från starttid)
+      let promilleAtTarget = 0;
+      testSchedule.forEach(drinkMin => {
+        promilleAtTarget += calculatePromilleAtTime(drinkMin, buildupMinutes);
+      });
 
-        // Beräkna nuvarande promille från alla tidigare drycker vid denna tid
-        let currentPromille = 0;
-        schedule.forEach(drinkTimeStr => {
-          const drinkMin = timeToMinutes(drinkTimeStr);
-          currentPromille += calculatePromilleAtTime(drinkMin, currentTime, gramsPerDrink);
-        });
-
-        // Om vi är under målnivån - buffert, drick nu (men minst minDrinkInterval från senaste drycken)
-        if (currentPromille < targetPromille - promilleBuffer && currentTime >= lastDrinkTime + minDrinkInterval) {
-          schedule.push(minutesToTime(currentTime));
-          lastDrinkTime = currentTime;
-          currentTime += 1; // Söka igen nästa minut
-          continue;
-        }
-
-        currentTime += 1; // Stega fram en minut i taget
+      if (promilleAtTarget >= targetPromille) {
+        drinksNeeded = testDrinks;
+        schedule = [...testSchedule];
+        break;
       }
     }
 
-    // Formatera resultat
+    if (drinksNeeded === 0) {
+      alert(`Omöjligt att nå ${targetPromille}‰ på ${buildupHours.toFixed(1)} timmar.\n\nDu kan max dricka 1 enhet var ${MIN_DRINK_INTERVAL} minuter = ${maxDrinksInTime} drycker.\n\nFörsök med:\n- Längre tid till målpromille\n- Större/starkare drycker\n- Lägre målpromille`);
+      return;
+    }
+
+    // === UNDERHÅLLSFAS ===
+    if (maintenanceHours > 0) {
+      let currentMin = buildupMinutes + MIN_DRINK_INTERVAL;
+      let maxMin = buildupMinutes + maintenanceMinutes;
+
+      while (currentMin < maxMin) {
+        let promille = 0;
+        schedule.forEach(drinkMin => {
+          promille += calculatePromilleAtTime(drinkMin, currentMin);
+        });
+
+        if (promille < targetPromille) {
+          schedule.push(currentMin);
+          currentMin += MIN_DRINK_INTERVAL;
+        } else {
+          currentMin += MIN_DRINK_INTERVAL;
+        }
+      }
+    }
+
+    // === FORMATERA RESULTAT ===
     const maintenanceDrinks = schedule.length - drinksNeeded;
-    const buildupText = `Uppbyggningsfas: Drick ${drinksNeeded} x ${drink.size} från ${startTime} till ${targetTime} (${buildupHours.toFixed(1)} timmar) för att nå ~${(targetPromille + bufferPromille).toFixed(1)}‰`;
+    const buildupText = `Uppbyggningsfas: Drick ${drinksNeeded} x ${drink.size} från ${startTime} till ${targetTime} (${buildupHours.toFixed(1)} timmar) för att nå ~${targetPromille}‰`;
 
     let maintenanceText = '';
     if (maintenanceHours > 0) {
@@ -1170,21 +1142,20 @@
       maintenanceText = 'Ingen underhållsfas (sluttid = målpromille-tid)';
     }
 
-    // Visa resultat
+    const scheduleDisplay = schedule.map(min => minutesToTime(min, startMin)).join(', ');
+
     document.getElementById('planBuildupText').textContent = buildupText;
     document.getElementById('planMaintenanceText').textContent = maintenanceText;
-    document.getElementById('planSchedule').textContent = 'Dryck på tiderna:\n' + schedule.join(', ');
+    document.getElementById('planSchedule').textContent = 'Dryck på tiderna:\n' + scheduleDisplay;
     document.getElementById('planResult').style.display = 'block';
 
-    // Rita promillekurva för planen
-    drawPlanChart(startMin, targetMin, endMin, schedule, weight, r, k, gramsPerDrink, drinkType);
+    drawPlanChart(startMin, buildupMinutes, maintenanceMinutes, schedule, weight, r, k, gramsPerDrink, drinkType);
   }
 
-  // Rita promillekurva för Promilleplaneraren (8 timmar från starttiden, EXAKT som huvudgrafen)
-  function drawPlanChart(startMin, targetMin, endMin, schedule, weight, r, k_a, gramsPerDrink, drinkType) {
+  // Rita promillekurva för Promilleplaneraren
+  function drawPlanChart(startMin, buildupMinutes, maintenanceMinutes, schedule, weight, r, k_a, gramsPerDrink, drinkType) {
     const k_e = 0.15;
 
-    // Skapa container för graf
     let chartContainer = document.getElementById('planChartContainer');
     if (!chartContainer) {
       chartContainer = document.createElement('div');
@@ -1213,29 +1184,27 @@
     const width = rect.width - padding * 2;
     const height = 350 - padding * 2;
 
-    // Få CSS-färger
     const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();
     const fgColor = getComputedStyle(document.documentElement).getPropertyValue('--fg').trim();
     const borderColor = getComputedStyle(document.documentElement).getPropertyValue('--border').trim();
     const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
     const mutedColor = getComputedStyle(document.documentElement).getPropertyValue('--muted').trim();
 
-    // Beräkna promille över 8 timmar från starttiden (EXAKT som huvudgrafen)
+    // Beräkna promille över 8 timmar från starttiden
     const dataPoints = [];
     const timePoints = [];
+    const totalDurationMinutes = buildupMinutes + maintenanceMinutes;
+    const maxTimeMinutes = Math.min(8 * 60, totalDurationMinutes);
 
-    // Använd samma 0.25-timmars intervall som huvudgrafen (33 datapunkter totalt)
     for (let hour = 0; hour <= 8; hour += 0.25) {
-      const hourMinutes = hour * 60; // Minuter från starttiden
+      const minutesFromStart = hour * 60;
+      if (minutesFromStart > maxTimeMinutes) break;
+
       let totalPromille = 0;
 
-      // För varje dryck i schemat
-      schedule.forEach((drinkTime) => {
-        const [h, m] = drinkTime.split(':').map(Number);
-        const drinkMinutes = h * 60 + m;
-        // Tid sedan denna dryck i timmar
-        const timeSinceMinutes = hourMinutes - (drinkMinutes - startMin);
-
+      // För varje dryck i schemat (som är minuter från starttid)
+      schedule.forEach(drinkMinutesFromStart => {
+        const timeSinceMinutes = minutesFromStart - drinkMinutesFromStart;
         if (timeSinceMinutes >= 0) {
           const timeSinceHours = timeSinceMinutes / 60;
           const term1 = Math.exp(-k_e * timeSinceHours);
@@ -1246,9 +1215,9 @@
 
       dataPoints.push(Math.max(0, totalPromille));
 
-      // Lagra tidpunkter baserat på starttiden
-      const totalMinutes = startMin + hourMinutes;
-      const timeHours = Math.floor((totalMinutes / 60) % 24);
+      // Lagra tidpunkter
+      const totalMinutes = startMin + minutesFromStart;
+      const timeHours = Math.floor((totalMinutes % (24 * 60)) / 60);
       const timeMins = Math.floor(totalMinutes % 60);
       timePoints.push(String(timeHours).padStart(2, '0') + ':' + String(timeMins).padStart(2, '0'));
     }
@@ -1270,7 +1239,7 @@
     ctx.fillStyle = 'rgba(56, 142, 60, 0.1)';
     ctx.fillRect(padding, padding, width, height - redZoneHeight);
 
-    // Rita gräns mellan zoner (streckad linje vid 0.6‰)
+    // Rita gräns mellan zoner
     const boundaryY = padding + height - redZoneHeight;
     ctx.strokeStyle = borderColor;
     ctx.lineWidth = 1;
@@ -1303,7 +1272,7 @@
       ctx.fillText(value, padding - 10, y);
     }
 
-    // Rita slät kurva utan datapunkter
+    // Rita kurva
     if (dataPoints.length > 0) {
       ctx.strokeStyle = accentColor;
       ctx.lineWidth = 2;
@@ -1319,10 +1288,8 @@
       });
       ctx.stroke();
 
-      // Rita större punkter på drycktiderna med etiketter
+      // Rita större punkter på drycktiderna
       ctx.fillStyle = accentColor;
-
-      // Drycktyp-mapping
       const drinkTypeNames = {
         'ol': 'ÖL',
         'cider': 'CIDER',
@@ -1331,23 +1298,19 @@
       };
       const drinkLabel = drinkTypeNames[drinkType] || drinkType.toUpperCase();
 
-      schedule.forEach((drinkTime) => {
-        const [h, m] = drinkTime.split(':').map(Number);
-        const drinkMinutes = h * 60 + m;
-        const timeSinceMinutes = drinkMinutes - startMin;
-
-        // Hitta motsvarande index i dataPoints (0.25-timmars intervaller)
-        const hoursSinceDrink = timeSinceMinutes / 60;
+      schedule.forEach(drinkMinutesFromStart => {
+        // Hitta motsvarande index i dataPoints
+        const hoursSinceDrink = drinkMinutesFromStart / 60;
         const index = Math.round(hoursSinceDrink * 4); // 0.25 hour intervals
 
         if (index >= 0 && index < dataPoints.length) {
           const x = padding + (index / (dataPoints.length - 1)) * width;
           const y = padding + height - dataPoints[index] * scale;
           ctx.beginPath();
-          ctx.arc(x, y, 5, 0, Math.PI * 2); // Större punkter (5px istället för 3px)
+          ctx.arc(x, y, 5, 0, Math.PI * 2);
           ctx.fill();
 
-          // Rita etikett ovanför punkten med drycktyp och utropstecken
+          // Rita etikett
           const labelText = drinkLabel + '!';
           ctx.fillStyle = mutedColor;
           ctx.font = 'bold 11px system-ui';
@@ -1355,18 +1318,17 @@
           ctx.textBaseline = 'bottom';
           ctx.fillText(labelText, x, y - 12);
 
-          // Rensa för nästa punkt
           ctx.fillStyle = accentColor;
         }
       });
     }
 
-    // Rita X-axis labels (timmar, samma som huvudgrafen)
+    // Rita X-axis labels
     ctx.fillStyle = mutedColor;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
     for (let hour = 0; hour <= 8; hour++) {
-      const index = Math.round(hour * 4); // 0.25 hour intervals
+      const index = Math.round(hour * 4);
       if (index < timePoints.length) {
         const x = padding + (index / (dataPoints.length - 1)) * width;
         ctx.fillText(timePoints[index], x, padding + height + 10);
