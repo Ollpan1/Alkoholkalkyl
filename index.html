@@ -1,0 +1,628 @@
+<title>Alkoholkalkyl</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Design plan: minimalist alcohol tracker
+     Color tokens: light bg, dark fg, muted secondary, accent blue
+     Typography: system fonts, strong hierarchy
+     Layout: vertical stack, form sections above, chart area below
+  */
+
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #666666;
+    --border: #e5e5e5;
+    --accent: #0066cc;
+    --accent-light: #e6f2ff;
+    --error: #d32f2f;
+    --success: #388e3c;
+    --input-bg: #f9f9f9;
+
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1a1a1a;
+      --fg: #ffffff;
+      --muted: #999999;
+      --border: #333333;
+      --accent: #4a9eff;
+      --accent-light: #1a3a52;
+      --input-bg: #262626;
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #1a1a1a;
+    --fg: #ffffff;
+    --muted: #999999;
+    --border: #333333;
+    --accent: #4a9eff;
+    --accent-light: #1a3a52;
+    --input-bg: #262626;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    margin: 0;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  h1, h2 {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Layout container */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 1rem;
+  }
+
+  /* Form sections */
+  .form-section {
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Form grid */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (min-width: 500px) {
+    .form-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* Form groups */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  label {
+    font-weight: 500;
+    color: var(--fg);
+    font-size: 0.95rem;
+  }
+
+  input, select {
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+  }
+
+  input:focus, select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-light);
+  }
+
+  /* Buttons */
+  button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+
+  .btn-secondary {
+    background: var(--border);
+    color: var(--fg);
+  }
+
+  .btn-secondary:hover {
+    opacity: 0.8;
+  }
+
+  .btn-danger {
+    background: var(--error);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-danger:hover {
+    opacity: 0.9;
+  }
+
+  /* Settings section */
+  #settingsSection {
+    margin-bottom: 2rem;
+  }
+
+  /* Drinks list */
+  .drinks-list {
+    margin-top: 1.5rem;
+  }
+
+  .drink-item {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .drink-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .drink-time {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+
+  .drink-details {
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  .drink-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  /* Chart area */
+  #chartSection {
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  #chartContainer {
+    width: 100%;
+    height: 400px;
+    margin-top: 1rem;
+  }
+
+  /* Helpers */
+  .text-muted {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .mt-1 {
+    margin-top: 0.5rem;
+  }
+
+  .mt-2 {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 499px) {
+    .form-section {
+      padding: 1rem;
+    }
+
+    h1 {
+      font-size: 1.25rem;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="container">
+  <h1>Alkoholkalkyl</h1>
+
+  <!-- Settings Section -->
+  <div id="settingsSection" class="form-section">
+    <h2>Personliga inställningar</h2>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="weight">Kroppsvikt (kg)</label>
+        <input type="number" id="weight" min="30" max="200" step="0.1" placeholder="70">
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Kön</label>
+        <select id="gender">
+          <option value="male">Man</option>
+          <option value="female">Kvinna</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="reductionFactor">Reduktionsfaktor (r)</label>
+        <input type="number" id="reductionFactor" min="0.5" max="1" step="0.01" placeholder="0.7" readonly>
+        <span class="text-muted">Uppdateras automatiskt baserat på kön</span>
+      </div>
+
+      <div class="form-group">
+        <label for="betaRate">Abbrytningstakt β (‰/h)</label>
+        <input type="number" id="betaRate" min="0.05" max="0.3" step="0.01" value="0.15">
+        <span class="text-muted">Hur mycket promille sjunker per timme</span>
+      </div>
+    </div>
+
+    <button class="btn-secondary mt-2" onclick="clearDrinks()">Rensa historik</button>
+  </div>
+
+  <!-- Drink Registration Section -->
+  <div class="form-section">
+    <h2>Lägg till drink</h2>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="volume">Volym (ml)</label>
+        <input type="number" id="volume" min="10" max="500" step="10" placeholder="250">
+      </div>
+
+      <div class="form-group">
+        <label for="alcoholContent">Alkoholhalt (%)</label>
+        <input type="number" id="alcoholContent" min="0" max="100" step="0.1" placeholder="5">
+      </div>
+
+      <div class="form-group">
+        <label for="drinkTime">Tidpunkt</label>
+        <input type="time" id="drinkTime">
+      </div>
+
+      <div class="form-group">
+        <label>&nbsp;</label>
+        <button class="btn-primary" onclick="addDrink()">Lägg till drink</button>
+      </div>
+    </div>
+
+    <!-- Drinks List -->
+    <div class="drinks-list" id="drinksList"></div>
+  </div>
+
+  <!-- Chart Section -->
+  <div id="chartSection">
+    <h2>Promillekurva (nästa 8 timmar)</h2>
+    <div id="chartContainer"></div>
+  </div>
+</div>
+
+<script>
+  // Initialize on load
+  document.addEventListener('DOMContentLoaded', () => {
+    loadSettings();
+    setDefaultDrinkTime();
+    loadDrinks();
+    updateChart();
+
+    // Update gender reduction factor
+    document.getElementById('gender').addEventListener('change', () => {
+      updateReductionFactor();
+      saveSettings();
+      updateChart();
+    });
+
+    // Auto-update chart when beta rate changes
+    document.getElementById('betaRate').addEventListener('change', () => {
+      saveSettings();
+      updateChart();
+    });
+
+    // Auto-update chart when weight changes
+    document.getElementById('weight').addEventListener('change', () => {
+      saveSettings();
+      updateChart();
+    });
+  });
+
+  // Set default drink time to now
+  function setDefaultDrinkTime() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    document.getElementById('drinkTime').value = `${hours}:${minutes}`;
+  }
+
+  // Update reduction factor based on gender
+  function updateReductionFactor() {
+    const gender = document.getElementById('gender').value;
+    const r = gender === 'male' ? 0.7 : 0.6;
+    document.getElementById('reductionFactor').value = r.toFixed(2);
+  }
+
+  // Load settings from localStorage
+  function loadSettings() {
+    const weight = localStorage.getItem('weight') || '70';
+    const gender = localStorage.getItem('gender') || 'male';
+    const betaRate = localStorage.getItem('betaRate') || '0.15';
+
+    document.getElementById('weight').value = weight;
+    document.getElementById('gender').value = gender;
+    document.getElementById('betaRate').value = betaRate;
+
+    updateReductionFactor();
+  }
+
+  // Save settings to localStorage
+  function saveSettings() {
+    localStorage.setItem('weight', document.getElementById('weight').value);
+    localStorage.setItem('gender', document.getElementById('gender').value);
+    localStorage.setItem('betaRate', document.getElementById('betaRate').value);
+  }
+
+  // Add a drink
+  function addDrink() {
+    const volume = parseFloat(document.getElementById('volume').value);
+    const alcoholContent = parseFloat(document.getElementById('alcoholContent').value);
+    const drinkTime = document.getElementById('drinkTime').value;
+
+    if (!volume || !alcoholContent || !drinkTime) {
+      alert('Vänligen fyll i alla fält');
+      return;
+    }
+
+    const drinks = getDrinks();
+    const now = new Date();
+    const [hours, minutes] = drinkTime.split(':');
+    const drinkDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes);
+
+    drinks.push({
+      id: Date.now(),
+      volume,
+      alcoholContent,
+      time: drinkDate.toISOString(),
+    });
+
+    saveDrinks(drinks);
+    loadDrinks();
+    updateChart();
+
+    // Clear inputs
+    document.getElementById('volume').value = '';
+    document.getElementById('alcoholContent').value = '';
+    setDefaultDrinkTime();
+  }
+
+  // Get drinks from localStorage
+  function getDrinks() {
+    try {
+      return JSON.parse(localStorage.getItem('drinks') || '[]');
+    } catch {
+      return [];
+    }
+  }
+
+  // Save drinks to localStorage
+  function saveDrinks(drinks) {
+    localStorage.setItem('drinks', JSON.stringify(drinks));
+  }
+
+  // Load and display drinks
+  function loadDrinks() {
+    const drinks = getDrinks();
+    const container = document.getElementById('drinksList');
+    container.innerHTML = '';
+
+    if (drinks.length === 0) {
+      container.innerHTML = '<p class="text-muted">Inga drinkar registrerade än</p>';
+      return;
+    }
+
+    drinks.forEach(drink => {
+      const drinkDate = new Date(drink.time);
+      const timeString = drinkDate.toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit' });
+      const gramsAlcohol = (drink.volume * drink.alcoholContent) / 100;
+
+      const item = document.createElement('div');
+      item.className = 'drink-item';
+      item.innerHTML = `
+        <div class="drink-info">
+          <div class="drink-time">${timeString}</div>
+          <div class="drink-details">${drink.volume}ml @ ${drink.alcoholContent}% = ${gramsAlcohol.toFixed(1)}g alkohol</div>
+        </div>
+        <div class="drink-actions">
+          <button class="btn-danger" onclick="removeDrink(${drink.id})">Ta bort</button>
+        </div>
+      `;
+      container.appendChild(item);
+    });
+  }
+
+  // Remove a drink
+  function removeDrink(id) {
+    const drinks = getDrinks();
+    const filtered = drinks.filter(d => d.id !== id);
+    saveDrinks(filtered);
+    loadDrinks();
+    updateChart();
+  }
+
+  // Clear all drinks
+  function clearDrinks() {
+    if (confirm('Är du säker på att du vill rensa all historik?')) {
+      saveDrinks([]);
+      loadDrinks();
+      updateChart();
+    }
+  }
+
+  // Calculate BAC (promille)
+  function calculatePromille() {
+    const weight = parseFloat(document.getElementById('weight').value) || 70;
+    const gender = document.getElementById('gender').value;
+    const r = gender === 'male' ? 0.7 : 0.6;
+    const beta = parseFloat(document.getElementById('betaRate').value) || 0.15;
+
+    const drinks = getDrinks();
+    const now = new Date();
+
+    // Generate data points for next 8 hours
+    const dataPoints = [];
+    const timePoints = [];
+
+    for (let hour = 0; hour <= 8; hour += 0.25) {
+      const timePoint = new Date(now.getTime() + hour * 60 * 60 * 1000);
+      let totalPromille = 0;
+
+      drinks.forEach(drink => {
+        const drinkTime = new Date(drink.time);
+        const hoursSinceDrink = (timePoint - drinkTime) / (1000 * 60 * 60);
+
+        if (hoursSinceDrink >= 0) {
+          const gramsAlcohol = (drink.volume * drink.alcoholContent) / 100;
+          const initialPromille = gramsAlcohol / (weight * r);
+          const promilleNow = initialPromille - (beta * hoursSinceDrink);
+          totalPromille += Math.max(0, promilleNow);
+        }
+      });
+
+      dataPoints.push(totalPromille);
+      timePoints.push(timePoint.toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit' }));
+    }
+
+    return { dataPoints, timePoints };
+  }
+
+  // Update chart
+  function updateChart() {
+    const { dataPoints, timePoints } = calculatePromille();
+    const container = document.getElementById('chartContainer');
+
+    // Simple canvas chart
+    const canvas = container.querySelector('canvas') || document.createElement('canvas');
+    canvas.width = container.clientWidth;
+    canvas.height = 400;
+    container.innerHTML = '';
+    container.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    const padding = 60;
+    const width = canvas.width - padding * 2;
+    const height = canvas.height - padding * 2;
+
+    // Find max promille for scaling
+    const maxPromille = Math.max(...dataPoints, 2);
+    const scale = height / maxPromille;
+
+    // Clear canvas
+    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Draw grid and axes
+    ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--border').trim();
+    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--muted').trim();
+    ctx.font = '12px system-ui';
+    ctx.textAlign = 'right';
+
+    // Y-axis labels
+    for (let i = 0; i <= 5; i++) {
+      const y = padding + height - (i * height / 5);
+      const value = (i * maxPromille / 5).toFixed(1);
+      ctx.fillText(value, padding - 10, y + 4);
+      ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--border').trim();
+      ctx.beginPath();
+      ctx.moveTo(padding, y);
+      ctx.lineTo(padding + width, y);
+      ctx.stroke();
+    }
+
+    // Draw line chart
+    ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+
+    dataPoints.forEach((point, i) => {
+      const x = padding + (i / (dataPoints.length - 1)) * width;
+      const y = padding + height - point * scale;
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    });
+    ctx.stroke();
+
+    // Draw points
+    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
+    dataPoints.forEach((point, i) => {
+      const x = padding + (i / (dataPoints.length - 1)) * width;
+      const y = padding + height - point * scale;
+      ctx.beginPath();
+      ctx.arc(x, y, 3, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    // X-axis labels (every hour)
+    ctx.textAlign = 'center';
+    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--muted').trim();
+    for (let hour = 0; hour <= 8; hour++) {
+      const index = Math.round(hour * 4); // 0.25 hour intervals
+      if (index < timePoints.length) {
+        const x = padding + (index / (dataPoints.length - 1)) * width;
+        ctx.fillText(timePoints[index], x, canvas.height - padding + 20);
+      }
+    }
+
+    // Axis labels
+    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--fg').trim();
+    ctx.font = 'bold 12px system-ui';
+    ctx.textAlign = 'center';
+    ctx.fillText('Tid', canvas.width / 2, canvas.height - 10);
+
+    ctx.save();
+    ctx.translate(15, canvas.height / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.textAlign = 'center';
+    ctx.fillText('Promille (‰)', 0, 0);
+    ctx.restore();
+  }
+
+  // Resize chart on window resize
+  window.addEventListener('resize', updateChart);
+</script>
