@@ -229,8 +229,15 @@
 
   #chartContainer {
     width: 100%;
-    height: 400px;
+    min-height: 350px;
     margin-top: 1rem;
+    position: relative;
+  }
+
+  canvas {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg);
   }
 
   /* Helpers */
@@ -282,18 +289,6 @@
           <option value="female">Kvinna</option>
         </select>
       </div>
-
-      <div class="form-group">
-        <label for="reductionFactor">Reduktionsfaktor (r)</label>
-        <input type="number" id="reductionFactor" min="0.5" max="1" step="0.01" placeholder="0.7" readonly>
-        <span class="text-muted">Uppdateras automatiskt baserat på kön</span>
-      </div>
-
-      <div class="form-group">
-        <label for="betaRate">Abbrytningstakt β (‰/h)</label>
-        <input type="number" id="betaRate" min="0.05" max="0.3" step="0.01" value="0.15">
-        <span class="text-muted">Hur mycket promille sjunker per timme</span>
-      </div>
     </div>
 
     <button class="btn-secondary mt-2" onclick="clearDrinks()">Rensa historik</button>
@@ -337,6 +332,14 @@
 </div>
 
 <script>
+  // Constants
+  const BETA = 0.15; // Elimination rate ‰/h
+  const K = 2; // Absorption rate h^-1
+  const REDUCTION_FACTOR = {
+    male: 0.7,
+    female: 0.6
+  };
+
   // Initialize on load
   document.addEventListener('DOMContentLoaded', () => {
     loadSettings();
@@ -344,21 +347,13 @@
     loadDrinks();
     updateChart();
 
-    // Update gender reduction factor
-    document.getElementById('gender').addEventListener('change', () => {
-      updateReductionFactor();
-      saveSettings();
-      updateChart();
-    });
-
-    // Auto-update chart when beta rate changes
-    document.getElementById('betaRate').addEventListener('change', () => {
-      saveSettings();
-      updateChart();
-    });
-
-    // Auto-update chart when weight changes
+    // Update chart when settings change
     document.getElementById('weight').addEventListener('change', () => {
+      saveSettings();
+      updateChart();
+    });
+
+    document.getElementById('gender').addEventListener('change', () => {
       saveSettings();
       updateChart();
     });
@@ -372,31 +367,26 @@
     document.getElementById('drinkTime').value = `${hours}:${minutes}`;
   }
 
-  // Update reduction factor based on gender
-  function updateReductionFactor() {
-    const gender = document.getElementById('gender').value;
-    const r = gender === 'male' ? 0.7 : 0.6;
-    document.getElementById('reductionFactor').value = r.toFixed(2);
-  }
-
   // Load settings from localStorage
   function loadSettings() {
-    const weight = localStorage.getItem('weight') || '70';
-    const gender = localStorage.getItem('gender') || 'male';
-    const betaRate = localStorage.getItem('betaRate') || '0.15';
-
-    document.getElementById('weight').value = weight;
-    document.getElementById('gender').value = gender;
-    document.getElementById('betaRate').value = betaRate;
-
-    updateReductionFactor();
+    try {
+      const weight = localStorage.getItem('weight') || '70';
+      const gender = localStorage.getItem('gender') || 'male';
+      document.getElementById('weight').value = weight;
+      document.getElementById('gender').value = gender;
+    } catch (e) {
+      console.log('Could not load settings from localStorage');
+    }
   }
 
   // Save settings to localStorage
   function saveSettings() {
-    localStorage.setItem('weight', document.getElementById('weight').value);
-    localStorage.setItem('gender', document.getElementById('gender').value);
-    localStorage.setItem('betaRate', document.getElementById('betaRate').value);
+    try {
+      localStorage.setItem('weight', document.getElementById('weight').value);
+      localStorage.setItem('gender', document.getElementById('gender').value);
+    } catch (e) {
+      console.log('Could not save settings to localStorage');
+    }
   }
 
   // Add a drink
@@ -413,7 +403,7 @@
     const drinks = getDrinks();
     const now = new Date();
     const [hours, minutes] = drinkTime.split(':');
-    const drinkDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes);
+    const drinkDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), parseInt(hours), parseInt(minutes));
 
     drinks.push({
       id: Date.now(),
@@ -443,7 +433,11 @@
 
   // Save drinks to localStorage
   function saveDrinks(drinks) {
-    localStorage.setItem('drinks', JSON.stringify(drinks));
+    try {
+      localStorage.setItem('drinks', JSON.stringify(drinks));
+    } catch (e) {
+      console.log('Could not save drinks to localStorage');
+    }
   }
 
   // Load and display drinks
@@ -495,12 +489,11 @@
     }
   }
 
-  // Calculate BAC (promille)
+  // Calculate BAC (promille) with absorption model
   function calculatePromille() {
     const weight = parseFloat(document.getElementById('weight').value) || 70;
     const gender = document.getElementById('gender').value;
-    const r = gender === 'male' ? 0.7 : 0.6;
-    const beta = parseFloat(document.getElementById('betaRate').value) || 0.15;
+    const r = REDUCTION_FACTOR[gender];
 
     const drinks = getDrinks();
     const now = new Date();
@@ -519,8 +512,12 @@
 
         if (hoursSinceDrink >= 0) {
           const gramsAlcohol = (drink.volume * drink.alcoholContent) / 100;
-          const initialPromille = gramsAlcohol / (weight * r);
-          const promilleNow = initialPromille - (beta * hoursSinceDrink);
+
+          // Formula: C(t) = (A/(m·r))(1 - e^(-k·t)) - β·t
+          const absorption = (gramsAlcohol / (weight * r)) * (1 - Math.exp(-K * hoursSinceDrink));
+          const elimination = BETA * hoursSinceDrink;
+          const promilleNow = absorption - elimination;
+
           totalPromille += Math.max(0, promilleNow);
         }
       });
@@ -537,92 +534,143 @@
     const { dataPoints, timePoints } = calculatePromille();
     const container = document.getElementById('chartContainer');
 
-    // Simple canvas chart
-    const canvas = container.querySelector('canvas') || document.createElement('canvas');
-    canvas.width = container.clientWidth;
-    canvas.height = 400;
+    if (!container) return;
+
+    // Create canvas
     container.innerHTML = '';
+    const canvas = document.createElement('canvas');
     container.appendChild(canvas);
 
+    // Set canvas size based on container
+    const dpr = window.devicePixelRatio || 1;
+    const rect = container.getBoundingClientRect();
+    canvas.width = rect.width * dpr;
+    canvas.height = 350 * dpr;
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = '350px';
+
     const ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+
     const padding = 60;
-    const width = canvas.width - padding * 2;
-    const height = canvas.height - padding * 2;
+    const width = rect.width - padding * 2;
+    const height = 350 - padding * 2;
+
+    // Get colors from CSS variables
+    const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();
+    const fgColor = getComputedStyle(document.documentElement).getPropertyValue('--fg').trim();
+    const borderColor = getComputedStyle(document.documentElement).getPropertyValue('--border').trim();
+    const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
+    const mutedColor = getComputedStyle(document.documentElement).getPropertyValue('--muted').trim();
 
     // Find max promille for scaling
     const maxPromille = Math.max(...dataPoints, 2);
     const scale = height / maxPromille;
 
     // Clear canvas
-    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = bgColor;
+    ctx.fillRect(0, 0, rect.width, 350);
 
-    // Draw grid and axes
-    ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--border').trim();
-    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--muted').trim();
-    ctx.font = '12px system-ui';
-    ctx.textAlign = 'right';
+    // Draw background zones
+    // Red zone: 0 - 0.6 ‰
+    const redZoneLimit = 0.6;
+    const redZoneHeight = (redZoneLimit / maxPromille) * height;
+    ctx.fillStyle = 'rgba(211, 47, 47, 0.1)'; // Light red
+    ctx.fillRect(padding, padding + height - redZoneHeight, width, redZoneHeight);
 
-    // Y-axis labels
+    // Green zone: 0.6+ ‰
+    ctx.fillStyle = 'rgba(56, 142, 60, 0.1)'; // Light green
+    ctx.fillRect(padding, padding, width, height - redZoneHeight);
+
+    // Draw zone boundary line
+    const boundaryY = padding + height - redZoneHeight;
+    ctx.strokeStyle = borderColor;
+    ctx.lineWidth = 1;
+    ctx.setLineDash([5, 5]);
+    ctx.beginPath();
+    ctx.moveTo(padding, boundaryY);
+    ctx.lineTo(padding + width, boundaryY);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Draw grid lines
+    ctx.strokeStyle = borderColor;
+    ctx.lineWidth = 1;
     for (let i = 0; i <= 5; i++) {
       const y = padding + height - (i * height / 5);
-      const value = (i * maxPromille / 5).toFixed(1);
-      ctx.fillText(value, padding - 10, y + 4);
-      ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--border').trim();
       ctx.beginPath();
       ctx.moveTo(padding, y);
       ctx.lineTo(padding + width, y);
       ctx.stroke();
     }
 
+    // Draw Y-axis labels
+    ctx.fillStyle = mutedColor;
+    ctx.font = '12px system-ui';
+    ctx.textAlign = 'right';
+    ctx.textBaseline = 'middle';
+    for (let i = 0; i <= 5; i++) {
+      const y = padding + height - (i * height / 5);
+      const value = (i * maxPromille / 5).toFixed(1);
+      ctx.fillText(value, padding - 10, y);
+    }
+
     // Draw line chart
-    ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-
-    dataPoints.forEach((point, i) => {
-      const x = padding + (i / (dataPoints.length - 1)) * width;
-      const y = padding + height - point * scale;
-      if (i === 0) ctx.moveTo(x, y);
-      else ctx.lineTo(x, y);
-    });
-    ctx.stroke();
-
-    // Draw points
-    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
-    dataPoints.forEach((point, i) => {
-      const x = padding + (i / (dataPoints.length - 1)) * width;
-      const y = padding + height - point * scale;
+    if (dataPoints.length > 0) {
+      ctx.strokeStyle = accentColor;
+      ctx.lineWidth = 2;
+      ctx.lineJoin = 'round';
       ctx.beginPath();
-      ctx.arc(x, y, 3, 0, Math.PI * 2);
-      ctx.fill();
-    });
 
-    // X-axis labels (every hour)
+      dataPoints.forEach((point, i) => {
+        const x = padding + (i / (dataPoints.length - 1)) * width;
+        const y = padding + height - point * scale;
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      });
+      ctx.stroke();
+
+      // Draw points
+      ctx.fillStyle = accentColor;
+      dataPoints.forEach((point, i) => {
+        const x = padding + (i / (dataPoints.length - 1)) * width;
+        const y = padding + height - point * scale;
+        ctx.beginPath();
+        ctx.arc(x, y, 3, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    }
+
+    // Draw X-axis labels
+    ctx.fillStyle = mutedColor;
     ctx.textAlign = 'center';
-    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--muted').trim();
+    ctx.textBaseline = 'top';
     for (let hour = 0; hour <= 8; hour++) {
       const index = Math.round(hour * 4); // 0.25 hour intervals
       if (index < timePoints.length) {
         const x = padding + (index / (dataPoints.length - 1)) * width;
-        ctx.fillText(timePoints[index], x, canvas.height - padding + 20);
+        ctx.fillText(timePoints[index], x, padding + height + 10);
       }
     }
 
-    // Axis labels
-    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--fg').trim();
+    // Draw axis labels
+    ctx.fillStyle = fgColor;
     ctx.font = 'bold 12px system-ui';
     ctx.textAlign = 'center';
-    ctx.fillText('Tid', canvas.width / 2, canvas.height - 10);
+    ctx.textBaseline = 'top';
+    ctx.fillText('Tid', rect.width / 2, 350 - 10);
 
     ctx.save();
-    ctx.translate(15, canvas.height / 2);
+    ctx.translate(15, 175);
     ctx.rotate(-Math.PI / 2);
     ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
     ctx.fillText('Promille (‰)', 0, 0);
     ctx.restore();
   }
 
   // Resize chart on window resize
-  window.addEventListener('resize', updateChart);
+  window.addEventListener('resize', () => {
+    updateChart();
+  });
 </script>
