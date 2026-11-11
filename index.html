@@ -803,7 +803,18 @@
 
       drinks.forEach(drink => {
         const drinkTime = new Date(drink.time);
-        const hoursSinceDrink = (timePoint - drinkTime) / (1000 * 60 * 60);
+        let hoursSinceDrink = (timePoint - drinkTime) / (1000 * 60 * 60);
+
+        // Om det är senare än 17:00 nu och drycken är tidigare på dagen,
+        // antas drycken vara från senare denna kväll/natt
+        const nowHours = now.getHours();
+        const drinkHours = drinkTime.getHours();
+
+        if (nowHours >= 17 && drinkHours < nowHours) {
+          // Drycken är senare denna kväll - justera beräkningen
+          const drinkTimeCorrected = new Date(drinkTime.getTime() + 24 * 60 * 60 * 1000);
+          hoursSinceDrink = (timePoint - drinkTimeCorrected) / (1000 * 60 * 60);
+        }
 
         // Endast beräkna om drycken redan har druckits
         if (hoursSinceDrink >= 0) {
