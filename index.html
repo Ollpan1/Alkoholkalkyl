@@ -289,6 +289,15 @@
           <option value="female">Kvinna</option>
         </select>
       </div>
+
+      <div class="form-group">
+        <label for="hunger">Hungringsnivå</label>
+        <select id="hunger">
+          <option value="hungry">Hungrig</option>
+          <option value="full" selected>Mätt</option>
+          <option value="blom">Edward Blom</option>
+        </select>
+      </div>
     </div>
 
     <button class="btn-secondary mt-2" onclick="clearDrinks()">Rensa historik</button>
@@ -334,7 +343,11 @@
 <script>
   // Constants
   const BETA = 0.15; // Elimination rate ‰/h
-  const K = 2; // Absorption rate h^-1
+  const K_VALUES = {
+    hungry: 3,
+    full: 1.5,
+    blom: 1
+  };
   const REDUCTION_FACTOR = {
     male: 0.7,
     female: 0.6
@@ -357,6 +370,11 @@
       saveSettings();
       updateChart();
     });
+
+    document.getElementById('hunger').addEventListener('change', () => {
+      saveSettings();
+      updateChart();
+    });
   });
 
   // Set default drink time to now
@@ -372,8 +390,10 @@
     try {
       const weight = localStorage.getItem('weight') || '70';
       const gender = localStorage.getItem('gender') || 'male';
+      const hunger = localStorage.getItem('hunger') || 'full';
       document.getElementById('weight').value = weight;
       document.getElementById('gender').value = gender;
+      document.getElementById('hunger').value = hunger;
     } catch (e) {
       console.log('Could not load settings from localStorage');
     }
@@ -384,6 +404,7 @@
     try {
       localStorage.setItem('weight', document.getElementById('weight').value);
       localStorage.setItem('gender', document.getElementById('gender').value);
+      localStorage.setItem('hunger', document.getElementById('hunger').value);
     } catch (e) {
       console.log('Could not save settings to localStorage');
     }
@@ -493,7 +514,9 @@
   function calculatePromille() {
     const weight = parseFloat(document.getElementById('weight').value) || 70;
     const gender = document.getElementById('gender').value;
+    const hunger = document.getElementById('hunger').value;
     const r = REDUCTION_FACTOR[gender];
+    const k = K_VALUES[hunger];
 
     const drinks = getDrinks();
     const now = new Date();
@@ -514,7 +537,7 @@
           const gramsAlcohol = (drink.volume * drink.alcoholContent) / 100;
 
           // Formula: C(t) = (A/(m·r))(1 - e^(-k·t)) - β·t
-          const absorption = (gramsAlcohol / (weight * r)) * (1 - Math.exp(-K * hoursSinceDrink));
+          const absorption = (gramsAlcohol / (weight * r)) * (1 - Math.exp(-k * hoursSinceDrink));
           const elimination = BETA * hoursSinceDrink;
           const promilleNow = absorption - elimination;
 
