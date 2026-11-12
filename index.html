@@ -1487,15 +1487,21 @@
       });
     }
 
-    // Rita X-axis labels
+    // Rita X-axis labels – jämna heltimmar (13:00, 14:00, ...)
     ctx.fillStyle = mutedColor;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
-    for (let hour = 0; hour <= 8; hour++) {
-      const index = Math.round(hour * 4);
-      if (index < timePoints.length) {
+    const startMinuteOfDay = startMin % (24 * 60);
+    const minutesToNextFullHour = (60 - (startMinuteOfDay % 60)) % 60;
+    const firstLabelMinFromStart = minutesToNextFullHour === 0 ? 0 : minutesToNextFullHour;
+    for (let min = firstLabelMinFromStart; min <= totalDurationMinutes; min += 60) {
+      const index = Math.round((min / 60) * 4); // 0.25h intervall
+      if (index >= 0 && index < timePoints.length) {
         const x = padding + (index / (dataPoints.length - 1)) * width;
-        ctx.fillText(timePoints[index], x, padding + height + 10);
+        const totalMin = startMin + min;
+        const h = Math.floor((totalMin % (24 * 60)) / 60);
+        const label = String(h).padStart(2, '0') + ':00';
+        ctx.fillText(label, x, padding + height + 10);
       }
     }
 
