@@ -382,9 +382,38 @@
 
   <!-- APK Statistics Section -->
   <div id="apkSection" class="form-section">
-    <h2>Kvällens APK</h2>
-    <div style="display: flex; align-items: center; gap: 1rem; justify-content: center;">
-      <div style="font-size: 2.5rem; font-weight: bold; color: var(--accent);" id="apkValue">-</div>
+    <h2>Kvällens Sammanställning</h2>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; justify-content: space-around; text-align: center; margin-bottom: 1.5rem;">
+      <div>
+        <div style="font-size: 0.9rem; color: var(--muted); margin-bottom: 0.25rem;">Snitt-APK</div>
+        <div style="font-size: 2.2rem; font-weight: bold; color: var(--accent);" id="apkValue">-</div>
+      </div>
+      <div>
+        <div style="font-size: 0.9rem; color: var(--muted); margin-bottom: 0.25rem;">Promillepeak</div>
+        <div style="font-size: 2.2rem; font-weight: bold; color: var(--fg);" id="peakValue">-</div>
+      </div>
+      <div>
+        <div style="font-size: 0.9rem; color: var(--muted); margin-bottom: 0.25rem;">Helt nykter (0.0‰)</div>
+        <div style="font-size: 2.2rem; font-weight: bold; color: var(--fg);" id="time00Value">-</div>
+      </div>
+    </div>
+
+    <div style="border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1rem;">
+      <h3 style="font-size: 1rem; color: var(--muted); margin: 0 0 1rem 0; text-align: center;">Ratta bil i...</h3>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; justify-content: space-around; text-align: center;">
+        <div>
+          <div style="font-size: 0.85rem; color: var(--muted); margin-bottom: 0.2rem;">USA</div>
+          <div style="font-size: 1.5rem; font-weight: bold; color: var(--fg);" id="time08Value">-</div>
+        </div>
+        <div>
+          <div style="font-size: 0.85rem; color: var(--muted); margin-bottom: 0.2rem;">Danmark</div>
+          <div style="font-size: 1.5rem; font-weight: bold; color: var(--fg);" id="time05Value">-</div>
+        </div>
+        <div>
+          <div style="font-size: 0.85rem; color: var(--muted); margin-bottom: 0.2rem;">Sverige</div>
+          <div style="font-size: 1.5rem; font-weight: bold; color: var(--fg);" id="time02Value">-</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -773,7 +802,7 @@
     }
   }
 
-  // Beräkna och uppdatera APK-snittet
+  // Beräkna och uppdatera APK-snitt och promillepeak
   function updateApkAverage() {
     const drinks = getDrinks();
     let apkValues = [];
@@ -811,6 +840,29 @@
     if (apkValueElement) {
       apkValueElement.textContent = average;
       apkValueElement.style.color = apkColor;
+    }
+
+    // Beräkna promillepeak
+    const { dataPoints, timePoints } = calculatePromille();
+    let maxP = 0;
+    let maxIdx = 0;
+    dataPoints.forEach((p, i) => {
+      if (p > maxP) {
+        maxP = p;
+        maxIdx = i;
+      }
+    });
+
+    const peakValueElement = document.getElementById('peakValue');
+    if (peakValueElement) {
+      if (drinks.length > 0 && maxP > 0) {
+        peakValueElement.textContent = `${maxP.toFixed(2)}‰ (${timePoints[maxIdx]})`;
+        // Färgkoda: röd upp till 0.6‰, därefter grön (precis som i diagrammets zoner)
+        peakValueElement.style.color = maxP < 0.6 ? '#d32f2f' : '#388e3c';
+      } else {
+        peakValueElement.textContent = '-';
+        peakValueElement.style.color = 'var(--fg)';
+      }
     }
   }
 
@@ -870,9 +922,11 @@
     const { dataPoints, timePoints } = calculatePromille();
     const now = new Date();
 
-    // Beräkna när promillen når 0.2‰ och 0.0‰ EFTER toppen
-    let timeAt02 = 'ej nådd';
-    let timeAt00 = 'ej nådd';
+    // Beräkna gränser EFTER toppen (0.8, 0.5, 0.2 och 0.0)
+    let timeAt08 = '-';
+    let timeAt05 = '-';
+    let timeAt02 = '-';
+    let timeAt00 = '-';
     const weight = parseFloat(document.getElementById('weight').value) || 70;
     const gender = document.getElementById('gender').value;
     const hunger = document.getElementById('hunger').value;
@@ -901,7 +955,7 @@
 
         if (hoursSinceDrink >= 0) {
           const gramsAlcohol = ((drink.volume * drink.alcoholContent) / 100) * 0.789;
-          const minutesSinceDrink = hoursSinceDrink * 60;
+      const minutesSinceDrink = hoursSinceDrink * 60;
           totalPromille += getDrinkConcentrationAtMinute(gramsAlcohol, k_a, weight, r, minutesSinceDrink);
         }
       });
@@ -916,14 +970,30 @@
     curvePoints.forEach(pt => {
       if (pt.minutes > peakMinute) {
         const timeStr = String(pt.time.getHours()).padStart(2, '0') + ':' + String(pt.time.getMinutes()).padStart(2, '0');
-        if (timeAt02 === 'ej nådd' && pt.promille <= 0.2) {
+        if (timeAt08 === '-' && pt.promille <= 0.8) {
+          timeAt08 = timeStr;
+        }
+        if (timeAt05 === '-' && pt.promille <= 0.5) {
+          timeAt05 = timeStr;
+        }
+        if (timeAt02 === '-' && pt.promille <= 0.2) {
           timeAt02 = timeStr;
         }
-        if (timeAt00 === 'ej nådd' && pt.promille <= 0.01) {
+        if (timeAt00 === '-' && pt.promille <= 0.01) {
           timeAt00 = timeStr;
         }
       }
     });
+
+    // Uppdatera sammanställningsrutan
+    const setElText = (id, val) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = val;
+    };
+    setElText('time08Value', timeAt08);
+    setElText('time05Value', timeAt05);
+    setElText('time02Value', timeAt02);
+    setElText('time00Value', timeAt00);
 
     const container = document.getElementById('chartContainer');
 
@@ -1059,18 +1129,19 @@
       }
     }
 
+    // Uppdatera sammanställningsrutan
+    const time02El = document.getElementById('time02Value');
+    if (time02El) time02El.textContent = timeAt02;
+
+    const time00El = document.getElementById('time00Value');
+    if (time00El) time00El.textContent = timeAt00;
+
     // Draw axis labels
     ctx.fillStyle = fgColor;
     ctx.font = 'bold 12px system-ui';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
     ctx.fillText('Tid', rect.width / 2, 350 - 10);
-
-    // Diskret info-text om när man når 0.2‰ och 0.0‰
-    ctx.fillStyle = mutedColor;
-    ctx.font = '11px system-ui';
-    const infoText = `Når 0.2‰ vid ${timeAt02}  |  Når 0.0‰ vid ${timeAt00}`;
-    ctx.fillText(infoText, rect.width / 2, padding + height + 35);
 
     ctx.save();
     ctx.translate(15, 175);
