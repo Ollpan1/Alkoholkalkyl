@@ -526,7 +526,7 @@
 
     const F = 0.944;
     const Vd = weight * r; // L
-    const Vmax = 6.31 * (weight / 70); // g/h
+    const Vmax = 6.31; // g/h
     const Km = 0.0849; // g/L
 
     let Ag = gramsAlcohol; // g kvar i magsäck
@@ -888,7 +888,7 @@
   function simulateTimeline(drinks, weight, r, ka, startTimestamp, totalMinutes) {
     const F = 0.944;
     const Vd = weight * r;
-    const Vmax = 6.31 * (weight / 70);
+    const Vmax = 6.31;
     const Km = 0.0849;
     const dt = 1 / 60; // 1 minut i timmar
 
@@ -944,7 +944,7 @@
     return promilleCurve;
   }
 
-  // Calculate BAC (promille) with unified timeline simulation
+  // Calculate BAC and extract data points for the graph from curvePoints (or first 8 hours)
   function calculatePromille() {
     const weight = parseFloat(document.getElementById('weight').value) || 70;
     const gender = document.getElementById('gender').value;
@@ -959,15 +959,33 @@
       return { dataPoints: new Array(33).fill(0), timePoints: [] };
     }
 
-    const totalMinutes = 8 * 60; // 8 timmar framåt
-    const curve = simulateTimeline(drinks, weight, r, k_a, now.getTime(), totalMinutes);
-
+    // Bygg samma exakta curvePoints som används för peak-beräkningen (första 8 timmarna = 480 min)
     const dataPoints = [];
     const timePoints = [];
 
-    for (let m = 0; m <= totalMinutes; m += 15) { // var 15:e minut
-      const timePoint = new Date(now.getTime() + m * 60 * 1000);
-      dataPoints.push(curve[m] || 0);
+    for (let minutesFromStart = 0; minutesFromStart <= 8 * 60; minutesFromStart += 15) {
+      const timePoint = new Date(now.getTime() + minutesFromStart * 60 * 1000);
+      let totalPromille = 0;
+
+      drinks.forEach(drink => {
+        const drinkTime = new Date(drink.time);
+        let hoursSinceDrink = (timePoint - drinkTime) / (1000 * 60 * 60);
+        const nowHours = now.getHours();
+        const drinkHours = drinkTime.getHours();
+
+        if (nowHours >= 17 && drinkHours < nowHours) {
+          const drinkTimeCorrected = new Date(drinkTime.getTime() + 24 * 60 * 60 * 1000);
+          hoursSinceDrink = (timePoint - drinkTimeCorrected) / (1000 * 60 * 60);
+        }
+
+        if (hoursSinceDrink >= 0) {
+          const gramsAlcohol = ((drink.volume * drink.alcoholContent) / 100) * 0.789;
+          const minutesSinceDrink = hoursSinceDrink * 60;
+          totalPromille += getDrinkConcentrationAtMinute(gramsAlcohol, k_a, weight, r, minutesSinceDrink);
+        }
+      });
+
+      dataPoints.push(totalPromille);
       timePoints.push(timePoint.toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit' }));
     }
 
