@@ -473,6 +473,39 @@
     female: 0.6
   };
 
+  // Ny modell: Fasta parametrar + Michaelis-Menten & första ordningens absorption
+  function getDrinkConcentrationAtMinute(gramsAlcohol, ka, weight, r, totalMinutesSinceDrink) {
+    if (totalMinutesSinceDrink <= 0) return 0;
+
+    const F = 0.944;
+    const Vd = weight * r; // L
+    const Vmax = 6.31 * (weight / 70); // g/h
+    const Km = 0.0849; // g/L
+
+    let Ag = gramsAlcohol; // g kvar i magsäck
+    let C = 0; // g/L (promille)
+
+    const steps = Math.round(totalMinutesSinceDrink);
+    const dt = 1 / 60; // 1 minut i timmar
+
+    for (let m = 0; m < steps; m++) {
+      const absorptionRate = F * ka * Ag;
+      const dAg = absorptionRate * dt;
+      Ag = Math.max(0, Ag - dAg);
+
+      let eliminationRate = 0;
+      if (C > 0) {
+        eliminationRate = (Vmax * C) / (Km + C);
+      }
+      const dElimination = eliminationRate * dt;
+
+      const dC = (dAg - dElimination) / Vd;
+      C = Math.max(0, C + dC);
+    }
+
+    return C;
+  }
+
   // Initialize on load
   document.addEventListener('DOMContentLoaded', () => {
     loadDrinksDatabase();
@@ -788,7 +821,6 @@
     const hunger = document.getElementById('hunger').value;
     const r = REDUCTION_FACTOR[gender];
     const k_a = K_VALUES[hunger]; // Absorptionshastighet från hungringsnivå
-    const k_e = 0.15; // Elimineringshastighet (fast)
 
     const drinks = getDrinks();
     const now = new Date();
@@ -818,15 +850,11 @@
 
         // Endast beräkna om drycken redan har druckits
         if (hoursSinceDrink >= 0) {
-          const gramsAlcohol = (drink.volume * drink.alcoholContent) / 100;
+          const gramsAlcohol = ((drink.volume * drink.alcoholContent) / 100) * 0.789;
+          const minutesSinceDrink = hoursSinceDrink * 60;
+          const promilleNow = getDrinkConcentrationAtMinute(gramsAlcohol, k_a, weight, r, minutesSinceDrink);
 
-          // Two-compartment model: C_i(t) = (A_i / (m * r)) * (exp(-k_e * t) - exp(-k_a * t))
-          const A = gramsAlcohol;
-          const term1 = Math.exp(-k_e * hoursSinceDrink);
-          const term2 = Math.exp(-k_a * hoursSinceDrink);
-          const promilleNow = (A / (weight * r)) * (term1 - term2);
-
-          totalPromille += Math.max(0, promilleNow);
+          totalPromille += promilleNow;
         }
       });
 
@@ -1209,7 +1237,6 @@
     // === KONSTANTER ===
     const gramsPerDrink = (drink.volume * drink.percent) / 100 * 0.789;
     const k_a = k;
-    const k_e = 0.15;
     const MIN_DRINK_INTERVAL = 3;
 
     // === BERÄKNA PROMILLE FÖR EN DRINK ===
@@ -1217,10 +1244,7 @@
       const timeSinceMinutes = currentMinutesFromStart - drinkMinutesFromStart;
       if (timeSinceMinutes < 0) return 0;
 
-      const timeSinceHours = timeSinceMinutes / 60;
-      const term1 = Math.exp(-k_e * timeSinceHours);
-      const term2 = Math.exp(-k_a * timeSinceHours);
-      return (gramsPerDrink / (weight * r)) * (term1 - term2);
+      return getDrinkConcentrationAtMinute(gramsPerDrink, k_a, weight, r, timeSinceMinutes);
     };
 
     // === UPPBYGGNINGSFAS ===
@@ -1305,7 +1329,6 @@
 
   // Rita promillekurva för Promilleplaneraren
   function drawPlanChart(startMin, buildupMinutes, maintenanceMinutes, schedule, weight, r, k_a, gramsPerDrink, drinkType, targetPromille) {
-    const k_e = 0.15;
 
     let chartContainer = document.getElementById('planChartContainer');
     if (!chartContainer) {
@@ -1356,10 +1379,7 @@
       schedule.forEach(drinkMinutesFromStart => {
         const timeSinceMinutes = minutesFromStart - drinkMinutesFromStart;
         if (timeSinceMinutes >= 0) {
-          const timeSinceHours = timeSinceMinutes / 60;
-          const term1 = Math.exp(-k_e * timeSinceHours);
-          const term2 = Math.exp(-k_a * timeSinceHours);
-          totalPromille += (gramsPerDrink / (weight * r)) * (term1 - term2);
+          totalPromille += getDrinkConcentrationAtMinute(gramsPerDrink, k_a, weight, r, timeSinceMinutes);
         }
       });
 
@@ -1384,10 +1404,7 @@
       schedule.forEach(drinkMinutesFromStart => {
         const timeSinceMinutes = minutesFromStart - drinkMinutesFromStart;
         if (timeSinceMinutes >= 0) {
-          const timeSinceHours = timeSinceMinutes / 60;
-          const term1 = Math.exp(-k_e * timeSinceHours);
-          const term2 = Math.exp(-k_a * timeSinceHours);
-          totalPromille += (gramsPerDrink / (weight * r)) * (term1 - term2);
+          totalPromille += getDrinkConcentrationAtMinute(gramsPerDrink, k_a, weight, r, timeSinceMinutes);
         }
       });
 
