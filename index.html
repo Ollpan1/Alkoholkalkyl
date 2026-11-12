@@ -840,6 +840,7 @@
   // Update chart
   function updateChart() {
     const { dataPoints, timePoints } = calculatePromille();
+    const now = new Date();
     const container = document.getElementById('chartContainer');
 
     if (!container) return;
@@ -949,15 +950,28 @@
       });
     }
 
-    // Draw X-axis labels
+    // Draw X-axis labels – börja med nu, sedan jämna heltimmar var 1h
     ctx.fillStyle = mutedColor;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
-    for (let hour = 0; hour <= 8; hour++) {
-      const index = Math.round(hour * 4); // 0.25 hour intervals
-      if (index < timePoints.length) {
+    // Första etikett: nuvarande tid (index 0)
+    {
+      const x = padding;
+      const label = String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0');
+      ctx.fillText(label, x, padding + height + 10);
+    }
+    // Resterande etiketter: nästa jämna timme och var 1h framåt
+    const nowMinuteOfHour = now.getMinutes();
+    const minutesToNextHour = (60 - nowMinuteOfHour) % 60;
+    // Om nästa heltimme är inom 15 min, hoppa över den (för nära startetiketten)
+    const firstFullHourOffset = (minutesToNextHour === 0 || minutesToNextHour <= 15) ? minutesToNextHour + 60 : minutesToNextHour;
+    for (let min = firstFullHourOffset; min <= 8 * 60; min += 60) {
+      const index = Math.round((min / 60) * 4);
+      if (index >= 0 && index < timePoints.length) {
         const x = padding + (index / (dataPoints.length - 1)) * width;
-        ctx.fillText(timePoints[index], x, padding + height + 10);
+        const labelDate = new Date(now.getTime() + min * 60 * 1000);
+        const label = String(labelDate.getHours()).padStart(2, '0') + ':00';
+        ctx.fillText(label, x, padding + height + 10);
       }
     }
 
