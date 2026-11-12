@@ -869,6 +869,62 @@
   function updateChart() {
     const { dataPoints, timePoints } = calculatePromille();
     const now = new Date();
+
+    // Beräkna när promillen når 0.2‰ och 0.0‰ EFTER toppen
+    let timeAt02 = 'ej nådd';
+    let timeAt00 = 'ej nådd';
+    const weight = parseFloat(document.getElementById('weight').value) || 70;
+    const gender = document.getElementById('gender').value;
+    const hunger = document.getElementById('hunger').value;
+    const r = REDUCTION_FACTOR[gender];
+    const k_a = K_VALUES[hunger];
+    const drinks = getDrinks();
+
+    let peakPromille = 0;
+    let peakMinute = 0;
+    const curvePoints = [];
+
+    for (let minutesFromStart = 0; minutesFromStart <= 24 * 60; minutesFromStart += 5) {
+      const timePoint = new Date(now.getTime() + minutesFromStart * 60 * 1000);
+      let totalPromille = 0;
+
+      drinks.forEach(drink => {
+        const drinkTime = new Date(drink.time);
+        let hoursSinceDrink = (timePoint - drinkTime) / (1000 * 60 * 60);
+        const nowHours = now.getHours();
+        const drinkHours = drinkTime.getHours();
+
+        if (nowHours >= 17 && drinkHours < nowHours) {
+          const drinkTimeCorrected = new Date(drinkTime.getTime() + 24 * 60 * 60 * 1000);
+          hoursSinceDrink = (timePoint - drinkTimeCorrected) / (1000 * 60 * 60);
+        }
+
+        if (hoursSinceDrink >= 0) {
+          const gramsAlcohol = ((drink.volume * drink.alcoholContent) / 100) * 0.789;
+          const minutesSinceDrink = hoursSinceDrink * 60;
+          totalPromille += getDrinkConcentrationAtMinute(gramsAlcohol, k_a, weight, r, minutesSinceDrink);
+        }
+      });
+
+      curvePoints.push({ minutes: minutesFromStart, promille: totalPromille, time: timePoint });
+      if (totalPromille > peakPromille) {
+        peakPromille = totalPromille;
+        peakMinute = minutesFromStart;
+      }
+    }
+
+    curvePoints.forEach(pt => {
+      if (pt.minutes > peakMinute) {
+        const timeStr = String(pt.time.getHours()).padStart(2, '0') + ':' + String(pt.time.getMinutes()).padStart(2, '0');
+        if (timeAt02 === 'ej nådd' && pt.promille <= 0.2) {
+          timeAt02 = timeStr;
+        }
+        if (timeAt00 === 'ej nådd' && pt.promille <= 0.01) {
+          timeAt00 = timeStr;
+        }
+      }
+    });
+
     const container = document.getElementById('chartContainer');
 
     if (!container) return;
@@ -1009,6 +1065,12 @@
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
     ctx.fillText('Tid', rect.width / 2, 350 - 10);
+
+    // Diskret info-text om när man når 0.2‰ och 0.0‰
+    ctx.fillStyle = mutedColor;
+    ctx.font = '11px system-ui';
+    const infoText = `Når 0.2‰ vid ${timeAt02}  |  Når 0.0‰ vid ${timeAt00}`;
+    ctx.fillText(infoText, rect.width / 2, padding + height + 35);
 
     ctx.save();
     ctx.translate(15, 175);
@@ -1392,13 +1454,14 @@
       timePoints.push(String(timeHours).padStart(2, '0') + ':' + String(timeMins).padStart(2, '0'));
     }
 
-    // Beräkna när promillen når 0.2‰ (söka långt framåt, även längre än grafen visar)
+    // Beräkna när promillen når 0.2‰ och 0.0‰ (söka långt framåt)
     let timeAt02 = 'okänd';
+    let timeAt00 = 'okänd';
 
     const sluttidMinutesFromStart = buildupMinutes + maintenanceMinutes;
 
-    // Beräkna framåt upp till 24 timmar från start för att hitta 0.2‰
-    for (let minutesFromStart = sluttidMinutesFromStart; minutesFromStart <= 24 * 60; minutesFromStart += 15) {
+    // Beräkna framåt upp till 24 timmar från start
+    for (let minutesFromStart = sluttidMinutesFromStart; minutesFromStart <= 24 * 60; minutesFromStart += 5) {
       let totalPromille = 0;
 
       schedule.forEach(drinkMinutesFromStart => {
@@ -1408,12 +1471,16 @@
         }
       });
 
-      if (totalPromille <= 0.2) {
-        // Konvertera minuter från starttid till tidstring
-        const totalMinutes = startMin + minutesFromStart;
-        const timeHours = Math.floor((totalMinutes % (24 * 60)) / 60);
-        const timeMins = Math.floor(totalMinutes % 60);
-        timeAt02 = String(timeHours).padStart(2, '0') + ':' + String(timeMins).padStart(2, '0');
+      const totalMinutes = startMin + minutesFromStart;
+      const timeHours = Math.floor((totalMinutes % (24 * 60)) / 60);
+      const timeMins = Math.floor(totalMinutes % 60);
+      const timeStr = String(timeHours).padStart(2, '0') + ':' + String(timeMins).padStart(2, '0');
+
+      if (timeAt02 === 'okänd' && totalPromille <= 0.2) {
+        timeAt02 = timeStr;
+      }
+      if (timeAt00 === 'okänd' && totalPromille <= 0.01) {
+        timeAt00 = timeStr;
         break;
       }
     }
@@ -1536,12 +1603,12 @@
       }
     }
 
-    // Rita information om när man når 0.2‰
+    // Rita information om när man når 0.2‰ respektive 0.0‰
     ctx.fillStyle = mutedColor;
     ctx.font = '12px system-ui';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
-    const infoText = `Når 0.2‰ vid ${timeAt02}`;
+    const infoText = `Når 0.2‰ vid ${timeAt02}  |  Når 0.0‰ vid ${timeAt00}`;
     ctx.fillText(infoText, rect.width / 2, padding + height + 35);
 
     // Rita axis labels
