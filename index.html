@@ -1276,8 +1276,8 @@
     }
 
     const scheduleDisplay = schedule.map(min => {
-      // Avrunda till närmaste 5-tal
-      const rounded = Math.round(min / 5) * 5;
+      // Avrunda till närmaste heltal
+      const rounded = Math.round(min);
       return minutesToTime(rounded, startMin);
     }).join(', ');
 
@@ -1634,15 +1634,30 @@
     });
 
     // Touch events
-    canvas.addEventListener('touchmove', (e) => {
+    let touchTooltipTimer = null;
+
+    canvas.addEventListener('touchstart', (e) => {
+      e.preventDefault();
       if (e.touches.length > 0) {
         const touch = e.touches[0];
         handlePlanInteraction(touch.clientX, touch.clientY);
       }
-    });
+    }, { passive: false });
+
+    canvas.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      if (e.touches.length > 0) {
+        const touch = e.touches[0];
+        handlePlanInteraction(touch.clientX, touch.clientY);
+      }
+    }, { passive: false });
 
     canvas.addEventListener('touchend', () => {
-      hoveredIndex = -1;
+      if (touchTooltipTimer) clearTimeout(touchTooltipTimer);
+      touchTooltipTimer = setTimeout(() => {
+        hoveredIndex = -1;
+        redrawPlanWithTooltip(-1);
+      }, 2000);
     });
   }
 
