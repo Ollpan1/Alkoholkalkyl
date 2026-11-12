@@ -884,19 +884,19 @@
     }
   }
 
-  // Gemensam tidslinjesimulering för alla drycker (en gemensam magsäck och lever)
+  // Tidslinjesimulering med Michaelis-Menten och separata magar per dryck, men gemensam lever (blod)
   function simulateTimeline(drinks, weight, r, ka, startTimestamp, totalMinutes) {
+    const F = 0.944;
     const Vd = weight * r;
-    const beta = 0.15; // ‰ / h
+    const Vmax = 6.31 * (weight / 70);
+    const Km = 0.0849;
     const dt = 1 / 60; // 1 minut i timmar
 
-    const drinkEvents = {}; // minut från start -> gram alkohol
-
+    const drinkEvents = [];
     drinks.forEach(drink => {
       const drinkTime = new Date(drink.time).getTime();
       let diffMinutes = Math.round((drinkTime - startTimestamp) / (1000 * 60));
 
-      // Hantera över midnatt om det behövs
       const now = new Date(startTimestamp);
       const drinkDate = new Date(drink.time);
       if (now.getHours() >= 17 && drinkDate.getHours() < now.getHours()) {
@@ -905,29 +905,40 @@
 
       if (diffMinutes >= 0 && diffMinutes <= totalMinutes) {
         const grams = ((drink.volume * drink.alcoholContent) / 100) * 0.789;
-        drinkEvents[diffMinutes] = (drinkEvents[diffMinutes] || 0) + grams;
+        drinkEvents.push({ minute: diffMinutes, grams: grams });
       }
     });
 
-    let Ag_total = 0; // Total mängd i magsäck
-    let C = 0;        // Promille i blodet
+    // Varje dryck har sin egen magsäck (Ag)
+    let stomachs = drinkEvents.map(event => ({
+      activeMinute: event.minute,
+      Ag: event.grams
+    }));
+
+    let C = 0; // Gemensam promille i blodet
     const promilleCurve = [];
 
     for (let m = 0; m <= totalMinutes; m++) {
-      if (drinkEvents[m]) {
-        Ag_total += drinkEvents[m];
+      let totalAbsorption = 0;
+
+      stomachs.forEach(stomach => {
+        if (m >= stomach.activeMinute && stomach.Ag > 0) {
+          const absorptionRate = F * ka * stomach.Ag;
+          const dAg = absorptionRate * dt;
+          stomach.Ag = Math.max(0, stomach.Ag - dAg);
+          totalAbsorption += dAg;
+        }
+      });
+
+      const dC_absorption = totalAbsorption / Vd;
+
+      let eliminationRate = 0;
+      if (C > 0) {
+        eliminationRate = (Vmax * C) / (Km + C);
       }
+      const dElimination = eliminationRate * dt;
 
-      let absorption = 0;
-      if (Ag_total > 0) {
-        absorption = ka * Ag_total * dt;
-        Ag_total = Math.max(0, Ag_total - absorption);
-      }
-
-      const dC_absorption = absorption / Vd;
-      const dC_elimination = beta * dt;
-
-      C = Math.max(0, C + dC_absorption - dC_elimination);
+      C = Math.max(0, C + dC_absorption - dElimination);
       promilleCurve.push(C);
     }
 
