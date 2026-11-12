@@ -383,11 +383,24 @@
   <!-- APK Statistics Section -->
   <div id="apkSection" class="form-section">
     <h2>Kvällens Sammanställning</h2>
+    <!-- Rad 1 -->
     <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; justify-content: space-around; text-align: center; margin-bottom: 1.5rem;">
+      <div>
+        <div style="font-size: 0.9rem; color: var(--muted); margin-bottom: 0.25rem;">Antal enheter</div>
+        <div style="font-size: 2.2rem; font-weight: bold; color: var(--fg);" id="totalDrinksValue">0</div>
+      </div>
+      <div>
+        <div style="font-size: 0.9rem; color: var(--muted); margin-bottom: 0.25rem;">Pengar spenderade</div>
+        <div style="font-size: 2.2rem; font-weight: bold; color: var(--accent);" id="totalMoneyValue">0 kr</div>
+      </div>
       <div>
         <div style="font-size: 0.9rem; color: var(--muted); margin-bottom: 0.25rem;">Snitt-APK</div>
         <div style="font-size: 2.2rem; font-weight: bold; color: var(--accent);" id="apkValue">-</div>
       </div>
+    </div>
+
+    <!-- Rad 2 -->
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; justify-content: space-around; text-align: center; margin-bottom: 1.5rem; border-top: 1px solid var(--border); padding-top: 1rem;">
       <div>
         <div style="font-size: 0.9rem; color: var(--muted); margin-bottom: 0.25rem;">Promillepeak</div>
         <div style="font-size: 2.2rem; font-weight: bold; color: var(--fg);" id="peakValue">-</div>
@@ -396,8 +409,13 @@
         <div style="font-size: 0.9rem; color: var(--muted); margin-bottom: 0.25rem;">Helt nykter (0.0‰)</div>
         <div style="font-size: 2.2rem; font-weight: bold; color: var(--fg);" id="time00Value">-</div>
       </div>
+      <div>
+        <div style="font-size: 0.9rem; color: var(--muted); margin-bottom: 0.25rem;">Flyga flygplan</div>
+        <div style="font-size: 2.2rem; font-weight: bold; color: var(--fg);" id="timePlaneValue">-</div>
+      </div>
     </div>
 
+    <!-- Rad 3: Ratta bil i... -->
     <div style="border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1rem;">
       <h3 style="font-size: 1rem; color: var(--muted); margin: 0 0 1rem 0; text-align: center;">Ratta bil i...</h3>
       <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; justify-content: space-around; text-align: center;">
@@ -927,6 +945,8 @@
     let timeAt05 = '-';
     let timeAt02 = '-';
     let timeAt00 = '-';
+    let timeAt00Date = null;
+    let peakValueStr = '-';
     const weight = parseFloat(document.getElementById('weight').value) || 70;
     const gender = document.getElementById('gender').value;
     const hunger = document.getElementById('hunger').value;
@@ -955,7 +975,7 @@
 
         if (hoursSinceDrink >= 0) {
           const gramsAlcohol = ((drink.volume * drink.alcoholContent) / 100) * 0.789;
-      const minutesSinceDrink = hoursSinceDrink * 60;
+          const minutesSinceDrink = hoursSinceDrink * 60;
           totalPromille += getDrinkConcentrationAtMinute(gramsAlcohol, k_a, weight, r, minutesSinceDrink);
         }
       });
@@ -981,7 +1001,29 @@
         }
         if (timeAt00 === '-' && pt.promille <= 0.01) {
           timeAt00 = timeStr;
+          timeAt00Date = pt.time;
         }
+      }
+    });
+
+    if (peakPromille > 0 && drinks.length > 0) {
+      const peakPoint = curvePoints.find(p => p.minutes === peakMinute);
+      const peakTimeStr = peakPoint ? String(peakPoint.time.getHours()).padStart(2, '0') + ':' + String(peakPoint.time.getMinutes()).padStart(2, '0') : '';
+      peakValueStr = `${peakPromille.toFixed(2)}‰ (${peakTimeStr})`;
+    }
+
+    let timePlane = '-';
+    if (timeAt00Date) {
+      const planeDate = new Date(timeAt00Date.getTime() + 8 * 60 * 60 * 1000);
+      timePlane = String(planeDate.getHours()).padStart(2, '0') + ':' + String(planeDate.getMinutes()).padStart(2, '0');
+    }
+
+    // Beräkna pengar spenderade
+    let totalMoney = 0;
+    drinks.forEach(drink => {
+      const drinkData = drinksDatabase.find(d => d.namn === drink.namn);
+      if (drinkData && drinkData.pris) {
+        totalMoney += drinkData.pris;
       }
     });
 
@@ -990,10 +1032,20 @@
       const el = document.getElementById(id);
       if (el) el.textContent = val;
     };
+    setElText('totalDrinksValue', drinks.length);
+    setElText('totalMoneyValue', totalMoney + ' kr');
+    setElText('peakValue', peakValueStr);
+
+    const peakEl = document.getElementById('peakValue');
+    if (peakEl) {
+      peakEl.style.color = peakPromille < 0.6 ? '#d32f2f' : '#388e3c';
+    }
+
     setElText('time08Value', timeAt08);
     setElText('time05Value', timeAt05);
     setElText('time02Value', timeAt02);
     setElText('time00Value', timeAt00);
+    setElText('timePlaneValue', timePlane);
 
     const container = document.getElementById('chartContainer');
 
