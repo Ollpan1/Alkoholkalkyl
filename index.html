@@ -923,10 +923,9 @@
 
       stomachs.forEach(stomach => {
         if (m >= stomach.activeMinute && stomach.Ag > 0) {
-          const absorptionRate = F * ka * stomach.Ag;
-          const dAg = absorptionRate * dt;
+          const dAg = ka * stomach.Ag * dt;
           stomach.Ag = Math.max(0, stomach.Ag - dAg);
-          totalAbsorption += dAg;
+          totalAbsorption += F * dAg;
         }
       });
 
