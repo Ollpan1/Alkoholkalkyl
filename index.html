@@ -486,21 +486,20 @@
     <!-- Resultat -->
     <div id="planResult" style="margin-top: 1.5rem; display: none;">
       <div style="background: var(--accent-light); border: 1px solid var(--border); border-radius: 6px; padding: 1.5rem;">
-        <h3 style="margin: 0 0 1rem 0; color: var(--fg);">Din promillplan</h3>
+        <h3 style="margin: 0 0 1rem 0; color: var(--fg);">Din personliga promilleplan</h3>
 
         <div style="margin-bottom: 1.5rem;">
-          <h4 style="margin: 0 0 0.5rem 0; color: var(--fg);">Uppbyggningsfas</h4>
-          <p id="planBuildupText" style="margin: 0; color: var(--muted); font-size: 0.95rem;"></p>
+          <h4 style="margin: 0 0 0.4rem 0; color: var(--fg);">Förkrök</h4>
+          <p id="planBuildupText" style="margin: 0 0 0.6rem 0; color: var(--muted); font-size: 0.95rem;"></p>
+          <h5 style="margin: 0 0 0.3rem 0; color: var(--fg); font-size: 0.9rem;">Schema</h5>
+          <div id="planBuildupSchedule" style="margin: 0; color: var(--muted); font-size: 0.95rem; font-family: monospace;"></div>
         </div>
 
-        <div style="margin-bottom: 1.5rem;">
-          <h4 style="margin: 0 0 0.5rem 0; color: var(--fg);">Underhållsfas</h4>
-          <p id="planMaintenanceText" style="margin: 0; color: var(--muted); font-size: 0.95rem;"></p>
-        </div>
-
-        <div>
-          <h4 style="margin: 0 0 0.5rem 0; color: var(--fg);">Schema</h4>
-          <p id="planSchedule" style="margin: 0; color: var(--muted); font-size: 0.95rem; font-family: monospace;"></p>
+        <div style="margin-bottom: 1.5rem;" id="planKrökSection">
+          <h4 style="margin: 0 0 0.4rem 0; color: var(--fg);">Krök</h4>
+          <p id="planMaintenanceText" style="margin: 0 0 0.6rem 0; color: var(--muted); font-size: 0.95rem;"></p>
+          <h5 style="margin: 0 0 0.3rem 0; color: var(--fg); font-size: 0.9rem;">Schema</h5>
+          <div id="planKrökSchedule" style="margin: 0; color: var(--muted); font-size: 0.95rem; font-family: monospace;"></div>
         </div>
 
         <div id="planChartContainer" style="width: 100%; min-height: 350px; margin-top: 1.5rem; position: relative;"></div>
@@ -1536,18 +1535,42 @@
     }
 
     // Formatera resultat
-    const buildupText = `Uppbyggnad: ${bestN} st ${drink.size} till ${targetTime} (~${finalPromilleAtTarget.toFixed(2)}‰).`;
-    const maintenanceText = `Underhåll: ${maintenanceCount} st extra drycker till ${endTime || targetTime} (minut-check till mål, därefter vänta 20 min).`;
+    const buildupText = `${bestN} st ${drink.size} till ${targetTime} (~${finalPromilleAtTarget.toFixed(2)}‰).`;
+    const maintenanceText = `${maintenanceCount} st ${drink.size} till ${endTime || targetTime}`;
 
-    const scheduleStr = drinkTimes.sort((a, b) => a - b).map((min, idx) => {
-      const timeStr = minutesToTimeStr(startMin, min);
-      const phase = min <= buildupMinutes ? 'Uppbyggnad' : 'Underhåll';
-      return `Dryck ${idx + 1} (${phase}): kl ${timeStr}`;
-    }).join('\n');
+    const sortedTimes = drinkTimes.sort((a, b) => a - b);
+    const buildupTimes = sortedTimes.filter(min => min <= buildupMinutes);
+    const maintenanceTimes = sortedTimes.filter(min => min > buildupMinutes);
+
+    const drinkTypeSelect = document.getElementById('planDrinkType');
+    const drinkTypeName = drinkTypeSelect.options[drinkTypeSelect.selectedIndex].text;
+
+    const buildupHtml = buildupTimes.map((min, idx) => {
+      const roundedMin = Math.round(min);
+      const timeStr = minutesToTimeStr(startMin, roundedMin);
+      return `<div style="margin-bottom: 0.25rem;">${drinkTypeName} ${idx + 1} (${drink.volume}ml, ${drink.percent}%): kl ${timeStr}</div>`;
+    }).join('');
+
+    const maintenanceHtml = maintenanceTimes.map((min, idx) => {
+      const roundedMin = Math.round(min);
+      const timeStr = minutesToTimeStr(startMin, roundedMin);
+      const drinkNum = buildupTimes.length + idx + 1;
+      return `<div style="margin-bottom: 0.25rem;">${drinkTypeName} ${drinkNum} (${drink.volume}ml, ${drink.percent}%): kl ${timeStr}</div>`;
+    }).join('');
 
     document.getElementById('planBuildupText').textContent = buildupText;
     document.getElementById('planMaintenanceText').textContent = maintenanceText;
-    document.getElementById('planSchedule').textContent = scheduleStr;
+    document.getElementById('planBuildupSchedule').innerHTML = buildupHtml;
+
+    const kroekSection = document.getElementById('planKrökSection');
+    const planKrökSchedule = document.getElementById('planKrökSchedule');
+    if (maintenanceTimes.length > 0) {
+      kroekSection.style.display = 'block';
+      planKrökSchedule.innerHTML = maintenanceHtml;
+    } else {
+      kroekSection.style.display = 'none';
+    }
+
     document.getElementById('planResult').style.display = 'block';
 
     // Rita grafen för planen med drinkTimes-arrayen
