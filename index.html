@@ -1514,14 +1514,14 @@
       return;
     }
 
-    // Steg 2: Underhållsfas (proaktiv kontroll var 3:e minut med 0.05‰ säkerhetsmarginal)
+    // Steg 2: Underhållsfas (proaktiv kontroll var 15:e minut med 10% säkerhetsmarginal)
     let drinkTimes = [...bestDrinkTimes];
     let maintenanceCount = 0;
 
     if (totalMinutes > buildupMinutes) {
-      const checkStart = Math.round(buildupMinutes) + 3;
-      const margin = 0.05;
-      for (let m = checkStart; m <= totalMinutes; m += 3) {
+      const checkStart = Math.round(buildupMinutes) + 15;
+      const margin = targetPromille * 0.10;
+      for (let m = checkStart; m <= totalMinutes; m += 15) {
         const promilleAtM = getTotalPromilleAtMinute(drinkTimes, m);
         if (promilleAtM <= (targetPromille + margin)) {
           drinkTimes.push(m);
@@ -1532,7 +1532,7 @@
 
     // Formatera resultat
     const buildupText = `Uppbyggnad: ${bestN} st ${drink.size} till ${targetTime} (~${finalPromilleAtTarget.toFixed(2)}‰).`;
-    const maintenanceText = `Underhåll: ${maintenanceCount} st extra drycker till ${endTime || targetTime} (proaktivt vid mål + 0.05‰).`;
+    const maintenanceText = `Underhåll: ${maintenanceCount} st extra drycker till ${endTime || targetTime} (proaktivt var 15:e minut vid mål + 10% marginal).`;
 
     const scheduleStr = drinkTimes.sort((a, b) => a - b).map((min, idx) => {
       const timeStr = minutesToTimeStr(startMin, min);
