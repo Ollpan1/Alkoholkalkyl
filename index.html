@@ -1509,25 +1509,35 @@
       return;
     }
 
-    // Steg 2: Underhållsfas (proaktiv kontroll var 15:e minut med 10% säkerhetsmarginal)
+    // Steg 2: Underhållsfas (minut-check direkt efter uppbyggnad tills mål, därefter vänta 20 min och minut-checka igen)
     let drinkTimes = [...bestDrinkTimes];
     let maintenanceCount = 0;
 
     if (totalMinutes > buildupMinutes) {
-      const checkStart = Math.round(buildupMinutes) + 15;
-      const margin = targetPromille * 0.10;
-      for (let m = checkStart; m <= totalMinutes; m += 15) {
-        const promilleAtM = getTotalPromilleAtMinute(drinkTimes, m);
-        if (promilleAtM <= (targetPromille + margin)) {
-          drinkTimes.push(m);
-          maintenanceCount++;
+      let currentMinute = Math.round(buildupMinutes);
+
+      while (currentMinute <= totalMinutes) {
+        let addedDrink = false;
+        for (let m = currentMinute; m <= totalMinutes; m++) {
+          const promilleAtM = getTotalPromilleAtMinute(drinkTimes, m);
+          if (promilleAtM <= targetPromille) {
+            drinkTimes.push(m);
+            maintenanceCount++;
+            currentMinute = m + 20; // Vänta 20 minuter innan nästa minut-check
+            addedDrink = true;
+            break;
+          }
+        }
+
+        if (!addedDrink) {
+          break;
         }
       }
     }
 
     // Formatera resultat
     const buildupText = `Uppbyggnad: ${bestN} st ${drink.size} till ${targetTime} (~${finalPromilleAtTarget.toFixed(2)}‰).`;
-    const maintenanceText = `Underhåll: ${maintenanceCount} st extra drycker till ${endTime || targetTime} (proaktivt var 15:e minut vid mål + 10% marginal).`;
+    const maintenanceText = `Underhåll: ${maintenanceCount} st extra drycker till ${endTime || targetTime} (minut-check till mål, därefter vänta 20 min).`;
 
     const scheduleStr = drinkTimes.sort((a, b) => a - b).map((min, idx) => {
       const timeStr = minutesToTimeStr(startMin, min);
