@@ -960,14 +960,7 @@
 
       drinks.forEach(drink => {
         const drinkTime = new Date(drink.time);
-        let hoursSinceDrink = (timePoint - drinkTime) / (1000 * 60 * 60);
-        const nowHours = startTime.getHours();
-        const drinkHours = drinkTime.getHours();
-
-        if (nowHours >= 17 && drinkHours < nowHours) {
-          const drinkTimeCorrected = new Date(drinkTime.getTime() + 24 * 60 * 60 * 1000);
-          hoursSinceDrink = (timePoint - drinkTimeCorrected) / (1000 * 60 * 60);
-        }
+        const hoursSinceDrink = (timePoint - drinkTime) / (1000 * 60 * 60);
 
         if (hoursSinceDrink >= 0) {
           const gramsAlcohol = ((drink.volume * drink.alcoholContent) / 100) * 0.789;
