@@ -693,20 +693,31 @@
     addButton.style.backgroundColor = apkColor;
   }
 
+  let heightWarned = false;
+
   function checkHeight() {
     const heightInput = document.getElementById('height');
     const genderSelect = document.getElementById('gender');
     const msgEl = document.getElementById('heightMessage');
-    if (!heightInput || !msgEl) return;
+    if (!heightInput) return;
     const h = parseFloat(heightInput.value);
     const gender = genderSelect ? genderSelect.value : 'male';
 
     if (gender === 'male' && !isNaN(h) && h >= 100 && h < 180) {
-      msgEl.textContent = '⚠️ Dvärg';
-      msgEl.style.display = 'block';
+      if (msgEl) {
+        msgEl.textContent = '';
+        msgEl.style.display = 'none';
+      }
+      if (!heightWarned) {
+        showModal('DVÄRG');
+        heightWarned = true;
+      }
     } else {
-      msgEl.textContent = '';
-      msgEl.style.display = 'none';
+      heightWarned = false;
+      if (msgEl) {
+        msgEl.textContent = '';
+        msgEl.style.display = 'none';
+      }
     }
   }
 
