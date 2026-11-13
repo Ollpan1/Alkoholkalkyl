@@ -577,6 +577,7 @@
 
     document.getElementById('gender').addEventListener('change', () => {
       saveSettings();
+      checkHeight();
       updateChart();
     });
 
@@ -694,10 +695,13 @@
 
   function checkHeight() {
     const heightInput = document.getElementById('height');
+    const genderSelect = document.getElementById('gender');
     const msgEl = document.getElementById('heightMessage');
     if (!heightInput || !msgEl) return;
     const h = parseFloat(heightInput.value);
-    if (!isNaN(h) && h >= 100 && h < 175) {
+    const gender = genderSelect ? genderSelect.value : 'male';
+
+    if (gender === 'male' && !isNaN(h) && h >= 100 && h < 180) {
       msgEl.textContent = '⚠️ Dvärg';
       msgEl.style.display = 'block';
     } else {
