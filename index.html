@@ -1156,9 +1156,11 @@
     // Beräkna pengar spenderade
     let totalMoney = 0;
     drinks.forEach(drink => {
-      const drinkData = drinksDatabase.find(d => d.namn === drink.namn);
+      const drinkData = drinksDatabase.find(d => d.namn && drink.namn && d.namn.toLowerCase() === drink.namn.toLowerCase());
       if (drinkData && drinkData.pris) {
         totalMoney += drinkData.pris;
+      } else if (drink.pris) {
+        totalMoney += drink.pris;
       }
     });
 
@@ -1168,7 +1170,7 @@
       if (el) el.textContent = val;
     };
     setElText('totalDrinksValue', drinks.length);
-    setElText('totalMoneyValue', totalMoney + ' kr');
+    setElText('totalMoneyValue', totalMoney.toFixed(1) + ' kr');
     setElText('peakValue', peakValueStr);
 
     const peakEl = document.getElementById('peakValue');
@@ -2036,7 +2038,7 @@
   <!-- Custom Modal Dialog -->
   <div id="customModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center; padding: 16px; backdrop-filter: blur(2px);">
     <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; max-width: 400px; width: 100%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
-      <div style="font-size: 3rem; margin-bottom: 0.75rem;">⚠️</div>
+      <img src="Designer.png" alt="Varning" style="width: 80px; height: 80px; object-fit: contain; margin: 0 auto 0.75rem auto; display: block; border-radius: 8px;">
       <h3 style="margin: 0 0 0.75rem 0; color: var(--fg); font-size: 1.35rem; font-weight: 600;">Varning</h3>
       <p id="modalMessage" style="margin: 0 0 1.5rem 0; color: var(--muted); font-size: 1.05rem; line-height: 1.5;"></p>
       <button class="btn-primary" onclick="closeCustomModal()" style="width: 100%; padding: 0.85rem; font-size: 1rem;">OK</button>
