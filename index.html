@@ -512,9 +512,9 @@
   // Constants
   const BETA = 0.15; // Elimination rate ‰/h
   const K_VALUES = {
-    hungry: 3,
-    full: 1.5,
-    blom: 1
+    hungry: 2,
+    full: 1,
+    blom: 0.5
   };
   const REDUCTION_FACTOR = {
     male: 0.7,
@@ -527,7 +527,7 @@
 
     const F = 0.944;
     const Vd = weight * r; // L
-    const Vmax = 6.31; // g/h
+    const Vmax = 5.31; // g/h
     const Km = 0.0849; // g/L
 
     let Ag = gramsAlcohol; // g kvar i magsäck
@@ -889,7 +889,7 @@
   function simulateTimeline(drinks, weight, r, ka, startTimestamp, totalMinutes) {
     const F = 0.944;
     const Vd = weight * r;
-    const Vmax = 6.31;
+    const Vmax = 5.31;
     const Km = 0.0849;
     const dt = 1 / 60; // 1 minut i timmar
 
