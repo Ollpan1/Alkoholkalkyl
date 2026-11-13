@@ -609,10 +609,10 @@
   let drinksDatabase = [];
   async function loadDrinksDatabase() {
     try {
-      const response = await fetch('apk.json');
+      const response = await fetch('systembolaget.json');
       drinksDatabase = await response.json();
     } catch (e) {
-      console.log('Could not load apk.json');
+      console.log('Could not load systembolaget.json');
     }
   }
 
