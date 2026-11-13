@@ -502,6 +502,8 @@
           <h4 style="margin: 0 0 0.5rem 0; color: var(--fg);">Schema</h4>
           <p id="planSchedule" style="margin: 0; color: var(--muted); font-size: 0.95rem; font-family: monospace;"></p>
         </div>
+
+        <div id="planChartContainer" style="width: 100%; min-height: 350px; margin-top: 1.5rem; position: relative;"></div>
       </div>
     </div>
   </div>
@@ -895,13 +897,7 @@
     const drinkEvents = [];
     drinks.forEach(drink => {
       const drinkTime = new Date(drink.time).getTime();
-      let diffMinutes = Math.round((drinkTime - startTimestamp) / (1000 * 60));
-
-      const now = new Date(startTimestamp);
-      const drinkDate = new Date(drink.time);
-      if (now.getHours() >= 17 && drinkDate.getHours() < now.getHours()) {
-        diffMinutes += 24 * 60;
-      }
+      const diffMinutes = Math.round((drinkTime - startTimestamp) / (1000 * 60));
 
       if (diffMinutes >= 0 && diffMinutes <= totalMinutes) {
         const grams = ((drink.volume * drink.alcoholContent) / 100) * 0.789;
@@ -944,33 +940,29 @@
     return promilleCurve;
   }
 
-  // Calculate BAC and extract data points for the graph from curvePoints (or first 8 hours)
-  function calculatePromille() {
+  // Gemensam promilleberäkning för en given dryckeslista och starttid
+  function calculatePromilleForDrinks(drinks, startTime, durationMinutes = 480, intervalMinutes = 15) {
     const weight = parseFloat(document.getElementById('weight').value) || 70;
     const gender = document.getElementById('gender').value;
     const hunger = document.getElementById('hunger').value;
     const r = REDUCTION_FACTOR[gender];
     const k_a = K_VALUES[hunger];
 
-    const drinks = getDrinks();
-    const now = new Date();
-
     if (drinks.length === 0) {
-      return { dataPoints: new Array(33).fill(0), timePoints: [] };
+      return { dataPoints: new Array(Math.floor(durationMinutes / intervalMinutes) + 1).fill(0), timePoints: [] };
     }
 
-    // Bygg samma exakta curvePoints som används för peak-beräkningen (första 8 timmarna = 480 min)
     const dataPoints = [];
     const timePoints = [];
 
-    for (let minutesFromStart = 0; minutesFromStart <= 8 * 60; minutesFromStart += 15) {
-      const timePoint = new Date(now.getTime() + minutesFromStart * 60 * 1000);
+    for (let minutesFromStart = 0; minutesFromStart <= durationMinutes; minutesFromStart += intervalMinutes) {
+      const timePoint = new Date(startTime.getTime() + minutesFromStart * 60 * 1000);
       let totalPromille = 0;
 
       drinks.forEach(drink => {
         const drinkTime = new Date(drink.time);
         let hoursSinceDrink = (timePoint - drinkTime) / (1000 * 60 * 60);
-        const nowHours = now.getHours();
+        const nowHours = startTime.getHours();
         const drinkHours = drinkTime.getHours();
 
         if (nowHours >= 17 && drinkHours < nowHours) {
@@ -992,6 +984,31 @@
     return { dataPoints, timePoints };
   }
 
+  // Skapa dryckeslista från planerarens schema
+  function getPlanDrinks(schedule, startMin, drink) {
+    const startDate = new Date();
+    startDate.setHours(
+      Math.floor(startMin / 60),
+      startMin % 60,
+      0,
+      0
+    );
+
+    return schedule.map((minutesFromStart, index) => ({
+      id: index + 1,
+      volume: drink.volume,
+      alcoholContent: drink.percent,
+      time: new Date(
+        startDate.getTime() + minutesFromStart * 60 * 1000
+      ).toISOString()
+    }));
+  }
+
+  // Calculate BAC and extract data points for the graph from curvePoints (or first 8 hours)
+  function calculatePromille() {
+    return calculatePromilleForDrinks(getDrinks(), new Date(), 8 * 60, 15);
+  }
+
   // Update chart
   function updateChart() {
     const { dataPoints, timePoints } = calculatePromille();
@@ -1004,45 +1021,23 @@
     let timeAt00 = '-';
     let timeAt00Date = null;
     let peakValueStr = '-';
-    const weight = parseFloat(document.getElementById('weight').value) || 70;
-    const gender = document.getElementById('gender').value;
-    const hunger = document.getElementById('hunger').value;
-    const r = REDUCTION_FACTOR[gender];
-    const k_a = K_VALUES[hunger];
     const drinks = getDrinks();
+
+    const { dataPoints: fullDataPoints, timePoints: fullTimePoints } = calculatePromilleForDrinks(drinks, now, 24 * 60, 5);
 
     let peakPromille = 0;
     let peakMinute = 0;
     const curvePoints = [];
 
-    for (let minutesFromStart = 0; minutesFromStart <= 24 * 60; minutesFromStart += 5) {
+    fullDataPoints.forEach((promille, idx) => {
+      const minutesFromStart = idx * 5;
       const timePoint = new Date(now.getTime() + minutesFromStart * 60 * 1000);
-      let totalPromille = 0;
-
-      drinks.forEach(drink => {
-        const drinkTime = new Date(drink.time);
-        let hoursSinceDrink = (timePoint - drinkTime) / (1000 * 60 * 60);
-        const nowHours = now.getHours();
-        const drinkHours = drinkTime.getHours();
-
-        if (nowHours >= 17 && drinkHours < nowHours) {
-          const drinkTimeCorrected = new Date(drinkTime.getTime() + 24 * 60 * 60 * 1000);
-          hoursSinceDrink = (timePoint - drinkTimeCorrected) / (1000 * 60 * 60);
-        }
-
-        if (hoursSinceDrink >= 0) {
-          const gramsAlcohol = ((drink.volume * drink.alcoholContent) / 100) * 0.789;
-          const minutesSinceDrink = hoursSinceDrink * 60;
-          totalPromille += getDrinkConcentrationAtMinute(gramsAlcohol, k_a, weight, r, minutesSinceDrink);
-        }
-      });
-
-      curvePoints.push({ minutes: minutesFromStart, promille: totalPromille, time: timePoint });
-      if (totalPromille > peakPromille) {
-        peakPromille = totalPromille;
+      curvePoints.push({ minutes: minutesFromStart, promille, time: timePoint });
+      if (promille > peakPromille) {
+        peakPromille = promille;
         peakMinute = minutesFromStart;
       }
-    }
+    });
 
     curvePoints.forEach(pt => {
       if (pt.minutes > peakMinute) {
@@ -1544,12 +1539,14 @@
     document.getElementById('planMaintenanceText').textContent = maintenanceText;
     document.getElementById('planSchedule').textContent = scheduleStr;
     document.getElementById('planResult').style.display = 'block';
+
+    // Rita grafen för planen med drinkTimes-arrayen
+    drawPlanChart(startMin, buildupMinutes, totalMinutes - buildupMinutes, drinkTimes, weight, r, k_a, gramsPerDrink, drinkType, targetPromille, drink);
   }
 
   // Initialisera dryckformat
   // Rita promillekurva för Promilleplaneraren
-  function drawPlanChart(startMin, buildupMinutes, maintenanceMinutes, schedule, weight, r, k_a, gramsPerDrink, drinkType, targetPromille) {
-
+  function drawPlanChart(startMin, buildupMinutes, maintenanceMinutes, schedule, weight, r, k_a, gramsPerDrink, drinkType, targetPromille, drink) {
     let chartContainer = document.getElementById('planChartContainer');
     if (!chartContainer) {
       chartContainer = document.createElement('div');
@@ -1566,6 +1563,10 @@
 
     const dpr = window.devicePixelRatio || 1;
     const rect = chartContainer.getBoundingClientRect();
+    if (rect.width === 0) {
+      setTimeout(() => drawPlanChart(startMin, buildupMinutes, maintenanceMinutes, schedule, weight, r, k_a, gramsPerDrink, drinkType, targetPromille, drink), 50);
+      return;
+    }
     canvas.width = rect.width * dpr;
     canvas.height = 350 * dpr;
     canvas.style.width = rect.width + 'px';
@@ -1584,43 +1585,41 @@
     const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
     const mutedColor = getComputedStyle(document.documentElement).getPropertyValue('--muted').trim();
 
-    // Bygg en enhetlig dryckeslista för simulateTimeline
-    const planDrinksList = schedule.map(drinkMin => ({
-      time: new Date(startMin * 60 * 1000 + drinkMin * 60 * 1000).toISOString(),
-      volume: drink.volume,
-      alcoholContent: drink.percent
-    }));
+    const planDrinks = getPlanDrinks(schedule, startMin, drink);
+    const planStartDate = new Date();
+    planStartDate.setHours(
+      Math.floor(startMin / 60),
+      startMin % 60,
+      0,
+      0
+    );
 
-    // Kör en enda gemensam simulering för hela tidsförloppet (24 timmar från startMin)
-    const totalPlanSimMinutes = 24 * 60;
-    const planFullCurve = simulateTimeline(planDrinksList, weight, r, k_a, startMin * 60 * 1000, totalPlanSimMinutes);
-
-    // Beräkna promille från starttid till sluttid + 3 timmar för att visa avtarningen i grafen
-    const dataPoints = [];
-    const timePoints = [];
     const totalDurationMinutes = buildupMinutes + maintenanceMinutes + (3 * 60);
+    const { dataPoints, timePoints } = calculatePromilleForDrinks(
+      planDrinks,
+      planStartDate,
+      totalDurationMinutes,
+      15
+    );
 
-    for (let m = 0; m <= totalDurationMinutes; m += 15) {
-      dataPoints.push(Math.max(0, planFullCurve[m] || 0));
+    const { dataPoints: fullPlanData, timePoints: fullPlanTimes } = calculatePromilleForDrinks(
+      planDrinks,
+      planStartDate,
+      24 * 60,
+      5
+    );
 
-      const totalMinutes = startMin + m;
-      const timeHours = Math.floor((totalMinutes % (24 * 60)) / 60);
-      const timeMins = Math.floor(totalMinutes % 60);
-      timePoints.push(String(timeHours).padStart(2, '0') + ':' + String(timeMins).padStart(2, '0'));
-    }
+    console.log("Plan drinks:", planDrinks);
+    console.log("Plan curve dataPoints:", dataPoints);
 
-    // Beräkna när promillen når 0.2‰ och 0.0‰ efter sluttiden
     let timeAt02 = 'okänd';
     let timeAt00 = 'okänd';
-
     const sluttidMinuteIndex = Math.round(buildupMinutes + maintenanceMinutes);
+    const sluttidIdxInFull = Math.round(sluttidMinuteIndex / 5);
 
-    for (let m = sluttidMinuteIndex; m < planFullCurve.length; m += 5) {
-      const val = planFullCurve[m] || 0;
-      const totalMinutes = startMin + m;
-      const timeHours = Math.floor((totalMinutes % (24 * 60)) / 60);
-      const timeMins = Math.floor(totalMinutes % 60);
-      const timeStr = String(timeHours).padStart(2, '0') + ':' + String(timeMins).padStart(2, '0');
+    for (let m = sluttidIdxInFull; m < fullPlanData.length; m++) {
+      const val = fullPlanData[m] || 0;
+      const timeStr = fullPlanTimes[m];
 
       if (timeAt02 === 'okänd' && val <= 0.2) {
         timeAt02 = timeStr;
