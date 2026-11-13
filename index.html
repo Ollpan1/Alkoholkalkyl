@@ -728,11 +728,34 @@
     const [hours, minutes] = drinkTime.split(':');
     const drinkDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), parseInt(hours), parseInt(minutes));
 
+    let drinkTyp = window.lastSelectedDrinkTyp || 'Öl';
+    let drinkPris = 0;
+    window.lastSelectedDrinkTyp = null;
+
+    if (drinkName) {
+      const match = drinksDatabase.find(d => d.namn && d.namn.toLowerCase().includes(drinkName.toLowerCase()));
+      if (match) {
+        if (match.typ) drinkTyp = match.typ;
+        if (match.pris) drinkPris = match.pris;
+      } else {
+        const lowerName = drinkName.toLowerCase();
+        if (lowerName.includes('vin') || lowerName.includes('rödvin') || lowerName.includes('vitt') || lowerName.includes('champagne')) drinkTyp = 'Vin';
+        else if (lowerName.includes('cider') || lowerName.includes('blanddryck')) drinkTyp = 'Cider & blanddrycker';
+        else if (lowerName.includes('vodka') || lowerName.includes('whisky') || lowerName.includes('gin') || lowerName.includes('rum') || lowerName.includes('sprit') || lowerName.includes('konjak')) drinkTyp = 'Sprit';
+        else if (alcoholContent <= 2.2) drinkTyp = 'Alkoholfritt';
+        else if (alcoholContent <= 7) drinkTyp = 'Öl';
+        else if (alcoholContent <= 15) drinkTyp = 'Vin';
+        else drinkTyp = 'Sprit';
+      }
+    }
+
     drinks.push({
       id: Date.now(),
       namn: drinkName,
+      typ: drinkTyp,
       volume,
       alcoholContent,
+      pris: drinkPris,
       time: drinkDate.toISOString(),
     });
 
@@ -782,16 +805,28 @@
       const timeString = drinkDate.toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit' });
 
       // Beräkna ml ren alkohol
-      const mlAlcohol = (drink.volume * drink.alcoholContent) / 100;
+      const alc = drink.alcoholContent !== undefined ? drink.alcoholContent : (drink.procent !== undefined ? drink.procent : 5);
+      const mlAlcohol = (drink.volume * alc) / 100;
       // Omvandla till gram (alkoholens densitet ≈ 0,789 g/ml)
       const gramsAlcohol = mlAlcohol * 0.789;
+
+      let drinkApk = null;
+      const match = drinksDatabase.find(d => d.namn && drink.namn && d.namn.toLowerCase() === drink.namn.toLowerCase());
+      if (match && match.apk) {
+        drinkApk = match.apk;
+      } else if (drink.pris && drink.pris > 0) {
+        drinkApk = parseFloat((mlAlcohol / drink.pris).toFixed(2));
+      }
+      const nameColor = getApkColor(drinkApk);
 
       const item = document.createElement('div');
       item.className = 'drink-item';
       item.innerHTML = `
         <div class="drink-info">
-          <div class="drink-time">${timeString}</div>
-          <div class="drink-details">${drink.volume}ml @ ${drink.alcoholContent}% = ${gramsAlcohol.toFixed(1)}g alkohol</div>
+          <div style="font-weight: 600; font-size: 1rem; margin-bottom: 0.2rem;">
+            <span style="color: ${nameColor};">${drink.namn || 'Dryck'}</span> <span style="font-weight: normal; font-size: 0.85rem; color: var(--muted);">${timeString}</span>
+          </div>
+          <div class="drink-details">${drink.pris ? drink.pris + ' kr | ' : ''}${drink.volume} ml (${alc}%)</div>
         </div>
         <div class="drink-actions">
           <button class="btn-danger" onclick="removeDrink(${drink.id})">Ta bort</button>
