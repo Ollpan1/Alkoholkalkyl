@@ -1005,7 +1005,7 @@
     updateLiveTracker();
   }
 
-  // Uppdatera live-promille-tracker
+  // Uppdatera live-promille-tracker med gemensam tidslinjesimulering
   function updateLiveTracker() {
     const drinks = getDrinks();
     const weight = parseFloat(document.getElementById('weight').value) || 70;
@@ -1018,16 +1018,15 @@
     let currentPromille = 0;
 
     if (drinks.length > 0) {
+      let simStart = now.getTime();
       drinks.forEach(drink => {
-        const drinkTime = new Date(drink.time);
-        const hoursSinceDrink = (now - drinkTime) / (1000 * 60 * 60);
-
-        if (hoursSinceDrink >= 0) {
-          const gramsAlcohol = ((drink.volume * drink.alcoholContent) / 100) * 0.789;
-          const minutesSinceDrink = hoursSinceDrink * 60;
-          currentPromille += getDrinkConcentrationAtMinute(gramsAlcohol, k_a, weight, r, minutesSinceDrink);
-        }
+        const t = new Date(drink.time).getTime();
+        if (t < simStart) simStart = t;
       });
+
+      const totalMinutes = Math.max(0, Math.round((now.getTime() - simStart) / (1000 * 60)));
+      const curve = simulateTimeline(drinks, weight, r, k_a, simStart, totalMinutes);
+      currentPromille = curve.length > 0 ? curve[curve.length - 1] : 0;
     }
 
     const liveValEl = document.getElementById('livePromilleValue');
@@ -1061,61 +1060,68 @@
     }
   }
 
-  // Tidslinjesimulering med Michaelis-Menten och separata magar per dryck, men gemensam lever (blod)
+  // Tidslinjesimulering med Michaelis-Menten och separata magar per dryck, men gemensam lever och blodpool
   function simulateTimeline(drinks, weight, r, ka, startTimestamp, totalMinutes) {
     const F = 0.944;
-    const Vd = weight * r;
-    const Vmax = 5.31;
-    const Km = 0.0849;
+    const Vd = weight * r; // L
+    const Vmax = 5.31; // g/h
+    const Km = 0.0849; // g/L
     const dt = 1 / 60; // 1 minut i timmar
 
-    const drinkEvents = [];
+    let stomachs = [];
     drinks.forEach(drink => {
       const drinkTime = new Date(drink.time).getTime();
       const diffMinutes = Math.round((drinkTime - startTimestamp) / (1000 * 60));
+      let Ag = ((drink.volume * drink.alcoholContent) / 100) * 0.789;
+      let activeMin = diffMinutes;
 
-      if (diffMinutes >= 0 && diffMinutes <= totalMinutes) {
-        const grams = ((drink.volume * drink.alcoholContent) / 100) * 0.789;
-        drinkEvents.push({ minute: diffMinutes, grams: grams });
+      // Om drycken intogs före startTimestamp, simulera upptaget fram till minut 0
+      if (activeMin < 0) {
+        for (let m = activeMin; m < 0; m++) {
+          if (Ag > 0) {
+            const dAg = ka * Ag * dt;
+            Ag = Math.max(0, Ag - dAg);
+          }
+        }
+        activeMin = 0;
+      }
+
+      if (activeMin <= totalMinutes) {
+        stomachs.push({ activeMinute: activeMin, Ag: Ag });
       }
     });
 
-    // Varje dryck har sin egen magsäck (Ag)
-    let stomachs = drinkEvents.map(event => ({
-      activeMinute: event.minute,
-      Ag: event.grams
-    }));
-
-    let C = 0; // Gemensam promille i blodet
+    let C = 0; // Gemensam promille i blodet (g/L)
     const promilleCurve = [];
 
     for (let m = 0; m <= totalMinutes; m++) {
-      let totalAbsorption = 0;
+      let totalAbsorptionGrams = 0;
 
       stomachs.forEach(stomach => {
         if (m >= stomach.activeMinute && stomach.Ag > 0) {
           const dAg = ka * stomach.Ag * dt;
           stomach.Ag = Math.max(0, stomach.Ag - dAg);
-          totalAbsorption += F * dAg;
+          totalAbsorptionGrams += F * dAg;
         }
       });
 
-      const dC_absorption = totalAbsorption / Vd;
+      const dC_absorption = totalAbsorptionGrams / Vd;
 
-      let eliminationRate = 0;
+      let eliminationRate = 0; // g/h
       if (C > 0) {
         eliminationRate = (Vmax * C) / (Km + C);
       }
-      const dElimination = eliminationRate * dt;
+      const gramsEliminated = eliminationRate * dt;
+      const dC_elimination = gramsEliminated / Vd;
 
-      C = Math.max(0, C + dC_absorption - dElimination);
+      C = Math.max(0, C + dC_absorption - dC_elimination);
       promilleCurve.push(C);
     }
 
     return promilleCurve;
   }
 
-  // Gemensam promilleberäkning för en given dryckeslista och starttid
+  // Gemensam promilleberäkning med tidslinjesimulering för gemensam lever/blodpool
   function calculatePromilleForDrinks(drinks, startTime, durationMinutes = 480, intervalMinutes = 15) {
     const weight = parseFloat(document.getElementById('weight').value) || 70;
     const gender = document.getElementById('gender').value;
@@ -1127,26 +1133,33 @@
       return { dataPoints: new Array(Math.floor(durationMinutes / intervalMinutes) + 1).fill(0), timePoints: [] };
     }
 
+    let simStart = startTime.getTime();
+    drinks.forEach(drink => {
+      const t = new Date(drink.time).getTime();
+      if (t < simStart) simStart = t;
+    });
+
+    const endTime = startTime.getTime() + durationMinutes * 60 * 1000;
+    const totalSimMinutes = Math.round((endTime - simStart) / (1000 * 60));
+
+    const fullCurve = simulateTimeline(drinks, weight, r, k_a, simStart, totalSimMinutes);
+
     const dataPoints = [];
     const timePoints = [];
 
     for (let minutesFromStart = 0; minutesFromStart <= durationMinutes; minutesFromStart += intervalMinutes) {
-      const timePoint = new Date(startTime.getTime() + minutesFromStart * 60 * 1000);
-      let totalPromille = 0;
+      const targetTime = new Date(startTime.getTime() + minutesFromStart * 60 * 1000);
+      const simMinuteOffset = Math.round((targetTime.getTime() - simStart) / (1000 * 60));
 
-      drinks.forEach(drink => {
-        const drinkTime = new Date(drink.time);
-        const hoursSinceDrink = (timePoint - drinkTime) / (1000 * 60 * 60);
+      let promille = 0;
+      if (simMinuteOffset >= 0 && simMinuteOffset < fullCurve.length) {
+        promille = fullCurve[simMinuteOffset];
+      } else if (simMinuteOffset >= fullCurve.length && fullCurve.length > 0) {
+        promille = fullCurve[fullCurve.length - 1];
+      }
 
-        if (hoursSinceDrink >= 0) {
-          const gramsAlcohol = ((drink.volume * drink.alcoholContent) / 100) * 0.789;
-          const minutesSinceDrink = hoursSinceDrink * 60;
-          totalPromille += getDrinkConcentrationAtMinute(gramsAlcohol, k_a, weight, r, minutesSinceDrink);
-        }
-      });
-
-      dataPoints.push(totalPromille);
-      timePoints.push(timePoint.toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit' }));
+      dataPoints.push(promille);
+      timePoints.push(targetTime.toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit' }));
     }
 
     return { dataPoints, timePoints };
@@ -1642,15 +1655,23 @@
 
     const gramsPerDrink = ((drink.volume * drink.percent) / 100) * 0.789;
 
+    const planStartDate = new Date();
+    planStartDate.setHours(
+      Math.floor(startMin / 60),
+      startMin % 60,
+      0,
+      0
+    );
+
     const getTotalPromilleAtMinute = (drinkTimes, currentMinute) => {
-      let total = 0;
-      drinkTimes.forEach(dt => {
-        const timeSince = currentMinute - dt;
-        if (timeSince >= 0) {
-          total += getDrinkConcentrationAtMinute(gramsPerDrink, k_a, weight, r, timeSince);
-        }
-      });
-      return total;
+      const testDrinks = drinkTimes.map((dt, idx) => ({
+        id: idx + 1,
+        volume: drink.volume,
+        alcoholContent: drink.percent,
+        time: new Date(planStartDate.getTime() + dt * 60 * 1000).toISOString()
+      }));
+      const curve = simulateTimeline(testDrinks, weight, r, k_a, planStartDate.getTime(), currentMinute);
+      return curve.length > 0 ? curve[curve.length - 1] : 0;
     };
 
     // Steg 1: Uppbyggnadsfas – testa n = 1, 2, 3... där tiderna är (i / n) * buildupMinutes
