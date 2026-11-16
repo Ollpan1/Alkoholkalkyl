@@ -389,6 +389,14 @@
   <!-- APK Statistics Section -->
   <div id="apkSection" class="form-section">
     <h2>Kvällens Sammanställning</h2>
+
+    <!-- Live Tracker -->
+    <div style="background: var(--accent-light); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; text-align: center; margin-bottom: 1.5rem;">
+      <div style="font-size: 0.95rem; color: var(--muted); margin-bottom: 0.25rem; font-weight: 500;">Nuvarande Promille (Live)</div>
+      <div style="font-size: 2.8rem; font-weight: bold; color: var(--accent);" id="livePromilleValue">0.00‰</div>
+      <div style="font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem;" id="livePromilleStatus">Helt nykter</div>
+    </div>
+
     <!-- Rad 1 -->
     <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; justify-content: space-around; text-align: center; margin-bottom: 1.5rem;">
       <div>
@@ -567,7 +575,11 @@
     setDefaultDrinkTime();
     loadDrinks();
     updateChart();
+    updateLiveTracker();
     updateDrinkOptions(); // Initialisera promilleplanerare-dropdowns
+
+    // Start live timer for promille tracker
+    setInterval(updateLiveTracker, 10000);
 
     // Update chart when settings change
     document.getElementById('weight').addEventListener('change', () => {
@@ -987,6 +999,64 @@
       } else {
         peakValueElement.textContent = '-';
         peakValueElement.style.color = 'var(--fg)';
+      }
+    }
+
+    updateLiveTracker();
+  }
+
+  // Uppdatera live-promille-tracker
+  function updateLiveTracker() {
+    const drinks = getDrinks();
+    const weight = parseFloat(document.getElementById('weight').value) || 70;
+    const gender = document.getElementById('gender').value;
+    const hunger = document.getElementById('hunger').value;
+    const r = REDUCTION_FACTOR[gender];
+    const k_a = K_VALUES[hunger];
+
+    const now = new Date();
+    let currentPromille = 0;
+
+    if (drinks.length > 0) {
+      drinks.forEach(drink => {
+        const drinkTime = new Date(drink.time);
+        const hoursSinceDrink = (now - drinkTime) / (1000 * 60 * 60);
+
+        if (hoursSinceDrink >= 0) {
+          const gramsAlcohol = ((drink.volume * drink.alcoholContent) / 100) * 0.789;
+          const minutesSinceDrink = hoursSinceDrink * 60;
+          currentPromille += getDrinkConcentrationAtMinute(gramsAlcohol, k_a, weight, r, minutesSinceDrink);
+        }
+      });
+    }
+
+    const liveValEl = document.getElementById('livePromilleValue');
+    const liveStatusEl = document.getElementById('livePromilleStatus');
+
+    if (liveValEl) {
+      liveValEl.textContent = `${currentPromille.toFixed(2)}‰`;
+      if (currentPromille <= 0.01) {
+        liveValEl.style.color = 'var(--muted)';
+      } else if (currentPromille < 0.6) {
+        liveValEl.style.color = '#d32f2f';
+      } else {
+        liveValEl.style.color = '#388e3c';
+      }
+    }
+
+    if (liveStatusEl) {
+      if (currentPromille <= 0.01) {
+        liveStatusEl.textContent = 'Helt nykter';
+      } else if (currentPromille < 0.2) {
+        liveStatusEl.textContent = 'Drick Mer!';
+      } else if (currentPromille < 0.5) {
+        liveStatusEl.textContent = 'Kom Igen!';
+      } else if (currentPromille < 0.8) {
+        liveStatusEl.textContent = 'Nära Nu!';
+      } else if (currentPromille < 2.0) {
+        liveStatusEl.textContent = 'Nu Lever Vi!!!';
+      } else {
+        liveStatusEl.textContent = 'Död?!';
       }
     }
   }
