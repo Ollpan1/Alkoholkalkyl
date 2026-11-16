@@ -1564,22 +1564,40 @@
       handleInteraction(e.clientX, e.clientY);
     });
 
+    canvas.addEventListener('click', (e) => {
+      handleInteraction(e.clientX, e.clientY);
+    });
+
     canvas.addEventListener('mouseleave', () => {
       hoveredIndex = -1;
       updateChart();
     });
 
     // Touch events
-    canvas.addEventListener('touchmove', (e) => {
+    let touchTooltipTimer = null;
+
+    canvas.addEventListener('touchstart', (e) => {
+      e.preventDefault();
       if (e.touches.length > 0) {
         const touch = e.touches[0];
         handleInteraction(touch.clientX, touch.clientY);
       }
-    });
+    }, { passive: false });
+
+    canvas.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      if (e.touches.length > 0) {
+        const touch = e.touches[0];
+        handleInteraction(touch.clientX, touch.clientY);
+      }
+    }, { passive: false });
 
     canvas.addEventListener('touchend', () => {
-      hoveredIndex = -1;
-      updateChart();
+      if (touchTooltipTimer) clearTimeout(touchTooltipTimer);
+      touchTooltipTimer = setTimeout(() => {
+        hoveredIndex = -1;
+        updateChart();
+      }, 3000);
     });
   }
 
