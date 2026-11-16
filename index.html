@@ -733,13 +733,32 @@
     }
   }
 
+  // Säker lagring med minnesfallback för webbläsare som blockerar localStorage (t.ex. Safari webb/privat läge)
+  const memoryStore = {};
+  const storage = {
+    getItem(key) {
+      try {
+        return localStorage.getItem(key);
+      } catch (e) {
+        return memoryStore[key] !== undefined ? memoryStore[key] : null;
+      }
+    },
+    setItem(key, value) {
+      try {
+        localStorage.setItem(key, value);
+      } catch (e) {
+        memoryStore[key] = String(value);
+      }
+    }
+  };
+
   // Load settings from localStorage
   function loadSettings() {
     try {
-      const weight = localStorage.getItem('weight') || '70';
-      const height = localStorage.getItem('height') || '';
-      const gender = localStorage.getItem('gender') || 'male';
-      const hunger = localStorage.getItem('hunger') || 'full';
+      const weight = storage.getItem('weight') || '70';
+      const height = storage.getItem('height') || '';
+      const gender = storage.getItem('gender') || 'male';
+      const hunger = storage.getItem('hunger') || 'full';
       document.getElementById('weight').value = weight;
       const heightEl = document.getElementById('height');
       if (heightEl) {
@@ -749,22 +768,22 @@
       document.getElementById('gender').value = gender;
       document.getElementById('hunger').value = hunger;
     } catch (e) {
-      console.log('Could not load settings from localStorage');
+      console.log('Could not load settings from storage');
     }
   }
 
   // Save settings to localStorage
   function saveSettings() {
     try {
-      localStorage.setItem('weight', document.getElementById('weight').value);
+      storage.setItem('weight', document.getElementById('weight').value);
       const heightEl = document.getElementById('height');
       if (heightEl) {
-        localStorage.setItem('height', heightEl.value);
+        storage.setItem('height', heightEl.value);
       }
-      localStorage.setItem('gender', document.getElementById('gender').value);
-      localStorage.setItem('hunger', document.getElementById('hunger').value);
+      storage.setItem('gender', document.getElementById('gender').value);
+      storage.setItem('hunger', document.getElementById('hunger').value);
     } catch (e) {
-      console.log('Could not save settings to localStorage');
+      console.log('Could not save settings to storage');
     }
   }
 
@@ -854,21 +873,21 @@
     setDefaultDrinkTime();
   }
 
-  // Get drinks from localStorage
+  // Get drinks from storage
   function getDrinks() {
     try {
-      return JSON.parse(localStorage.getItem('drinks') || '[]');
+      return JSON.parse(storage.getItem('drinks') || '[]');
     } catch {
       return [];
     }
   }
 
-  // Save drinks to localStorage
+  // Save drinks to storage
   function saveDrinks(drinks) {
     try {
-      localStorage.setItem('drinks', JSON.stringify(drinks));
-    } catch (e) {
-      console.log('Could not save drinks to localStorage');
+      storage.setItem('drinks', JSON.stringify(drinks));
+    }	catch (e) {
+      console.log('Could not save drinks to storage');
     }
   }
 
