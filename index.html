@@ -674,7 +674,7 @@
       item.style.borderLeftStyle = 'solid';
       item.innerHTML = `
         <div class="suggestion-name">${drink.namn}</div>
-        <div class="suggestion-details">${drink.procent}% alkohol</div>
+        <div class="suggestion-details">${drink.pris ? drink.pris + ' kr | ' : ''}${drink.volym ? drink.volym + ' ml ' : ''}(${drink.procent}%)</div>
       `;
       item.addEventListener('click', () => {
         selectDrink(drink);
