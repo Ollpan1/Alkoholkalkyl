@@ -1257,6 +1257,12 @@
       }
     });
 
+    // Om toppen aldrig når över gränsen är man redan under den – visa "Nu"
+    if (peakPromille <= 0.8) timeAt08 = 'KBK';
+    if (peakPromille <= 0.5) timeAt05 = 'KBK';
+    if (peakPromille <= 0.2) timeAt02 = 'KBK';
+    if (peakPromille <= 0.01) { timeAt00 = 'NU:('; timeAt00Date = new Date(); }
+
     curvePoints.forEach(pt => {
       if (pt.minutes > peakMinute) {
         const timeStr = String(pt.time.getHours()).padStart(2, '0') + ':' + String(pt.time.getMinutes()).padStart(2, '0');
@@ -1283,7 +1289,7 @@
     }
 
     let timePlane = '-';
-    if (timeAt00Date) {
+    if (drinks.length > 0 && timeAt00Date) {
       const planeDate = new Date(timeAt00Date.getTime() + 8 * 60 * 60 * 1000);
       timePlane = String(planeDate.getHours()).padStart(2, '0') + ':' + String(planeDate.getMinutes()).padStart(2, '0');
     }
