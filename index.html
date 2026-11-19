@@ -974,11 +974,18 @@
     const drinks = getDrinks();
     let apkValues = [];
 
-    // Samla alla APK-värden från dryckerna i databasen
+    // Samla alla APK-värden – föredra databasens APK, annars beräkna från ml alkohol / pris
     drinks.forEach(drink => {
       const drinkData = drinksDatabase.find(d => d.namn === drink.namn);
       if (drinkData && drinkData.apk) {
         apkValues.push(drinkData.apk);
+      } else {
+        const alc = drink.alcoholContent !== undefined ? drink.alcoholContent : (drink.procent || 5);
+        const mlAlcohol = (drink.volume * alc) / 100;
+        const pris = drink.pris > 0 ? drink.pris : 0;
+        if (pris > 0 && mlAlcohol > 0) {
+          apkValues.push(parseFloat((mlAlcohol / pris).toFixed(2)));
+        }
       }
     });
 
