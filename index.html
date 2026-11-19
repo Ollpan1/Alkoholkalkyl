@@ -848,7 +848,7 @@
     let drinkTyp = 'Öl';
     let drinkPris = drinkPrice > 0 ? drinkPrice : 0;
 
-    // Använd det exakt valda dryck-objektet (med rätt volym) om det finns
+    // Använd det exakt valda dryck-objektet om det finns
     const selectedDrink = window.lastSelectedDrink;
     window.lastSelectedDrink = null;
 
@@ -858,13 +858,9 @@
         : drinksDatabase.find(d => d.namn && d.namn.toLowerCase() === drinkName.toLowerCase());
       if (match) {
         if (match.typ) drinkTyp = match.typ;
-        if (match.pris) {
-          // Skala priset proportionellt mot hur stor del av flaskan man dricker
-          if (match.volym && volume && volume < match.volym) {
-            drinkPris = parseFloat((match.pris * volume / match.volym).toFixed(2));
-          } else {
-            drinkPris = match.pris;
-          }
+        if (match.pris && match.volym) {
+          // Räkna alltid priset från det som faktiskt står i volymmfältet
+          drinkPris = parseFloat((match.pris * volume / match.volym).toFixed(2));
         }
       } else {
         const lowerName = drinkName.toLowerCase();
