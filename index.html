@@ -848,7 +848,14 @@
       const match = drinksDatabase.find(d => d.namn && d.namn.toLowerCase().includes(drinkName.toLowerCase()));
       if (match) {
         if (match.typ) drinkTyp = match.typ;
-        if (match.pris) drinkPris = match.pris;
+        if (match.pris) {
+          // Skala priset proportionellt mot hur stor del av flaskan man dricker
+          if (match.volym && volume && volume < match.volym) {
+            drinkPris = parseFloat((match.pris * volume / match.volym).toFixed(2));
+          } else {
+            drinkPris = match.pris;
+          }
+        }
       } else {
         const lowerName = drinkName.toLowerCase();
         if (lowerName.includes('vin') || lowerName.includes('rödvin') || lowerName.includes('vitt') || lowerName.includes('champagne')) drinkTyp = 'Vin';
@@ -1297,10 +1304,8 @@
     // Beräkna pengar spenderade
     let totalMoney = 0;
     drinks.forEach(drink => {
-      const drinkData = drinksDatabase.find(d => d.namn && drink.namn && d.namn.toLowerCase() === drink.namn.toLowerCase());
-      if (drinkData && drinkData.pris) {
-        totalMoney += drinkData.pris;
-      } else if (drink.pris) {
+      // Använd det pris som sparades vid registreringen (redan skalat mot volym)
+      if (drink.pris && drink.pris > 0) {
         totalMoney += drink.pris;
       }
     });
