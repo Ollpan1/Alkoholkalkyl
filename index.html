@@ -609,6 +609,8 @@
     // Setup drink search
     document.getElementById('drinkSearch').addEventListener('input', (e) => {
       searchDrinks(e.target.value);
+      // Rensa valt dryck-objekt om användaren ändrar söktexten manuellt
+      window.lastSelectedDrink = null;
       // Återställ knappens färg till blå om sökfältet är tomt
       if (!e.target.value) {
         const addButton = document.querySelector('button.btn-primary');
@@ -707,6 +709,9 @@
     document.getElementById('drinkSearch').value = drink.namn;
     document.getElementById('drinkPrice').value = drink.pris || '';
     document.getElementById('drinkSuggestions').style.display = 'none';
+
+    // Spara hela det valda dryck-objektet så att addDrink kan använda exakt rätt volym/pris
+    window.lastSelectedDrink = drink;
 
     // Ändra knappens färg baserat på APK
     const addButton = document.querySelector('button.btn-primary');
@@ -840,12 +845,17 @@
     const [hours, minutes] = drinkTime.split(':');
     const drinkDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), parseInt(hours), parseInt(minutes));
 
-    let drinkTyp = window.lastSelectedDrinkTyp || 'Öl';
+    let drinkTyp = 'Öl';
     let drinkPris = drinkPrice > 0 ? drinkPrice : 0;
-    window.lastSelectedDrinkTyp = null;
+
+    // Använd det exakt valda dryck-objektet (med rätt volym) om det finns
+    const selectedDrink = window.lastSelectedDrink;
+    window.lastSelectedDrink = null;
 
     if (drinkName) {
-      const match = drinksDatabase.find(d => d.namn && d.namn.toLowerCase().includes(drinkName.toLowerCase()));
+      const match = selectedDrink && selectedDrink.namn && selectedDrink.namn.toLowerCase() === drinkName.toLowerCase()
+        ? selectedDrink
+        : drinksDatabase.find(d => d.namn && d.namn.toLowerCase() === drinkName.toLowerCase());
       if (match) {
         if (match.typ) drinkTyp = match.typ;
         if (match.pris) {
