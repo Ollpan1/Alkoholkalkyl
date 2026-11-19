@@ -374,6 +374,11 @@
       </div>
 
       <div class="form-group">
+        <label for="drinkPrice">Pris (kr)</label>
+        <input type="number" id="drinkPrice" min="0" max="9999" step="1" placeholder="0">
+      </div>
+
+      <div class="form-group">
         <label>&nbsp;</label>
         <button class="btn-primary" onclick="addDrink()">Lägg till berusning</button>
       </div>
@@ -700,6 +705,7 @@
     document.getElementById('volume').value = volym;
     document.getElementById('alcoholContent').value = drink.procent;
     document.getElementById('drinkSearch').value = drink.namn;
+    document.getElementById('drinkPrice').value = drink.pris || '';
     document.getElementById('drinkSuggestions').style.display = 'none';
 
     // Ändra knappens färg baserat på APK
@@ -814,6 +820,7 @@
     const alcoholContent = parseFloat(document.getElementById('alcoholContent').value);
     const drinkTime = document.getElementById('drinkTime').value;
     const drinkName = document.getElementById('drinkSearch').value;
+    const drinkPrice = parseFloat(document.getElementById('drinkPrice').value) || 0;
 
     if (!volume || isNaN(alcoholContent) || alcoholContent < 0 || !drinkTime) {
       alert('Vänligen fyll i alla fält');
@@ -834,7 +841,7 @@
     const drinkDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), parseInt(hours), parseInt(minutes));
 
     let drinkTyp = window.lastSelectedDrinkTyp || 'Öl';
-    let drinkPris = 0;
+    let drinkPris = drinkPrice > 0 ? drinkPrice : 0;
     window.lastSelectedDrinkTyp = null;
 
     if (drinkName) {
@@ -873,6 +880,7 @@
     document.getElementById('volume').value = '';
     document.getElementById('alcoholContent').value = '';
     document.getElementById('drinkSearch').value = '';
+    document.getElementById('drinkPrice').value = '';
     setDefaultDrinkTime();
   }
 
