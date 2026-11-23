@@ -56,14 +56,6 @@
     "pris": 23.7
   },
   {
-    "namn": "Arboga 10,2",
-    "apk": 2.15,
-    "typ": "Öl",
-    "procent": 10.2,
-    "volym": 500,
-    "pris": 23.7
-  },
-  {
     "namn": "Maison Francoise Côtes de Marmandais Abouriou Merlot",
     "apk": 2.14,
     "typ": "Vin",
@@ -86,14 +78,6 @@
     "procent": 13.0,
     "volym": 3000,
     "pris": 187.0
-  },
-  {
-    "namn": "Sofiero Original Guld",
-    "apk": 2.09,
-    "typ": "Öl",
-    "procent": 7.5,
-    "volym": 500,
-    "pris": 17.9
   },
   {
     "namn": "Montevalle Rosso ViniMundi",
@@ -192,14 +176,6 @@
     "pris": 17.8
   },
   {
-    "namn": "Sju komma tvåan",
-    "apk": 2.02,
-    "typ": "Öl",
-    "procent": 7.2,
-    "volym": 500,
-    "pris": 17.8
-  },
-  {
     "namn": "Mira",
     "apk": 2.01,
     "typ": "Vin",
@@ -238,14 +214,6 @@
     "procent": 14.5,
     "volym": 3000,
     "pris": 219.0
-  },
-  {
-    "namn": "Three Hearts Extra Strong",
-    "apk": 1.98,
-    "typ": "Öl",
-    "procent": 7.5,
-    "volym": 500,
-    "pris": 18.9
   },
   {
     "namn": "Three Hearts Extra Strong",
@@ -376,14 +344,6 @@
     "pris": 209.0
   },
   {
-    "namn": "Pelles Pilsner",
-    "apk": 1.94,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 500,
-    "pris": 12.9
-  },
-  {
     "namn": "Hero Red Wine",
     "apk": 1.94,
     "typ": "Vin",
@@ -398,14 +358,6 @@
     "procent": 13.5,
     "volym": 3000,
     "pris": 209.0
-  },
-  {
-    "namn": "Pripps Blå Extra",
-    "apk": 1.93,
-    "typ": "Öl",
-    "procent": 6.8,
-    "volym": 500,
-    "pris": 17.6
   },
   {
     "namn": "Pripps Blå Extra",
@@ -544,22 +496,6 @@
     "pris": 13.9
   },
   {
-    "namn": "Crocodile Lager",
-    "apk": 1.87,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 500,
-    "pris": 13.9
-  },
-  {
-    "namn": "Sofiero Original",
-    "apk": 1.87,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 500,
-    "pris": 13.9
-  },
-  {
     "namn": "Åbro Extra Stark",
     "apk": 1.87,
     "typ": "Öl",
@@ -616,14 +552,6 @@
     "pris": 12.9
   },
   {
-    "namn": "Stockholm Festival",
-    "apk": 1.84,
-    "typ": "Öl",
-    "procent": 7.2,
-    "volym": 330,
-    "pris": 12.9
-  },
-  {
     "namn": "Cameleon Signature Organic Malbec",
     "apk": 1.84,
     "typ": "Vin",
@@ -648,14 +576,6 @@
     "pris": 14.2
   },
   {
-    "namn": "Kung",
-    "apk": 1.83,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 500,
-    "pris": 14.2
-  },
-  {
     "namn": "GOSA Organic Monastrell",
     "apk": 1.83,
     "typ": "Vin",
@@ -670,14 +590,6 @@
     "procent": 13.0,
     "volym": 4500,
     "pris": 319.0
-  },
-  {
-    "namn": "Stockholm Festival",
-    "apk": 1.83,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 500,
-    "pris": 14.5
   },
   {
     "namn": "Stockholm Festival",
@@ -752,36 +664,12 @@
     "pris": 18.9
   },
   {
-    "namn": "Norrlands Djup",
-    "apk": 1.8,
-    "typ": "Öl",
-    "procent": 6.8,
-    "volym": 500,
-    "pris": 18.9
-  },
-  {
     "namn": "Ey'Bro",
     "apk": 1.8,
     "typ": "Öl",
     "procent": 5.0,
     "volym": 500,
     "pris": 13.9
-  },
-  {
-    "namn": "Ey'Bro",
-    "apk": 1.8,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 500,
-    "pris": 13.9
-  },
-  {
-    "namn": "Åbro Original Extra Stark",
-    "apk": 1.8,
-    "typ": "Öl",
-    "procent": 7.3,
-    "volym": 330,
-    "pris": 13.4
   },
   {
     "namn": "In the MOOD for Chenin Blanc",
@@ -806,22 +694,6 @@
     "procent": 5.2,
     "volym": 500,
     "pris": 14.5
-  },
-  {
-    "namn": "Fem komma tvåan",
-    "apk": 1.79,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 500,
-    "pris": 14.5
-  },
-  {
-    "namn": "Nästgårds Ljusa",
-    "apk": 1.79,
-    "typ": "Öl",
-    "procent": 5.7,
-    "volym": 500,
-    "pris": 15.9
   },
   {
     "namn": "Nästgårds Ljusa",
@@ -878,14 +750,6 @@
     "procent": 5.3,
     "volym": 500,
     "pris": 14.9
-  },
-  {
-    "namn": "Bellman 6,0",
-    "apk": 1.78,
-    "typ": "Öl",
-    "procent": 6.0,
-    "volym": 500,
-    "pris": 16.9
   },
   {
     "namn": "Caminante de los Mundos Malbec",
@@ -968,14 +832,6 @@
     "pris": 13.7
   },
   {
-    "namn": "Arboga 7,3",
-    "apk": 1.76,
-    "typ": "Öl",
-    "procent": 7.3,
-    "volym": 330,
-    "pris": 13.7
-  },
-  {
     "namn": "Spendrups Premium Gold",
     "apk": 1.75,
     "typ": "Öl",
@@ -1008,36 +864,12 @@
     "pris": 11.9
   },
   {
-    "namn": "Special Brew Special Brew 6,3%",
-    "apk": 1.75,
-    "typ": "Öl",
-    "procent": 6.3,
-    "volym": 330,
-    "pris": 11.9
-  },
-  {
-    "namn": "Spendrups Premium Gold",
-    "apk": 1.75,
-    "typ": "Öl",
-    "procent": 5.9,
-    "volym": 500,
-    "pris": 16.9
-  },
-  {
     "namn": "Småland Mellanöl",
     "apk": 1.74,
     "typ": "Öl",
     "procent": 4.5,
     "volym": 500,
     "pris": 12.9
-  },
-  {
-    "namn": "Nordliga Sarek",
-    "apk": 1.74,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 500,
-    "pris": 14.9
   },
   {
     "namn": "Nordliga Sarek",
@@ -1080,14 +912,6 @@
     "pris": 19.9
   },
   {
-    "namn": "Mariestads Old Ox",
-    "apk": 1.73,
-    "typ": "Öl",
-    "procent": 6.9,
-    "volym": 500,
-    "pris": 19.9
-  },
-  {
     "namn": "Lisa 1503 Rosato d’artista",
     "apk": 1.73,
     "typ": "Vin",
@@ -1118,14 +942,6 @@
     "procent": 11.5,
     "volym": 3000,
     "pris": 199.0
-  },
-  {
-    "namn": "Three Hearts Premium",
-    "apk": 1.73,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 9.9
   },
   {
     "namn": "Le Grand Blanc",
@@ -1392,14 +1208,6 @@
     "pris": 9.9
   },
   {
-    "namn": "Svensk Starköl",
-    "apk": 1.7,
-    "typ": "Öl",
-    "procent": 5.1,
-    "volym": 330,
-    "pris": 9.9
-  },
-  {
     "namn": "Pripps Blå Export",
     "apk": 1.7,
     "typ": "Öl",
@@ -1438,14 +1246,6 @@
     "procent": 12.5,
     "volym": 750,
     "pris": 55.0
-  },
-  {
-    "namn": "Millennium",
-    "apk": 1.7,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 500,
-    "pris": 14.7
   },
   {
     "namn": "Foot of Africa Chenin Blanc",
@@ -1496,14 +1296,6 @@
     "pris": 249.0
   },
   {
-    "namn": "Bryggmästarens Premium Gold",
-    "apk": 1.69,
-    "typ": "Öl",
-    "procent": 5.7,
-    "volym": 500,
-    "pris": 16.9
-  },
-  {
     "namn": "Casas Honestos Smooth",
     "apk": 1.69,
     "typ": "Vin",
@@ -1552,14 +1344,6 @@
     "pris": 20.5
   },
   {
-    "namn": "Falcon Export",
-    "apk": 1.68,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 500,
-    "pris": 15.5
-  },
-  {
     "namn": "Kopparberg Cider Apple",
     "apk": 1.67,
     "typ": "Öl",
@@ -1606,30 +1390,6 @@
     "procent": 5.3,
     "volym": 330,
     "pris": 10.5
-  },
-  {
-    "namn": "Kopparberg Cider Apple",
-    "apk": 1.67,
-    "typ": "Öl",
-    "procent": 7.0,
-    "volym": 500,
-    "pris": 20.9
-  },
-  {
-    "namn": "Dansk Fadøl",
-    "apk": 1.67,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 9.9
-  },
-  {
-    "namn": "Kopparberg Cider Pear",
-    "apk": 1.67,
-    "typ": "Öl",
-    "procent": 7.0,
-    "volym": 500,
-    "pris": 20.9
   },
   {
     "namn": "Swedish Elk Brew",
@@ -1832,14 +1592,6 @@
     "pris": 229.0
   },
   {
-    "namn": "Norrlands Guld Export",
-    "apk": 1.64,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 500,
-    "pris": 16.2
-  },
-  {
     "namn": "Zumbali Chenin Blanc",
     "apk": 1.64,
     "typ": "Vin",
@@ -1878,14 +1630,6 @@
     "procent": 13.0,
     "volym": 3000,
     "pris": 239.0
-  },
-  {
-    "namn": "Lucky Bait",
-    "apk": 1.63,
-    "typ": "Öl",
-    "procent": 5.4,
-    "volym": 330,
-    "pris": 10.9
   },
   {
     "namn": "Le goût de Chardonnay",
@@ -1968,14 +1712,6 @@
     "pris": 259.0
   },
   {
-    "namn": "TT Pilsner",
-    "apk": 1.62,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 500,
-    "pris": 13.9
-  },
-  {
     "namn": "Carte Postal by Le Grand Roi",
     "apk": 1.62,
     "typ": "Vin",
@@ -1990,14 +1726,6 @@
     "procent": 13.5,
     "volym": 3000,
     "pris": 250.0
-  },
-  {
-    "namn": "Carlsberg Sort Guld",
-    "apk": 1.61,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 500,
-    "pris": 17.1
   },
   {
     "namn": "Carlsberg Sort Guld",
@@ -2040,23 +1768,7 @@
     "pris": 10.9
   },
   {
-    "namn": "Tuborg Guld",
-    "apk": 1.6,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 330,
-    "pris": 10.9
-  },
-  {
     "namn": "Fagerhult Export",
-    "apk": 1.6,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 330,
-    "pris": 10.9
-  },
-  {
-    "namn": "Zeunerts Original",
     "apk": 1.6,
     "typ": "Öl",
     "procent": 5.3,
@@ -2312,36 +2024,12 @@
     "pris": 10.9
   },
   {
-    "namn": "Fem komma tvåan",
-    "apk": 1.57,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 10.9
-  },
-  {
     "namn": "Sofiero Original",
     "apk": 1.57,
     "typ": "Öl",
     "procent": 5.2,
     "volym": 330,
     "pris": 10.9
-  },
-  {
-    "namn": "Småland",
-    "apk": 1.57,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 10.9
-  },
-  {
-    "namn": "Carlsberg Export",
-    "apk": 1.57,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 500,
-    "pris": 15.9
   },
   {
     "namn": "Carlsberg Export",
@@ -2358,14 +2046,6 @@
     "procent": 5.0,
     "volym": 500,
     "pris": 15.9
-  },
-  {
-    "namn": "Sofiero Original",
-    "apk": 1.57,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 10.9
   },
   {
     "namn": "Bryggmästarens Bästa Ekologiska",
@@ -2520,14 +2200,6 @@
     "pris": 250.0
   },
   {
-    "namn": "Underground Rosé",
-    "apk": 1.56,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 3000,
-    "pris": 250.0
-  },
-  {
     "namn": "Underground Red",
     "apk": 1.56,
     "typ": "Vin",
@@ -2576,28 +2248,12 @@
     "pris": 10.7
   },
   {
-    "namn": "The Bäär",
-    "apk": 1.54,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 10.7
-  },
-  {
     "namn": "Olvi Export Lager",
     "apk": 1.54,
     "typ": "Öl",
     "procent": 5.2,
     "volym": 500,
     "pris": 16.9
-  },
-  {
-    "namn": "Ey'Bro",
-    "apk": 1.54,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 10.7
   },
   {
     "namn": "Falcon Export",
@@ -2608,36 +2264,12 @@
     "pris": 16.9
   },
   {
-    "namn": "Pripps Blå",
-    "apk": 1.54,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 10.7
-  },
-  {
     "namn": "Lapin Kulta",
     "apk": 1.54,
     "typ": "Öl",
     "procent": 5.2,
     "volym": 500,
     "pris": 16.9
-  },
-  {
-    "namn": "Lapin Kulta",
-    "apk": 1.54,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 500,
-    "pris": 16.9
-  },
-  {
-    "namn": "Rekorderlig Skogsbär Extra stark",
-    "apk": 1.53,
-    "typ": "Öl",
-    "procent": 7.0,
-    "volym": 500,
-    "pris": 22.9
   },
   {
     "namn": "Rekorderlig Skogsbär Extra stark",
@@ -2726,14 +2358,6 @@
     "procent": 12.0,
     "volym": 1000,
     "pris": 79.0
-  },
-  {
-    "namn": "Bright Brew",
-    "apk": 1.52,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 500,
-    "pris": 16.5
   },
   {
     "namn": "Saturnus Starkvinsglögg",
@@ -2872,14 +2496,6 @@
     "pris": 129.0
   },
   {
-    "namn": "Král lev Pivo",
-    "apk": 1.51,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 10.9
-  },
-  {
     "namn": "Hardys Crest Cabernet Shiraz Merlot",
     "apk": 1.51,
     "typ": "Vin",
@@ -2976,14 +2592,6 @@
     "pris": 10.9
   },
   {
-    "namn": "Åbro Lejon",
-    "apk": 1.51,
-    "typ": "Öl",
-    "procent": 5.9,
-    "volym": 330,
-    "pris": 12.9
-  },
-  {
     "namn": "Guldkällan",
     "apk": 1.5,
     "typ": "Öl",
@@ -3008,14 +2616,6 @@
     "pris": 9.9
   },
   {
-    "namn": "Guldkällan",
-    "apk": 1.5,
-    "typ": "Öl",
-    "procent": 5.7,
-    "volym": 330,
-    "pris": 12.5
-  },
-  {
     "namn": "Vikbo Cider Tropical Mango",
     "apk": 1.5,
     "typ": "Öl",
@@ -3038,14 +2638,6 @@
     "procent": 12.0,
     "volym": 750,
     "pris": 60.0
-  },
-  {
-    "namn": "Falcon Bayerskt",
-    "apk": 1.49,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 500,
-    "pris": 17.5
   },
   {
     "namn": "Falcon Bayerskt",
@@ -3096,14 +2688,6 @@
     "pris": 17.9
   },
   {
-    "namn": "Mariestads Export",
-    "apk": 1.48,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 500,
-    "pris": 17.9
-  },
-  {
     "namn": "Zeunerts Höga Kusten",
     "apk": 1.48,
     "typ": "Öl",
@@ -3144,22 +2728,6 @@
     "pris": 19.9
   },
   {
-    "namn": "Zeunerts Höga Kusten",
-    "apk": 1.48,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 500,
-    "pris": 17.9
-  },
-  {
-    "namn": "Obolon Premium",
-    "apk": 1.48,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 500,
-    "pris": 16.9
-  },
-  {
     "namn": "Obolon Premium",
     "apk": 1.48,
     "typ": "Öl",
@@ -3182,14 +2750,6 @@
     "procent": 14.0,
     "volym": 3000,
     "pris": 285.0
-  },
-  {
-    "namn": "Z1N Zinfandel",
-    "apk": 1.47,
-    "typ": "Vin",
-    "procent": 14.0,
-    "volym": 1000,
-    "pris": 95.0
   },
   {
     "namn": "Good Guys Brew Hopmonster 2.0",
@@ -3520,14 +3080,6 @@
     "pris": 11.9
   },
   {
-    "namn": "Falcon Export",
-    "apk": 1.44,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 11.9
-  },
-  {
     "namn": "Spritverket Ekologisk Starkvinsglögg",
     "apk": 1.44,
     "typ": "Vin",
@@ -3552,36 +3104,12 @@
     "pris": 200.0
   },
   {
-    "namn": "Backyard Brew Chopping Block",
-    "apk": 1.44,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 11.9
-  },
-  {
     "namn": "Big Bossy Jane Zinfandel",
     "apk": 1.43,
     "typ": "Vin",
     "procent": 14.0,
     "volym": 1500,
     "pris": 147.0
-  },
-  {
-    "namn": "Big Bossy Jane Zinfandel",
-    "apk": 1.43,
-    "typ": "Vin",
-    "procent": 14.0,
-    "volym": 1500,
-    "pris": 147.0
-  },
-  {
-    "namn": "Falcon Hoppfull",
-    "apk": 1.42,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 12.1
   },
   {
     "namn": "Falcon Hoppfull",
@@ -3726,22 +3254,6 @@
     "procent": 14.0,
     "volym": 1000,
     "pris": 99.0
-  },
-  {
-    "namn": "Zywiec",
-    "apk": 1.41,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 330,
-    "pris": 12.9
-  },
-  {
-    "namn": "Pistonhead Haze Lager",
-    "apk": 1.41,
-    "typ": "Öl",
-    "procent": 5.1,
-    "volym": 330,
-    "pris": 11.9
   },
   {
     "namn": "Bron Ekologisk",
@@ -3920,14 +3432,6 @@
     "pris": 279.0
   },
   {
-    "namn": "Carlsberg Export",
-    "apk": 1.4,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 500,
-    "pris": 17.9
-  },
-  {
     "namn": "Les Champs Sauvignon Blanc",
     "apk": 1.4,
     "typ": "Vin",
@@ -4072,14 +3576,6 @@
     "pris": 259.0
   },
   {
-    "namn": "Grand Sud Merlot",
-    "apk": 1.39,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 1000,
-    "pris": 97.0
-  },
-  {
     "namn": "Pazzione Riesling Organic Pfalz by Pernilla Wahlgren",
     "apk": 1.39,
     "typ": "Vin",
@@ -4176,14 +3672,6 @@
     "pris": 109.0
   },
   {
-    "namn": "CHILL OUT Cabernet Sauvignon Petit Verdot South Africa",
-    "apk": 1.38,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 1000,
-    "pris": 98.0
-  },
-  {
     "namn": "Hellefors Bryggeri A ship Full of Pale Ale",
     "apk": 1.38,
     "typ": "Öl",
@@ -4206,14 +3694,6 @@
     "procent": 5.2,
     "volym": 500,
     "pris": 18.9
-  },
-  {
-    "namn": "Guldkällan",
-    "apk": 1.38,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 330,
-    "pris": 11.5
   },
   {
     "namn": "Slightly Pinot Noir",
@@ -4392,14 +3872,6 @@
     "pris": 199.0
   },
   {
-    "namn": "Bombus Chardonnay",
-    "apk": 1.36,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 1000,
-    "pris": 99.0
-  },
-  {
     "namn": "Zensa Rosso Terre Siciliane Organico",
     "apk": 1.36,
     "typ": "Vin",
@@ -4496,14 +3968,6 @@
     "pris": 99.0
   },
   {
-    "namn": "Paolo Leo Nero Amaro",
-    "apk": 1.36,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 1000,
-    "pris": 99.0
-  },
-  {
     "namn": "Leone El rojo Sabroso",
     "apk": 1.36,
     "typ": "Vin",
@@ -4544,36 +4008,12 @@
     "pris": 99.0
   },
   {
-    "namn": "Pistonhead Kustom Lager",
-    "apk": 1.36,
-    "typ": "Öl",
-    "procent": 4.9,
-    "volym": 330,
-    "pris": 11.9
-  },
-  {
     "namn": "Clockwork Tangerine Session IPA",
     "apk": 1.36,
     "typ": "Öl",
     "procent": 4.5,
     "volym": 330,
     "pris": 10.9
-  },
-  {
-    "namn": "Zensa Rosso Terre Siciliane Organico",
-    "apk": 1.36,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 1000,
-    "pris": 99.0
-  },
-  {
-    "namn": "Impressivo",
-    "apk": 1.36,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 1000,
-    "pris": 99.0
   },
   {
     "namn": "Via del Campo Rosado Tempranillo Bobal",
@@ -4904,14 +4344,6 @@
     "pris": 270.0
   },
   {
-    "namn": "Nästgårds Lager Ekologisk",
-    "apk": 1.33,
-    "typ": "Öl",
-    "procent": 6.0,
-    "volym": 330,
-    "pris": 14.9
-  },
-  {
     "namn": "Carlsberg Hoppy Lager",
     "apk": 1.33,
     "typ": "Öl",
@@ -5016,14 +4448,6 @@
     "pris": 13.2
   },
   {
-    "namn": "Norrlands Guld Export",
-    "apk": 1.32,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 330,
-    "pris": 13.2
-  },
-  {
     "namn": "Zywiec",
     "apk": 1.32,
     "typ": "Öl",
@@ -5038,14 +4462,6 @@
     "procent": 5.0,
     "volym": 500,
     "pris": 18.9
-  },
-  {
-    "namn": "Carlsberg Hof Organic",
-    "apk": 1.32,
-    "typ": "Öl",
-    "procent": 4.2,
-    "volym": 500,
-    "pris": 15.9
   },
   {
     "namn": "Hardys Nottage Hill Cabernet Shiraz",
@@ -5097,14 +4513,6 @@
   },
   {
     "namn": "Maison Petite Perle Chardonnay",
-    "apk": 1.31,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 1000,
-    "pris": 99.0
-  },
-  {
-    "namn": "Crazy Cat Chardonnay",
     "apk": 1.31,
     "typ": "Vin",
     "procent": 13.0,
@@ -5182,14 +4590,6 @@
     "procent": 13.0,
     "volym": 1500,
     "pris": 149.0
-  },
-  {
-    "namn": "Gran Bodega Tempranillo",
-    "apk": 1.31,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 1000,
-    "pris": 99.0
   },
   {
     "namn": "Susurro Monastrell",
@@ -5328,22 +4728,6 @@
     "pris": 69.0
   },
   {
-    "namn": "Breznak",
-    "apk": 1.3,
-    "typ": "Öl",
-    "procent": 5.1,
-    "volym": 330,
-    "pris": 12.9
-  },
-  {
-    "namn": "Tuborg Grön",
-    "apk": 1.3,
-    "typ": "Öl",
-    "procent": 4.2,
-    "volym": 330,
-    "pris": 10.7
-  },
-  {
     "namn": "Passicone Gran Passicone Rosso Organico",
     "apk": 1.3,
     "typ": "Vin",
@@ -5398,14 +4782,6 @@
     "procent": 12.0,
     "volym": 3000,
     "pris": 279.0
-  },
-  {
-    "namn": "Carlsberg Sort Guld",
-    "apk": 1.29,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 330,
-    "pris": 14.1
   },
   {
     "namn": "Ruppertsberger Riesling",
@@ -5505,30 +4881,6 @@
   },
   {
     "namn": "Santa Inés",
-    "apk": 1.28,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 750,
-    "pris": 79.0
-  },
-  {
-    "namn": "Robertson Chardonnay",
-    "apk": 1.28,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 750,
-    "pris": 79.0
-  },
-  {
-    "namn": "Carlsberg Export",
-    "apk": 1.28,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 12.9
-  },
-  {
-    "namn": "Lindemans Shiraz Cabernet",
     "apk": 1.28,
     "typ": "Vin",
     "procent": 13.5,
@@ -5728,14 +5080,6 @@
     "pris": 259.0
   },
   {
-    "namn": "Bitburger Premium Pils",
-    "apk": 1.27,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 500,
-    "pris": 18.9
-  },
-  {
     "namn": "Vale Da Vida Reserva",
     "apk": 1.27,
     "typ": "Vin",
@@ -5856,14 +5200,6 @@
     "pris": 99.0
   },
   {
-    "namn": "Explorer Gin Ekologisk",
-    "apk": 1.26,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 700,
-    "pris": 209.0
-  },
-  {
     "namn": "Krusovice Imperial",
     "apk": 1.26,
     "typ": "Öl",
@@ -5878,14 +5214,6 @@
     "procent": 12.5,
     "volym": 1000,
     "pris": 99.0
-  },
-  {
-    "namn": "Budvar Budejovicky Original Czech Lager",
-    "apk": 1.26,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 500,
-    "pris": 19.9
   },
   {
     "namn": "Paulaner Hefe-Weissbier",
@@ -5904,68 +5232,12 @@
     "pris": 13.9
   },
   {
-    "namn": "Norrlands Guld Export",
-    "apk": 1.26,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 330,
-    "pris": 13.9
-  },
-  {
-    "namn": "Staropramen",
-    "apk": 1.26,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 500,
-    "pris": 19.9
-  },
-  {
-    "namn": "Norrlands Guld Export",
-    "apk": 1.26,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 330,
-    "pris": 13.9
-  },
-  {
     "namn": "The Stag Cabernet Sauvignon Feteasca Neagra",
     "apk": 1.26,
     "typ": "Vin",
     "procent": 15.0,
     "volym": 750,
     "pris": 89.0
-  },
-  {
-    "namn": "Eriksberg",
-    "apk": 1.26,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 330,
-    "pris": 13.9
-  },
-  {
-    "namn": "Pinot Noir Réserve Maison Fortant",
-    "apk": 1.26,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 1000,
-    "pris": 99.0
-  },
-  {
-    "namn": "Kopparberg Cider Naked Apple",
-    "apk": 1.26,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 500,
-    "pris": 17.9
-  },
-  {
-    "namn": "No.1 Swedish Gin",
-    "apk": 1.26,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 700,
-    "pris": 209.0
   },
   {
     "namn": "Dugges Perfa Pils",
@@ -6040,14 +5312,6 @@
     "pris": 19.9
   },
   {
-    "namn": "Paulaner Hefe-Weissbier",
-    "apk": 1.26,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 500,
-    "pris": 21.9
-  },
-  {
     "namn": "La Cuvée Maison Bonjour Rosé",
     "apk": 1.26,
     "typ": "Vin",
@@ -6104,22 +5368,6 @@
     "pris": 300.0
   },
   {
-    "namn": "Melleruds Paradpilsner",
-    "apk": 1.25,
-    "typ": "Öl",
-    "procent": 6.0,
-    "volym": 330,
-    "pris": 15.9
-  },
-  {
-    "namn": "Brooklyn East IPA",
-    "apk": 1.25,
-    "typ": "Öl",
-    "procent": 6.9,
-    "volym": 330,
-    "pris": 18.2
-  },
-  {
     "namn": "Wolf Blass Eaglehawk Chardonnay",
     "apk": 1.25,
     "typ": "Vin",
@@ -6142,14 +5390,6 @@
     "procent": 12.0,
     "volym": 3000,
     "pris": 289.0
-  },
-  {
-    "namn": "Eriksberg Karaktär",
-    "apk": 1.25,
-    "typ": "Öl",
-    "procent": 5.4,
-    "volym": 330,
-    "pris": 14.2
   },
   {
     "namn": "Train Station Brewery The 8.5% Päron Cider",
@@ -6262,22 +5502,6 @@
     "procent": 6.7,
     "volym": 330,
     "pris": 17.9
-  },
-  {
-    "namn": "Affligem Blond",
-    "apk": 1.24,
-    "typ": "Öl",
-    "procent": 6.7,
-    "volym": 330,
-    "pris": 17.9
-  },
-  {
-    "namn": "Vanlig Vodka",
-    "apk": 1.24,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 700,
-    "pris": 211.0
   },
   {
     "namn": "Småland",
@@ -6424,14 +5648,6 @@
     "pris": 79.0
   },
   {
-    "namn": "Arton56 Glutenfri",
-    "apk": 1.23,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 13.9
-  },
-  {
     "namn": "Savanha Tercet",
     "apk": 1.23,
     "typ": "Vin",
@@ -6456,22 +5672,6 @@
     "pris": 159.0
   },
   {
-    "namn": "Las Moras Reserve Chardonnay",
-    "apk": 1.23,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 79.0
-  },
-  {
-    "namn": "La Granja Tempranillo",
-    "apk": 1.23,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 79.0
-  },
-  {
     "namn": "Leva Chardonnay Misket Dimiat & Muscat",
     "apk": 1.23,
     "typ": "Vin",
@@ -6488,36 +5688,12 @@
     "pris": 329.0
   },
   {
-    "namn": "Arton56 Glutenfri",
-    "apk": 1.23,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 13.9
-  },
-  {
-    "namn": "Good ol' Sailor Vodka",
-    "apk": 1.23,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 700,
-    "pris": 214.0
-  },
-  {
     "namn": "Ciao Pinot Grigio",
     "apk": 1.23,
     "typ": "Vin",
     "procent": 13.0,
     "volym": 750,
     "pris": 79.0
-  },
-  {
-    "namn": "Dworek Vodka",
-    "apk": 1.23,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 700,
-    "pris": 213.0
   },
   {
     "namn": "Lindemans Chardonnay",
@@ -6566,14 +5742,6 @@
     "procent": 13.0,
     "volym": 750,
     "pris": 79.0
-  },
-  {
-    "namn": "Paulaner Münchner Hell",
-    "apk": 1.23,
-    "typ": "Öl",
-    "procent": 4.9,
-    "volym": 500,
-    "pris": 19.9
   },
   {
     "namn": "Paulaner Münchner Hell",
@@ -6688,14 +5856,6 @@
     "pris": 14.9
   },
   {
-    "namn": "Banderilleros Ecológico Tempranillo Cabernet Sauvignon Merlot",
-    "apk": 1.22,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 80.0
-  },
-  {
     "namn": "La Vecchia Via Barbera",
     "apk": 1.22,
     "typ": "Vin",
@@ -6726,14 +5886,6 @@
     "procent": 40.0,
     "volym": 1000,
     "pris": 329.0
-  },
-  {
-    "namn": "Arboga Mörk Lager",
-    "apk": 1.22,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 330,
-    "pris": 14.9
   },
   {
     "namn": "La Zulema Malbec",
@@ -6784,14 +5936,6 @@
     "pris": 87.0
   },
   {
-    "namn": "Explorer Vodka",
-    "apk": 1.21,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 700,
-    "pris": 217.0
-  },
-  {
     "namn": "Tonno Pinot Grigio",
     "apk": 1.21,
     "typ": "Vin",
@@ -6824,14 +5968,6 @@
     "pris": 87.0
   },
   {
-    "namn": "Mariestads Export",
-    "apk": 1.21,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 330,
-    "pris": 14.5
-  },
-  {
     "namn": "Lustgårdens Cider Torr Äpple",
     "apk": 1.21,
     "typ": "Öl",
@@ -6862,22 +5998,6 @@
     "procent": 12.0,
     "volym": 1500,
     "pris": 149.0
-  },
-  {
-    "namn": "Lustgårdens Cider Torr Äpple",
-    "apk": 1.21,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 500,
-    "pris": 18.6
-  },
-  {
-    "namn": "LAB Reserva",
-    "apk": 1.21,
-    "typ": "Vin",
-    "procent": 14.0,
-    "volym": 750,
-    "pris": 87.0
   },
   {
     "namn": "AKiA Brygghus KBA Tripel",
@@ -6982,14 +6102,6 @@
     "procent": 12.0,
     "volym": 750,
     "pris": 75.0
-  },
-  {
-    "namn": "St Pierre White-Blanche",
-    "apk": 1.2,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 500,
-    "pris": 20.9
   },
   {
     "namn": "St Pierre White-Blanche",
@@ -7152,22 +6264,6 @@
     "pris": 105.0
   },
   {
-    "namn": "CHILL OUT Chardonnay South Africa",
-    "apk": 1.19,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 750,
-    "pris": 85.0
-  },
-  {
-    "namn": "Heineken",
-    "apk": 1.19,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 13.9
-  },
-  {
     "namn": "Chapel Hill Blanc de Blancs Chardonnay",
     "apk": 1.19,
     "typ": "Vin",
@@ -7222,14 +6318,6 @@
     "procent": 7.7,
     "volym": 500,
     "pris": 32.6
-  },
-  {
-    "namn": "Côtes-du-Rhône Reserve",
-    "apk": 1.18,
-    "typ": "Vin",
-    "procent": 14.0,
-    "volym": 750,
-    "pris": 89.0
   },
   {
     "namn": "Côtes-du-Rhône Reserve",
@@ -7496,14 +6584,6 @@
     "pris": 16.9
   },
   {
-    "namn": "Carlsberg Hof Organic",
-    "apk": 1.17,
-    "typ": "Öl",
-    "procent": 4.2,
-    "volym": 500,
-    "pris": 17.9
-  },
-  {
     "namn": "Riesling for you and for me",
     "apk": 1.17,
     "typ": "Vin",
@@ -7518,22 +6598,6 @@
     "procent": 6.0,
     "volym": 330,
     "pris": 16.9
-  },
-  {
-    "namn": "Eriksberg Mäster",
-    "apk": 1.17,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 14.1
-  },
-  {
-    "namn": "Norra Vångas Bryggeri Camping Öl",
-    "apk": 1.17,
-    "typ": "Öl",
-    "procent": 7.1,
-    "volym": 330,
-    "pris": 20.0
   },
   {
     "namn": "Norra Vångas Bryggeri Camping Öl",
@@ -7552,14 +6616,6 @@
     "pris": 23.9
   },
   {
-    "namn": "Kopparberg Cider Cherry",
-    "apk": 1.17,
-    "typ": "Öl",
-    "procent": 6.0,
-    "volym": 330,
-    "pris": 16.9
-  },
-  {
     "namn": "Eriksberg Julöl",
     "apk": 1.16,
     "typ": "Öl",
@@ -7576,14 +6632,6 @@
     "pris": 25.9
   },
   {
-    "namn": "Eriksberg Julöl",
-    "apk": 1.16,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 15.9
-  },
-  {
     "namn": "Highland Queen",
     "apk": 1.16,
     "typ": "Sprit",
@@ -7598,14 +6646,6 @@
     "procent": 11.0,
     "volym": 1000,
     "pris": 95.0
-  },
-  {
-    "namn": "Mariestads Dunkel",
-    "apk": 1.16,
-    "typ": "Öl",
-    "procent": 5.8,
-    "volym": 330,
-    "pris": 16.5
   },
   {
     "namn": "Mariestads Dunkel",
@@ -7640,14 +6680,6 @@
     "pris": 28.9
   },
   {
-    "namn": "Don Simon Sangría",
-    "apk": 1.16,
-    "typ": "Vin",
-    "procent": 11.0,
-    "volym": 1000,
-    "pris": 95.0
-  },
-  {
     "namn": "Lindeman's Bin 75 Riesling",
     "apk": 1.16,
     "typ": "Vin",
@@ -7662,14 +6694,6 @@
     "procent": 7.0,
     "volym": 330,
     "pris": 19.9
-  },
-  {
-    "namn": "Jever Pilsener",
-    "apk": 1.16,
-    "typ": "Öl",
-    "procent": 4.9,
-    "volym": 330,
-    "pris": 13.9
   },
   {
     "namn": "Jever Pilsener",
@@ -7800,14 +6824,6 @@
     "pris": 229.0
   },
   {
-    "namn": "Candidato Ecologico Tempranillo",
-    "apk": 1.15,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 85.0
-  },
-  {
     "namn": "Leale Sangiovese",
     "apk": 1.15,
     "typ": "Vin",
@@ -7822,22 +6838,6 @@
     "procent": 4.5,
     "volym": 330,
     "pris": 12.9
-  },
-  {
-    "namn": "POMPOM Rosé",
-    "apk": 1.15,
-    "typ": "Öl",
-    "procent": 5.9,
-    "volym": 330,
-    "pris": 17.0
-  },
-  {
-    "namn": "Pilsner Urquell",
-    "apk": 1.15,
-    "typ": "Öl",
-    "procent": 4.4,
-    "volym": 500,
-    "pris": 19.2
   },
   {
     "namn": "Arboga Cider Vilda Bär",
@@ -7862,14 +6862,6 @@
     "procent": 5.2,
     "volym": 440,
     "pris": 19.9
-  },
-  {
-    "namn": "Mälardalens Destilleri Gin",
-    "apk": 1.15,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 700,
-    "pris": 229.0
   },
   {
     "namn": "Frank's Premium Vodka",
@@ -8008,14 +7000,6 @@
     "pris": 21.9
   },
   {
-    "namn": "Lord Calvert",
-    "apk": 1.14,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 700,
-    "pris": 245.0
-  },
-  {
     "namn": "Pink Pet Rosé",
     "apk": 1.14,
     "typ": "Vin",
@@ -8104,14 +7088,6 @@
     "pris": 79.0
   },
   {
-    "namn": "CHILL OUT Malbec Organic",
-    "apk": 1.14,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 750,
-    "pris": 89.0
-  },
-  {
     "namn": "Lindeman's Bin 50 Shiraz",
     "apk": 1.14,
     "typ": "Vin",
@@ -8128,14 +7104,6 @@
     "pris": 89.0
   },
   {
-    "namn": "Pink Pet Rosé",
-    "apk": 1.14,
-    "typ": "Vin",
-    "procent": 12.0,
-    "volym": 750,
-    "pris": 79.0
-  },
-  {
     "namn": "Jacob's Creek Shiraz Cabernet Organic",
     "apk": 1.14,
     "typ": "Vin",
@@ -8144,52 +7112,12 @@
     "pris": 89.0
   },
   {
-    "namn": "The Fox and the grapes",
-    "apk": 1.14,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 750,
-    "pris": 89.0
-  },
-  {
-    "namn": "Lindeman's Bin 50 Shiraz",
-    "apk": 1.14,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 750,
-    "pris": 89.0
-  },
-  {
-    "namn": "Lindemans Chardonnay",
-    "apk": 1.14,
-    "typ": "Vin",
-    "procent": 12.0,
-    "volym": 750,
-    "pris": 79.0
-  },
-  {
     "namn": "Lindeman's Bin 65 Chardonnay",
     "apk": 1.14,
     "typ": "Vin",
     "procent": 13.5,
     "volym": 750,
     "pris": 89.0
-  },
-  {
-    "namn": "Casa Vinironia Palloncino Aglianico",
-    "apk": 1.14,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 750,
-    "pris": 89.0
-  },
-  {
-    "namn": "West Sixth Snake Eyes Imperial Stout",
-    "apk": 1.14,
-    "typ": "Öl",
-    "procent": 9.6,
-    "volym": 355,
-    "pris": 29.9
   },
   {
     "namn": "The Wanted Zin Zinfandel Old Vines",
@@ -8464,38 +7392,6 @@
     "pris": 79.0
   },
   {
-    "namn": "Norra Vångas Bryggeri Standard Snaps",
-    "apk": 1.14,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 700,
-    "pris": 230.0
-  },
-  {
-    "namn": "Norra Vångas Bryggeri Standard Gin",
-    "apk": 1.14,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 700,
-    "pris": 230.0
-  },
-  {
-    "namn": "Norra Vångas Bryggeri Standard Pink Gin",
-    "apk": 1.14,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 700,
-    "pris": 230.0
-  },
-  {
-    "namn": "Norra Vångas Bryggeri Standard Vodka",
-    "apk": 1.14,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 700,
-    "pris": 230.0
-  },
-  {
     "namn": "Niksicko pivo",
     "apk": 1.14,
     "typ": "Öl",
@@ -8568,14 +7464,6 @@
     "pris": 159.0
   },
   {
-    "namn": "J.P. Wiser's Triple Barrel 10 Years Old",
-    "apk": 1.13,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 700,
-    "pris": 247.0
-  },
-  {
     "namn": "La Brique Cabernet Sauvignon Organic",
     "apk": 1.13,
     "typ": "Vin",
@@ -8614,38 +7502,6 @@
     "procent": 13.5,
     "volym": 1500,
     "pris": 179.0
-  },
-  {
-    "namn": "Spring Village Rosé Grenache Syrah",
-    "apk": 1.13,
-    "typ": "Vin",
-    "procent": 12.0,
-    "volym": 1500,
-    "pris": 159.0
-  },
-  {
-    "namn": "Brutal Brewing A Ship Full of IPA",
-    "apk": 1.13,
-    "typ": "Öl",
-    "procent": 5.8,
-    "volym": 330,
-    "pris": 16.9
-  },
-  {
-    "namn": "Barlingbo Bryggeri Galgbacken IPA",
-    "apk": 1.13,
-    "typ": "Öl",
-    "procent": 5.8,
-    "volym": 330,
-    "pris": 16.9
-  },
-  {
-    "namn": "Grand Sud Sauvignon Blanc",
-    "apk": 1.13,
-    "typ": "Vin",
-    "procent": 11.0,
-    "volym": 1000,
-    "pris": 97.0
   },
   {
     "namn": "Smith Street Brew XII [Lina]",
@@ -8776,14 +7632,6 @@
     "pris": 249.0
   },
   {
-    "namn": "Explorer Pink Gin Rabarber Jordgubb",
-    "apk": 1.12,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 700,
-    "pris": 235.0
-  },
-  {
     "namn": "Zlatopramen Premium",
     "apk": 1.12,
     "typ": "Öl",
@@ -8806,22 +7654,6 @@
     "procent": 13.5,
     "volym": 750,
     "pris": 90.0
-  },
-  {
-    "namn": "Evan Williams Bourbon",
-    "apk": 1.12,
-    "typ": "Sprit",
-    "procent": 43.0,
-    "volym": 700,
-    "pris": 269.0
-  },
-  {
-    "namn": "Poppels Poppelino Lager",
-    "apk": 1.12,
-    "typ": "Öl",
-    "procent": 4.7,
-    "volym": 330,
-    "pris": 13.9
   },
   {
     "namn": "Poppels Poppelino Lager",
@@ -8958,14 +7790,6 @@
     "procent": 14.0,
     "volym": 1500,
     "pris": 189.0
-  },
-  {
-    "namn": "Amazin' Zinfandel",
-    "apk": 1.11,
-    "typ": "Vin",
-    "procent": 14.0,
-    "volym": 750,
-    "pris": 95.0
   },
   {
     "namn": "1664 Lager",
@@ -9168,14 +7992,6 @@
     "pris": 119.0
   },
   {
-    "namn": "Koskenkorva Vodka Organic",
-    "apk": 1.1,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 700,
-    "pris": 238.0
-  },
-  {
     "namn": "Montepulciano d'Abruzzo Umani Ronchi",
     "apk": 1.1,
     "typ": "Vin",
@@ -9224,28 +8040,12 @@
     "pris": 89.0
   },
   {
-    "namn": "Aurora",
-    "apk": 1.1,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 89.0
-  },
-  {
     "namn": "Vivir Sin Dormir Monastrell Organico",
     "apk": 1.1,
     "typ": "Vin",
     "procent": 14.5,
     "volym": 750,
     "pris": 99.0
-  },
-  {
-    "namn": "Caprice Kir",
-    "apk": 1.1,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 89.0
   },
   {
     "namn": "Pol Rémy Gala Brut",
@@ -9272,28 +8072,12 @@
     "pris": 59.0
   },
   {
-    "namn": "Solbacka Körsbärsvin",
-    "apk": 1.1,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 89.0
-  },
-  {
     "namn": "Casa Marzoni Appassimento Bianco",
     "apk": 1.1,
     "typ": "Vin",
     "procent": 14.5,
     "volym": 750,
     "pris": 99.0
-  },
-  {
-    "namn": "Spring Village Merlot",
-    "apk": 1.1,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 89.0
   },
   {
     "namn": "Ascot Crisp White",
@@ -9305,14 +8089,6 @@
   },
   {
     "namn": "Viña Albali Reserva",
-    "apk": 1.1,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 89.0
-  },
-  {
-    "namn": "Porta 6 Tejo",
     "apk": 1.1,
     "typ": "Vin",
     "procent": 13.0,
@@ -9704,14 +8480,6 @@
     "pris": 129.0
   },
   {
-    "namn": "Carlsberg Hof Organic",
-    "apk": 1.09,
-    "typ": "Öl",
-    "procent": 4.2,
-    "volym": 330,
-    "pris": 12.7
-  },
-  {
     "namn": "Finlandia",
     "apk": 1.09,
     "typ": "Sprit",
@@ -9734,14 +8502,6 @@
     "procent": 4.7,
     "volym": 330,
     "pris": 14.2
-  },
-  {
-    "namn": "Dworek Vodka",
-    "apk": 1.09,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 350,
-    "pris": 120.0
   },
   {
     "namn": "Nemiroff Vodka de Luxe",
@@ -9769,14 +8529,6 @@
   },
   {
     "namn": "Tuborg Grön EKO",
-    "apk": 1.09,
-    "typ": "Öl",
-    "procent": 4.6,
-    "volym": 330,
-    "pris": 13.9
-  },
-  {
-    "namn": "Estrella Damm Barcelona",
     "apk": 1.09,
     "typ": "Öl",
     "procent": 4.6,
@@ -9832,14 +8584,6 @@
     "pris": 79.0
   },
   {
-    "namn": "Norrlands Ljus Ekologisk",
-    "apk": 1.09,
-    "typ": "Öl",
-    "procent": 4.7,
-    "volym": 330,
-    "pris": 14.2
-  },
-  {
     "namn": "Budvar Budejovicky Original Czech Lager",
     "apk": 1.09,
     "typ": "Öl",
@@ -9862,14 +8606,6 @@
     "procent": 12.5,
     "volym": 250,
     "pris": 29.0
-  },
-  {
-    "namn": "Explorer Vodka",
-    "apk": 1.08,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 350,
-    "pris": 121.0
   },
   {
     "namn": "Explorer Vodka",
@@ -9936,14 +8672,6 @@
     "pris": 259.0
   },
   {
-    "namn": "Ekobryggeriet Gin Ekologisk",
-    "apk": 1.08,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 700,
-    "pris": 259.0
-  },
-  {
     "namn": "J&B",
     "apk": 1.08,
     "typ": "Sprit",
@@ -9958,22 +8686,6 @@
     "procent": 40.0,
     "volym": 350,
     "pris": 130.0
-  },
-  {
-    "namn": "High Commissioner",
-    "apk": 1.08,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 350,
-    "pris": 130.0
-  },
-  {
-    "namn": "MacRoys Finest Scotch Blended Whisky",
-    "apk": 1.08,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 500,
-    "pris": 185.0
   },
   {
     "namn": "MacRoys Finest Scotch Blended Whisky",
@@ -9998,14 +8710,6 @@
     "procent": 40.0,
     "volym": 700,
     "pris": 259.0
-  },
-  {
-    "namn": "Lagunitas IPA",
-    "apk": 1.08,
-    "typ": "Öl",
-    "procent": 6.2,
-    "volym": 330,
-    "pris": 18.9
   },
   {
     "namn": "Clay Creek Pinot Noir",
@@ -10120,14 +8824,6 @@
     "pris": 54.9
   },
   {
-    "namn": "Gaymer's Olde English Cyder",
-    "apk": 1.07,
-    "typ": "Öl",
-    "procent": 5.9,
-    "volym": 1000,
-    "pris": 54.9
-  },
-  {
     "namn": "Barlingbo Bryggeri Galgbacken IPA",
     "apk": 1.07,
     "typ": "Öl",
@@ -10142,14 +8838,6 @@
     "procent": 38.0,
     "volym": 700,
     "pris": 249.0
-  },
-  {
-    "namn": "Brooklyn Defender IPA",
-    "apk": 1.07,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 330,
-    "pris": 16.9
   },
   {
     "namn": "Fontana Candida Frascati",
@@ -10176,28 +8864,12 @@
     "pris": 16.9
   },
   {
-    "namn": "S:t Eriks IPA",
-    "apk": 1.07,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 330,
-    "pris": 16.4
-  },
-  {
     "namn": "Santa Vittoria Langhe Rosso",
     "apk": 1.07,
     "typ": "Vin",
     "procent": 12.5,
     "volym": 3000,
     "pris": 349.0
-  },
-  {
-    "namn": "Eau-de-Vie **",
-    "apk": 1.07,
-    "typ": "Sprit",
-    "procent": 38.0,
-    "volym": 700,
-    "pris": 249.0
   },
   {
     "namn": "Jensen Bitter",
@@ -10286,14 +8958,6 @@
     "procent": 14.0,
     "volym": 750,
     "pris": 99.0
-  },
-  {
-    "namn": "Zlatopramen Half n' Half",
-    "apk": 1.06,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 330,
-    "pris": 14.9
   },
   {
     "namn": "Zlatopramen Half n' Half",
@@ -10480,14 +9144,6 @@
     "pris": 99.0
   },
   {
-    "namn": "Les Pious Côtes du Rhône",
-    "apk": 1.06,
-    "typ": "Vin",
-    "procent": 14.0,
-    "volym": 750,
-    "pris": 99.0
-  },
-  {
     "namn": "Les Dauphins Côtes du Rhône Organic Rouge",
     "apk": 1.06,
     "typ": "Vin",
@@ -10528,31 +9184,7 @@
     "pris": 99.0
   },
   {
-    "namn": "High Commissioner Aged 7 Years",
-    "apk": 1.06,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 500,
-    "pris": 189.0
-  },
-  {
-    "namn": "Spring Village Grenache Syrah Rosé",
-    "apk": 1.06,
-    "typ": "Vin",
-    "procent": 12.0,
-    "volym": 750,
-    "pris": 85.0
-  },
-  {
     "namn": "La Vecchia Via Barbera",
-    "apk": 1.06,
-    "typ": "Vin",
-    "procent": 14.0,
-    "volym": 750,
-    "pris": 99.0
-  },
-  {
-    "namn": "Cigarra Gran Passo Touriga Nacional Cabernet Sauvignon",
     "apk": 1.06,
     "typ": "Vin",
     "procent": 14.0,
@@ -10606,14 +9238,6 @@
     "procent": 14.0,
     "volym": 750,
     "pris": 99.0
-  },
-  {
-    "namn": "Explorer Vodka Jordgubb Lime",
-    "apk": 1.06,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 700,
-    "pris": 247.0
   },
   {
     "namn": "Explorer Vodka Jordgubb Lime",
@@ -10792,14 +9416,6 @@
     "pris": 89.0
   },
   {
-    "namn": "The Latitude 55°",
-    "apk": 1.05,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 700,
-    "pris": 267.0
-  },
-  {
     "namn": "Casillero del Diablo Chardonnay",
     "apk": 1.05,
     "typ": "Vin",
@@ -10912,14 +9528,6 @@
     "pris": 144.0
   },
   {
-    "namn": "Ruppertsberger Imperial Cuvée Organic",
-    "apk": 1.05,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 750,
-    "pris": 89.0
-  },
-  {
     "namn": "Casillero del Diablo Merlot",
     "apk": 1.05,
     "typ": "Vin",
@@ -10936,22 +9544,6 @@
     "pris": 89.0
   },
   {
-    "namn": "Lord Calvert",
-    "apk": 1.05,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 350,
-    "pris": 133.0
-  },
-  {
-    "namn": "Ekobryggeriet Old Tom Gin Eko",
-    "apk": 1.05,
-    "typ": "Sprit",
-    "procent": 45.0,
-    "volym": 700,
-    "pris": 299.0
-  },
-  {
     "namn": "Cuvée Celeste Chardonnay",
     "apk": 1.05,
     "typ": "Vin",
@@ -10966,14 +9558,6 @@
     "procent": 12.5,
     "volym": 750,
     "pris": 89.0
-  },
-  {
-    "namn": "Evan Williams Bourbon",
-    "apk": 1.05,
-    "typ": "Sprit",
-    "procent": 43.0,
-    "volym": 350,
-    "pris": 144.0
   },
   {
     "namn": "Strangely South Pinot Grigio",
@@ -11142,14 +9726,6 @@
     "procent": 12.5,
     "volym": 750,
     "pris": 89.0
-  },
-  {
-    "namn": "Stockholms Brygghus Lager",
-    "apk": 1.05,
-    "typ": "Öl",
-    "procent": 5.4,
-    "volym": 330,
-    "pris": 17.0
   },
   {
     "namn": "Shaman's Lingonberry Vodka",
@@ -11360,14 +9936,6 @@
     "pris": 135.0
   },
   {
-    "namn": "Elin Organic Vodka",
-    "apk": 1.04,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 350,
-    "pris": 135.0
-  },
-  {
     "namn": "Sorelle Blanc de Blancs",
     "apk": 1.04,
     "typ": "Vin",
@@ -11400,36 +9968,12 @@
     "pris": 269.0
   },
   {
-    "namn": "Explorer Vodka Ekologisk",
-    "apk": 1.04,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 500,
-    "pris": 192.0
-  },
-  {
-    "namn": "Budvar Budejovicky Original Czech Lager",
-    "apk": 1.04,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 15.9
-  },
-  {
     "namn": "For Peat's Sake",
     "apk": 1.04,
     "typ": "Sprit",
     "procent": 40.0,
     "volym": 350,
     "pris": 135.0
-  },
-  {
-    "namn": "Château Juvenal Les Garrigues",
-    "apk": 1.04,
-    "typ": "Vin",
-    "procent": 14.5,
-    "volym": 750,
-    "pris": 105.0
   },
   {
     "namn": "La la lager",
@@ -11494,22 +10038,6 @@
     "procent": 14.5,
     "volym": 750,
     "pris": 105.0
-  },
-  {
-    "namn": "Heineken",
-    "apk": 1.04,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 15.9
-  },
-  {
-    "namn": "Heineken",
-    "apk": 1.04,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 15.9
   },
   {
     "namn": "Kukko Helles",
@@ -11664,14 +10192,6 @@
     "pris": 129.0
   },
   {
-    "namn": "Barracuda Rum Silver",
-    "apk": 1.03,
-    "typ": "Sprit",
-    "procent": 38.0,
-    "volym": 350,
-    "pris": 129.0
-  },
-  {
     "namn": "Desperados Original",
     "apk": 1.03,
     "typ": "Öl",
@@ -11704,14 +10224,6 @@
     "pris": 146.0
   },
   {
-    "namn": "Desperados Original",
-    "apk": 1.03,
-    "typ": "Öl",
-    "procent": 5.9,
-    "volym": 330,
-    "pris": 18.9
-  },
-  {
     "namn": "Bonterra The Econic",
     "apk": 1.03,
     "typ": "Vin",
@@ -11742,14 +10254,6 @@
     "procent": 40.0,
     "volym": 500,
     "pris": 194.0
-  },
-  {
-    "namn": "Coppersmith's En Kall",
-    "apk": 1.03,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 16.0
   },
   {
     "namn": "Coppersmith's En Kall",
@@ -11990,14 +10494,6 @@
     "procent": 13.5,
     "volym": 750,
     "pris": 99.0
-  },
-  {
-    "namn": "Brännvin special",
-    "apk": 1.02,
-    "typ": "Sprit",
-    "procent": 30.0,
-    "volym": 700,
-    "pris": 206.0
   },
   {
     "namn": "Famille Audu Chardonnay",
@@ -12254,22 +10750,6 @@
     "procent": 12.0,
     "volym": 750,
     "pris": 88.0
-  },
-  {
-    "namn": "Pilsner Urquell",
-    "apk": 1.02,
-    "typ": "Öl",
-    "procent": 4.4,
-    "volym": 330,
-    "pris": 14.2
-  },
-  {
-    "namn": "Perdeberg Cellar Reserve Collection Cabernet Sauvignon Shiraz Malbec",
-    "apk": 1.02,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 750,
-    "pris": 99.0
   },
   {
     "namn": "Piemonte Rosso Enzo Bartoli",
@@ -12568,28 +11048,12 @@
     "pris": 278.0
   },
   {
-    "namn": "Brooklyn Lager",
-    "apk": 1.01,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 17.0
-  },
-  {
     "namn": "Inycon Chardonnay",
     "apk": 1.01,
     "typ": "Vin",
     "procent": 12.0,
     "volym": 750,
     "pris": 89.0
-  },
-  {
-    "namn": "West Cork Irish Whiskey Black Cask",
-    "apk": 1.01,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 700,
-    "pris": 278.0
   },
   {
     "namn": "Stoli Vodka",
@@ -12968,14 +11432,6 @@
     "pris": 315.0
   },
   {
-    "namn": "Pistonhead Cider Hallon och Svarta vinbär",
-    "apk": 1.0,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 14.9
-  },
-  {
     "namn": "Good Guys Brew Kung Karlstad",
     "apk": 1.0,
     "typ": "Öl",
@@ -13350,14 +11806,6 @@
     "procent": 38.0,
     "volym": 700,
     "pris": 269.0
-  },
-  {
-    "namn": "CHILL OUT Sauvignon Blanc Semillon",
-    "apk": 0.99,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 750,
-    "pris": 95.0
   },
   {
     "namn": "Erdinger Weissbier Dunkel",
@@ -13912,28 +12360,12 @@
     "pris": 99.0
   },
   {
-    "namn": "Prima Festa Nerello Mascalese Terre Siciliane",
-    "apk": 0.98,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 750,
-    "pris": 103.0
-  },
-  {
     "namn": "Collevite Falerio Pecorino",
     "apk": 0.98,
     "typ": "Vin",
     "procent": 13.0,
     "volym": 750,
     "pris": 99.0
-  },
-  {
-    "namn": "Biostilla Organic Gin",
-    "apk": 0.98,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 350,
-    "pris": 134.0
   },
   {
     "namn": "19 Crimes Shiraz",
@@ -14376,14 +12808,6 @@
     "pris": 12.9
   },
   {
-    "namn": "Koskenkorva Vodka",
-    "apk": 0.97,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 350,
-    "pris": 135.0
-  },
-  {
     "namn": "Pierre Olivier Blanc de Blancs Prestige Brut",
     "apk": 0.97,
     "typ": "Vin",
@@ -14528,14 +12952,6 @@
     "pris": 89.0
   },
   {
-    "namn": "Peak 2 Peak Blended Malt Scotch Whisky",
-    "apk": 0.97,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 700,
-    "pris": 289.0
-  },
-  {
     "namn": "Kolkmann Rosé Zweigelt",
     "apk": 0.97,
     "typ": "Vin",
@@ -14654,14 +13070,6 @@
     "procent": 5.0,
     "volym": 330,
     "pris": 17.0
-  },
-  {
-    "namn": "Paul Sapin Chardonnay",
-    "apk": 0.97,
-    "typ": "Vin",
-    "procent": 11.5,
-    "volym": 750,
-    "pris": 89.0
   },
   {
     "namn": "Beersmiths Soundwaves",
@@ -14832,14 +13240,6 @@
     "pris": 109.0
   },
   {
-    "namn": "Cid Wildberries",
-    "apk": 0.96,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 15.5
-  },
-  {
     "namn": "Ecoltura Valpolicella Ripasso",
     "apk": 0.96,
     "typ": "Vin",
@@ -14864,14 +13264,6 @@
     "pris": 296.0
   },
   {
-    "namn": "Cid Kaktus/Lime",
-    "apk": 0.96,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 15.5
-  },
-  {
     "namn": "Passitivo Primitivo",
     "apk": 0.96,
     "typ": "Vin",
@@ -14886,14 +13278,6 @@
     "procent": 5.2,
     "volym": 330,
     "pris": 17.9
-  },
-  {
-    "namn": "Old Speckled Hen",
-    "apk": 0.96,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 500,
-    "pris": 24.9
   },
   {
     "namn": "Starrs Reach Grenache",
@@ -15094,14 +13478,6 @@
     "procent": 40.0,
     "volym": 1750,
     "pris": 729.0
-  },
-  {
-    "namn": "Remmarlöv Gårdsbryggeri Eslöfs APA",
-    "apk": 0.96,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 17.9
   },
   {
     "namn": "Spirit of Sweden Sommarcider Fläder och Rabarber",
@@ -15504,22 +13880,6 @@
     "pris": 99.0
   },
   {
-    "namn": "Brooklyn Stonewall Inn IPA",
-    "apk": 0.95,
-    "typ": "Öl",
-    "procent": 4.6,
-    "volym": 330,
-    "pris": 15.9
-  },
-  {
-    "namn": "Ruppertsberger Riesling Pfalz Organic",
-    "apk": 0.95,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 750,
-    "pris": 99.0
-  },
-  {
     "namn": "Fontana Candida Frascati",
     "apk": 0.95,
     "typ": "Vin",
@@ -15536,28 +13896,12 @@
     "pris": 99.0
   },
   {
-    "namn": "Gotlands Bryggeri Hazy Bulldog APA",
-    "apk": 0.95,
-    "typ": "Öl",
-    "procent": 5.7,
-    "volym": 330,
-    "pris": 19.9
-  },
-  {
     "namn": "Fuller's London Porter",
     "apk": 0.95,
     "typ": "Öl",
     "procent": 5.4,
     "volym": 500,
     "pris": 28.5
-  },
-  {
-    "namn": "Saint Auriol Grand Blanc",
-    "apk": 0.95,
-    "typ": "Vin",
-    "procent": 12.0,
-    "volym": 750,
-    "pris": 95.0
   },
   {
     "namn": "Bouchard Aîné & Fils Pinot Noir Rosé",
@@ -15888,14 +14232,6 @@
     "pris": 99.0
   },
   {
-    "namn": "Mooi by Org de Rac Sauvignon Blanc",
-    "apk": 0.95,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 750,
-    "pris": 99.0
-  },
-  {
     "namn": "NO.1 Old Caribbean Exotic",
     "apk": 0.95,
     "typ": "Sprit",
@@ -15910,14 +14246,6 @@
     "procent": 14.5,
     "volym": 750,
     "pris": 115.0
-  },
-  {
-    "namn": "Ruckel Brewing Magnum Opus",
-    "apk": 0.95,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 19.5
   },
   {
     "namn": "Golden Year Rosé",
@@ -16176,14 +14504,6 @@
     "pris": 299.0
   },
   {
-    "namn": "The Latitude 55°",
-    "apk": 0.94,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 350,
-    "pris": 149.0
-  },
-  {
     "namn": "Echo Falls White Peach & Mango",
     "apk": 0.94,
     "typ": "Vin",
@@ -16198,14 +14518,6 @@
     "procent": 40.0,
     "volym": 700,
     "pris": 299.0
-  },
-  {
-    "namn": "Gotlands Bryggeri Sleepy Bulldog Pale Ale",
-    "apk": 0.94,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 330,
-    "pris": 16.9
   },
   {
     "namn": "Cocky Crane Black Currant Gin",
@@ -16262,14 +14574,6 @@
     "procent": 5.3,
     "volym": 440,
     "pris": 24.7
-  },
-  {
-    "namn": "Göteborgs Nya Bryggeri Pils",
-    "apk": 0.94,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 330,
-    "pris": 16.9
   },
   {
     "namn": "Remmarlöv The Red Slope Imperial Red Ale",
@@ -16464,14 +14768,6 @@
     "pris": 279.0
   },
   {
-    "namn": "Elin Gin Grapefrukt",
-    "apk": 0.94,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 350,
-    "pris": 139.0
-  },
-  {
     "namn": "St Feuillien Triple",
     "apk": 0.94,
     "typ": "Öl",
@@ -16510,14 +14806,6 @@
     "procent": 40.0,
     "volym": 500,
     "pris": 212.0
-  },
-  {
-    "namn": "Poppels Imperial NEIPA",
-    "apk": 0.94,
-    "typ": "Öl",
-    "procent": 8.5,
-    "volym": 440,
-    "pris": 39.9
   },
   {
     "namn": "All About Old Tom Gin",
@@ -16688,14 +14976,6 @@
     "pris": 109.0
   },
   {
-    "namn": "Rekorderlig Päron",
-    "apk": 0.93,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 15.9
-  },
-  {
     "namn": "Castelmare Valpolicella Ripasso Superiore",
     "apk": 0.93,
     "typ": "Vin",
@@ -16742,14 +15022,6 @@
     "procent": 13.5,
     "volym": 750,
     "pris": 109.0
-  },
-  {
-    "namn": "Rekorderlig Skogsbär",
-    "apk": 0.93,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 15.9
   },
   {
     "namn": "Rekorderlig Skogsbär",
@@ -16840,22 +15112,6 @@
     "pris": 282.0
   },
   {
-    "namn": "Rekorderlig Jordgubb Lime",
-    "apk": 0.93,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 15.9
-  },
-  {
-    "namn": "Brännvin special",
-    "apk": 0.93,
-    "typ": "Sprit",
-    "procent": 30.0,
-    "volym": 350,
-    "pris": 113.0
-  },
-  {
     "namn": "Castelmondo Valpolicella Ripasso Superiore",
     "apk": 0.93,
     "typ": "Vin",
@@ -16864,23 +15120,7 @@
     "pris": 109.0
   },
   {
-    "namn": "Shapeshifter West Coast IPA",
-    "apk": 0.93,
-    "typ": "Öl",
-    "procent": 5.9,
-    "volym": 330,
-    "pris": 20.9
-  },
-  {
     "namn": "Somersby Pear Cider",
-    "apk": 0.93,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 15.9
-  },
-  {
-    "namn": "Somersby Strawberry & Lime",
     "apk": 0.93,
     "typ": "Öl",
     "procent": 4.5,
@@ -17022,14 +15262,6 @@
     "procent": 5.1,
     "volym": 330,
     "pris": 18.0
-  },
-  {
-    "namn": "Bitburger Premium Pils",
-    "apk": 0.93,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 330,
-    "pris": 17.0
   },
   {
     "namn": "Kopparberg Cider Raspberry",
@@ -17240,14 +15472,6 @@
     "pris": 14.9
   },
   {
-    "namn": "Somersby Pear Cider",
-    "apk": 0.93,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 15.9
-  },
-  {
     "namn": "Nivei Blanco",
     "apk": 0.93,
     "typ": "Vin",
@@ -17262,14 +15486,6 @@
     "procent": 14.8,
     "volym": 750,
     "pris": 120.0
-  },
-  {
-    "namn": "Gotlands Bryggeri Winter Bulldog",
-    "apk": 0.93,
-    "typ": "Öl",
-    "procent": 6.2,
-    "volym": 330,
-    "pris": 21.9
   },
   {
     "namn": "Portillo Organic Malbec",
@@ -17368,14 +15584,6 @@
     "pris": 142.0
   },
   {
-    "namn": "Explorer Vodka Röda Bär",
-    "apk": 0.92,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 350,
-    "pris": 142.0
-  },
-  {
     "namn": "Stella Artois",
     "apk": 0.92,
     "typ": "Öl",
@@ -17408,28 +15616,12 @@
     "pris": 17.9
   },
   {
-    "namn": "Kirin Ichiban",
-    "apk": 0.92,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 17.9
-  },
-  {
     "namn": "Magners Original Irish Cider",
     "apk": 0.92,
     "typ": "Öl",
     "procent": 4.5,
     "volym": 1000,
     "pris": 49.0
-  },
-  {
-    "namn": "Stella Artois",
-    "apk": 0.92,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 17.9
   },
   {
     "namn": "Falling Feather Ruby Cabernet",
@@ -17518,14 +15710,6 @@
     "procent": 5.6,
     "volym": 330,
     "pris": 20.0
-  },
-  {
-    "namn": "1664 Blanc",
-    "apk": 0.92,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 17.9
   },
   {
     "namn": "1664 Blanc",
@@ -17654,14 +15838,6 @@
     "procent": 38.0,
     "volym": 700,
     "pris": 289.0
-  },
-  {
-    "namn": "Peroni Nastro Azzurro",
-    "apk": 0.92,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 17.9
   },
   {
     "namn": "Dark Side of The Moon Shiraz",
@@ -17992,14 +16168,6 @@
     "pris": 99.0
   },
   {
-    "namn": "The Crossings Sauvignon Blanc",
-    "apk": 0.91,
-    "typ": "Vin",
-    "procent": 12.0,
-    "volym": 750,
-    "pris": 99.0
-  },
-  {
     "namn": "Raimonda Barbera d'Alba",
     "apk": 0.91,
     "typ": "Vin",
@@ -18080,14 +16248,6 @@
     "pris": 99.0
   },
   {
-    "namn": "Collective Arts Radio The Mothership Imperial IPA",
-    "apk": 0.91,
-    "typ": "Öl",
-    "procent": 8.2,
-    "volym": 355,
-    "pris": 31.9
-  },
-  {
     "namn": "De Kuyper Triple Sec",
     "apk": 0.91,
     "typ": "Sprit",
@@ -18142,14 +16302,6 @@
     "procent": 5.8,
     "volym": 330,
     "pris": 21.0
-  },
-  {
-    "namn": "Svartberget Nord",
-    "apk": 0.91,
-    "typ": "Öl",
-    "procent": 4.7,
-    "volym": 330,
-    "pris": 17.1
   },
   {
     "namn": "Beersmiths Bockhammer",
@@ -18704,22 +16856,6 @@
     "pris": 16.5
   },
   {
-    "namn": "Briska Passionfrukt & Persika",
-    "apk": 0.9,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 16.5
-  },
-  {
-    "namn": "Halmstad Crush Lemon",
-    "apk": 0.9,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 16.5
-  },
-  {
     "namn": "Halmstad Crush Lemon",
     "apk": 0.9,
     "typ": "Öl",
@@ -18744,36 +16880,12 @@
     "pris": 16.5
   },
   {
-    "namn": "Briska Svarta Vinbär",
-    "apk": 0.9,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 16.5
-  },
-  {
     "namn": "Graham's Fine Ruby Port",
     "apk": 0.9,
     "typ": "Vin",
     "procent": 19.0,
     "volym": 750,
     "pris": 159.0
-  },
-  {
-    "namn": "Briska Fläder",
-    "apk": 0.9,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 16.5
-  },
-  {
-    "namn": "Briska Äppelcider",
-    "apk": 0.9,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 16.5
   },
   {
     "namn": "Bulleit Bourbon",
@@ -18808,14 +16920,6 @@
     "pris": 16.5
   },
   {
-    "namn": "Briska Jordgubb",
-    "apk": 0.9,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 16.5
-  },
-  {
     "namn": "Echo Falls White Zinfandel Rosé",
     "apk": 0.9,
     "typ": "Vin",
@@ -18832,28 +16936,12 @@
     "pris": 249.0
   },
   {
-    "namn": "Briska Äppelcider med smak av Mango",
-    "apk": 0.9,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 16.5
-  },
-  {
     "namn": "Langhe Rosso Giovanni Rosso",
     "apk": 0.9,
     "typ": "Vin",
     "procent": 13.5,
     "volym": 2000,
     "pris": 299.0
-  },
-  {
-    "namn": "West Cork Irish Whiskey Black Cask",
-    "apk": 0.9,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 350,
-    "pris": 155.0
   },
   {
     "namn": "Mora Bryggeri Njupeskär ljus lager på dalavis",
@@ -19112,14 +17200,6 @@
     "pris": 29.9
   },
   {
-    "namn": "Reinklou No. 6 Bock",
-    "apk": 0.9,
-    "typ": "Öl",
-    "procent": 6.8,
-    "volym": 440,
-    "pris": 33.1
-  },
-  {
     "namn": "7 Deadly Red",
     "apk": 0.9,
     "typ": "Vin",
@@ -19254,14 +17334,6 @@
     "procent": 13.0,
     "volym": 750,
     "pris": 109.0
-  },
-  {
-    "namn": "Birra Moretti",
-    "apk": 0.89,
-    "typ": "Öl",
-    "procent": 4.6,
-    "volym": 330,
-    "pris": 17.0
   },
   {
     "namn": "Birra Moretti",
@@ -19912,14 +17984,6 @@
     "pris": 119.0
   },
   {
-    "namn": "Ekobryggeriet Lemon Gin",
-    "apk": 0.88,
-    "typ": "Sprit",
-    "procent": 37.5,
-    "volym": 350,
-    "pris": 149.0
-  },
-  {
     "namn": "Myth Red Blend",
     "apk": 0.88,
     "typ": "Vin",
@@ -19945,14 +18009,6 @@
   },
   {
     "namn": "Les Sorts Selecció",
-    "apk": 0.88,
-    "typ": "Vin",
-    "procent": 14.0,
-    "volym": 750,
-    "pris": 119.0
-  },
-  {
-    "namn": "Cline Old Vine Zinfandel",
     "apk": 0.88,
     "typ": "Vin",
     "procent": 14.0,
@@ -20024,14 +18080,6 @@
     "pris": 16.9
   },
   {
-    "namn": "Tail of A Whale",
-    "apk": 0.88,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 330,
-    "pris": 17.9
-  },
-  {
     "namn": "El Mar Cava Rosé Brut",
     "apk": 0.88,
     "typ": "Vin",
@@ -20062,14 +18110,6 @@
     "procent": 14.0,
     "volym": 750,
     "pris": 119.0
-  },
-  {
-    "namn": "Halmstad Crush Mango Passion",
-    "apk": 0.88,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 16.9
   },
   {
     "namn": "Bourgogne Chardonnay Les Sentinelles",
@@ -20136,28 +18176,12 @@
     "pris": 119.0
   },
   {
-    "namn": "Gotlands Bryggeri Sitting Bulldog",
-    "apk": 0.88,
-    "typ": "Öl",
-    "procent": 6.4,
-    "volym": 330,
-    "pris": 23.9
-  },
-  {
     "namn": "Gran Feudo Reserva",
     "apk": 0.88,
     "typ": "Vin",
     "procent": 14.0,
     "volym": 750,
     "pris": 119.0
-  },
-  {
-    "namn": "S:t Eriks Citra Pale Ale",
-    "apk": 0.88,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 16.9
   },
   {
     "namn": "Kleine Zalze Pinotage",
@@ -20280,14 +18304,6 @@
     "pris": 40.1
   },
   {
-    "namn": "Benchwarmers Brewing Santo Poco Mexican Maize Lager",
-    "apk": 0.88,
-    "typ": "Öl",
-    "procent": 4.6,
-    "volym": 440,
-    "pris": 22.9
-  },
-  {
     "namn": "Golden Age DIPA",
     "apk": 0.88,
     "typ": "Öl",
@@ -20302,14 +18318,6 @@
     "procent": 8.7,
     "volym": 330,
     "pris": 32.5
-  },
-  {
-    "namn": "Nederburg The Winemasters Cinsault Pinotage",
-    "apk": 0.88,
-    "typ": "Vin",
-    "procent": 14.0,
-    "volym": 750,
-    "pris": 119.0
   },
   {
     "namn": "Nederburg The Winemasters Cinsault Pinotage",
@@ -20678,14 +18686,6 @@
     "procent": 4.5,
     "volym": 330,
     "pris": 16.9
-  },
-  {
-    "namn": "O.I.B Hunden, Katten, Glassen",
-    "apk": 0.88,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 330,
-    "pris": 19.9
   },
   {
     "namn": "Stigbergets ÖL",
@@ -21064,14 +19064,6 @@
     "pris": 369.0
   },
   {
-    "namn": "Cederlunds Caloric",
-    "apk": 0.87,
-    "typ": "Sprit",
-    "procent": 26.0,
-    "volym": 700,
-    "pris": 209.0
-  },
-  {
     "namn": "Pizzolato Vino Spumante Pinot Grigio Organic",
     "apk": 0.87,
     "typ": "Vin",
@@ -21110,14 +19102,6 @@
     "procent": 11.5,
     "volym": 750,
     "pris": 99.0
-  },
-  {
-    "namn": "O.P. Anderson Dill Aquavit",
-    "apk": 0.87,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 500,
-    "pris": 229.0
   },
   {
     "namn": "Vinette Chardonnay",
@@ -21192,14 +19176,6 @@
     "pris": 99.0
   },
   {
-    "namn": "Vinette Chardonnay",
-    "apk": 0.87,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 250,
-    "pris": 39.0
-  },
-  {
     "namn": "Let every moment Spark Brut",
     "apk": 0.87,
     "typ": "Vin",
@@ -21246,14 +19222,6 @@
     "procent": 10.5,
     "volym": 330,
     "pris": 39.9
-  },
-  {
-    "namn": "Fjäderholmarnas Lager",
-    "apk": 0.87,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 19.0
   },
   {
     "namn": "Beerium BFG Beriums Friendly Giant",
@@ -21872,14 +19840,6 @@
     "pris": 109.0
   },
   {
-    "namn": "Gato Negro Cabernet Sauvignon",
-    "apk": 0.86,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 250,
-    "pris": 38.0
-  },
-  {
     "namn": "Petite Cuvée Madame",
     "apk": 0.86,
     "typ": "Vin",
@@ -21902,14 +19862,6 @@
     "procent": 6.2,
     "volym": 330,
     "pris": 23.9
-  },
-  {
-    "namn": "Barracuda Caribbean Dark",
-    "apk": 0.86,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 700,
-    "pris": 327.0
   },
   {
     "namn": "Saint Clair Vicar's Choice Barrel Chardonnay",
@@ -21974,14 +19926,6 @@
     "procent": 6.7,
     "volym": 500,
     "pris": 38.8
-  },
-  {
-    "namn": "Beerium Kraftölsbryggeri King in Yellow",
-    "apk": 0.86,
-    "typ": "Öl",
-    "procent": 7.8,
-    "volym": 330,
-    "pris": 30.1
   },
   {
     "namn": "Grebbestad Bryggeri Kosteröl",
@@ -22792,14 +20736,6 @@
     "pris": 119.0
   },
   {
-    "namn": "Le Reviseur VS Cognac",
-    "apk": 0.85,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 500,
-    "pris": 234.0
-  },
-  {
     "namn": "Château Pineraie Malbec",
     "apk": 0.85,
     "typ": "Vin",
@@ -22840,68 +20776,12 @@
     "pris": 119.0
   },
   {
-    "namn": "Liquid Industries The Bellini Project",
-    "apk": 0.85,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 17.5
-  },
-  {
     "namn": "Antiche Terre Venete Valpolicella Ripasso",
     "apk": 0.85,
     "typ": "Vin",
     "procent": 13.5,
     "volym": 750,
     "pris": 119.0
-  },
-  {
-    "namn": "Meukow Cognac VS",
-    "apk": 0.85,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 500,
-    "pris": 235.0
-  },
-  {
-    "namn": "Liquid Industries The Sour Project Grapefrukt, Lindblomma och Grönt te",
-    "apk": 0.85,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 17.5
-  },
-  {
-    "namn": "Liquid Industries The Mojito Project",
-    "apk": 0.85,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 17.5
-  },
-  {
-    "namn": "Liquid Industries The Pina Colada Project",
-    "apk": 0.85,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 17.5
-  },
-  {
-    "namn": "Liquid Industries The Apple Sour Project",
-    "apk": 0.85,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 17.5
-  },
-  {
-    "namn": "Nau Mai Sauvignon Blanc",
-    "apk": 0.85,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 750,
-    "pris": 110.0
   },
   {
     "namn": "Andica Cabernet Sauvignon",
@@ -23416,14 +21296,6 @@
     "pris": 27.0
   },
   {
-    "namn": "Stockholms Brygghus Pale Ale",
-    "apk": 0.85,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 330,
-    "pris": 21.3
-  },
-  {
     "namn": "Monferrato Nebbiolo Vinchio Vaglio",
     "apk": 0.85,
     "typ": "Vin",
@@ -23600,14 +21472,6 @@
     "pris": 120.0
   },
   {
-    "namn": "Dulban Garnacha",
-    "apk": 0.84,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 250,
-    "pris": 40.0
-  },
-  {
     "namn": "Ribera 1 One",
     "apk": 0.84,
     "typ": "Vin",
@@ -23654,22 +21518,6 @@
     "procent": 35.0,
     "volym": 700,
     "pris": 292.0
-  },
-  {
-    "namn": "Rendola Sangiovese Organic",
-    "apk": 0.84,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 750,
-    "pris": 120.0
-  },
-  {
-    "namn": "Château Bois-Cardon Médoc",
-    "apk": 0.84,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 750,
-    "pris": 120.0
   },
   {
     "namn": "Martini Rosso",
@@ -23782,14 +21630,6 @@
     "procent": 6.1,
     "volym": 500,
     "pris": 36.3
-  },
-  {
-    "namn": "Wapnö Lya Belgisk Blond",
-    "apk": 0.84,
-    "typ": "Öl",
-    "procent": 6.0,
-    "volym": 330,
-    "pris": 23.6
   },
   {
     "namn": "Wapnö Lya Belgisk Blond",
@@ -24648,14 +22488,6 @@
     "pris": 19.9
   },
   {
-    "namn": "Fiuza Castelão",
-    "apk": 0.83,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 250,
-    "pris": 39.0
-  },
-  {
     "namn": "Somersby Piña Colada",
     "apk": 0.83,
     "typ": "Öl",
@@ -24678,22 +22510,6 @@
     "procent": 11.0,
     "volym": 750,
     "pris": 99.0
-  },
-  {
-    "namn": "Sigtuna Knight Rider Porter",
-    "apk": 0.83,
-    "typ": "Öl",
-    "procent": 7.0,
-    "volym": 330,
-    "pris": 27.9
-  },
-  {
-    "namn": "Cidraie Apple Organic",
-    "apk": 0.83,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 19.9
   },
   {
     "namn": "Cidraie Apple Organic",
@@ -24758,22 +22574,6 @@
     "procent": 40.0,
     "volym": 500,
     "pris": 242.0
-  },
-  {
-    "namn": "Leva Chardonnay Dimiat & Muscat",
-    "apk": 0.83,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 250,
-    "pris": 39.0
-  },
-  {
-    "namn": "Gotlands Bryggeri Peachy Bulldog",
-    "apk": 0.83,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 19.9
   },
   {
     "namn": "St Bernardus Watou Wit",
@@ -24918,22 +22718,6 @@
     "procent": 9.5,
     "volym": 440,
     "pris": 50.1
-  },
-  {
-    "namn": "Stigbergets Always Porter",
-    "apk": 0.83,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 19.9
-  },
-  {
-    "namn": "Stigbergets Always Christmas Porter",
-    "apk": 0.83,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 19.9
   },
   {
     "namn": "Dugges Perfa Påsk",
@@ -25512,14 +23296,6 @@
     "pris": 19.9
   },
   {
-    "namn": "Wapnö Freja Lager",
-    "apk": 0.83,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 19.9
-  },
-  {
     "namn": "Baffo Rosso Chianti",
     "apk": 0.83,
     "typ": "Vin",
@@ -25808,14 +23584,6 @@
     "pris": 386.0
   },
   {
-    "namn": "Gato Negro Sauvignon Blanc",
-    "apk": 0.82,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 250,
-    "pris": 38.0
-  },
-  {
     "namn": "Gardo & Morris Organic Sauvignon Blanc",
     "apk": 0.82,
     "typ": "Vin",
@@ -25849,14 +23617,6 @@
   },
   {
     "namn": "Langhe Rosso",
-    "apk": 0.82,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 119.0
-  },
-  {
-    "namn": "Château Bonnet Rouge",
     "apk": 0.82,
     "typ": "Vin",
     "procent": 13.0,
@@ -25926,22 +23686,6 @@
     "procent": 13.0,
     "volym": 750,
     "pris": 119.0
-  },
-  {
-    "namn": "Oppigårds Pilsner",
-    "apk": 0.82,
-    "typ": "Öl",
-    "procent": 4.7,
-    "volym": 330,
-    "pris": 18.9
-  },
-  {
-    "namn": "Newcastle Brown Ale",
-    "apk": 0.82,
-    "typ": "Öl",
-    "procent": 4.7,
-    "volym": 330,
-    "pris": 18.9
   },
   {
     "namn": "Gabriel Meffre Côtes-du-Rhône Terra",
@@ -26064,14 +23808,6 @@
     "pris": 31.9
   },
   {
-    "namn": "Dalabryggeri Weisse",
-    "apk": 0.82,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 500,
-    "pris": 31.9
-  },
-  {
     "namn": "South Plains Brewing Pink Freud",
     "apk": 0.82,
     "typ": "Öl",
@@ -26118,22 +23854,6 @@
     "procent": 5.4,
     "volym": 500,
     "pris": 32.9
-  },
-  {
-    "namn": "Colle Reale Rosso",
-    "apk": 0.82,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 119.0
-  },
-  {
-    "namn": "Norra Vångas Bryggeri Afterski Ljus Lager",
-    "apk": 0.82,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 20.0
   },
   {
     "namn": "Norra Vångas Bryggeri Afterski Ljus Lager",
@@ -26464,14 +24184,6 @@
     "pris": 279.0
   },
   {
-    "namn": "Commander Jones Dark Spiced",
-    "apk": 0.82,
-    "typ": "Sprit",
-    "procent": 35.0,
-    "volym": 350,
-    "pris": 149.0
-  },
-  {
     "namn": "Mulderbosch Sparkling Chenin Blanc",
     "apk": 0.82,
     "typ": "Vin",
@@ -26502,14 +24214,6 @@
     "procent": 6.4,
     "volym": 473,
     "pris": 36.9
-  },
-  {
-    "namn": "Oppigårds Thurbo Stout",
-    "apk": 0.82,
-    "typ": "Öl",
-    "procent": 8.7,
-    "volym": 330,
-    "pris": 34.9
   },
   {
     "namn": "Västkustens Öl Västkustsk Imperial Stout",
@@ -27096,14 +24800,6 @@
     "pris": 129.0
   },
   {
-    "namn": "Oppigårds Indian Tribute",
-    "apk": 0.81,
-    "typ": "Öl",
-    "procent": 6.6,
-    "volym": 330,
-    "pris": 26.9
-  },
-  {
     "namn": "Brewdog Punk IPA",
     "apk": 0.81,
     "typ": "Öl",
@@ -27278,14 +24974,6 @@
     "procent": 9.0,
     "volym": 330,
     "pris": 36.5
-  },
-  {
-    "namn": "O.P. Anderson Petronella Äpple",
-    "apk": 0.81,
-    "typ": "Sprit",
-    "procent": 30.0,
-    "volym": 350,
-    "pris": 129.0
   },
   {
     "namn": "O.P. Anderson Petronella Äpple",
@@ -27640,14 +25328,6 @@
     "pris": 35.1
   },
   {
-    "namn": "Stigbergets Trouble Sleep",
-    "apk": 0.81,
-    "typ": "Öl",
-    "procent": 12.0,
-    "volym": 330,
-    "pris": 48.9
-  },
-  {
     "namn": "Gotlands Bryggeri Headbanger Bulldog",
     "apk": 0.81,
     "typ": "Öl",
@@ -27800,14 +25480,6 @@
     "pris": 18.5
   },
   {
-    "namn": "Briska Päron",
-    "apk": 0.8,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 18.5
-  },
-  {
     "namn": "Briska Hallon",
     "apk": 0.8,
     "typ": "Öl",
@@ -27870,14 +25542,6 @@
     "procent": 12.5,
     "volym": 250,
     "pris": 39.0
-  },
-  {
-    "namn": "Briska Hallon",
-    "apk": 0.8,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 18.5
   },
   {
     "namn": "Briska Blåbär & Hallon",
@@ -27960,14 +25624,6 @@
     "pris": 199.0
   },
   {
-    "namn": "Briska Blåbär & Hallon",
-    "apk": 0.8,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 18.5
-  },
-  {
     "namn": "Poppels Pine IPA",
     "apk": 0.8,
     "typ": "Öl",
@@ -27982,14 +25638,6 @@
     "procent": 9.5,
     "volym": 750,
     "pris": 89.0
-  },
-  {
-    "namn": "Barracuda Caribbean Dark",
-    "apk": 0.8,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 350,
-    "pris": 174.0
   },
   {
     "namn": "Bache Gabrielsen 3 kors",
@@ -28198,14 +25846,6 @@
     "procent": 5.5,
     "volym": 330,
     "pris": 22.8
-  },
-  {
-    "namn": "Bottenvikens Solen",
-    "apk": 0.8,
-    "typ": "Öl",
-    "procent": 4.6,
-    "volym": 330,
-    "pris": 19.0
   },
   {
     "namn": "Värmdö Bryggeri Rockenrollex Pilsner",
@@ -28728,14 +26368,6 @@
     "pris": 19.0
   },
   {
-    "namn": "Berretto Hoppy",
-    "apk": 0.8,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 330,
-    "pris": 22.8
-  },
-  {
     "namn": "Torsöl Microbryggeri Cirkus APA",
     "apk": 0.8,
     "typ": "Öl",
@@ -29200,14 +26832,6 @@
     "pris": 119.0
   },
   {
-    "namn": "Crudo Catarratto Zibibbo Organic PET",
-    "apk": 0.79,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 375,
-    "pris": 59.0
-  },
-  {
     "namn": "havn Riesling",
     "apk": 0.79,
     "typ": "Vin",
@@ -29310,14 +26934,6 @@
     "procent": 12.5,
     "volym": 750,
     "pris": 119.0
-  },
-  {
-    "namn": "Nya Carnegiebryggeriet Jack",
-    "apk": 0.79,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 18.9
   },
   {
     "namn": "Mulderbosch Sparkling Rosé",
@@ -30216,14 +27832,6 @@
     "pris": 33.0
   },
   {
-    "namn": "Bottenvikens Polarnatten",
-    "apk": 0.79,
-    "typ": "Öl",
-    "procent": 11.0,
-    "volym": 330,
-    "pris": 46.1
-  },
-  {
     "namn": "EtOH Double Peached",
     "apk": 0.79,
     "typ": "Sprit",
@@ -30816,14 +28424,6 @@
     "pris": 21.9
   },
   {
-    "namn": "Bryggverket Dubbelpipa",
-    "apk": 0.78,
-    "typ": "Öl",
-    "procent": 9.5,
-    "volym": 330,
-    "pris": 40.1
-  },
-  {
     "namn": "Svartbergets Fjällbryggeri Byvind",
     "apk": 0.78,
     "typ": "Öl",
@@ -30888,14 +28488,6 @@
     "pris": 35.0
   },
   {
-    "namn": "Östersundsbryggerier Beredskapslager - Jemtehed & Brande",
-    "apk": 0.78,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 440,
-    "pris": 27.1
-  },
-  {
     "namn": "U and Me Beer Dubbelripa",
     "apk": 0.78,
     "typ": "Öl",
@@ -30950,14 +28542,6 @@
     "procent": 11.0,
     "volym": 330,
     "pris": 46.8
-  },
-  {
-    "namn": "To Øl Whirl Domination",
-    "apk": 0.78,
-    "typ": "Öl",
-    "procent": 6.2,
-    "volym": 440,
-    "pris": 34.9
   },
   {
     "namn": "Nils Oscar Södermalmspilsner",
@@ -31086,14 +28670,6 @@
     "procent": 20.0,
     "volym": 500,
     "pris": 129.0
-  },
-  {
-    "namn": "Nils Oscar Korvöl",
-    "apk": 0.78,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 22.0
   },
   {
     "namn": "Zibibbo Macerato Alileo Wines",
@@ -31648,14 +29224,6 @@
     "pris": 19.9
   },
   {
-    "namn": "Nya Carnegiebryggeriet 100W IPA",
-    "apk": 0.78,
-    "typ": "Öl",
-    "procent": 6.8,
-    "volym": 330,
-    "pris": 28.9
-  },
-  {
     "namn": "Charlis ipaipa",
     "apk": 0.78,
     "typ": "Öl",
@@ -31920,14 +29488,6 @@
     "pris": 39.0
   },
   {
-    "namn": "Mälardalens Destilleri Kir - Svarta Vinbär",
-    "apk": 0.77,
-    "typ": "Vin",
-    "procent": 12.0,
-    "volym": 250,
-    "pris": 39.0
-  },
-  {
     "namn": "Jarana Blanco",
     "apk": 0.77,
     "typ": "Sprit",
@@ -31990,14 +29550,6 @@
     "procent": 13.5,
     "volym": 750,
     "pris": 132.0
-  },
-  {
-    "namn": "Dale's Pale Ale",
-    "apk": 0.77,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 355,
-    "pris": 29.9
   },
   {
     "namn": "Smith Street Session IPA Gluten Free",
@@ -32094,22 +29646,6 @@
     "procent": 5.9,
     "volym": 440,
     "pris": 33.9
-  },
-  {
-    "namn": "Svartberget Weissbergen",
-    "apk": 0.77,
-    "typ": "Öl",
-    "procent": 4.7,
-    "volym": 440,
-    "pris": 26.7
-  },
-  {
-    "namn": "Remmarlöv Eslöfs IPA",
-    "apk": 0.77,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 23.9
   },
   {
     "namn": "Svartberget Weissbergen",
@@ -32529,14 +30065,6 @@
   },
   {
     "namn": "BrewDog Two Scoops",
-    "apk": 0.77,
-    "typ": "Öl",
-    "procent": 7.0,
-    "volym": 440,
-    "pris": 39.9
-  },
-  {
-    "namn": "Finn Krush IPA",
     "apk": 0.77,
     "typ": "Öl",
     "procent": 7.0,
@@ -33016,14 +30544,6 @@
     "pris": 149.0
   },
   {
-    "namn": "Nerello Mascalese Nicosia",
-    "apk": 0.76,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 129.0
-  },
-  {
     "namn": "Ruppertsberger Von Wallberg Sauvignon Blanc",
     "apk": 0.76,
     "typ": "Vin",
@@ -33384,14 +30904,6 @@
     "pris": 34.9
   },
   {
-    "namn": "Omaka Akaipa",
-    "apk": 0.76,
-    "typ": "Öl",
-    "procent": 6.2,
-    "volym": 330,
-    "pris": 26.9
-  },
-  {
     "namn": "Perfectly Squared Brewing Simcoe DoubleIPA",
     "apk": 0.76,
     "typ": "Öl",
@@ -33406,14 +30918,6 @@
     "procent": 5.4,
     "volym": 330,
     "pris": 23.6
-  },
-  {
-    "namn": "Sälens Fjällbryggeri Norrsken Ljus Lager",
-    "apk": 0.76,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 440,
-    "pris": 30.1
   },
   {
     "namn": "U and Me Beer Funky Chicken Easter Brew",
@@ -33920,14 +31424,6 @@
     "pris": 139.0
   },
   {
-    "namn": "Loimu Årgångsglögg",
-    "apk": 0.76,
-    "typ": "Vin",
-    "procent": 15.0,
-    "volym": 750,
-    "pris": 149.0
-  },
-  {
     "namn": "Lirac Le Petit Prince",
     "apk": 0.76,
     "typ": "Vin",
@@ -34256,14 +31752,6 @@
     "pris": 32.9
   },
   {
-    "namn": "Modus Hoperandi India Pale Ale",
-    "apk": 0.76,
-    "typ": "Öl",
-    "procent": 6.8,
-    "volym": 355,
-    "pris": 31.9
-  },
-  {
     "namn": "Picpoul de Pinet Villa Blanche",
     "apk": 0.76,
     "typ": "Vin",
@@ -34414,14 +31902,6 @@
     "procent": 14.0,
     "volym": 750,
     "pris": 139.0
-  },
-  {
-    "namn": "Mikkeller Burst IPA",
-    "apk": 0.76,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 330,
-    "pris": 23.9
   },
   {
     "namn": "Bodegas Covila Covila Crianza",
@@ -34792,28 +32272,12 @@
     "pris": 19.9
   },
   {
-    "namn": "Petit Paul Sapin Merlot ECO",
-    "apk": 0.75,
-    "typ": "Vin",
-    "procent": 14.5,
-    "volym": 187,
-    "pris": 36.0
-  },
-  {
     "namn": "Century Cocktails Mojito",
     "apk": 0.75,
     "typ": "Sprit",
     "procent": 12.5,
     "volym": 1500,
     "pris": 249.0
-  },
-  {
-    "namn": "Cidraie Pear Organic",
-    "apk": 0.75,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 19.9
   },
   {
     "namn": "Gekkeikan Junmai Sake",
@@ -34846,14 +32310,6 @@
     "procent": 13.5,
     "volym": 750,
     "pris": 135.0
-  },
-  {
-    "namn": "Oppigårds Amarillo",
-    "apk": 0.75,
-    "typ": "Öl",
-    "procent": 5.9,
-    "volym": 330,
-    "pris": 25.9
   },
   {
     "namn": "Stiegl Goldbräu",
@@ -35080,14 +32536,6 @@
     "pris": 32.9
   },
   {
-    "namn": "Remmarlöv Eslöfs Lager",
-    "apk": 0.75,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 21.9
-  },
-  {
     "namn": "Timjans Brygghus Amber Lager",
     "apk": 0.75,
     "typ": "Öl",
@@ -35104,28 +32552,12 @@
     "pris": 29.4
   },
   {
-    "namn": "Remmarlöv Skördefestens Pilsner",
-    "apk": 0.75,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 22.9
-  },
-  {
     "namn": "O/O Narangi IPA",
     "apk": 0.75,
     "typ": "Öl",
     "procent": 6.8,
     "volym": 330,
     "pris": 29.9
-  },
-  {
-    "namn": "Revsunds Brewery Corroded",
-    "apk": 0.75,
-    "typ": "Öl",
-    "procent": 5.1,
-    "volym": 440,
-    "pris": 30.0
   },
   {
     "namn": "Nya Carnegiebryggeriet Vittja Pilsner",
@@ -35150,14 +32582,6 @@
     "procent": 5.6,
     "volym": 440,
     "pris": 32.9
-  },
-  {
-    "namn": "Göteborgs Nya Fresh Lemon",
-    "apk": 0.75,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 19.9
   },
   {
     "namn": "Dugges Bryggeri High Five",
@@ -35302,14 +32726,6 @@
     "procent": 4.5,
     "volym": 330,
     "pris": 19.9
-  },
-  {
-    "namn": "Stigbergets Dubbelnelson",
-    "apk": 0.75,
-    "typ": "Öl",
-    "procent": 8.5,
-    "volym": 440,
-    "pris": 49.9
   },
   {
     "namn": "Stigbergets Dubbelnelson",
@@ -35744,14 +33160,6 @@
     "pris": 30.1
   },
   {
-    "namn": "O/O Narangi IPA",
-    "apk": 0.75,
-    "typ": "Öl",
-    "procent": 6.8,
-    "volym": 330,
-    "pris": 29.9
-  },
-  {
     "namn": "Rörö Öl Västkustsk APA",
     "apk": 0.75,
     "typ": "Öl",
@@ -36064,28 +33472,12 @@
     "pris": 35.9
   },
   {
-    "namn": "Fatamorgana Omnipollo",
-    "apk": 0.74,
-    "typ": "Öl",
-    "procent": 8.0,
-    "volym": 330,
-    "pris": 35.9
-  },
-  {
     "namn": "WOW Riesling",
     "apk": 0.74,
     "typ": "Vin",
     "procent": 12.0,
     "volym": 750,
     "pris": 121.0
-  },
-  {
-    "namn": "Amundsen Apocalyptic Thunder Juice NEIPA",
-    "apk": 0.74,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 28.9
   },
   {
     "namn": "Fjäderholmarnas Buzzin' Amber Ale",
@@ -36110,14 +33502,6 @@
     "procent": 8.5,
     "volym": 330,
     "pris": 37.9
-  },
-  {
-    "namn": "Fjäderholmarnas Buzzin' Amber Ale",
-    "apk": 0.74,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 25.1
   },
   {
     "namn": "Finn New England IPA",
@@ -36216,14 +33600,6 @@
     "pris": 22.4
   },
   {
-    "namn": "Skärpning På Alla Plan Fjäderholmarnas Bryggeri",
-    "apk": 0.74,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 22.4
-  },
-  {
     "namn": "Norrlandsbryggarna Black Oyster Stout",
     "apk": 0.74,
     "typ": "Öl",
@@ -36264,14 +33640,6 @@
     "pris": 30.0
   },
   {
-    "namn": "Remmarlöv The Migla Hazy IPA",
-    "apk": 0.74,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 28.9
-  },
-  {
     "namn": "Shapes & Objects Haga Everywhere Local Pilsner",
     "apk": 0.74,
     "typ": "Öl",
@@ -36294,14 +33662,6 @@
     "procent": 5.6,
     "volym": 330,
     "pris": 25.0
-  },
-  {
-    "namn": "Rocket Brewing Company Astro Yuzu",
-    "apk": 0.74,
-    "typ": "Öl",
-    "procent": 4.2,
-    "volym": 330,
-    "pris": 18.7
   },
   {
     "namn": "Remmarlöv Gårdsbryggeri Clara Mexican Lager",
@@ -36342,14 +33702,6 @@
     "procent": 9.0,
     "volym": 330,
     "pris": 39.9
-  },
-  {
-    "namn": "Norrlandsbryggarna Black Oyster Stout",
-    "apk": 0.74,
-    "typ": "Öl",
-    "procent": 7.8,
-    "volym": 330,
-    "pris": 34.7
   },
   {
     "namn": "Österlensnapsar Brantevikaren",
@@ -36550,14 +33902,6 @@
     "procent": 7.8,
     "volym": 330,
     "pris": 34.9
-  },
-  {
-    "namn": "Train Station Brewery Bärtz",
-    "apk": 0.74,
-    "typ": "Öl",
-    "procent": 4.9,
-    "volym": 330,
-    "pris": 21.9
   },
   {
     "namn": "Train Station Brewery Bärtz",
@@ -36982,14 +34326,6 @@
     "procent": 6.5,
     "volym": 330,
     "pris": 29.0
-  },
-  {
-    "namn": "Shapes & Objects New Hazy",
-    "apk": 0.74,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 440,
-    "pris": 38.9
   },
   {
     "namn": "Shapes & Objects New Hazy",
@@ -37552,14 +34888,6 @@
     "pris": 149.0
   },
   {
-    "namn": "Oppigårds New Sweden IPA",
-    "apk": 0.73,
-    "typ": "Öl",
-    "procent": 6.2,
-    "volym": 330,
-    "pris": 27.9
-  },
-  {
     "namn": "Semente Avesso Orange",
     "apk": 0.73,
     "typ": "Vin",
@@ -37680,28 +35008,12 @@
     "pris": 29.2
   },
   {
-    "namn": "Amundsen Ink & Dagger Modern Day IPA",
-    "apk": 0.73,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 29.5
-  },
-  {
     "namn": "Smögenbryggar'n Ljungman - Marin Märzen",
     "apk": 0.73,
     "typ": "Öl",
     "procent": 5.5,
     "volym": 330,
     "pris": 24.9
-  },
-  {
-    "namn": "Stigbergets El Capitano",
-    "apk": 0.73,
-    "typ": "Öl",
-    "procent": 8.3,
-    "volym": 440,
-    "pris": 49.9
   },
   {
     "namn": "Stigbergets El Capitano",
@@ -38688,14 +36000,6 @@
     "pris": 38.6
   },
   {
-    "namn": "Coppersmith's Westerås Lager",
-    "apk": 0.73,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 440,
-    "pris": 29.0
-  },
-  {
     "namn": "Klackabackens DIPA",
     "apk": 0.73,
     "typ": "Öl",
@@ -39200,14 +36504,6 @@
     "pris": 89.0
   },
   {
-    "namn": "Poppels West Coast IPA",
-    "apk": 0.72,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 29.9
-  },
-  {
     "namn": "Dignitat Cava Brut Nature",
     "apk": 0.72,
     "typ": "Vin",
@@ -39254,14 +36550,6 @@
     "procent": 14.5,
     "volym": 750,
     "pris": 150.0
-  },
-  {
-    "namn": "Oppigårds Golden Ale",
-    "apk": 0.72,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 23.9
   },
   {
     "namn": "Planteray Isle of Fiji",
@@ -39350,14 +36638,6 @@
     "procent": 6.5,
     "volym": 330,
     "pris": 29.9
-  },
-  {
-    "namn": "Nils Oscar Södermalmspilsner",
-    "apk": 0.72,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 23.0
   },
   {
     "namn": "Nils Oscar Södermalmspilsner",
@@ -39520,14 +36800,6 @@
     "pris": 24.6
   },
   {
-    "namn": "Grästorps Bryggeri Coasters",
-    "apk": 0.72,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 25.6
-  },
-  {
     "namn": "Brygghus 19 Italian Glam",
     "apk": 0.72,
     "typ": "Öl",
@@ -39558,22 +36830,6 @@
     "procent": 4.2,
     "volym": 330,
     "pris": 19.2
-  },
-  {
-    "namn": "Stigbergets San Diego",
-    "apk": 0.72,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 22.9
-  },
-  {
-    "namn": "Klackabackens Elin IPA",
-    "apk": 0.72,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 29.9
   },
   {
     "namn": "Jinko Pils",
@@ -39633,14 +36889,6 @@
   },
   {
     "namn": "Fjäderholmarnas Bryggeri It's a Bird",
-    "apk": 0.72,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 29.9
-  },
-  {
-    "namn": "Göteborgs Nya Bryggeri GBG Nya IPA",
     "apk": 0.72,
     "typ": "Öl",
     "procent": 6.5,
@@ -39926,14 +37174,6 @@
     "procent": 12.0,
     "volym": 1500,
     "pris": 249.0
-  },
-  {
-    "namn": "Stigbergets American Pale Ale",
-    "apk": 0.72,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 23.9
   },
   {
     "namn": "Prep'd Cocktails Pink Paloma",
@@ -40608,14 +37848,6 @@
     "pris": 34.9
   },
   {
-    "namn": "Finn Winter Bock",
-    "apk": 0.72,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 29.9
-  },
-  {
     "namn": "Nils Oscar Dubbel IPA",
     "apk": 0.72,
     "typ": "Öl",
@@ -40640,14 +37872,6 @@
     "pris": 399.0
   },
   {
-    "namn": "O/O Brewing Trubaduren West Coast IPA",
-    "apk": 0.72,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 29.9
-  },
-  {
     "namn": "Dugges Bryggeri 4Ever",
     "apk": 0.72,
     "typ": "Öl",
@@ -40656,36 +37880,12 @@
     "pris": 29.9
   },
   {
-    "namn": "Brygghus 19 Italian Glam",
-    "apk": 0.72,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 440,
-    "pris": 34.1
-  },
-  {
-    "namn": "Uppsala Brygghus Bira Bira Bira",
-    "apk": 0.72,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 22.9
-  },
-  {
     "namn": "Rocket Brewing Company Grön",
     "apk": 0.72,
     "typ": "Öl",
     "procent": 5.3,
     "volym": 330,
     "pris": 24.2
-  },
-  {
-    "namn": "Stigbergets Dubbelmås",
-    "apk": 0.72,
-    "typ": "Öl",
-    "procent": 8.5,
-    "volym": 330,
-    "pris": 38.9
   },
   {
     "namn": "Helsing Akvavit",
@@ -40904,14 +38104,6 @@
     "pris": 1449.6
   },
   {
-    "namn": "KUBIK Hard Seltzer Passionsfrukt",
-    "apk": 0.72,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 20.6
-  },
-  {
     "namn": "Mc Chouffe Brune",
     "apk": 0.72,
     "typ": "Öl",
@@ -41072,14 +38264,6 @@
     "pris": 159.0
   },
   {
-    "namn": "Local Hard Seltzer Tropical Organic",
-    "apk": 0.71,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 20.9
-  },
-  {
     "namn": "Niwakami Japanese Blended Whisky",
     "apk": 0.71,
     "typ": "Sprit",
@@ -41128,14 +38312,6 @@
     "pris": 99.0
   },
   {
-    "namn": "Oppigårds Norn Pale Ale",
-    "apk": 0.71,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 25.9
-  },
-  {
     "namn": "KUBIK Hard Seltzer Grapefrukt",
     "apk": 0.71,
     "typ": "Öl",
@@ -41150,22 +38326,6 @@
     "procent": 4.5,
     "volym": 250,
     "pris": 15.9
-  },
-  {
-    "namn": "Buxton Best Bitter",
-    "apk": 0.71,
-    "typ": "Öl",
-    "procent": 4.2,
-    "volym": 440,
-    "pris": 25.9
-  },
-  {
-    "namn": "Local Hard Seltzer",
-    "apk": 0.71,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 20.9
   },
   {
     "namn": "Buxton Best Bitter",
@@ -41376,28 +38536,12 @@
     "pris": 35.1
   },
   {
-    "namn": "Wapnö Zantippa",
-    "apk": 0.71,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 25.9
-  },
-  {
     "namn": "Uppsala Brygghus Czech Mate Pilsner",
     "apk": 0.71,
     "typ": "Öl",
     "procent": 4.9,
     "volym": 330,
     "pris": 22.9
-  },
-  {
-    "namn": "Hyllie Bryggeri Skånsk Lager",
-    "apk": 0.71,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 24.0
   },
   {
     "namn": "Bearded Rabbit Brewery Stampen Lager",
@@ -41430,14 +38574,6 @@
     "procent": 9.6,
     "volym": 330,
     "pris": 44.9
-  },
-  {
-    "namn": "Odd Island Brewing Dirty Black Winter",
-    "apk": 0.71,
-    "typ": "Öl",
-    "procent": 6.4,
-    "volym": 330,
-    "pris": 29.9
   },
   {
     "namn": "Odd Island Brewing Dirty Black IPA",
@@ -41478,14 +38614,6 @@
     "procent": 8.0,
     "volym": 440,
     "pris": 49.9
-  },
-  {
-    "namn": "Två Feta Grisar Chill iN",
-    "apk": 0.71,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 330,
-    "pris": 25.6
   },
   {
     "namn": "Skrea Backe Ocean Strength",
@@ -42136,14 +39264,6 @@
     "pris": 51.1
   },
   {
-    "namn": "Säröbanans Bryggeri Särö Pilsner",
-    "apk": 0.71,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 440,
-    "pris": 29.9
-  },
-  {
     "namn": "Emmaboda Bryggeri Mattenvelon",
     "apk": 0.71,
     "typ": "Öl",
@@ -42158,14 +39278,6 @@
     "procent": 5.2,
     "volym": 330,
     "pris": 24.0
-  },
-  {
-    "namn": "Good Guys Brew Pilot IPA",
-    "apk": 0.71,
-    "typ": "Öl",
-    "procent": 6.0,
-    "volym": 330,
-    "pris": 27.9
   },
   {
     "namn": "Good Guys Brew Pilot IPA",
@@ -42632,22 +39744,6 @@
     "pris": 25.9
   },
   {
-    "namn": "Original Long Drink Pineapple",
-    "apk": 0.7,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 330,
-    "pris": 25.9
-  },
-  {
-    "namn": "Original Long Drink Grapefruit",
-    "apk": 0.7,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 330,
-    "pris": 25.9
-  },
-  {
     "namn": "Skärgårdssnapsar",
     "apk": 0.7,
     "typ": "Sprit",
@@ -42816,14 +39912,6 @@
     "pris": 25.9
   },
   {
-    "namn": "Original Long Drink Pink Raspberry",
-    "apk": 0.7,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 330,
-    "pris": 25.9
-  },
-  {
     "namn": "Stoneleigh Wild Valley Sauvignon Blanc",
     "apk": 0.7,
     "typ": "Vin",
@@ -42926,14 +40014,6 @@
     "procent": 12.0,
     "volym": 750,
     "pris": 129.0
-  },
-  {
-    "namn": "Poppels Session IPA",
-    "apk": 0.7,
-    "typ": "Öl",
-    "procent": 4.2,
-    "volym": 330,
-    "pris": 19.9
   },
   {
     "namn": "Mandrarossa Urra di Mare Sauvignon Blanc",
@@ -43160,14 +40240,6 @@
     "pris": 22.7
   },
   {
-    "namn": "Beerium Kraftölsbryggeri Tjärlek",
-    "apk": 0.7,
-    "typ": "Öl",
-    "procent": 9.6,
-    "volym": 330,
-    "pris": 45.1
-  },
-  {
     "namn": "Sälens Fjällbryggeri Snöstorm Imperial Stout",
     "apk": 0.7,
     "typ": "Öl",
@@ -43222,22 +40294,6 @@
     "procent": 4.2,
     "volym": 330,
     "pris": 19.9
-  },
-  {
-    "namn": "Klackabackens Pilsner",
-    "apk": 0.7,
-    "typ": "Öl",
-    "procent": 4.2,
-    "volym": 330,
-    "pris": 19.9
-  },
-  {
-    "namn": "Stjernsund Brygghus Dalarnas Guld",
-    "apk": 0.7,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 330,
-    "pris": 25.1
   },
   {
     "namn": "Pine Brewing The Plump Piggy's Winter Ale",
@@ -43328,22 +40384,6 @@
     "pris": 24.9
   },
   {
-    "namn": "This is HOW How To Be Local",
-    "apk": 0.7,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 440,
-    "pris": 32.9
-  },
-  {
-    "namn": "Smakladan Dala Dunder",
-    "apk": 0.7,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 330,
-    "pris": 24.9
-  },
-  {
     "namn": "Lundasnaps",
     "apk": 0.7,
     "typ": "Sprit",
@@ -43366,14 +40406,6 @@
     "procent": 5.3,
     "volym": 330,
     "pris": 24.9
-  },
-  {
-    "namn": "Ahlafors Jubileumslager",
-    "apk": 0.7,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 330,
-    "pris": 22.5
   },
   {
     "namn": "Häxkitteln Leviathan",
@@ -44792,22 +41824,6 @@
     "pris": 399.0
   },
   {
-    "namn": "Ruckel Brewing Bella Italo",
-    "apk": 0.7,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 23.6
-  },
-  {
-    "namn": "Nyköping Brewing Birramisu Italian Style Lager",
-    "apk": 0.7,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 330,
-    "pris": 22.7
-  },
-  {
     "namn": "Snausarve Christmas Quad",
     "apk": 0.7,
     "typ": "Öl",
@@ -45288,14 +42304,6 @@
     "pris": 28.9
   },
   {
-    "namn": "Train Station Brewery IPA",
-    "apk": 0.69,
-    "typ": "Öl",
-    "procent": 6.0,
-    "volym": 330,
-    "pris": 28.9
-  },
-  {
     "namn": "Bubba Pop Sour Apple",
     "apk": 0.69,
     "typ": "Sprit",
@@ -45366,14 +42374,6 @@
     "procent": 5.4,
     "volym": 330,
     "pris": 25.9
-  },
-  {
-    "namn": "Planteray Rum & Cola",
-    "apk": 0.69,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 23.9
   },
   {
     "namn": "Planteray Rum & Cola",
@@ -45752,22 +42752,6 @@
     "pris": 26.9
   },
   {
-    "namn": "O/O Brewing Ekta Pils",
-    "apk": 0.69,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 24.9
-  },
-  {
-    "namn": "Roma Svartbergets Fjällbryggeri",
-    "apk": 0.69,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 23.9
-  },
-  {
     "namn": "Snörsjö hantverksbryggeri Påsköl",
     "apk": 0.69,
     "typ": "Öl",
@@ -45814,14 +42798,6 @@
     "procent": 5.2,
     "volym": 330,
     "pris": 24.9
-  },
-  {
-    "namn": "Lule Brew Strong Lager",
-    "apk": 0.69,
-    "typ": "Öl",
-    "procent": 6.3,
-    "volym": 330,
-    "pris": 30.0
   },
   {
     "namn": "To Øl # SIPA",
@@ -46456,14 +43432,6 @@
     "pris": 1699.0
   },
   {
-    "namn": "Remmarlöv Hazy IPA Ekologisk",
-    "apk": 0.69,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 26.9
-  },
-  {
     "namn": "Freixenet Cordon Negro Brut",
     "apk": 0.69,
     "typ": "Vin",
@@ -46568,14 +43536,6 @@
     "pris": 39.9
   },
   {
-    "namn": "Barlingbo Bryggeri Slåttarns Emmerlager",
-    "apk": 0.69,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 330,
-    "pris": 22.9
-  },
-  {
     "namn": "Fulltofta Gårdsbryggeri Fulltofta Jul",
     "apk": 0.69,
     "typ": "Öl",
@@ -46598,14 +43558,6 @@
     "procent": 8.0,
     "volym": 330,
     "pris": 38.1
-  },
-  {
-    "namn": "To Øl # SIPA",
-    "apk": 0.69,
-    "typ": "Öl",
-    "procent": 4.7,
-    "volym": 440,
-    "pris": 29.9
   },
   {
     "namn": "Spike Brewery Krampus",
@@ -46656,14 +43608,6 @@
     "pris": 26.8
   },
   {
-    "namn": "Omaka Mamma",
-    "apk": 0.69,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 330,
-    "pris": 22.9
-  },
-  {
     "namn": "Spike Brewery Vienna Lager",
     "apk": 0.69,
     "typ": "Öl",
@@ -46686,14 +43630,6 @@
     "procent": 41.0,
     "volym": 700,
     "pris": 416.0
-  },
-  {
-    "namn": "Brygghuset Finn New Zealand IPA",
-    "apk": 0.69,
-    "typ": "Öl",
-    "procent": 6.3,
-    "volym": 440,
-    "pris": 39.9
   },
   {
     "namn": "Fix Hellas",
@@ -47168,14 +44104,6 @@
     "pris": 24.3
   },
   {
-    "namn": "Spring Village Merlot",
-    "apk": 0.68,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 187,
-    "pris": 36.0
-  },
-  {
     "namn": "Enzo Bartoli Langhe Nebbiolo",
     "apk": 0.68,
     "typ": "Vin",
@@ -47224,28 +44152,12 @@
     "pris": 149.0
   },
   {
-    "namn": "Kung Fu Girl Riesling",
-    "apk": 0.68,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 375,
-    "pris": 69.0
-  },
-  {
     "namn": "Shanky's Whip",
     "apk": 0.68,
     "typ": "Sprit",
     "procent": 33.0,
     "volym": 700,
     "pris": 339.0
-  },
-  {
-    "namn": "Azuca Sour Lemon",
-    "apk": 0.68,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 21.9
   },
   {
     "namn": "Petite Faiblesse Sauvignon Blanc",
@@ -47264,28 +44176,12 @@
     "pris": 115.0
   },
   {
-    "namn": "Alto Molino Chardonnay",
-    "apk": 0.68,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 250,
-    "pris": 46.0
-  },
-  {
     "namn": "Lucky Buddha",
     "apk": 0.68,
     "typ": "Öl",
     "procent": 4.7,
     "volym": 330,
     "pris": 22.9
-  },
-  {
-    "namn": "Ginger Prince Sparkling White",
-    "apk": 0.68,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 375,
-    "pris": 69.0
   },
   {
     "namn": "Ginger Prince Sparkling White",
@@ -47392,14 +44288,6 @@
     "pris": 33.1
   },
   {
-    "namn": "Smögenbryggar'n snIPA",
-    "apk": 0.68,
-    "typ": "Öl",
-    "procent": 6.2,
-    "volym": 330,
-    "pris": 29.9
-  },
-  {
     "namn": "Wapnö Stoja Pale Ale",
     "apk": 0.68,
     "typ": "Öl",
@@ -47472,14 +44360,6 @@
     "pris": 49.1
   },
   {
-    "namn": "Pine Brewing Company No Monkey Business APA",
-    "apk": 0.68,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 440,
-    "pris": 36.1
-  },
-  {
     "namn": "Bromma Allmänna Bryggeri Vic's IPA",
     "apk": 0.68,
     "typ": "Öl",
@@ -47510,14 +44390,6 @@
     "procent": 6.2,
     "volym": 330,
     "pris": 29.9
-  },
-  {
-    "namn": "Bromma Allmänna Bryggeri Vic's IPA",
-    "apk": 0.68,
-    "typ": "Öl",
-    "procent": 6.6,
-    "volym": 330,
-    "pris": 31.9
   },
   {
     "namn": "Bustad Brewing Baltic Porter",
@@ -47806,14 +44678,6 @@
     "procent": 5.6,
     "volym": 330,
     "pris": 27.1
-  },
-  {
-    "namn": "Omnipollo Big Pim",
-    "apk": 0.68,
-    "typ": "Öl",
-    "procent": 6.2,
-    "volym": 440,
-    "pris": 39.9
   },
   {
     "namn": "Omnipollo Big Pim",
@@ -48592,36 +45456,12 @@
     "pris": 46.0
   },
   {
-    "namn": "Ruckel Brewing Byfjorden",
-    "apk": 0.68,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 31.7
-  },
-  {
-    "namn": "Ruckel Brewing Nanny",
-    "apk": 0.68,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 27.2
-  },
-  {
     "namn": "Kårboda Bryggeri IPA",
     "apk": 0.68,
     "typ": "Öl",
     "procent": 6.0,
     "volym": 330,
     "pris": 29.1
-  },
-  {
-    "namn": "The Artist Nyköping Brewing",
-    "apk": 0.68,
-    "typ": "Öl",
-    "procent": 6.6,
-    "volym": 440,
-    "pris": 42.7
   },
   {
     "namn": "Ruckel Brewing Nohab Lager",
@@ -49144,14 +45984,6 @@
     "pris": 90.0
   },
   {
-    "namn": "Stigbergets API YZAH",
-    "apk": 0.67,
-    "typ": "Öl",
-    "procent": 5.9,
-    "volym": 330,
-    "pris": 28.9
-  },
-  {
     "namn": "Kwak",
     "apk": 0.67,
     "typ": "Öl",
@@ -49296,36 +46128,12 @@
     "pris": 33.7
   },
   {
-    "namn": "Brygghus 19 Carlshamnsöl",
-    "apk": 0.67,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 22.0
-  },
-  {
-    "namn": "Wättle Ögonstenen",
-    "apk": 0.67,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 25.8
-  },
-  {
     "namn": "Billdale A Gents Code",
     "apk": 0.67,
     "typ": "Öl",
     "procent": 8.2,
     "volym": 330,
     "pris": 40.5
-  },
-  {
-    "namn": "Hedemora Stadsbryggeri Helles Lager",
-    "apk": 0.67,
-    "typ": "Öl",
-    "procent": 5.1,
-    "volym": 330,
-    "pris": 25.0
   },
   {
     "namn": "Hedemora Stadsbryggeri Helles Lager",
@@ -49374,14 +46182,6 @@
     "procent": 10.0,
     "volym": 330,
     "pris": 48.9
-  },
-  {
-    "namn": "Bottenvikens Brytarna",
-    "apk": 0.67,
-    "typ": "Öl",
-    "procent": 8.2,
-    "volym": 330,
-    "pris": 40.1
   },
   {
     "namn": "Wet City Spirits WOW Vodka",
@@ -50312,14 +47112,6 @@
     "pris": 261.0
   },
   {
-    "namn": "Mackmyra",
-    "apk": 0.67,
-    "typ": "Sprit",
-    "procent": 40.0,
-    "volym": 500,
-    "pris": 299.0
-  },
-  {
     "namn": "Feddie Ocean Distillery Dill Aquavit",
     "apk": 0.67,
     "typ": "Sprit",
@@ -50528,14 +47320,6 @@
     "pris": 389.0
   },
   {
-    "namn": "Coppersmith's The Pawns Pilsener Non-Gluten",
-    "apk": 0.67,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 25.6
-  },
-  {
     "namn": "Magners Irish Cider",
     "apk": 0.67,
     "typ": "Öl",
@@ -50574,14 +47358,6 @@
     "procent": 5.5,
     "volym": 330,
     "pris": 26.9
-  },
-  {
-    "namn": "Wapnö Sunny Pilsner",
-    "apk": 0.67,
-    "typ": "Öl",
-    "procent": 4.7,
-    "volym": 330,
-    "pris": 23.2
   },
   {
     "namn": "Bryggeriaktiebolaget Nya Victoria Slafsan",
@@ -51208,14 +47984,6 @@
     "pris": 160.0
   },
   {
-    "namn": "Maison Petit Perle Le Petit Petit Grenache",
-    "apk": 0.66,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 250,
-    "pris": 49.0
-  },
-  {
     "namn": "Oppigårds Ruby Ale",
     "apk": 0.66,
     "typ": "Öl",
@@ -51248,14 +48016,6 @@
     "pris": 99.0
   },
   {
-    "namn": "GOSA Organic Rosé",
-    "apk": 0.66,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 250,
-    "pris": 49.0
-  },
-  {
     "namn": "Stoneleigh Latitude Chardonnay",
     "apk": 0.66,
     "typ": "Vin",
@@ -51272,44 +48032,12 @@
     "pris": 189.0
   },
   {
-    "namn": "Le Meilleur Pinot Noir",
-    "apk": 0.66,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 250,
-    "pris": 49.0
-  },
-  {
-    "namn": "Oppigårds Ruby Ale",
-    "apk": 0.66,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 22.6
-  },
-  {
     "namn": "Nils Oscar Best Bitter",
     "apk": 0.66,
     "typ": "Öl",
     "procent": 4.5,
     "volym": 440,
     "pris": 29.9
-  },
-  {
-    "namn": "Adega de Monção Alvarinho",
-    "apk": 0.66,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 250,
-    "pris": 49.0
-  },
-  {
-    "namn": "Oppigårds Everyday IPA",
-    "apk": 0.66,
-    "typ": "Öl",
-    "procent": 4.6,
-    "volym": 330,
-    "pris": 22.9
   },
   {
     "namn": "Boom Boom! Syrah",
@@ -51576,14 +48304,6 @@
     "pris": 40.1
   },
   {
-    "namn": "Fjäderholmarnas Bryggeri Duck Dive IPA",
-    "apk": 0.66,
-    "typ": "Öl",
-    "procent": 6.0,
-    "volym": 330,
-    "pris": 30.0
-  },
-  {
     "namn": "Nyköping Brewing Mind the gap",
     "apk": 0.66,
     "typ": "Öl",
@@ -51760,14 +48480,6 @@
     "pris": 25.1
   },
   {
-    "namn": "Hyllie Pils",
-    "apk": 0.66,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 25.0
-  },
-  {
     "namn": "Odd Island Brewing Västkustpilsner",
     "apk": 0.66,
     "typ": "Öl",
@@ -51912,14 +48624,6 @@
     "pris": 32.7
   },
   {
-    "namn": "Dugges Amaretto Sour",
-    "apk": 0.66,
-    "typ": "Öl",
-    "procent": 6.0,
-    "volym": 330,
-    "pris": 29.9
-  },
-  {
     "namn": "Bearded Rabbit Motueka",
     "apk": 0.66,
     "typ": "Öl",
@@ -51966,14 +48670,6 @@
     "procent": 6.6,
     "volym": 440,
     "pris": 44.1
-  },
-  {
-    "namn": "Ten Hands Herrhagen",
-    "apk": 0.66,
-    "typ": "Öl",
-    "procent": 6.0,
-    "volym": 440,
-    "pris": 39.9
   },
   {
     "namn": "Miss Behave IPA",
@@ -52152,14 +48848,6 @@
     "pris": 28.8
   },
   {
-    "namn": "Uppsala Brygghus Sir Fugglelot",
-    "apk": 0.66,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 440,
-    "pris": 29.9
-  },
-  {
     "namn": "Ruckel Brewing Front Flip",
     "apk": 0.66,
     "typ": "Öl",
@@ -52190,22 +48878,6 @@
     "procent": 8.0,
     "volym": 330,
     "pris": 39.9
-  },
-  {
-    "namn": "Lule Brew Dark lager",
-    "apk": 0.66,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 26.0
-  },
-  {
-    "namn": "Bottenvikens Lager På Lager",
-    "apk": 0.66,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 25.0
   },
   {
     "namn": "Malmö Spritfabrik Baronens Bitter",
@@ -53352,14 +50024,6 @@
     "pris": 28.9
   },
   {
-    "namn": "Nyköping Brewing Mind the gap",
-    "apk": 0.66,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 440,
-    "pris": 33.1
-  },
-  {
     "namn": "Ten Hands Brewing Swedish Body Music vol.2",
     "apk": 0.66,
     "typ": "Öl",
@@ -53454,14 +50118,6 @@
     "procent": 5.6,
     "volym": 330,
     "pris": 28.0
-  },
-  {
-    "namn": "Westerbottens Bryggeri Hällnäs",
-    "apk": 0.66,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 25.1
   },
   {
     "namn": "Nils Oscar Wee Heavy 24",
@@ -53646,14 +50302,6 @@
     "procent": 5.0,
     "volym": 330,
     "pris": 24.9
-  },
-  {
-    "namn": "Ruckel Brewing Nohab IPA",
-    "apk": 0.66,
-    "typ": "Öl",
-    "procent": 5.9,
-    "volym": 330,
-    "pris": 29.7
   },
   {
     "namn": "Rosso di Montepulciano",
@@ -54120,14 +50768,6 @@
     "pris": 149.0
   },
   {
-    "namn": "Cape Fynbos Merlot",
-    "apk": 0.65,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 250,
-    "pris": 50.0
-  },
-  {
     "namn": "Omnipollo Noa Pecan Mud Cake",
     "apk": 0.65,
     "typ": "Öl",
@@ -54158,14 +50798,6 @@
     "procent": 15.0,
     "volym": 700,
     "pris": 161.0
-  },
-  {
-    "namn": "Poppels Passion Pale Ale",
-    "apk": 0.65,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 26.3
   },
   {
     "namn": "Petit Paul Sapin Chardonnay Eco",
@@ -54222,14 +50854,6 @@
     "procent": 26.0,
     "volym": 500,
     "pris": 199.0
-  },
-  {
-    "namn": "White Claw Raspberry Hard Seltzer",
-    "apk": 0.65,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 22.9
   },
   {
     "namn": "Casa de Sarmento Branco Bruto",
@@ -54632,14 +51256,6 @@
     "pris": 34.1
   },
   {
-    "namn": "5mans Fünfman Aktiebolaget Femman",
-    "apk": 0.65,
-    "typ": "Öl",
-    "procent": 7.5,
-    "volym": 330,
-    "pris": 38.1
-  },
-  {
     "namn": "Åre Bryggcompagni Extra Special Bitter",
     "apk": 0.65,
     "typ": "Öl",
@@ -54662,14 +51278,6 @@
     "procent": 4.5,
     "volym": 330,
     "pris": 22.9
-  },
-  {
-    "namn": "Jemtehed & Brande Östersund City Lager",
-    "apk": 0.65,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 440,
-    "pris": 34.1
   },
   {
     "namn": "Vanliga Bryggeriet Göteborg Vanlig italienare",
@@ -54712,36 +51320,12 @@
     "pris": 25.0
   },
   {
-    "namn": "Skny Btch Hard Seltzer Raspberry",
-    "apk": 0.65,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 22.9
-  },
-  {
-    "namn": "Wapnö Saga Nelson",
-    "apk": 0.65,
-    "typ": "Öl",
-    "procent": 7.0,
-    "volym": 330,
-    "pris": 35.5
-  },
-  {
     "namn": "Pine Brewing Company The Sassy Swordfish`s New England IPA",
     "apk": 0.65,
     "typ": "Öl",
     "procent": 7.0,
     "volym": 440,
     "pris": 47.1
-  },
-  {
-    "namn": "Svartbergets Fjällbryggeri Kall Lager",
-    "apk": 0.65,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 330,
-    "pris": 28.1
   },
   {
     "namn": "Brygghus 19 Easter Bunny IPA",
@@ -54806,14 +51390,6 @@
     "procent": 6.9,
     "volym": 330,
     "pris": 34.9
-  },
-  {
-    "namn": "Bottenvikens Norrskum",
-    "apk": 0.65,
-    "typ": "Öl",
-    "procent": 7.1,
-    "volym": 330,
-    "pris": 36.1
   },
   {
     "namn": "Ölsbo Gårdsbryggeri Vienna Lager",
@@ -55848,14 +52424,6 @@
     "pris": 43.9
   },
   {
-    "namn": "Skny Btch Hard Seltzer Pear",
-    "apk": 0.65,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 22.9
-  },
-  {
     "namn": "Spirits of the North Moonshine South Plains Brewing Company",
     "apk": 0.65,
     "typ": "Sprit",
@@ -55886,14 +52454,6 @@
     "procent": 5.5,
     "volym": 330,
     "pris": 28.0
-  },
-  {
-    "namn": "Skny Btch Hard Seltzer Lemon",
-    "apk": 0.65,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 22.9
   },
   {
     "namn": "Beerbliotek Super Spesh",
@@ -55976,14 +52536,6 @@
     "pris": 40.5
   },
   {
-    "namn": "Uppsala Brygghus Majestic",
-    "apk": 0.65,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 330,
-    "pris": 27.9
-  },
-  {
     "namn": "Moonshine Farmers Lavendel Gin",
     "apk": 0.65,
     "typ": "Sprit",
@@ -56006,14 +52558,6 @@
     "procent": 5.0,
     "volym": 330,
     "pris": 25.4
-  },
-  {
-    "namn": "Pils Svartbergets Fjällbryggeri",
-    "apk": 0.65,
-    "typ": "Öl",
-    "procent": 4.7,
-    "volym": 330,
-    "pris": 24.0
   },
   {
     "namn": "Stay True En Värmländsk Jävla Alkoläsk Het Passion",
@@ -56464,14 +53008,6 @@
     "pris": 28.9
   },
   {
-    "namn": "Brewmaster Nitro Stout",
-    "apk": 0.64,
-    "typ": "Öl",
-    "procent": 4.2,
-    "volym": 440,
-    "pris": 28.9
-  },
-  {
     "namn": "Domaine Bousquet White Brut",
     "apk": 0.64,
     "typ": "Vin",
@@ -56542,14 +53078,6 @@
     "procent": 13.5,
     "volym": 375,
     "pris": 79.0
-  },
-  {
-    "namn": "S:t Eriks Klassisk Porter",
-    "apk": 0.64,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 28.9
   },
   {
     "namn": "Xavier Vignon Vacqueyras",
@@ -56640,14 +53168,6 @@
     "pris": 199.0
   },
   {
-    "namn": "Stigbergets Albatross",
-    "apk": 0.64,
-    "typ": "Öl",
-    "procent": 7.0,
-    "volym": 440,
-    "pris": 47.9
-  },
-  {
     "namn": "Sagace Langhe Nebbiolo",
     "apk": 0.64,
     "typ": "Vin",
@@ -56689,22 +53209,6 @@
   },
   {
     "namn": "Stockholms Bränneri Apple Punch",
-    "apk": 0.64,
-    "typ": "Öl",
-    "procent": 10.0,
-    "volym": 250,
-    "pris": 39.0
-  },
-  {
-    "namn": "Stockholms Bränneri Cocktails Pink Paloma",
-    "apk": 0.64,
-    "typ": "Öl",
-    "procent": 10.0,
-    "volym": 250,
-    "pris": 39.0
-  },
-  {
-    "namn": "Stockholms Bränneri Dry & Tonic",
     "apk": 0.64,
     "typ": "Öl",
     "procent": 10.0,
@@ -56936,14 +53440,6 @@
     "pris": 25.9
   },
   {
-    "namn": "Smögenbryggar'n Atlant",
-    "apk": 0.64,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 25.9
-  },
-  {
     "namn": "Vareböke Bryggeri Småland Pale Ale",
     "apk": 0.64,
     "typ": "Öl",
@@ -57006,14 +53502,6 @@
     "procent": 6.5,
     "volym": 440,
     "pris": 44.9
-  },
-  {
-    "namn": "Reinklou Bryggerier No. 2 India Pale Ale",
-    "apk": 0.64,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 33.5
   },
   {
     "namn": "Fenix Brewery Sagolika Sommarlager",
@@ -57110,22 +53598,6 @@
     "procent": 7.0,
     "volym": 440,
     "pris": 47.9
-  },
-  {
-    "namn": "Rörö Öl Västkustsk Lager",
-    "apk": 0.64,
-    "typ": "Öl",
-    "procent": 4.7,
-    "volym": 330,
-    "pris": 24.2
-  },
-  {
-    "namn": "Lule Brew West Coast IPA",
-    "apk": 0.64,
-    "typ": "Öl",
-    "procent": 6.8,
-    "volym": 330,
-    "pris": 35.1
   },
   {
     "namn": "Hernö Botanical Flavoured Gin",
@@ -58520,22 +54992,6 @@
     "pris": 34.9
   },
   {
-    "namn": "Stockholm Brewing Saison d'Etre",
-    "apk": 0.64,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 25.9
-  },
-  {
-    "namn": "Ruckel Brewing Hazy Jazz",
-    "apk": 0.64,
-    "typ": "Öl",
-    "procent": 6.2,
-    "volym": 330,
-    "pris": 32.1
-  },
-  {
     "namn": "Ahlafors Julöl",
     "apk": 0.64,
     "typ": "Öl",
@@ -58566,14 +55022,6 @@
     "procent": 5.4,
     "volym": 330,
     "pris": 27.9
-  },
-  {
-    "namn": "Wättle Krispig Skymning",
-    "apk": 0.64,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 25.8
   },
   {
     "namn": "Kornheddinge BryggeriKompani Pale Ale",
@@ -59056,14 +55504,6 @@
     "pris": 26.2
   },
   {
-    "namn": "FORS Cocktails Tom Collins Organic",
-    "apk": 0.63,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 26.2
-  },
-  {
     "namn": "Contacto Alvarinho",
     "apk": 0.63,
     "typ": "Vin",
@@ -59272,14 +55712,6 @@
     "pris": 34.1
   },
   {
-    "namn": "Hyllie Bryggeri Hyllipan IPA",
-    "apk": 0.63,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 34.1
-  },
-  {
     "namn": "O/O Brewing Winter Warmer",
     "apk": 0.63,
     "typ": "Öl",
@@ -59310,14 +55742,6 @@
     "procent": 5.6,
     "volym": 330,
     "pris": 29.5
-  },
-  {
-    "namn": "Naja Hazy IPA Uppsala Brygghus",
-    "apk": 0.63,
-    "typ": "Öl",
-    "procent": 6.9,
-    "volym": 330,
-    "pris": 35.9
   },
   {
     "namn": "Majornas Bryggeri Makrillager",
@@ -59392,14 +55816,6 @@
     "pris": 24.0
   },
   {
-    "namn": "Rocky Point Brewery Stenudden Pilsner",
-    "apk": 0.63,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 26.1
-  },
-  {
     "namn": "Helihopper",
     "apk": 0.63,
     "typ": "Öl",
@@ -59414,14 +55830,6 @@
     "procent": 7.2,
     "volym": 330,
     "pris": 37.9
-  },
-  {
-    "namn": "Hyllie Bryggeri Lowlands",
-    "apk": 0.63,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 34.1
   },
   {
     "namn": "Revsunds Brewery Badass black IPA",
@@ -59520,28 +55928,12 @@
     "pris": 34.0
   },
   {
-    "namn": "Kallholmen Levande IPA",
-    "apk": 0.63,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 29.4
-  },
-  {
     "namn": "Skellefteå Bryggeri God Pilsner",
     "apk": 0.63,
     "typ": "Öl",
     "procent": 5.0,
     "volym": 330,
     "pris": 26.1
-  },
-  {
-    "namn": "Brewhuslän Obsfredag",
-    "apk": 0.63,
-    "typ": "Öl",
-    "procent": 8.0,
-    "volym": 330,
-    "pris": 42.1
   },
   {
     "namn": "Brewhuslän Obsfredag",
@@ -59566,14 +55958,6 @@
     "procent": 5.5,
     "volym": 330,
     "pris": 28.9
-  },
-  {
-    "namn": "Brygghus 19 Smugglarhamnens Pilsner",
-    "apk": 0.63,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 26.0
   },
   {
     "namn": "Haandbryggeriet Kittens, Puppies & Hops",
@@ -60768,22 +57152,6 @@
     "pris": 34.9
   },
   {
-    "namn": "5mans Right Side Aktiebolaget Femman",
-    "apk": 0.63,
-    "typ": "Öl",
-    "procent": 5.9,
-    "volym": 330,
-    "pris": 30.9
-  },
-  {
-    "namn": "Bryggverket UÅ West Coast IPA",
-    "apk": 0.63,
-    "typ": "Öl",
-    "procent": 6.3,
-    "volym": 330,
-    "pris": 33.0
-  },
-  {
     "namn": "En Aleigen Brewery Jester Pale Ale",
     "apk": 0.63,
     "typ": "Öl",
@@ -61416,14 +57784,6 @@
     "pris": 169.0
   },
   {
-    "namn": "Spring Village Grenache Syrah Rosé",
-    "apk": 0.62,
-    "typ": "Vin",
-    "procent": 12.0,
-    "volym": 187,
-    "pris": 36.0
-  },
-  {
     "namn": "Domaine Pouderoux",
     "apk": 0.62,
     "typ": "Vin",
@@ -61456,14 +57816,6 @@
     "pris": 23.9
   },
   {
-    "namn": "Guinness Draught",
-    "apk": 0.62,
-    "typ": "Öl",
-    "procent": 4.2,
-    "volym": 440,
-    "pris": 29.9
-  },
-  {
     "namn": "Bumbu The Original",
     "apk": 0.62,
     "typ": "Sprit",
@@ -61486,14 +57838,6 @@
     "procent": 6.4,
     "volym": 750,
     "pris": 77.9
-  },
-  {
-    "namn": "Bubbelburk Brut",
-    "apk": 0.62,
-    "typ": "Vin",
-    "procent": 11.5,
-    "volym": 375,
-    "pris": 69.0
   },
   {
     "namn": "Stigbergets New & Improved India Pale Ale",
@@ -61784,14 +58128,6 @@
     "pris": 35.2
   },
   {
-    "namn": "Nyköping Brewing Noll ät fem fem",
-    "apk": 0.62,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 330,
-    "pris": 29.1
-  },
-  {
     "namn": "Fjäderholmarnas Bryggeri Fjädervikt",
     "apk": 0.62,
     "typ": "Öl",
@@ -61904,14 +58240,6 @@
     "pris": 37.7
   },
   {
-    "namn": "Majornas Kaparkung",
-    "apk": 0.62,
-    "typ": "Öl",
-    "procent": 6.7,
-    "volym": 330,
-    "pris": 35.9
-  },
-  {
     "namn": "Timjans Brygghus Jansa Brygga",
     "apk": 0.62,
     "typ": "Öl",
@@ -61960,28 +58288,12 @@
     "pris": 49.9
   },
   {
-    "namn": "Odd Island Brewing Citrauvin American Pale Ale",
-    "apk": 0.62,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 29.9
-  },
-  {
     "namn": "Ekerö Brygghus Bloom",
     "apk": 0.62,
     "typ": "Öl",
     "procent": 5.5,
     "volym": 440,
     "pris": 39.2
-  },
-  {
-    "namn": "Hyllie Bryggeri Sunny Disposition",
-    "apk": 0.62,
-    "typ": "Öl",
-    "procent": 5.7,
-    "volym": 330,
-    "pris": 30.1
   },
   {
     "namn": "Nya Carnegiebryggeriet Summer Session IPA",
@@ -62038,14 +58350,6 @@
     "procent": 6.3,
     "volym": 440,
     "pris": 44.9
-  },
-  {
-    "namn": "Northern Brewers Kåtöl IPA",
-    "apk": 0.62,
-    "typ": "Öl",
-    "procent": 6.0,
-    "volym": 330,
-    "pris": 31.7
   },
   {
     "namn": "Brygghus 19 Oberoende Bitter",
@@ -63688,14 +59992,6 @@
     "pris": 24.9
   },
   {
-    "namn": "Östersundsbryggerier Klassisk Pilsner",
-    "apk": 0.62,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 440,
-    "pris": 32.1
-  },
-  {
     "namn": "Omnipollo Primal Self",
     "apk": 0.62,
     "typ": "Öl",
@@ -63710,22 +60006,6 @@
     "procent": 8.3,
     "volym": 330,
     "pris": 44.1
-  },
-  {
-    "namn": "BarlindBeer Barcode",
-    "apk": 0.62,
-    "typ": "Öl",
-    "procent": 8.3,
-    "volym": 330,
-    "pris": 44.1
-  },
-  {
-    "namn": "BarlindBeer Archipelago",
-    "apk": 0.62,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 30.0
   },
   {
     "namn": "Josefin Lagerhorn Blacksta Dry Gin",
@@ -63822,14 +60102,6 @@
     "procent": 5.6,
     "volym": 330,
     "pris": 30.0
-  },
-  {
-    "namn": "Stigbergets New & Improved India Pale Ale",
-    "apk": 0.62,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 440,
-    "pris": 45.9
   },
   {
     "namn": "Poppels Easter Ale",
@@ -64384,14 +60656,6 @@
     "pris": 479.0
   },
   {
-    "namn": "Crudo Organic Sparkling Wine",
-    "apk": 0.61,
-    "typ": "Vin",
-    "procent": 11.5,
-    "volym": 200,
-    "pris": 38.0
-  },
-  {
     "namn": "Les Remparts des Ceps Dorés Rosé",
     "apk": 0.61,
     "typ": "Vin",
@@ -64470,14 +60734,6 @@
     "procent": 13.0,
     "volym": 750,
     "pris": 159.0
-  },
-  {
-    "namn": "Stigbergets Existens essens transcendens",
-    "apk": 0.61,
-    "typ": "Öl",
-    "procent": 5.9,
-    "volym": 440,
-    "pris": 42.9
   },
   {
     "namn": "Bogle Family Vineyards Chardonnay",
@@ -64656,14 +60912,6 @@
     "pris": 29.9
   },
   {
-    "namn": "Kvarnagårdens Redig American Pale Ale",
-    "apk": 0.61,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 28.0
-  },
-  {
     "namn": "Vigrum Vinter ilischus",
     "apk": 0.61,
     "typ": "Öl",
@@ -64694,14 +60942,6 @@
     "procent": 4.6,
     "volym": 330,
     "pris": 24.9
-  },
-  {
-    "namn": "I'll Sleep When I'm Dead",
-    "apk": 0.61,
-    "typ": "Öl",
-    "procent": 6.9,
-    "volym": 330,
-    "pris": 37.1
   },
   {
     "namn": "Business Monkey Vacationland Juice",
@@ -66272,14 +62512,6 @@
     "pris": 43.9
   },
   {
-    "namn": "5mans Lady of the mine Aktiebolaget Femman",
-    "apk": 0.61,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 30.5
-  },
-  {
     "namn": "Burgsviks bryggeri New Gotland IPA",
     "apk": 0.61,
     "typ": "Öl",
@@ -66294,14 +62526,6 @@
     "procent": 7.5,
     "volym": 440,
     "pris": 53.9
-  },
-  {
-    "namn": "Barlingbo Bryggeri Den säure Hallon",
-    "apk": 0.61,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 330,
-    "pris": 29.9
   },
   {
     "namn": "This Is How To Spotlight IPA",
@@ -66368,14 +62592,6 @@
     "pris": 58.8
   },
   {
-    "namn": "Östersunds Nya Ångbryggeri Modern lager",
-    "apk": 0.61,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 440,
-    "pris": 36.1
-  },
-  {
     "namn": "Kornheddinge BryggeriKompani KBK Veteranöl",
     "apk": 0.61,
     "typ": "Öl",
@@ -66408,14 +62624,6 @@
     "pris": 43.5
   },
   {
-    "namn": "Rocky Point Brewery A-Frame Modern Lager",
-    "apk": 0.61,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 30.5
-  },
-  {
     "namn": "O/O & Bad Seed Slice of Moonshine Black IPA",
     "apk": 0.61,
     "typ": "Öl",
@@ -66440,28 +62648,12 @@
     "pris": 35.1
   },
   {
-    "namn": "Stockholm Brewing Pillow Talk",
-    "apk": 0.61,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 34.9
-  },
-  {
     "namn": "Ume 400 Pilsner",
     "apk": 0.61,
     "typ": "Öl",
     "procent": 4.8,
     "volym": 330,
     "pris": 26.0
-  },
-  {
-    "namn": "Ekerö Brygghus Pils Glutenfri",
-    "apk": 0.61,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 27.1
   },
   {
     "namn": "Bosman Twyfeling Cinsault",
@@ -67256,14 +63448,6 @@
     "pris": 25.9
   },
   {
-    "namn": "Beerbliotek A Moment of Clarity",
-    "apk": 0.6,
-    "typ": "Öl",
-    "procent": 4.7,
-    "volym": 330,
-    "pris": 25.9
-  },
-  {
     "namn": "La Belle Extra Brut Blanc de Blancs",
     "apk": 0.6,
     "typ": "Vin",
@@ -67318,14 +63502,6 @@
     "procent": 13.5,
     "volym": 750,
     "pris": 169.0
-  },
-  {
-    "namn": "Galipette Organic Brut Premier",
-    "apk": 0.6,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 24.9
   },
   {
     "namn": "Pieropan Soave Classico",
@@ -67430,14 +63606,6 @@
     "procent": 6.5,
     "volym": 330,
     "pris": 35.9
-  },
-  {
-    "namn": "Två Feta Grisar Neipa",
-    "apk": 0.6,
-    "typ": "Öl",
-    "procent": 6.0,
-    "volym": 330,
-    "pris": 32.8
   },
   {
     "namn": "Fjäderholmarnas Bryggeri Hazy Island",
@@ -67608,14 +63776,6 @@
     "pris": 30.1
   },
   {
-    "namn": "Timjans Brygghus Västkust IPA",
-    "apk": 0.6,
-    "typ": "Öl",
-    "procent": 6.7,
-    "volym": 330,
-    "pris": 36.7
-  },
-  {
     "namn": "Timjans Brygghus Nectaron",
     "apk": 0.6,
     "typ": "Öl",
@@ -67766,14 +63926,6 @@
     "procent": 6.1,
     "volym": 440,
     "pris": 44.9
-  },
-  {
-    "namn": "Lule brew Pale Ale",
-    "apk": 0.6,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 330,
-    "pris": 30.1
   },
   {
     "namn": "Wet City Pink Gin",
@@ -69424,28 +65576,12 @@
     "pris": 369.0
   },
   {
-    "namn": "Westerbottens Bryggeri Snöan",
-    "apk": 0.6,
-    "typ": "Öl",
-    "procent": 7.4,
-    "volym": 330,
-    "pris": 41.0
-  },
-  {
     "namn": "Ten Hands Dankenstein",
     "apk": 0.6,
     "typ": "Öl",
     "procent": 6.8,
     "volym": 440,
     "pris": 49.9
-  },
-  {
-    "namn": "Vellinge Bryggeri Skånsk Bitter",
-    "apk": 0.6,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 24.9
   },
   {
     "namn": "Vellinge Bryggeri Skånsk Bitter",
@@ -70304,14 +66440,6 @@
     "pris": 179.0
   },
   {
-    "namn": "Eòlic Brut Nature",
-    "apk": 0.59,
-    "typ": "Vin",
-    "procent": 11.5,
-    "volym": 200,
-    "pris": 39.0
-  },
-  {
     "namn": "Substance Cs Cabernet Sauvignon",
     "apk": 0.59,
     "typ": "Vin",
@@ -70374,14 +66502,6 @@
     "procent": 5.2,
     "volym": 330,
     "pris": 28.9
-  },
-  {
-    "namn": "Gotlands Ginfabrik Dry Gin",
-    "apk": 0.59,
-    "typ": "Sprit",
-    "procent": 42.1,
-    "volym": 500,
-    "pris": 359.0
   },
   {
     "namn": "Potum Brewery Intergalactic",
@@ -70672,14 +66792,6 @@
     "pris": 48.1
   },
   {
-    "namn": "Hyllie Bryggeri Liberation Gluten-free Lager",
-    "apk": 0.59,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 25.0
-  },
-  {
     "namn": "Elmeleven Water Worlds",
     "apk": 0.59,
     "typ": "Öl",
@@ -70832,14 +66944,6 @@
     "pris": 25.0
   },
   {
-    "namn": "Timjans Brygghus La Bionda",
-    "apk": 0.59,
-    "typ": "Öl",
-    "procent": 4.9,
-    "volym": 330,
-    "pris": 27.6
-  },
-  {
     "namn": "Apex Metatron DIPA",
     "apk": 0.59,
     "typ": "Öl",
@@ -70904,38 +67008,6 @@
     "pris": 59.9
   },
   {
-    "namn": "Billdale The Cru",
-    "apk": 0.59,
-    "typ": "Öl",
-    "procent": 5.9,
-    "volym": 330,
-    "pris": 32.8
-  },
-  {
-    "namn": "Billdale Bohuslän",
-    "apk": 0.59,
-    "typ": "Öl",
-    "procent": 6.1,
-    "volym": 330,
-    "pris": 34.4
-  },
-  {
-    "namn": "Potum Brewery Intergalactic",
-    "apk": 0.59,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 440,
-    "pris": 48.1
-  },
-  {
-    "namn": "Gamma Brewing Big Doink - Double IPA",
-    "apk": 0.59,
-    "typ": "Öl",
-    "procent": 8.0,
-    "volym": 440,
-    "pris": 60.1
-  },
-  {
     "namn": "God Jul Änna",
     "apk": 0.59,
     "typ": "Öl",
@@ -70950,30 +67022,6 @@
     "procent": 4.8,
     "volym": 330,
     "pris": 27.0
-  },
-  {
-    "namn": "Bottenvikens Skanderna",
-    "apk": 0.59,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 36.1
-  },
-  {
-    "namn": "Orange spritz Länna Bruk",
-    "apk": 0.59,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 27.9
-  },
-  {
-    "namn": "Gin'n Grape Länna Bruk",
-    "apk": 0.59,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 27.9
   },
   {
     "namn": "Shapes & Objects Nelson Sauvin Supreme",
@@ -72488,14 +68536,6 @@
     "pris": 506.0
   },
   {
-    "namn": "O/O Bruks Bitter",
-    "apk": 0.59,
-    "typ": "Öl",
-    "procent": 3.9,
-    "volym": 330,
-    "pris": 21.9
-  },
-  {
     "namn": "Domaene Gobelsburg Kamptal Grüner Veltliner",
     "apk": 0.59,
     "typ": "Vin",
@@ -72592,14 +68632,6 @@
     "pris": 25.2
   },
   {
-    "namn": "Vega Bryggeri Bowline Bitter",
-    "apk": 0.59,
-    "typ": "Öl",
-    "procent": 4.3,
-    "volym": 330,
-    "pris": 24.1
-  },
-  {
     "namn": "Brygga Bränneri Session 17 Barrel Aged Gin",
     "apk": 0.59,
     "typ": "Sprit",
@@ -72640,14 +68672,6 @@
     "pris": 39.2
   },
   {
-    "namn": "Vigrum Bryggeri Mosaik IPA",
-    "apk": 0.59,
-    "typ": "Öl",
-    "procent": 5.8,
-    "volym": 330,
-    "pris": 32.4
-  },
-  {
     "namn": "Halmstad Brygghus Hallands Golden Lager",
     "apk": 0.59,
     "typ": "Öl",
@@ -72670,14 +68694,6 @@
     "procent": 5.2,
     "volym": 330,
     "pris": 29.1
-  },
-  {
-    "namn": "Potum Brewery Illusions",
-    "apk": 0.59,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 440,
-    "pris": 48.1
   },
   {
     "namn": "Öde Stout",
@@ -73400,22 +69416,6 @@
     "pris": 155.0
   },
   {
-    "namn": "Stigbergets Scandinavian West Coast IPA",
-    "apk": 0.58,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 36.9
-  },
-  {
-    "namn": "Stigbergets Amazing Haze IPA",
-    "apk": 0.58,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 36.9
-  },
-  {
     "namn": "Armagnac XO Olivier Gessler",
     "apk": 0.58,
     "typ": "Sprit",
@@ -73608,28 +69608,12 @@
     "pris": 37.1
   },
   {
-    "namn": "Rocky Point Brewery Nidingen West Coast IPA",
-    "apk": 0.58,
-    "typ": "Öl",
-    "procent": 6.3,
-    "volym": 330,
-    "pris": 36.1
-  },
-  {
     "namn": "Ekerö Brygghus Hazy IPA",
     "apk": 0.58,
     "typ": "Öl",
     "procent": 6.5,
     "volym": 330,
     "pris": 37.3
-  },
-  {
-    "namn": "Svartberget Black Mountain Stout",
-    "apk": 0.58,
-    "typ": "Öl",
-    "procent": 4.7,
-    "volym": 330,
-    "pris": 26.8
   },
   {
     "namn": "Smakladan Skogsfrun",
@@ -73670,14 +69654,6 @@
     "procent": 4.7,
     "volym": 330,
     "pris": 26.8
-  },
-  {
-    "namn": "Happy Valley Svartbergets Fjällbryggeri",
-    "apk": 0.58,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 37.1
   },
   {
     "namn": "Åre Bryggcompagni Heidi Kellerbier",
@@ -73744,36 +69720,12 @@
     "pris": 36.7
   },
   {
-    "namn": "Ekerö Brygghus IPA",
-    "apk": 0.58,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 37.3
-  },
-  {
-    "namn": "Wättle Förtrollningen",
-    "apk": 0.58,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 31.8
-  },
-  {
     "namn": "Vellinge Bryggeri Hefeweizen",
     "apk": 0.58,
     "typ": "Öl",
     "procent": 4.9,
     "volym": 330,
     "pris": 27.9
-  },
-  {
-    "namn": "Wättle Rödhaken",
-    "apk": 0.58,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 31.8
   },
   {
     "namn": "Stigberget Clandestino",
@@ -73808,28 +69760,12 @@
     "pris": 49.1
   },
   {
-    "namn": "Åre Bryggcompagni Heidi Kellerbier",
-    "apk": 0.58,
-    "typ": "Öl",
-    "procent": 4.9,
-    "volym": 330,
-    "pris": 27.9
-  },
-  {
     "namn": "Prins Katts Hantverksöl Sur-Olle Imperial Blueberry Custard Milkshake Sour Ale",
     "apk": 0.58,
     "typ": "Öl",
     "procent": 7.0,
     "volym": 330,
     "pris": 40.1
-  },
-  {
-    "namn": "Ekerö Brygghus Hazy IPA",
-    "apk": 0.58,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 37.3
   },
   {
     "namn": "Åre Bryggcompagni Little Boxes IPA",
@@ -73856,14 +69792,6 @@
     "pris": 28.5
   },
   {
-    "namn": "Billdale Aloha Aloha",
-    "apk": 0.58,
-    "typ": "Öl",
-    "procent": 6.2,
-    "volym": 330,
-    "pris": 35.5
-  },
-  {
     "namn": "Kvarnagårdens Mellanbäss",
     "apk": 0.58,
     "typ": "Öl",
@@ -73886,22 +69814,6 @@
     "procent": 5.5,
     "volym": 330,
     "pris": 31.4
-  },
-  {
-    "namn": "Smakladan Skogsfrun",
-    "apk": 0.58,
-    "typ": "Öl",
-    "procent": 7.0,
-    "volym": 330,
-    "pris": 39.9
-  },
-  {
-    "namn": "Bottenvikens Någerst",
-    "apk": 0.58,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 37.1
   },
   {
     "namn": "Qvänum Jonsson Ale",
@@ -75304,14 +71216,6 @@
     "pris": 28.4
   },
   {
-    "namn": "Stjernsund GT",
-    "apk": 0.58,
-    "typ": "Öl",
-    "procent": 8.5,
-    "volym": 250,
-    "pris": 36.7
-  },
-  {
     "namn": "Bröderna Bommen Påsksnaps Fläderblom",
     "apk": 0.58,
     "typ": "Sprit",
@@ -75336,22 +71240,6 @@
     "pris": 31.1
   },
   {
-    "namn": "Hedemora Stadsbryggeri Hazy Liza",
-    "apk": 0.58,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 330,
-    "pris": 30.1
-  },
-  {
-    "namn": "Ekerö Brygghus Akatsuki Rice Lager",
-    "apk": 0.58,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 25.4
-  },
-  {
     "namn": "En Kristinehamns Jävel Stay True Brewing",
     "apk": 0.58,
     "typ": "Sprit",
@@ -75368,28 +71256,12 @@
     "pris": 29.9
   },
   {
-    "namn": "Stjernsund Brygghus Paloma",
-    "apk": 0.58,
-    "typ": "Öl",
-    "procent": 8.5,
-    "volym": 250,
-    "pris": 36.7
-  },
-  {
     "namn": "Örebro Brygghus Helles Lager",
     "apk": 0.58,
     "typ": "Öl",
     "procent": 5.3,
     "volym": 440,
     "pris": 39.9
-  },
-  {
-    "namn": "Amundsen Hopbliminal Messages NEIPA",
-    "apk": 0.58,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 330,
-    "pris": 30.0
   },
   {
     "namn": "Sickla NEIPA",
@@ -76264,14 +72136,6 @@
     "pris": 159.0
   },
   {
-    "namn": "Omnipollo Sundbybergs IPA",
-    "apk": 0.57,
-    "typ": "Öl",
-    "procent": 5.9,
-    "volym": 330,
-    "pris": 33.9
-  },
-  {
     "namn": "Tre Marchetti Amarone Della Valpolicella",
     "apk": 0.57,
     "typ": "Vin",
@@ -76454,14 +72318,6 @@
     "procent": 6.5,
     "volym": 440,
     "pris": 49.9
-  },
-  {
-    "namn": "Skellefteå Bryggeri Hooja",
-    "apk": 0.57,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 29.0
   },
   {
     "namn": "Wättle Brygghus Hemvändningen Julöl",
@@ -76744,14 +72600,6 @@
     "pris": 33.1
   },
   {
-    "namn": "5mans Shout out stout Aktiebolaget Femman",
-    "apk": 0.57,
-    "typ": "Öl",
-    "procent": 6.0,
-    "volym": 330,
-    "pris": 34.6
-  },
-  {
     "namn": "Åre Bryggcompagni Community Beer IPA",
     "apk": 0.57,
     "typ": "Öl",
@@ -76886,14 +72734,6 @@
     "procent": 5.0,
     "volym": 330,
     "pris": 28.9
-  },
-  {
-    "namn": "Två Feta Grisar A röd ale",
-    "apk": 0.57,
-    "typ": "Öl",
-    "procent": 4.7,
-    "volym": 330,
-    "pris": 27.1
   },
   {
     "namn": "Qvänum Mat&Malt Pink Gin",
@@ -77920,14 +73760,6 @@
     "pris": 157.0
   },
   {
-    "namn": "Langhe Rosato Josetta Saffirio",
-    "apk": 0.57,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 750,
-    "pris": 165.0
-  },
-  {
     "namn": "Azul Mediterráneo Chardonnay Blue",
     "apk": 0.57,
     "typ": "Vin",
@@ -78590,22 +74422,6 @@
     "procent": 6.5,
     "volym": 440,
     "pris": 49.9
-  },
-  {
-    "namn": "Pine Brewing Company Jumping Jacks Modern Lager",
-    "apk": 0.57,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 29.9
-  },
-  {
-    "namn": "Reinklou Bryggerier No. 1",
-    "apk": 0.57,
-    "typ": "Öl",
-    "procent": 5.8,
-    "volym": 330,
-    "pris": 33.5
   },
   {
     "namn": "Bryggeri 1766 Oxel Gin",
@@ -79544,44 +75360,12 @@
     "pris": 269.0
   },
   {
-    "namn": "Ginger Prince Rosé Bubbles",
-    "apk": 0.56,
-    "typ": "Vin",
-    "procent": 11.7,
-    "volym": 375,
-    "pris": 79.0
-  },
-  {
-    "namn": "Lubanzi Sparkling Cinsault Rosé",
-    "apk": 0.56,
-    "typ": "Vin",
-    "procent": 11.0,
-    "volym": 200,
-    "pris": 39.0
-  },
-  {
-    "namn": "S:t Eriks Rabarber Sur",
-    "apk": 0.56,
-    "typ": "Öl",
-    "procent": 4.7,
-    "volym": 330,
-    "pris": 27.9
-  },
-  {
     "namn": "Lynx Central Coast Pinot Noir",
     "apk": 0.56,
     "typ": "Vin",
     "procent": 14.0,
     "volym": 750,
     "pris": 189.0
-  },
-  {
-    "namn": "Rosé Sparkling Wine Belrose",
-    "apk": 0.56,
-    "typ": "Vin",
-    "procent": 11.0,
-    "volym": 200,
-    "pris": 39.0
   },
   {
     "namn": "Bryggverket Hooja Varg IPA",
@@ -79728,22 +75512,6 @@
     "pris": 24.9
   },
   {
-    "namn": "5MAN Sip Happens",
-    "apk": 0.56,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 38.6
-  },
-  {
-    "namn": "Janne Shuffle Lager",
-    "apk": 0.56,
-    "typ": "Öl",
-    "procent": 5.1,
-    "volym": 330,
-    "pris": 30.1
-  },
-  {
     "namn": "Timjans Brygghus Grötvik Lager",
     "apk": 0.56,
     "typ": "Öl",
@@ -79774,14 +75542,6 @@
     "procent": 4.2,
     "volym": 330,
     "pris": 24.9
-  },
-  {
-    "namn": "Svartberget Jämtbitter",
-    "apk": 0.56,
-    "typ": "Öl",
-    "procent": 4.2,
-    "volym": 330,
-    "pris": 24.7
   },
   {
     "namn": "Unibärsum Tharsis II",
@@ -82360,14 +78120,6 @@
     "pris": 543.0
   },
   {
-    "namn": "Le Rosé Domaine de la Bargemone",
-    "apk": 0.55,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 250,
-    "pris": 59.0
-  },
-  {
     "namn": "Cinzia Aperitivo",
     "apk": 0.55,
     "typ": "Vin",
@@ -82672,14 +78424,6 @@
     "pris": 28.9
   },
   {
-    "namn": "5mans NEIPA Aktiebolaget Femman",
-    "apk": 0.55,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 330,
-    "pris": 38.7
-  },
-  {
     "namn": "Batch Brewing Identity Crisis",
     "apk": 0.55,
     "typ": "Öl",
@@ -82784,14 +78528,6 @@
     "pris": 28.3
   },
   {
-    "namn": "Hyllie Bryggeri Meadows Gluten-free",
-    "apk": 0.55,
-    "typ": "Öl",
-    "procent": 4.7,
-    "volym": 330,
-    "pris": 28.4
-  },
-  {
     "namn": "Westerbottens bryggeri Svansele",
     "apk": 0.55,
     "typ": "Öl",
@@ -82886,14 +78622,6 @@
     "procent": 6.0,
     "volym": 330,
     "pris": 35.9
-  },
-  {
-    "namn": "Uppsala Brygghus Juicy McHopface",
-    "apk": 0.55,
-    "typ": "Öl",
-    "procent": 5.8,
-    "volym": 330,
-    "pris": 34.9
   },
   {
     "namn": "BarlindBeer Flygtornets schwarzbier",
@@ -84512,14 +80240,6 @@
     "pris": 49.5
   },
   {
-    "namn": "Brutal Bubbles Rosé",
-    "apk": 0.55,
-    "typ": "Vin",
-    "procent": 11.0,
-    "volym": 375,
-    "pris": 75.0
-  },
-  {
     "namn": "Wättle Sommar",
     "apk": 0.55,
     "typ": "Öl",
@@ -85536,14 +81256,6 @@
     "pris": 106.0
   },
   {
-    "namn": "Camp Sparkling",
-    "apk": 0.54,
-    "typ": "Vin",
-    "procent": 11.0,
-    "volym": 200,
-    "pris": 41.0
-  },
-  {
     "namn": "Punt Road Pinot Noir",
     "apk": 0.54,
     "typ": "Vin",
@@ -85590,14 +81302,6 @@
     "procent": 11.5,
     "volym": 750,
     "pris": 159.0
-  },
-  {
-    "namn": "Asiotus Vino Bianco Biologico Frizzante",
-    "apk": 0.54,
-    "typ": "Vin",
-    "procent": 10.5,
-    "volym": 200,
-    "pris": 39.0
   },
   {
     "namn": "Real Tesoro del Principe Amontillado",
@@ -85832,14 +81536,6 @@
     "pris": 34.0
   },
   {
-    "namn": "Wapnö Ellina Tropisk Syrlig",
-    "apk": 0.54,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 34.0
-  },
-  {
     "namn": "Kurjovikens Oberoende Dry Stout",
     "apk": 0.54,
     "typ": "Öl",
@@ -85862,30 +81558,6 @@
     "procent": 8.0,
     "volym": 330,
     "pris": 48.9
-  },
-  {
-    "namn": "BarlindBeer Ishusets lager",
-    "apk": 0.54,
-    "typ": "Öl",
-    "procent": 4.9,
-    "volym": 330,
-    "pris": 30.1
-  },
-  {
-    "namn": "Westerbottens Bryggeri Hummelholm",
-    "apk": 0.54,
-    "typ": "Öl",
-    "procent": 5.9,
-    "volym": 330,
-    "pris": 36.3
-  },
-  {
-    "namn": "BarlindBeer Flygtornets pilsner",
-    "apk": 0.54,
-    "typ": "Öl",
-    "procent": 4.6,
-    "volym": 330,
-    "pris": 28.0
   },
   {
     "namn": "Mick & Jack Smoked Beer",
@@ -85958,14 +81630,6 @@
     "procent": 6.8,
     "volym": 440,
     "pris": 55.1
-  },
-  {
-    "namn": "Rocket Brewing Fågelsång",
-    "apk": 0.54,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 30.3
   },
   {
     "namn": "Bua Beach Brewery Eyes On My Beer",
@@ -86350,14 +82014,6 @@
     "procent": 6.5,
     "volym": 250,
     "pris": 29.9
-  },
-  {
-    "namn": "Omnipollos Tokyo",
-    "apk": 0.54,
-    "typ": "Öl",
-    "procent": 5.4,
-    "volym": 330,
-    "pris": 32.9
   },
   {
     "namn": "Omnipollos Tokyo",
@@ -88896,14 +84552,6 @@
     "pris": 99.0
   },
   {
-    "namn": "Poppels Bryggeri Mango Sour",
-    "apk": 0.53,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 27.9
-  },
-  {
     "namn": "Hermon Mount Hermon Red",
     "apk": 0.53,
     "typ": "Vin",
@@ -89136,14 +84784,6 @@
     "pris": 32.8
   },
   {
-    "namn": "Hop Notch Hoppy Otter",
-    "apk": 0.53,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 330,
-    "pris": 29.9
-  },
-  {
     "namn": "Vega Bryggeri Tropic Haze Fruited Session IPA",
     "apk": 0.53,
     "typ": "Öl",
@@ -89216,14 +84856,6 @@
     "pris": 79.9
   },
   {
-    "namn": "Ekerö Brygghus Hazy Pale",
-    "apk": 0.53,
-    "typ": "Öl",
-    "procent": 5.5,
-    "volym": 330,
-    "pris": 34.5
-  },
-  {
     "namn": "Brewski Paw Paw Fruited Sour",
     "apk": 0.53,
     "typ": "Öl",
@@ -89246,14 +84878,6 @@
     "procent": 5.3,
     "volym": 330,
     "pris": 32.9
-  },
-  {
-    "namn": "Göteborgs Nya Bryggeri Session Ipa",
-    "apk": 0.53,
-    "typ": "Öl",
-    "procent": 3.7,
-    "volym": 330,
-    "pris": 22.9
   },
   {
     "namn": "Västkustens & Hopping Owl New England IPA",
@@ -91024,28 +86648,12 @@
     "pris": 37.5
   },
   {
-    "namn": "Gagnef Brewing Solig",
-    "apk": 0.53,
-    "typ": "Öl",
-    "procent": 5.9,
-    "volym": 330,
-    "pris": 36.4
-  },
-  {
     "namn": "Bryggerifabriken Karlskrona Export",
     "apk": 0.53,
     "typ": "Öl",
     "procent": 5.7,
     "volym": 330,
     "pris": 35.5
-  },
-  {
-    "namn": "PKLK Bryggeri Public Service",
-    "apk": 0.53,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 330,
-    "pris": 29.8
   },
   {
     "namn": "PKLK Bryggeri Public Service",
@@ -91094,14 +86702,6 @@
     "procent": 4.5,
     "volym": 330,
     "pris": 28.2
-  },
-  {
-    "namn": "Bua Beach Brewery Skull",
-    "apk": 0.53,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 330,
-    "pris": 32.8
   },
   {
     "namn": "Örebro Brygghus Pub Feed",
@@ -91968,14 +87568,6 @@
     "pris": 195.0
   },
   {
-    "namn": "Pizzolato Moscato Frizzante Organic",
-    "apk": 0.52,
-    "typ": "Vin",
-    "procent": 11.0,
-    "volym": 200,
-    "pris": 42.0
-  },
-  {
     "namn": "Lat 42 Gran Reserva",
     "apk": 0.52,
     "typ": "Vin",
@@ -92128,14 +87720,6 @@
     "pris": 32.9
   },
   {
-    "namn": "Revsunds Brewery HKFY Habanero",
-    "apk": 0.52,
-    "typ": "Öl",
-    "procent": 6.6,
-    "volym": 330,
-    "pris": 42.0
-  },
-  {
     "namn": "Unibärsum Boiling Cauldron",
     "apk": 0.52,
     "typ": "Öl",
@@ -92176,28 +87760,12 @@
     "pris": 30.9
   },
   {
-    "namn": "Brutal Bubbles Odd Island Brewing",
-    "apk": 0.52,
-    "typ": "Vin",
-    "procent": 10.3,
-    "volym": 375,
-    "pris": 75.0
-  },
-  {
     "namn": "Lilla Edet Strawberry Daiquiri",
     "apk": 0.52,
     "typ": "Öl",
     "procent": 4.5,
     "volym": 330,
     "pris": 28.4
-  },
-  {
-    "namn": "Reinklou Bryggerier No. 3 German Pilsner",
-    "apk": 0.52,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 330,
-    "pris": 30.3
   },
   {
     "namn": "Bua Beach Brewery Påskpilsner",
@@ -92990,14 +88558,6 @@
     "procent": 12.5,
     "volym": 750,
     "pris": 180.0
-  },
-  {
-    "namn": "Château Pont de Brion",
-    "apk": 0.52,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 189.0
   },
   {
     "namn": "Poli Bomb",
@@ -94168,14 +89728,6 @@
     "pris": 60.1
   },
   {
-    "namn": "PKLK Bryggeri Space Monk Modern blond",
-    "apk": 0.52,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 31.7
-  },
-  {
     "namn": "Brygglabbet Påsk mortem",
     "apk": 0.52,
     "typ": "Öl",
@@ -94198,14 +89750,6 @@
     "procent": 5.2,
     "volym": 330,
     "pris": 33.1
-  },
-  {
-    "namn": "5mans Gustav Vapa Aktiebolaget Femman",
-    "apk": 0.52,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 35.8
   },
   {
     "namn": "Evan Williams Single Barrel Vintage 2016",
@@ -95216,14 +90760,6 @@
     "pris": 38.7
   },
   {
-    "namn": "5mans Lilla Chicago Aktiebolaget Femman",
-    "apk": 0.51,
-    "typ": "Öl",
-    "procent": 6.0,
-    "volym": 330,
-    "pris": 38.7
-  },
-  {
     "namn": "Gamma Brewing Freak Wave - IPA",
     "apk": 0.51,
     "typ": "Öl",
@@ -95238,22 +90774,6 @@
     "procent": 4.5,
     "volym": 330,
     "pris": 28.9
-  },
-  {
-    "namn": "Billdale & Co True Love",
-    "apk": 0.51,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 32.4
-  },
-  {
-    "namn": "Gamma Brewing Freak Wave - IPA",
-    "apk": 0.51,
-    "typ": "Öl",
-    "procent": 6.5,
-    "volym": 440,
-    "pris": 56.1
   },
   {
     "namn": "Wet City Spirits Amicitia Triple Sec Cask Aged Gin",
@@ -98600,22 +94120,6 @@
     "pris": 79.9
   },
   {
-    "namn": "To Øl Snublejuice",
-    "apk": 0.5,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 29.9
-  },
-  {
-    "namn": "Bottenvikens Pussen",
-    "apk": 0.5,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 34.1
-  },
-  {
     "namn": "Hammarby Sjöstad Destilleri Ultra Vodka",
     "apk": 0.5,
     "typ": "Sprit",
@@ -100528,14 +96032,6 @@
     "pris": 33.2
   },
   {
-    "namn": "Skatan i gatan Brewhuslän AB",
-    "apk": 0.5,
-    "typ": "Öl",
-    "procent": 5.3,
-    "volym": 330,
-    "pris": 35.1
-  },
-  {
     "namn": "Nya Carnegiebryggeriet 5kW Barrel-aged Imperial Stout",
     "apk": 0.5,
     "typ": "Öl",
@@ -100582,14 +96078,6 @@
     "procent": 30.0,
     "volym": 500,
     "pris": 298.0
-  },
-  {
-    "namn": "Dugges Stillwater Artisanal Mango Mango Mango",
-    "apk": 0.5,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 29.9
   },
   {
     "namn": "Roslagens Brygghus Julöl",
@@ -102000,14 +97488,6 @@
     "pris": 32.4
   },
   {
-    "namn": "Vega Session IPA",
-    "apk": 0.49,
-    "typ": "Öl",
-    "procent": 4.3,
-    "volym": 330,
-    "pris": 29.1
-  },
-  {
     "namn": "Westerbottens Bryggeri Nyåker",
     "apk": 0.49,
     "typ": "Öl",
@@ -102080,14 +97560,6 @@
     "pris": 30.0
   },
   {
-    "namn": "Westerbottens Bryggeri Nyåker",
-    "apk": 0.49,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 33.6
-  },
-  {
     "namn": "Unibärsum Passing Through",
     "apk": 0.49,
     "typ": "Öl",
@@ -102142,22 +97614,6 @@
     "procent": 4.5,
     "volym": 330,
     "pris": 30.1
-  },
-  {
-    "namn": "Billdale Strawberry Sour",
-    "apk": 0.49,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 330,
-    "pris": 32.4
-  },
-  {
-    "namn": "Smakladan Vättvilling",
-    "apk": 0.49,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 33.5
   },
   {
     "namn": "Hyllie Bryggeri Stout of Order",
@@ -103728,14 +99184,6 @@
     "pris": 30.1
   },
   {
-    "namn": "Kvarnagårdens Småland Haze",
-    "apk": 0.49,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 30.1
-  },
-  {
     "namn": "Rocket Brewing Company Sommar",
     "apk": 0.49,
     "typ": "Öl",
@@ -104288,14 +99736,6 @@
     "pris": 539.0
   },
   {
-    "namn": "Stockholms Bränneri Garden Smash",
-    "apk": 0.49,
-    "typ": "Öl",
-    "procent": 5.9,
-    "volym": 250,
-    "pris": 29.9
-  },
-  {
     "namn": "Mission Reserve Syrah",
     "apk": 0.49,
     "typ": "Vin",
@@ -104310,14 +99750,6 @@
     "procent": 13.0,
     "volym": 750,
     "pris": 199.0
-  },
-  {
-    "namn": "Montefalco Sagrantino Antonelli",
-    "apk": 0.49,
-    "typ": "Vin",
-    "procent": 15.0,
-    "volym": 750,
-    "pris": 229.0
   },
   {
     "namn": "Rosso di Montalcino Ciacci Piccolomini",
@@ -110000,14 +105432,6 @@
     "pris": 199.0
   },
   {
-    "namn": "Vega Bryggeri Sour Power Svarta Vinbär & Hallon",
-    "apk": 0.47,
-    "typ": "Öl",
-    "procent": 4.7,
-    "volym": 330,
-    "pris": 33.1
-  },
-  {
     "namn": "En Aleigen Brewery Whats brewing around the galaxy",
     "apk": 0.47,
     "typ": "Öl",
@@ -110094,14 +105518,6 @@
     "procent": 5.3,
     "volym": 330,
     "pris": 36.9
-  },
-  {
-    "namn": "Uppsala Brygghus Fläderfunk",
-    "apk": 0.47,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 31.9
   },
   {
     "namn": "Ljungbyholm Bjäre Dry Gin",
@@ -113784,14 +109200,6 @@
     "pris": 249.0
   },
   {
-    "namn": "Poppels Bryggeri Sour Fruit Ale Strawberry",
-    "apk": 0.45,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 32.9
-  },
-  {
     "namn": "Cuvée des Jacobins Brouwerij Bockor",
     "apk": 0.45,
     "typ": "Öl",
@@ -113870,22 +109278,6 @@
     "procent": 4.8,
     "volym": 330,
     "pris": 35.5
-  },
-  {
-    "namn": "U and Me Beer Lillbörtingen",
-    "apk": 0.45,
-    "typ": "Öl",
-    "procent": 3.6,
-    "volym": 330,
-    "pris": 26.6
-  },
-  {
-    "namn": "Wadstena Crafts NEIPA",
-    "apk": 0.45,
-    "typ": "Öl",
-    "procent": 5.8,
-    "volym": 330,
-    "pris": 43.0
   },
   {
     "namn": "Wetterstadens Bryggeri Unnergången Exclusive Ale",
@@ -115536,14 +110928,6 @@
     "pris": 39.9
   },
   {
-    "namn": "U and Me Beer Gose Granskott",
-    "apk": 0.45,
-    "typ": "Öl",
-    "procent": 4.8,
-    "volym": 330,
-    "pris": 35.5
-  },
-  {
     "namn": "Brewski Peruvian Snow Fruited Sour",
     "apk": 0.45,
     "typ": "Öl",
@@ -116320,14 +111704,6 @@
     "pris": 239.0
   },
   {
-    "namn": "Querciabella Chianti Classico",
-    "apk": 0.44,
-    "typ": "Vin",
-    "procent": 14.0,
-    "volym": 750,
-    "pris": 239.0
-  },
-  {
     "namn": "Radicale Primitivo",
     "apk": 0.44,
     "typ": "Vin",
@@ -116454,14 +111830,6 @@
     "procent": 12.0,
     "volym": 350,
     "pris": 96.0
-  },
-  {
-    "namn": "Walcher Limoncello Biologico",
-    "apk": 0.44,
-    "typ": "Sprit",
-    "procent": 15.0,
-    "volym": 500,
-    "pris": 169.0
   },
   {
     "namn": "Winkl Sauvignon",
@@ -118384,14 +113752,6 @@
     "pris": 229.0
   },
   {
-    "namn": "Bryggverket Megasourus",
-    "apk": 0.44,
-    "typ": "Öl",
-    "procent": 8.0,
-    "volym": 330,
-    "pris": 60.2
-  },
-  {
     "namn": "Friends x Pulpit Rock Tropic Pancake Mango Passion Fruit Vanilla Sour",
     "apk": 0.44,
     "typ": "Öl",
@@ -119320,14 +114680,6 @@
     "pris": 231.0
   },
   {
-    "namn": "Foot of Africa Rosé",
-    "apk": 0.43,
-    "typ": "Vin",
-    "procent": 8.5,
-    "volym": 250,
-    "pris": 49.0
-  },
-  {
     "namn": "Xanté Latte & Pear",
     "apk": 0.43,
     "typ": "Sprit",
@@ -119350,14 +114702,6 @@
     "procent": 43.0,
     "volym": 700,
     "pris": 699.0
-  },
-  {
-    "namn": "Dugges Tropic Thunder Stillwater Artisanal",
-    "apk": 0.43,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 34.9
   },
   {
     "namn": "Dugges Flora",
@@ -119438,14 +114782,6 @@
     "procent": 4.5,
     "volym": 330,
     "pris": 34.9
-  },
-  {
-    "namn": "Wadstena Suröl",
-    "apk": 0.43,
-    "typ": "Öl",
-    "procent": 5.6,
-    "volym": 330,
-    "pris": 42.9
   },
   {
     "namn": "Dugges Barrel-Aged Saffron",
@@ -122376,22 +117712,6 @@
     "pris": 33.0
   },
   {
-    "namn": "Lule Brew Raspberry Sour",
-    "apk": 0.42,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 35.1
-  },
-  {
-    "namn": "Lule Brew Passion Sour",
-    "apk": 0.42,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 330,
-    "pris": 35.1
-  },
-  {
     "namn": "Vingården i Klagshamn Vilda",
     "apk": 0.42,
     "typ": "Vin",
@@ -124080,14 +119400,6 @@
     "pris": 501.0
   },
   {
-    "namn": "No T'ho Diré Rosé",
-    "apk": 0.42,
-    "typ": "Vin",
-    "procent": 14.0,
-    "volym": 750,
-    "pris": 250.0
-  },
-  {
     "namn": "Sancerre Blanc",
     "apk": 0.42,
     "typ": "Vin",
@@ -125238,14 +120550,6 @@
     "procent": 4.5,
     "volym": 330,
     "pris": 36.2
-  },
-  {
-    "namn": "Kullabergs Vingård Äppelcider Halvtorr",
-    "apk": 0.41,
-    "typ": "Öl",
-    "procent": 4.5,
-    "volym": 250,
-    "pris": 27.3
   },
   {
     "namn": "Kullabergs Vingård Äppelcider Halvtorr",
@@ -128288,14 +123592,6 @@
     "pris": 49.9
   },
   {
-    "namn": "Wadstena IPA",
-    "apk": 0.4,
-    "typ": "Öl",
-    "procent": 5.2,
-    "volym": 330,
-    "pris": 42.9
-  },
-  {
     "namn": "Gotland Whisky Karlsö",
     "apk": 0.4,
     "typ": "Sprit",
@@ -130808,14 +126104,6 @@
     "pris": 69.0
   },
   {
-    "namn": "Nanbu Bijin Tokubetsu Junmai",
-    "apk": 0.39,
-    "typ": "Vin",
-    "procent": 15.0,
-    "volym": 180,
-    "pris": 69.0
-  },
-  {
     "namn": "Nanbu Bijin Junmai Ginjo",
     "apk": 0.39,
     "typ": "Vin",
@@ -130830,14 +126118,6 @@
     "procent": 15.0,
     "volym": 750,
     "pris": 289.0
-  },
-  {
-    "namn": "Nanbu Bijin Junmai Ginjo",
-    "apk": 0.39,
-    "typ": "Vin",
-    "procent": 15.0,
-    "volym": 180,
-    "pris": 69.0
   },
   {
     "namn": "Bolla Le Poiane Amarone",
@@ -133936,14 +129216,6 @@
     "pris": 725.0
   },
   {
-    "namn": "Lindores Abbey Thiron",
-    "apk": 0.39,
-    "typ": "Sprit",
-    "procent": 49.4,
-    "volym": 700,
-    "pris": 898.0
-  },
-  {
     "namn": "Finglassie Wine Cask #638 6 Years",
     "apk": 0.39,
     "typ": "Sprit",
@@ -134616,14 +129888,6 @@
     "pris": 34.9
   },
   {
-    "namn": "Brewski Triple Berry Pie",
-    "apk": 0.38,
-    "typ": "Öl",
-    "procent": 4.0,
-    "volym": 330,
-    "pris": 34.9
-  },
-  {
     "namn": "Brunello di Montalcino Val di Suga",
     "apk": 0.38,
     "typ": "Vin",
@@ -134662,14 +129926,6 @@
     "procent": 4.0,
     "volym": 330,
     "pris": 34.9
-  },
-  {
-    "namn": "Wadstena Lager",
-    "apk": 0.38,
-    "typ": "Öl",
-    "procent": 5.0,
-    "volym": 330,
-    "pris": 42.9
   },
   {
     "namn": "Wine Mechanics Gimme, Gimme, Gimme",
@@ -143240,14 +138496,6 @@
     "pris": 299.0
   },
   {
-    "namn": "Mâcon-Chardonnay L'Échenault de Serre",
-    "apk": 0.35,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 750,
-    "pris": 269.0
-  },
-  {
     "namn": "Un Jour Clos d'un Jour",
     "apk": 0.35,
     "typ": "Vin",
@@ -145998,14 +141246,6 @@
     "procent": 47.0,
     "volym": 3000,
     "pris": 3979.0
-  },
-  {
-    "namn": "Ryelaw Fife Single Grain",
-    "apk": 0.35,
-    "typ": "Sprit",
-    "procent": 46.3,
-    "volym": 700,
-    "pris": 929.0
   },
   {
     "namn": "Millstone Peated Tawny Port 5y",
@@ -160832,14 +156072,6 @@
     "pris": 392.0
   },
   {
-    "namn": "Nizza Serra Domenico",
-    "apk": 0.3,
-    "typ": "Vin",
-    "procent": 15.5,
-    "volym": 750,
-    "pris": 392.0
-  },
-  {
     "namn": "Simonsig Pinotage Redhill",
     "apk": 0.3,
     "typ": "Vin",
@@ -167296,14 +162528,6 @@
     "pris": 421.0
   },
   {
-    "namn": "TOCS",
-    "apk": 0.27,
-    "typ": "Vin",
-    "procent": 15.0,
-    "volym": 750,
-    "pris": 421.0
-  },
-  {
     "namn": "One Nine Spirits Kask",
     "apk": 0.27,
     "typ": "Sprit",
@@ -170024,22 +165248,6 @@
     "pris": 779.0
   },
   {
-    "namn": "TOCS",
-    "apk": 0.26,
-    "typ": "Vin",
-    "procent": 15.0,
-    "volym": 750,
-    "pris": 431.0
-  },
-  {
-    "namn": "TOCS",
-    "apk": 0.26,
-    "typ": "Vin",
-    "procent": 15.0,
-    "volym": 750,
-    "pris": 431.0
-  },
-  {
     "namn": "Delas Domaine des Grand Chemins Crozes-Hermitage",
     "apk": 0.26,
     "typ": "Vin",
@@ -171048,14 +166256,6 @@
     "pris": 399.0
   },
   {
-    "namn": "Château d'Aiguilhe Querre",
-    "apk": 0.26,
-    "typ": "Vin",
-    "procent": 14.0,
-    "volym": 750,
-    "pris": 399.0
-  },
-  {
     "namn": "Château St.Thomas Clos St.Thomas",
     "apk": 0.26,
     "typ": "Vin",
@@ -171158,14 +166358,6 @@
     "procent": 11.0,
     "volym": 750,
     "pris": 320.0
-  },
-  {
-    "namn": "Nikka The Tailored",
-    "apk": 0.26,
-    "typ": "Sprit",
-    "procent": 43.0,
-    "volym": 700,
-    "pris": 1139.0
   },
   {
     "namn": "Radikon RS21",
@@ -172054,14 +167246,6 @@
     "procent": 13.5,
     "volym": 750,
     "pris": 399.0
-  },
-  {
-    "namn": "Ricasoli Castello di Brolio Gran Selezione",
-    "apk": 0.25,
-    "typ": "Vin",
-    "procent": 14.5,
-    "volym": 750,
-    "pris": 429.0
   },
   {
     "namn": "Château Soutard",
@@ -174400,28 +169584,12 @@
     "pris": 849.0
   },
   {
-    "namn": "Vicoregio Marchesi Mazzei",
-    "apk": 0.25,
-    "typ": "Vin",
-    "procent": 14.5,
-    "volym": 750,
-    "pris": 429.0
-  },
-  {
     "namn": "Van Volxem 1900 Brut",
     "apk": 0.25,
     "typ": "Vin",
     "procent": 12.0,
     "volym": 750,
     "pris": 359.0
-  },
-  {
-    "namn": "Il Frappato Arianna Occhipinti",
-    "apk": 0.25,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 750,
-    "pris": 369.0
   },
   {
     "namn": "Chablis Tête d'Or Billaud-Simon",
@@ -174654,14 +169822,6 @@
     "procent": 12.5,
     "volym": 750,
     "pris": 389.0
-  },
-  {
-    "namn": "Cristom Eola-Amity Hills Chardonnay",
-    "apk": 0.24,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 399.0
   },
   {
     "namn": "Macchiona La Stoppa",
@@ -179808,14 +174968,6 @@
     "pris": 499.0
   },
   {
-    "namn": "Chablis Premier Cru Les Lys Albert Bichot",
-    "apk": 0.23,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 429.0
-  },
-  {
     "namn": "Tenuta delle Terre Nere Etna Rosso Moganazzi",
     "apk": 0.23,
     "typ": "Vin",
@@ -183422,14 +178574,6 @@
     "procent": 12.0,
     "volym": 500,
     "pris": 290.0
-  },
-  {
-    "namn": "Barolo Cannubi",
-    "apk": 0.21,
-    "typ": "Vin",
-    "procent": 14.5,
-    "volym": 750,
-    "pris": 522.0
   },
   {
     "namn": "Barolo Cannubi",
@@ -190592,14 +185736,6 @@
     "pris": 1150.0
   },
   {
-    "namn": "Marc de Chambertin Domaine Trapet",
-    "apk": 0.18,
-    "typ": "Sprit",
-    "procent": 40.5,
-    "volym": 500,
-    "pris": 1150.0
-  },
-  {
     "namn": "Valentina Andrei Petite Arvine Granite",
     "apk": 0.18,
     "typ": "Vin",
@@ -192126,14 +187262,6 @@
     "procent": 14.5,
     "volym": 750,
     "pris": 589.0
-  },
-  {
-    "namn": "Beaulieu Vineyard Reserve Tapestry",
-    "apk": 0.18,
-    "typ": "Vin",
-    "procent": 15.0,
-    "volym": 750,
-    "pris": 629.0
   },
   {
     "namn": "Archineri Etna Rosso Pietradolce",
@@ -194144,14 +189272,6 @@
     "pris": 549.0
   },
   {
-    "namn": "Domaine de la Commanderie Tradition",
-    "apk": 0.17,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 750,
-    "pris": 549.0
-  },
-  {
     "namn": "Garagiste Meadery Barrel Aged CYPM Cobbler",
     "apk": 0.17,
     "typ": "Vin",
@@ -195222,14 +190342,6 @@
     "procent": 14.5,
     "volym": 750,
     "pris": 679.0
-  },
-  {
-    "namn": "Barbaresco Pajorè Sottimano",
-    "apk": 0.16,
-    "typ": "Vin",
-    "procent": 14.5,
-    "volym": 750,
-    "pris": 699.0
   },
   {
     "namn": "Château Giscours",
@@ -197520,14 +192632,6 @@
     "pris": 639.0
   },
   {
-    "namn": "Chénas Le Jugement Dernier",
-    "apk": 0.16,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 599.0
-  },
-  {
     "namn": "Kutch McDougall Ranch Pinot Noir",
     "apk": 0.16,
     "typ": "Vin",
@@ -197950,22 +193054,6 @@
     "procent": 14.0,
     "volym": 750,
     "pris": 699.0
-  },
-  {
-    "namn": "Kutch McDougall Ranch Pinot Noir",
-    "apk": 0.15,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 669.0
-  },
-  {
-    "namn": "Kutch Falstaff Vineyard Pinot Noir",
-    "apk": 0.15,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 669.0
   },
   {
     "namn": "Carnasciale",
@@ -199024,14 +194112,6 @@
     "pris": 702.0
   },
   {
-    "namn": "Savigny-Lès-Beaune Premier Cru Les Marconnets Domaine de la Vougeraie",
-    "apk": 0.15,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 750,
-    "pris": 679.0
-  },
-  {
     "namn": "Planet Romeiko",
     "apk": 0.15,
     "typ": "Vin",
@@ -199110,14 +194190,6 @@
     "procent": 14.0,
     "volym": 750,
     "pris": 701.0
-  },
-  {
-    "namn": "Moulin à Vent Domaine Jules Desjourneys",
-    "apk": 0.15,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 669.0
   },
   {
     "namn": "Moulin à Vent Domaine Jules Desjourneys",
@@ -200878,14 +195950,6 @@
     "procent": 42.0,
     "volym": 700,
     "pris": 2099.0
-  },
-  {
-    "namn": "Berivagus Blanc de Blancs, Grand Cru, Mesnil-sur-Oger, Oger",
-    "apk": 0.14,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 750,
-    "pris": 692.0
   },
   {
     "namn": "Berivagus Blanc de Blancs, Grand Cru, Mesnil-sur-Oger, Oger",
@@ -202661,14 +197725,6 @@
     "typ": "Öl",
     "procent": 0.5,
     "volym": 330,
-    "pris": 12.3
-  },
-  {
-    "namn": "Carlsberg Alcohol Free",
-    "apk": 0.13,
-    "typ": "Öl",
-    "procent": 0.5,
-    "volym": 330,
     "pris": 12.5
   },
   {
@@ -203968,14 +199024,6 @@
     "pris": 682.0
   },
   {
-    "namn": "Barolo Bricco Fiasco Azelia",
-    "apk": 0.13,
-    "typ": "Vin",
-    "procent": 14.5,
-    "volym": 750,
-    "pris": 869.0
-  },
-  {
     "namn": "Follet-Ramillon Solera 219 Extra Brut",
     "apk": 0.13,
     "typ": "Vin",
@@ -203998,14 +199046,6 @@
     "procent": 14.0,
     "volym": 500,
     "pris": 546.0
-  },
-  {
-    "namn": "Barolo Margheria Azelia",
-    "apk": 0.13,
-    "typ": "Vin",
-    "procent": 14.5,
-    "volym": 750,
-    "pris": 869.0
   },
   {
     "namn": "Chateau Montelena Chardonnay",
@@ -204112,14 +199152,6 @@
     "pris": 799.0
   },
   {
-    "namn": "Barolo San Rocco Azelia",
-    "apk": 0.13,
-    "typ": "Vin",
-    "procent": 14.5,
-    "volym": 750,
-    "pris": 869.0
-  },
-  {
     "namn": "Dumangin Premium Blanc De Blancs Extra Brut",
     "apk": 0.13,
     "typ": "Vin",
@@ -204182,14 +199214,6 @@
     "procent": 12.5,
     "volym": 750,
     "pris": 749.0
-  },
-  {
-    "namn": "Barolo Monvigliero Paolo Scavino",
-    "apk": 0.13,
-    "typ": "Vin",
-    "procent": 14.5,
-    "volym": 750,
-    "pris": 849.0
   },
   {
     "namn": "Larmes de Meunier Simon Rion",
@@ -204302,14 +199326,6 @@
     "procent": 14.5,
     "volym": 750,
     "pris": 829.0
-  },
-  {
-    "namn": "Yarra Yering Dry Red Wine No 1",
-    "apk": 0.13,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 750,
-    "pris": 779.0
   },
   {
     "namn": "Richmond Grove Watervale Riesling",
@@ -205368,14 +200384,6 @@
     "pris": 969.0
   },
   {
-    "namn": "Taittinger Brut Millésimé",
-    "apk": 0.12,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 750,
-    "pris": 769.0
-  },
-  {
     "namn": "Demiere Inno'Sens Pur",
     "apk": 0.12,
     "typ": "Vin",
@@ -205862,14 +200870,6 @@
     "procent": 14.5,
     "volym": 750,
     "pris": 895.0
-  },
-  {
-    "namn": "Taittinger Prélude Grands Crus",
-    "apk": 0.12,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 750,
-    "pris": 795.0
   },
   {
     "namn": "Bernard Tornay Grand Cru Brut",
@@ -208152,14 +203152,6 @@
     "pris": 899.0
   },
   {
-    "namn": "Don Melchor",
-    "apk": 0.11,
-    "typ": "Vin",
-    "procent": 14.5,
-    "volym": 750,
-    "pris": 999.0
-  },
-  {
     "namn": "Brunello di Montalcino Riserva Poggio Sant'Arna",
     "apk": 0.11,
     "typ": "Vin",
@@ -208678,14 +203670,6 @@
     "procent": 14.5,
     "volym": 1500,
     "pris": 2195.0
-  },
-  {
-    "namn": "Vasse Felix Tom Cullity",
-    "apk": 0.1,
-    "typ": "Vin",
-    "procent": 14.0,
-    "volym": 750,
-    "pris": 1029.0
   },
   {
     "namn": "Ridge Vineyards Estate Cabernet Sauvignon",
@@ -209988,24 +204972,8 @@
     "apk": 0.1,
     "typ": "Vin",
     "procent": 14.5,
-    "volym": 750,
-    "pris": 1099.0
-  },
-  {
-    "namn": "Poggio al Vento Col d'Orcia",
-    "apk": 0.1,
-    "typ": "Vin",
-    "procent": 14.5,
     "volym": 3000,
     "pris": 4499.0
-  },
-  {
-    "namn": "Alion",
-    "apk": 0.1,
-    "typ": "Vin",
-    "procent": 14.5,
-    "volym": 1500,
-    "pris": 2195.0
   },
   {
     "namn": "Dufvenkrooks Alkoholfri Röd Glögg",
@@ -210390,14 +205358,6 @@
     "procent": 7.5,
     "volym": 187,
     "pris": 159.0
-  },
-  {
-    "namn": "Brooklyn Special Effects IPA Alkoholfri",
-    "apk": 0.09,
-    "typ": "Öl",
-    "procent": 0.4,
-    "volym": 330,
-    "pris": 15.2
   },
   {
     "namn": "Brooklyn Special Effects IPA Alkoholfri",
@@ -211054,14 +206014,6 @@
     "procent": 14.5,
     "volym": 750,
     "pris": 1203.0
-  },
-  {
-    "namn": "Chambolle-Musigny Domaine Taupenot-Merme",
-    "apk": 0.09,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 1099.0
   },
   {
     "namn": "Pouilly Fuissé 1er Cru Sur La Roche Esprit Leflaive",
@@ -211784,14 +206736,6 @@
     "pris": 1149.0
   },
   {
-    "namn": "Nuits-St-Georges 1er Cru Clos de Thorey Monopole Domaine de la Vougeraie",
-    "apk": 0.08,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 1199.0
-  },
-  {
     "namn": "Nuits St Georges Premier Cru Clos de Thorey Monopole Domaine de la Vougeraie",
     "apk": 0.08,
     "typ": "Vin",
@@ -212160,14 +207104,6 @@
     "pris": 4169.0
   },
   {
-    "namn": "Hunter Laing & Co Ltd Auchentoshan Old Malt Cask 25 years",
-    "apk": 0.08,
-    "typ": "Sprit",
-    "procent": 50.0,
-    "volym": 700,
-    "pris": 4169.0
-  },
-  {
     "namn": "Hunter Laing & Co Ltd Blair Athol Sherry Cask Old Malt Cask 26 Years",
     "apk": 0.08,
     "typ": "Sprit",
@@ -212326,14 +207262,6 @@
     "procent": 10.5,
     "volym": 375,
     "pris": 519.0
-  },
-  {
-    "namn": "Veyder-Malberg Elsarner Ried Brandstatt Riesling",
-    "apk": 0.08,
-    "typ": "Vin",
-    "procent": 12.5,
-    "volym": 750,
-    "pris": 1199.0
   },
   {
     "namn": "Joseph Perrier La Côte à Bras Brut Nature",
@@ -212760,14 +207688,6 @@
     "pris": 2599.0
   },
   {
-    "namn": "Barolo Mosconi Pio Cesare",
-    "apk": 0.08,
-    "typ": "Vin",
-    "procent": 14.5,
-    "volym": 750,
-    "pris": 1299.0
-  },
-  {
     "namn": "Vosne Romanée Michel Gros",
     "apk": 0.08,
     "typ": "Vin",
@@ -213120,14 +208040,6 @@
     "pris": 1599.0
   },
   {
-    "namn": "The Macallan Sherry Oak 18 years",
-    "apk": 0.07,
-    "typ": "Sprit",
-    "procent": 43.0,
-    "volym": 700,
-    "pris": 4400.0
-  },
-  {
     "namn": "Nuits-Saint-Georges 1er Cru Les Vaucrains Lucien le Moine",
     "apk": 0.07,
     "typ": "Vin",
@@ -213198,30 +208110,6 @@
     "procent": 0.5,
     "volym": 250,
     "pris": 18.6
-  },
-  {
-    "namn": "ISH Mojito Non Alcoholic Cocktail",
-    "apk": 0.07,
-    "typ": "Öl",
-    "procent": 0.5,
-    "volym": 250,
-    "pris": 18.6
-  },
-  {
-    "namn": "Nejgroni Alkoholfri Cocktail",
-    "apk": 0.07,
-    "typ": "Öl",
-    "procent": 0.5,
-    "volym": 250,
-    "pris": 18.8
-  },
-  {
-    "namn": "Fentimans Ginger Beer Alcohol Free",
-    "apk": 0.07,
-    "typ": "Öl",
-    "procent": 0.5,
-    "volym": 250,
-    "pris": 18.7
   },
   {
     "namn": "Brännland Iscider LXIV Västerbotten",
@@ -214088,14 +208976,6 @@
     "pris": 22.0
   },
   {
-    "namn": "Stockholms Bränneri Spicy Pink Paloma Alkoholfri",
-    "apk": 0.06,
-    "typ": "Öl",
-    "procent": 0.5,
-    "volym": 250,
-    "pris": 22.0
-  },
-  {
     "namn": "Stockholms Bränneri Winter Spritz Non Alcoholic",
     "apk": 0.06,
     "typ": "Öl",
@@ -214568,23 +209448,7 @@
     "pris": 16.9
   },
   {
-    "namn": "Stockholms Bränneri  Apéro Soda Non Alcoholic",
-    "apk": 0.06,
-    "typ": "Öl",
-    "procent": 0.5,
-    "volym": 250,
-    "pris": 21.0
-  },
-  {
     "namn": "Poppels Hoppy Pale Ale Alkoholfri, Glutenfri",
-    "apk": 0.06,
-    "typ": "Öl",
-    "procent": 0.3,
-    "volym": 330,
-    "pris": 16.9
-  },
-  {
-    "namn": "Oppigårds Pale Ale Alkoholfri",
     "apk": 0.06,
     "typ": "Öl",
     "procent": 0.3,
@@ -215368,14 +210232,6 @@
     "pris": 1800.0
   },
   {
-    "namn": "Conterno Vigna Molsino Cantine Nervi",
-    "apk": 0.06,
-    "typ": "Vin",
-    "procent": 14.0,
-    "volym": 750,
-    "pris": 1649.0
-  },
-  {
     "namn": "Barolo Bussia Colonnello Aldo Conterno",
     "apk": 0.06,
     "typ": "Vin",
@@ -215928,14 +210784,6 @@
     "pris": 2199.0
   },
   {
-    "namn": "Opus One Overture",
-    "apk": 0.05,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 750,
-    "pris": 2095.0
-  },
-  {
     "namn": "Ornellaia",
     "apk": 0.05,
     "typ": "Vin",
@@ -216094,14 +210942,6 @@
     "procent": 0.5,
     "volym": 750,
     "pris": 76.0
-  },
-  {
-    "namn": "Mikkeller Drink'in The Sun Alcohol Free",
-    "apk": 0.05,
-    "typ": "Öl",
-    "procent": 0.3,
-    "volym": 330,
-    "pris": 18.8
   },
   {
     "namn": "Barolo Rocche di Castiglione",
@@ -216686,14 +211526,6 @@
     "procent": 14.5,
     "volym": 750,
     "pris": 2266.0
-  },
-  {
-    "namn": "Château Hosanna",
-    "apk": 0.05,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 750,
-    "pris": 2000.0
   },
   {
     "namn": "Domaine Parent Corton Grand Cru Les Renardes",
@@ -217808,14 +212640,6 @@
     "pris": 36.0
   },
   {
-    "namn": "Cognato Chenin Blanc Alcohol Free",
-    "apk": 0.04,
-    "typ": "Öl",
-    "procent": 0.4,
-    "volym": 250,
-    "pris": 24.0
-  },
-  {
     "namn": "Cognato Cabernet Sauvignon Alcohol free",
     "apk": 0.04,
     "typ": "Öl",
@@ -217838,14 +212662,6 @@
     "procent": 0.4,
     "volym": 375,
     "pris": 37.0
-  },
-  {
-    "namn": "Chavin Rosé Sparkling Non Alcoholic",
-    "apk": 0.04,
-    "typ": "Öl",
-    "procent": 0.5,
-    "volym": 250,
-    "pris": 29.0
   },
   {
     "namn": "Oddbird Spumante Rosé Non Alcoholic",
@@ -218048,14 +212864,6 @@
     "pris": 3799.0
   },
   {
-    "namn": "Gevrey-Chambertin Premier Cru Clos Prieur Domaine Trapet",
-    "apk": 0.04,
-    "typ": "Vin",
-    "procent": 13.0,
-    "volym": 750,
-    "pris": 2199.0
-  },
-  {
     "namn": "Messorio",
     "apk": 0.04,
     "typ": "Vin",
@@ -218168,14 +212976,6 @@
     "pris": 2500.0
   },
   {
-    "namn": "Château Bélair-Monange Jean-Pierre Mouiex",
-    "apk": 0.04,
-    "typ": "Vin",
-    "procent": 14.5,
-    "volym": 750,
-    "pris": 2500.0
-  },
-  {
     "namn": "Perez Pascuas Gran Seleccion Gran Reserva",
     "apk": 0.04,
     "typ": "Vin",
@@ -218246,14 +213046,6 @@
     "procent": 53.5,
     "volym": 700,
     "pris": 8999.0
-  },
-  {
-    "namn": "Dominus Estate",
-    "apk": 0.04,
-    "typ": "Vin",
-    "procent": 14.5,
-    "volym": 750,
-    "pris": 3000.0
   },
   {
     "namn": "Dominus Estate",
@@ -219552,14 +214344,6 @@
     "pris": 2151.0
   },
   {
-    "namn": "Dominus Estate",
-    "apk": 0.03,
-    "typ": "Vin",
-    "procent": 14.5,
-    "volym": 750,
-    "pris": 3206.0
-  },
-  {
     "namn": "Château Figeac",
     "apk": 0.03,
     "typ": "Vin",
@@ -219950,14 +214734,6 @@
     "procent": 14.0,
     "volym": 750,
     "pris": 6195.0
-  },
-  {
-    "namn": "Gaja Sorì Tildìn Barbaresco",
-    "apk": 0.02,
-    "typ": "Vin",
-    "procent": 14.0,
-    "volym": 750,
-    "pris": 6795.0
   },
   {
     "namn": "Château Trotanoy",
@@ -220768,14 +215544,6 @@
     "pris": 6599.0
   },
   {
-    "namn": "Corton Grand Cru Domaine Bonneau du Martray",
-    "apk": 0.02,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 750,
-    "pris": 6599.0
-  },
-  {
     "namn": "Latricières-Chambertin Grand Cru Domaine Trapet",
     "apk": 0.02,
     "typ": "Vin",
@@ -220918,14 +215686,6 @@
     "procent": 13.0,
     "volym": 750,
     "pris": 5849.0
-  },
-  {
-    "namn": "Vega Sicilia Unico",
-    "apk": 0.02,
-    "typ": "Vin",
-    "procent": 14.0,
-    "volym": 1500,
-    "pris": 8995.0
   },
   {
     "namn": "Chambertin-Clos de Bèze Grand Cru Lucien le Moine",
@@ -221800,14 +216560,6 @@
     "pris": 44999.0
   },
   {
-    "namn": "Charlemagne Grand Cru Domaine Bonneau du Martray",
-    "apk": 0.01,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 750,
-    "pris": 6999.0
-  },
-  {
     "namn": "Tullibardine Custodian",
     "apk": 0.01,
     "typ": "Sprit",
@@ -222184,14 +216936,6 @@
     "pris": 9999.0
   },
   {
-    "namn": "Musigny Grand Cru Vieilles Vignes Domaine Comte Georges de Vogüé",
-    "apk": 0.01,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 1500,
-    "pris": 19999.0
-  },
-  {
     "namn": "Musigny Grand Cru Domaine de la Vougeraie",
     "apk": 0.01,
     "typ": "Vin",
@@ -222272,28 +217016,12 @@
     "pris": 11499.0
   },
   {
-    "namn": "Bonnes-Mares Grand Cru Domaine Comte Georges de Vogüé",
-    "apk": 0.01,
-    "typ": "Vin",
-    "procent": 13.5,
-    "volym": 750,
-    "pris": 7599.0
-  },
-  {
     "namn": "Vega Sicilia Double magnum",
     "apk": 0.01,
     "typ": "Vin",
     "procent": 14.0,
     "volym": 3000,
     "pris": 32495.0
-  },
-  {
-    "namn": "Masseto",
-    "apk": 0.01,
-    "typ": "Vin",
-    "procent": 15.0,
-    "volym": 750,
-    "pris": 8999.0
   },
   {
     "namn": "Port Ellen 40th",
